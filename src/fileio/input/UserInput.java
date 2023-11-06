@@ -31,4 +31,12 @@ public final class UserInput {
     public void setCity(final String city) {
         this.city = city;
     }
+
+    public Integer getTimestamp() {
+        return timestamp;
+    }
+
+    public void setTimestamp(Integer timestamp) {
+        this.timestamp = timestamp;
+    }
 }

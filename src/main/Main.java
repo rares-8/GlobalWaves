@@ -8,9 +8,9 @@ import com.fasterxml.jackson.databind.JsonNode;
 import com.fasterxml.jackson.databind.ObjectMapper;
 import com.fasterxml.jackson.databind.ObjectWriter;
 import com.fasterxml.jackson.databind.node.ArrayNode;
-import commandsParser.SearchCommand;
-import commandsParser.SelectCommand;
+import commandParser.CommandParser;
 import fileio.input.LibraryInput;
+import fileio.input.SongInput;
 
 import java.io.File;
 import java.io.IOException;
@@ -79,47 +79,21 @@ public final class Main {
         ObjectMapper objectMapper = new ObjectMapper();
         LibraryInput library = objectMapper.readValue(new File(LIBRARY_PATH), LibraryInput.class);
 
+
+        if (!Objects.equals(filePath1, "test01_searchBar_songs_podcasts.json"))
+            return;
+
         ArrayNode outputs = objectMapper.createArrayNode();
+
+        JsonNode commands = objectMapper.readTree(new File("input/" + filePath1));
+        CommandParser commandParser = new CommandParser(library, outputs);
+
+        for (int i = 0; i < commands.size(); i++) {
+            JsonNode currentCommand = commands.get(i);
+            commandParser.parse(currentCommand);
+        }
 
         ObjectWriter objectWriter = objectMapper.writerWithDefaultPrettyPrinter();
         objectWriter.writeValue(new File(filePath2), outputs);
-
-        JsonNode obj = objectMapper.readTree(new File("input/" + filePath1));
-
-        String username;
-        String commandValue;
-        Integer timestamp;
-        for (int i = 0; i < obj.size(); i++) {
-            JsonNode currentNode = obj.get(i);
-
-            commandValue = currentNode.get("command").toString();
-            commandValue = commandValue.replace("\"", "");
-
-            if (commandValue.equals("getTop5Songs") || commandValue.equals("getTop5Playlists"))
-                continue;
-
-            username = currentNode.get("username").toString();
-            username = username.replace("\"", "");
-
-            timestamp = currentNode.get("timestamp").asInt();
-            switch (commandValue) {
-                case "search":
-                    String type = currentNode.get("type").toString().replace("\"", "");
-                    Map<String, Object> filters = objectMapper.convertValue(currentNode.get("filters"), new TypeReference<Map<String, Object>>(){});
-                    SearchCommand search = new SearchCommand(commandValue, username, timestamp, type, filters);
-                    break;
-                case "select":
-                    Integer itemNumber = currentNode.get("itemNumber").asInt();
-                    SelectCommand selectCommand = new SelectCommand(commandValue, username, timestamp, itemNumber);
-                    break;
-                default:
-                    //System.out.println("Unknown command");
-            }
-        }
-
-        System.out.println(filePath1);
-        //System.out.println(obj.size());
-        System.out.println("------------------------------");
-
     }
 }

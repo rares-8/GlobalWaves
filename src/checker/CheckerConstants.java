@@ -1,15 +1,15 @@
 package checker;
 
 /**
- * The class contains the minimum of constants needed.
+ * The class contains the minimum of constants.constants needed.
  *
- * You can define your own constants here or create separate files.
+ * You can define your own constants.constants here or create separate files.
  */
 public final class CheckerConstants {
     private CheckerConstants() {
     }
 
-    // checker constants
+    // checker constants.constants
     public static final Integer BIG_TEST_POINTS = 3;
     public static final Integer MAXIMUM_ERROR_CHECKSTYLE = 30;
     public static final Integer CHECKSTYLE_POINTS = 10;

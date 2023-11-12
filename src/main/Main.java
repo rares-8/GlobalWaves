@@ -2,24 +2,18 @@ package main;
 
 import checker.Checker;
 import checker.CheckerConstants;
-import com.fasterxml.jackson.annotation.JsonInclude;
-import com.fasterxml.jackson.core.type.TypeReference;
 import com.fasterxml.jackson.databind.JsonNode;
 import com.fasterxml.jackson.databind.ObjectMapper;
 import com.fasterxml.jackson.databind.ObjectWriter;
 import com.fasterxml.jackson.databind.node.ArrayNode;
-import commandParser.CommandParser;
+import command.parser.CommandParser;
 import fileio.input.LibraryInput;
-import fileio.input.SongInput;
-import userMemory.UserMemory;
-
+import user.memory.UserMemory;
 import java.io.File;
 import java.io.IOException;
 import java.nio.file.Files;
 import java.nio.file.Path;
 import java.nio.file.Paths;
-import java.util.Iterator;
-import java.util.Map;
 import java.util.Objects;
 
 /**
@@ -80,8 +74,6 @@ public final class Main {
         ObjectMapper objectMapper = new ObjectMapper();
         LibraryInput library = objectMapper.readValue(new File(LIBRARY_PATH), LibraryInput.class);
 
-//        if (!Objects.equals(filePath1, "test01_searchBar_songs_podcasts.json"))
-//            return;
 
         ArrayNode outputs = objectMapper.createArrayNode();
 
@@ -96,5 +88,6 @@ public final class Main {
 
         ObjectWriter objectWriter = objectMapper.writerWithDefaultPrettyPrinter();
         objectWriter.writeValue(new File(filePath2), outputs);
+        memory = null;
     }
 }

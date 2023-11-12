@@ -41,7 +41,7 @@ public final class PodcastInput implements Audio {
     }
 
     @Override
-    public void setDuration(Integer duration) {
+    public void setDuration(final Integer duration) {
 
     }
 
@@ -51,7 +51,7 @@ public final class PodcastInput implements Audio {
     }
 
     @Override
-    public void setAlbum(String album) {
+    public void setAlbum(final String album) {
 
     }
 
@@ -61,7 +61,7 @@ public final class PodcastInput implements Audio {
     }
 
     @Override
-    public void setTags(ArrayList<String> tags) {
+    public void setTags(final ArrayList<String> tags) {
 
     }
 
@@ -71,7 +71,7 @@ public final class PodcastInput implements Audio {
     }
 
     @Override
-    public void setLyrics(String lyrics) {
+    public void setLyrics(final String lyrics) {
 
     }
 
@@ -81,7 +81,7 @@ public final class PodcastInput implements Audio {
     }
 
     @Override
-    public void setGenre(String genre) {
+    public void setGenre(final String genre) {
 
     }
 
@@ -91,7 +91,7 @@ public final class PodcastInput implements Audio {
     }
 
     @Override
-    public void setReleaseYear(int releaseYear) {
+    public void setReleaseYear(final int releaseYear) {
 
     }
 
@@ -101,7 +101,7 @@ public final class PodcastInput implements Audio {
     }
 
     @Override
-    public void setArtist(String artist) {
+    public void setArtist(final String artist) {
 
     }
 }

@@ -86,7 +86,7 @@ public final class SongInput implements Audio {
     }
 
     @Override
-    public void setOwner(String owner) {
+    public void setOwner(final String owner) {
 
     }
 
@@ -96,7 +96,7 @@ public final class SongInput implements Audio {
     }
 
     @Override
-    public void setEpisodes(ArrayList<EpisodeInput> episodes) {
+    public void setEpisodes(final ArrayList<EpisodeInput> episodes) {
 
     }
 }

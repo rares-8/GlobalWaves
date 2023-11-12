@@ -3,46 +3,126 @@ package fileio.input;
 import java.util.ArrayList;
 
 /**
- * Interface used in order to be able to create lists that contain podcasts, playlists, and songs.
+ * Interface used in order to be able to create objects that contain songs/podcasts
  */
 public interface Audio {
-    public String getName();
+    /**
+     *
+     * @return name parameter for podcast/song
+     */
+    String getName();
 
-    public void setName(String name);
+    /**
+     *
+     * @param name
+     */
+    void setName(String name);
 
-    public String getOwner();
+    /**
+     *
+     * @return podcast owner
+     */
+    String getOwner();
 
-    public void setOwner(String owner);
+    /**
+     *
+     * @param owner
+     */
+    void setOwner(String owner);
 
-    public ArrayList<EpisodeInput> getEpisodes();
+    /**
+     *
+     * @return episodes
+     */
+    ArrayList<EpisodeInput> getEpisodes();
 
-    public void setEpisodes(final ArrayList<EpisodeInput> episodes);
+    /**
+     *
+     * @param episodes
+     */
+    void setEpisodes(ArrayList<EpisodeInput> episodes);
 
-    public Integer getDuration();
+    /**
+     *
+     * @return duration
+     */
+    Integer getDuration();
 
-    public void setDuration(final Integer duration);
+    /**
+     *
+     * @param duration
+     */
+    void setDuration(Integer duration);
 
-    public String getAlbum();
+    /**
+     *
+     * @return album
+     */
+    String getAlbum();
 
-    public void setAlbum(final String album);
+    /**
+     *
+     * @param album
+     */
+    void setAlbum(String album);
 
-    public ArrayList<String> getTags();
+    /**
+     *
+     * @return tags
+     */
+    ArrayList<String> getTags();
 
-    public void setTags(final ArrayList<String> tags);
+    /**
+     *
+     * @param tags
+     */
+    void setTags(ArrayList<String> tags);
 
-    public String getLyrics();
+    /**
+     *
+     * @return lyrics
+     */
+    String getLyrics();
 
-    public void setLyrics(final String lyrics);
+    /**
+     *
+     * @param lyrics
+     */
+    void setLyrics(String lyrics);
 
-    public String getGenre();
+    /**
+     *
+     * @return genre
+     */
+    String getGenre();
 
-    public void setGenre(final String genre);
+    /**
+     *
+     * @param genre
+     */
+    void setGenre(String genre);
 
-    public int getReleaseYear();
+    /**
+     *
+     * @return releaseYear
+     */
+    int getReleaseYear();
 
-    public void setReleaseYear(final int releaseYear);
+    /**
+     *
+     * @param releaseYear
+     */
+    void setReleaseYear(int releaseYear);
 
-    public String getArtist();
+    /**
+     *
+     * @return artist
+     */
+    String getArtist();
 
-    public void setArtist(final String artist);
+    /**
+     *
+     * @param artist
+     */
+    void setArtist(String artist);
 }

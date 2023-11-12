@@ -11,6 +11,7 @@ import com.fasterxml.jackson.databind.node.ArrayNode;
 import commandParser.CommandParser;
 import fileio.input.LibraryInput;
 import fileio.input.SongInput;
+import userMemory.UserMemory;
 
 import java.io.File;
 import java.io.IOException;
@@ -79,18 +80,18 @@ public final class Main {
         ObjectMapper objectMapper = new ObjectMapper();
         LibraryInput library = objectMapper.readValue(new File(LIBRARY_PATH), LibraryInput.class);
 
-
-        if (!Objects.equals(filePath1, "test01_searchBar_songs_podcasts.json"))
-            return;
+//        if (!Objects.equals(filePath1, "test01_searchBar_songs_podcasts.json"))
+//            return;
 
         ArrayNode outputs = objectMapper.createArrayNode();
 
         JsonNode commands = objectMapper.readTree(new File("input/" + filePath1));
         CommandParser commandParser = new CommandParser(library, outputs);
 
+        UserMemory memory = UserMemory.getInstance();
         for (int i = 0; i < commands.size(); i++) {
             JsonNode currentCommand = commands.get(i);
-            commandParser.parse(currentCommand);
+            commandParser.parse(currentCommand, memory);
         }
 
         ObjectWriter objectWriter = objectMapper.writerWithDefaultPrettyPrinter();

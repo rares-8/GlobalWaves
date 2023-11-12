@@ -2,7 +2,7 @@ package fileio.input;
 
 import java.util.ArrayList;
 
-public final class SongInput {
+public final class SongInput implements Audio {
     private String name;
     private Integer duration;
     private String album;
@@ -77,5 +77,26 @@ public final class SongInput {
 
     public void setArtist(final String artist) {
         this.artist = artist;
+    }
+
+    // these methods are not used, only declared because it is not an abstract class
+    @Override
+    public String getOwner() {
+        return null;
+    }
+
+    @Override
+    public void setOwner(String owner) {
+
+    }
+
+    @Override
+    public ArrayList<EpisodeInput> getEpisodes() {
+        return null;
+    }
+
+    @Override
+    public void setEpisodes(ArrayList<EpisodeInput> episodes) {
+
     }
 }

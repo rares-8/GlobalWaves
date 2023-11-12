@@ -2,7 +2,7 @@ package fileio.input;
 
 import java.util.ArrayList;
 
-public final class PodcastInput {
+public final class PodcastInput implements Audio {
     private String name;
     private String owner;
     private ArrayList<EpisodeInput> episodes;
@@ -32,5 +32,76 @@ public final class PodcastInput {
 
     public void setEpisodes(final ArrayList<EpisodeInput> episodes) {
         this.episodes = episodes;
+    }
+
+    // these methods are not used, only declared because it is not an abstract class
+    @Override
+    public Integer getDuration() {
+        return null;
+    }
+
+    @Override
+    public void setDuration(Integer duration) {
+
+    }
+
+    @Override
+    public String getAlbum() {
+        return null;
+    }
+
+    @Override
+    public void setAlbum(String album) {
+
+    }
+
+    @Override
+    public ArrayList<String> getTags() {
+        return null;
+    }
+
+    @Override
+    public void setTags(ArrayList<String> tags) {
+
+    }
+
+    @Override
+    public String getLyrics() {
+        return null;
+    }
+
+    @Override
+    public void setLyrics(String lyrics) {
+
+    }
+
+    @Override
+    public String getGenre() {
+        return null;
+    }
+
+    @Override
+    public void setGenre(String genre) {
+
+    }
+
+    @Override
+    public int getReleaseYear() {
+        return 0;
+    }
+
+    @Override
+    public void setReleaseYear(int releaseYear) {
+
+    }
+
+    @Override
+    public String getArtist() {
+        return null;
+    }
+
+    @Override
+    public void setArtist(String artist) {
+
     }
 }

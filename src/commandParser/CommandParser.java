@@ -7,6 +7,7 @@ import com.fasterxml.jackson.databind.node.ArrayNode;
 import commands.SearchCommand;
 import fileio.input.LibraryInput;
 import fileio.input.SongInput;
+import userMemory.UserMemory;
 
 import java.util.*;
 
@@ -15,13 +16,13 @@ public final class CommandParser {
     private LibraryInput library;
     private ArrayNode outputs;
 
-    public void parse(JsonNode currentCommand) {
+    public void parse(JsonNode currentCommand, UserMemory memory) {
         String command = getCommand(currentCommand);
         Integer timestamp = getTimestamp(currentCommand);
 
         switch (command) {
             case "search":
-                searchParse(currentCommand);
+                searchParse(currentCommand, memory);
                 break;
             default:
                 System.out.println("Unknown " + command);
@@ -32,7 +33,7 @@ public final class CommandParser {
      * Get the rest of the fields from "search" command and call method
      * to solve the command.
      */
-    private void searchParse(JsonNode currentCommand) {
+    private void searchParse(JsonNode currentCommand, UserMemory memory) {
         ObjectMapper objectMapper = new ObjectMapper();
         String type = getType(currentCommand);
         JsonNode filtersNode = currentCommand.get("filters");
@@ -53,7 +54,7 @@ public final class CommandParser {
         }
 
         String username = getUsername(currentCommand);
-        outputs.add(SearchCommand.search(username, type, tags, otherFilters, library, getTimestamp(currentCommand)));
+        outputs.add(SearchCommand.search(username, type, tags, otherFilters, library, getTimestamp(currentCommand), memory));
     }
 
     private String getType(JsonNode currentCommand) {

@@ -1,0 +1,72 @@
+[ {
+  "command" : "search",
+  "user" : "alice22",
+  "timestamp" : 10,
+  "message" : "Search returned 1 results",
+  "results" : [ "TED Radio Hour" ]
+}, {
+  "command" : "select",
+  "user" : "alice22",
+  "timestamp" : 15,
+  "message" : "Successfully selected TED Radio Hour."
+}, {
+  "command" : "search",
+  "user" : "alice22",
+  "timestamp" : 60,
+  "message" : "Search returned 1 results",
+  "results" : [ "Stairway to Heaven" ]
+}, {
+  "command" : "select",
+  "user" : "alice22",
+  "timestamp" : 65,
+  "message" : "Successfully selected Stairway to Heaven."
+}, {
+  "command" : "search",
+  "user" : "alice22",
+  "timestamp" : 75,
+  "message" : "Search returned 1 results",
+  "results" : [ "TED Radio Hour" ]
+}, {
+  "command" : "select",
+  "user" : "alice22",
+  "timestamp" : 80,
+  "message" : "Successfully selected TED Radio Hour."
+}, {
+  "command" : "createPlaylist",
+  "user" : "alice22",
+  "timestamp" : 3210,
+  "message" : "Playlist created successfully"
+}, {
+  "command" : "search",
+  "user" : "alice22",
+  "timestamp" : 3215,
+  "message" : "Search returned 2 results",
+  "results" : [ "Freedom", "Freedom" ]
+}, {
+  "command" : "select",
+  "user" : "alice22",
+  "timestamp" : 3220,
+  "message" : "Successfully selected Freedom."
+}, {
+  "command" : "search",
+  "user" : "alice22",
+  "timestamp" : 3235,
+  "message" : "Search returned 1 results",
+  "results" : [ "Happier" ]
+}, {
+  "command" : "select",
+  "user" : "alice22",
+  "timestamp" : 3240,
+  "message" : "Successfully selected Happier."
+}, {
+  "command" : "search",
+  "user" : "alice22",
+  "timestamp" : 3255,
+  "message" : "Search returned 1 results",
+  "results" : [ "2010 hits" ]
+}, {
+  "command" : "select",
+  "user" : "alice22",
+  "timestamp" : 3260,
+  "message" : "Successfully selected 2010 hits."
+} ]

@@ -1,0 +1,83 @@
+[ {
+  "command" : "createPlaylist",
+  "user" : "bob35",
+  "timestamp" : 50,
+  "message" : "Playlist created successfully"
+}, {
+  "command" : "search",
+  "user" : "bob35",
+  "timestamp" : 100,
+  "message" : "Search returned 1 results",
+  "results" : [ "TED Talks Daily" ]
+}, {
+  "command" : "select",
+  "user" : "bob35",
+  "timestamp" : 110,
+  "message" : "Successfully selected TED Talks Daily."
+}, {
+  "command" : "search",
+  "user" : "bob35",
+  "timestamp" : 200,
+  "message" : "Search returned 1 results",
+  "results" : [ "Blank Space" ]
+}, {
+  "command" : "select",
+  "user" : "bob35",
+  "timestamp" : 210,
+  "message" : "Successfully selected Blank Space."
+}, {
+  "command" : "search",
+  "user" : "bob35",
+  "timestamp" : 250,
+  "message" : "Search returned 1 results",
+  "results" : [ "Whole Lotta Love" ]
+}, {
+  "command" : "select",
+  "user" : "bob35",
+  "timestamp" : 260,
+  "message" : "Successfully selected Whole Lotta Love."
+}, {
+  "command" : "search",
+  "user" : "bob35",
+  "timestamp" : 400,
+  "message" : "Search returned 1 results",
+  "results" : [ "I Don't Wanna Live Forever" ]
+}, {
+  "command" : "select",
+  "user" : "bob35",
+  "timestamp" : 410,
+  "message" : "Successfully selected I Don't Wanna Live Forever."
+}, {
+  "command" : "search",
+  "user" : "bob35",
+  "timestamp" : 500,
+  "message" : "Search returned 1 results",
+  "results" : [ "Kings Dead" ]
+}, {
+  "command" : "select",
+  "user" : "bob35",
+  "timestamp" : 510,
+  "message" : "Successfully selected Kings Dead."
+}, {
+  "command" : "search",
+  "user" : "bob35",
+  "timestamp" : 550,
+  "message" : "Search returned 1 results",
+  "results" : [ "Thinking Out Loud" ]
+}, {
+  "command" : "select",
+  "user" : "bob35",
+  "timestamp" : 560,
+  "message" : "Successfully selected Thinking Out Loud."
+}, {
+  "command" : "search",
+  "user" : "bob35",
+  "timestamp" : 3110,
+  "message" : "Search returned 1 results",
+  "results" : [ "Colaj" ]
+}, {
+  "command" : "select",
+  "user" : "bob35",
+  "timestamp" : 3130,
+  "message" : "Successfully selected Colaj."
+} ]

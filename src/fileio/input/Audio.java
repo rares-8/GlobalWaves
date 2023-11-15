@@ -3,7 +3,7 @@ package fileio.input;
 import java.util.ArrayList;
 
 /**
- * Interface used in order to be able to create objects that contain songs/podcasts
+ * Interface used by songs and podcasts, useful for polymorphic arrays
  */
 public interface Audio {
     /**
@@ -125,4 +125,12 @@ public interface Audio {
      * @param artist
      */
     void setArtist(String artist);
+
+    Integer getIsPrivate();
+
+    void setIsPrivate(Integer isPrivate);
+
+    ArrayList<SongInput> getPlaylistSongs();
+
+    void setPlaylistSongs(ArrayList<SongInput> playlistSongs);
 }

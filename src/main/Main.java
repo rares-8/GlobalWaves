@@ -74,7 +74,6 @@ public final class Main {
         ObjectMapper objectMapper = new ObjectMapper();
         LibraryInput library = objectMapper.readValue(new File(LIBRARY_PATH), LibraryInput.class);
 
-
         ArrayNode outputs = objectMapper.createArrayNode();
 
         JsonNode commands = objectMapper.readTree(new File("input/" + filePath1));
@@ -88,6 +87,6 @@ public final class Main {
 
         ObjectWriter objectWriter = objectMapper.writerWithDefaultPrettyPrinter();
         objectWriter.writeValue(new File(filePath2), outputs);
-        memory = null;
+        memory.removeInstance();
     }
 }

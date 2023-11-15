@@ -5,10 +5,7 @@ import com.fasterxml.jackson.databind.ObjectMapper;
 import com.fasterxml.jackson.databind.node.ArrayNode;
 import com.fasterxml.jackson.databind.node.ObjectNode;
 import constants.Constants;
-import fileio.input.Audio;
-import fileio.input.LibraryInput;
-import fileio.input.PodcastInput;
-import fileio.input.SongInput;
+import fileio.input.*;
 import user.memory.UserMemory;
 
 import java.util.ArrayList;
@@ -39,23 +36,18 @@ public abstract class SearchCommand implements Constants {
 
         ArrayNode auxNode;
 
-        if (type.equals("podcast") || type.equals("song")) {
-            ArrayList<Audio> audioResult = new ArrayList<>();
-            searchAudio(tags, library, otherFilters, audioResult, type);
+        ArrayList<Audio> audioResult = new ArrayList<>();
+        searchAudio(tags, library, otherFilters, audioResult, type, memory);
 
-            if (audioResult.size() > SEARCH_MAX_SIZE) {
-                audioResult = new ArrayList<>(audioResult.subList(0, SEARCH_MAX_SIZE));
-            }
+        if (audioResult.size() > SEARCH_MAX_SIZE) {
+            audioResult = new ArrayList<>(audioResult.subList(0, SEARCH_MAX_SIZE));
+        }
 
-            memory.getLastSearch().put(username, audioResult);
-            commandResult.put("message", "Search returned " + audioResult.size() + " results");
-            auxNode = commandResult.putArray("results");
-            for (Audio audio : audioResult) {
-                auxNode.add(audio.getName());
-            }
-        } else if (type.equals("playlist")) {
-            // do this later
-            System.out.println("later");
+        memory.getLastSearch().put(username, audioResult);
+        commandResult.put("message", "Search returned " + audioResult.size() + " results");
+        auxNode = commandResult.putArray("results");
+        for (Audio audio : audioResult) {
+            auxNode.add(audio.getName());
         }
 
         return commandResult;
@@ -67,10 +59,12 @@ public abstract class SearchCommand implements Constants {
      * @param otherFilters - all other filters except tags
      * @param audioResult  - list that contains all files that match the search filters
      * @param type         - search type
+     * @param memory - memory for users
      */
     private static void searchAudio(final List<String> tags, final LibraryInput library,
                                     final Map<String, String> otherFilters,
-                                    final ArrayList<Audio> audioResult, final String type) {
+                                    final ArrayList<Audio> audioResult, final String type,
+                                    final UserMemory memory) {
         /*
             First search for podcasts, easier to do
          */
@@ -80,6 +74,19 @@ public abstract class SearchCommand implements Constants {
                     searchAudioByFilter(element, currentPodcast, audioResult);
                 }
             }
+            return;
+        }
+
+        /*
+            Next search for playlists
+         */
+        if (type.equals("playlist")) {
+            for (PlaylistInput currentPlaylist : memory.getPublicPlaylists()) {
+                for (Map.Entry<String, String> element : otherFilters.entrySet()) {
+                    searchAudioByFilter(element, currentPlaylist, audioResult);
+                }
+            }
+            // should search for private playlists too
             return;
         }
 
@@ -135,7 +142,7 @@ public abstract class SearchCommand implements Constants {
      *
      * @param element      - [key, value] pair for a filter
      * @param currentAudio - checked to see if it matches filters
-     * @param result
+     * @param result       - search result
      */
     private static void searchAudioByFilter(final Map.Entry<String, String> element,
                                             final Audio currentAudio,

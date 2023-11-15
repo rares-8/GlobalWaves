@@ -79,6 +79,26 @@ public final class SongInput implements Audio {
         this.artist = artist;
     }
 
+    @Override
+    public Integer getIsPrivate() {
+        return null;
+    }
+
+    @Override
+    public void setIsPrivate(Integer isPrivate) {
+
+    }
+
+    @Override
+    public ArrayList<SongInput> getPlaylistSongs() {
+        return null;
+    }
+
+    @Override
+    public void setPlaylistSongs(ArrayList<SongInput> playlistSongs) {
+
+    }
+
     // these methods are not used, only declared because it is not an abstract class
     @Override
     public String getOwner() {

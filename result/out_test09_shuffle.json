@@ -1,0 +1,94 @@
+[ {
+  "command" : "createPlaylist",
+  "user" : "bob35",
+  "timestamp" : 150,
+  "message" : "Playlist created successfully"
+}, {
+  "command" : "search",
+  "user" : "bob35",
+  "timestamp" : 170,
+  "message" : "Search returned 1 results",
+  "results" : [ "Nothing Else Matters" ]
+}, {
+  "command" : "select",
+  "user" : "bob35",
+  "timestamp" : 190,
+  "message" : "Successfully selected Nothing Else Matters."
+}, {
+  "command" : "search",
+  "user" : "bob35",
+  "timestamp" : 270,
+  "message" : "Search returned 1 results",
+  "results" : [ "Crazy" ]
+}, {
+  "command" : "select",
+  "user" : "bob35",
+  "timestamp" : 290,
+  "message" : "Successfully selected Crazy."
+}, {
+  "command" : "search",
+  "user" : "bob35",
+  "timestamp" : 370,
+  "message" : "Search returned 1 results",
+  "results" : [ "Elevate" ]
+}, {
+  "command" : "select",
+  "user" : "bob35",
+  "timestamp" : 390,
+  "message" : "Successfully selected Elevate."
+}, {
+  "command" : "search",
+  "user" : "bob35",
+  "timestamp" : 445,
+  "message" : "Search returned 1 results",
+  "results" : [ "I Don't Wanna Live Forever" ]
+}, {
+  "command" : "select",
+  "user" : "bob35",
+  "timestamp" : 450,
+  "message" : "Successfully selected I Don't Wanna Live Forever."
+}, {
+  "command" : "search",
+  "user" : "bob35",
+  "timestamp" : 500,
+  "message" : "Search returned 1 results",
+  "results" : [ "Hustle Hard" ]
+}, {
+  "command" : "select",
+  "user" : "bob35",
+  "timestamp" : 510,
+  "message" : "Successfully selected Hustle Hard."
+}, {
+  "command" : "search",
+  "user" : "bob35",
+  "timestamp" : 590,
+  "message" : "Search returned 1 results",
+  "results" : [ "Begin Again" ]
+}, {
+  "command" : "select",
+  "user" : "bob35",
+  "timestamp" : 650,
+  "message" : "Successfully selected Begin Again."
+}, {
+  "command" : "search",
+  "user" : "bob35",
+  "timestamp" : 700,
+  "message" : "Search returned 1 results",
+  "results" : [ "My playlist" ]
+}, {
+  "command" : "select",
+  "user" : "bob35",
+  "timestamp" : 710,
+  "message" : "Successfully selected My playlist."
+}, {
+  "command" : "search",
+  "user" : "bob35",
+  "timestamp" : 2351,
+  "message" : "Search returned 1 results",
+  "results" : [ "My playlist" ]
+}, {
+  "command" : "select",
+  "user" : "bob35",
+  "timestamp" : 2352,
+  "message" : "Successfully selected My playlist."
+} ]

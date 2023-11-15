@@ -1,0 +1,61 @@
+[ {
+  "command" : "search",
+  "user" : "emily30",
+  "timestamp" : 5,
+  "message" : "Search returned 5 results",
+  "results" : [ "Money Trees", "Big Pimpin'", "Whatever You Need", "Sicko Mode", "Empire State of Mind" ]
+}, {
+  "command" : "select",
+  "user" : "emily30",
+  "timestamp" : 10,
+  "message" : "Successfully selected Big Pimpin'."
+}, {
+  "command" : "search",
+  "user" : "emily30",
+  "timestamp" : 25,
+  "message" : "Search returned 1 results",
+  "results" : [ "The Joe Rogan Experience" ]
+}, {
+  "command" : "select",
+  "user" : "emily30",
+  "timestamp" : 30,
+  "message" : "Successfully selected The Joe Rogan Experience."
+}, {
+  "command" : "createPlaylist",
+  "user" : "emily30",
+  "timestamp" : 35,
+  "message" : "Playlist created successfully"
+}, {
+  "command" : "search",
+  "user" : "emily30",
+  "timestamp" : 45,
+  "message" : "Search returned 3 results",
+  "results" : [ "Bohemian Rhapsody", "We Will Rock You", "Radio Ga Ga" ]
+}, {
+  "command" : "createPlaylist",
+  "user" : "emily30",
+  "timestamp" : 55,
+  "message" : "A playlist with the same name already exists."
+}, {
+  "command" : "search",
+  "user" : "emily30",
+  "timestamp" : 60,
+  "message" : "Search returned 4 results",
+  "results" : [ "The Man", "Freedom", "Castle on the Hill", "Get Lucky" ]
+}, {
+  "command" : "select",
+  "user" : "emily30",
+  "timestamp" : 70,
+  "message" : "Successfully selected Get Lucky."
+}, {
+  "command" : "search",
+  "user" : "emily30",
+  "timestamp" : 75,
+  "message" : "Search returned 1 results",
+  "results" : [ "Playlist alb pentru zile negre" ]
+}, {
+  "command" : "select",
+  "user" : "emily30",
+  "timestamp" : 85,
+  "message" : "Successfully selected Playlist alb pentru zile negre."
+} ]

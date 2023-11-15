@@ -1,19 +1,27 @@
 package user.memory;
 
 import fileio.input.Audio;
+import fileio.input.PlaylistInput;
 
 import java.util.ArrayList;
 import java.util.HashMap;
 import java.util.Map;
 
 public final class UserMemory {
-    private final Map<String, ArrayList<Audio>> lastSearch = new HashMap<>();
-    private final Map<String, Integer> lastTimestamp = new HashMap<>();
-    private final Map<String, Audio> currentSelect = new HashMap<>();
+    private final Map<String, ArrayList<Audio>> lastSearch;
+    private final Map<String, Integer> lastTimestamp;
+    private final Map<String, Audio> currentSelect;
+    private final Map<String, ArrayList<PlaylistInput>> userPlaylists;
+    private final ArrayList<PlaylistInput> publicPlaylists;
 
     private static UserMemory uniqueInstance = null;
 
     private UserMemory() {
+        lastSearch = new HashMap<>();
+        lastTimestamp = new HashMap<>();
+        currentSelect = new HashMap<>();
+        userPlaylists = new HashMap<>();
+        publicPlaylists = new ArrayList<>();
     }
 
     /**
@@ -27,6 +35,12 @@ public final class UserMemory {
         return uniqueInstance;
     }
 
+    /*
+        Free the instance for the next test, or else it keeps some values
+     */
+    public void removeInstance() {
+        uniqueInstance = null;
+    }
     /**
      * @return hashmap that contains last searches for users
      */
@@ -49,5 +63,17 @@ public final class UserMemory {
      */
     public Map<String, Audio> getCurrentSelect() {
         return currentSelect;
+    }
+
+    /**
+     *
+     * @return hashmap that keeps playlists for all users
+     */
+    public Map<String, ArrayList<PlaylistInput>> getUserPlaylists() {
+        return userPlaylists;
+    }
+
+    public ArrayList<PlaylistInput> getPublicPlaylists() {
+        return publicPlaylists;
     }
 }

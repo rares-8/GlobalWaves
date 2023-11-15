@@ -4,8 +4,10 @@ import com.fasterxml.jackson.core.type.TypeReference;
 import com.fasterxml.jackson.databind.JsonNode;
 import com.fasterxml.jackson.databind.ObjectMapper;
 import com.fasterxml.jackson.databind.node.ArrayNode;
+import commands.CreatePlaylist;
 import commands.SearchCommand;
 import commands.SelectCommand;
+import commands.SwitchVisibility;
 import fileio.input.LibraryInput;
 import user.memory.UserMemory;
 
@@ -16,7 +18,6 @@ import java.util.List;
 import java.util.Map;
 
 public final class CommandParser {
-    private static CommandParser uniqueInstance = null;
     private LibraryInput library;
     private ArrayNode outputs;
 
@@ -37,9 +38,22 @@ public final class CommandParser {
             case "select":
                 selectParse(currentCommand, memory, timestamp);
                 break;
+            case "createPlaylist":
+                createPlaylistParse(currentCommand, memory, timestamp);
+                break;
+            case "switchVisibility":
+                switchParse(currentCommand, memory, timestamp);
+                break;
             default:
                 System.out.println("Unknown command : " + command);
         }
+    }
+
+    private void switchParse(final JsonNode currentCommand, final UserMemory memory,
+                             final Integer timestamp) {
+        String username = getUsername(currentCommand);
+        Integer playlistID = getPlaylistID(currentCommand);
+        outputs.add(SwitchVisibility.switchVisibility(username, playlistID, timestamp, memory));
     }
 
     /**
@@ -93,6 +107,18 @@ public final class CommandParser {
                 library, getTimestamp(currentCommand), memory));
     }
 
+    private void createPlaylistParse(final JsonNode currentCommand, final UserMemory memory,
+                                     final Integer timestamp) {
+        ObjectMapper objectMapper = new ObjectMapper();
+        String playlistName = getPlaylistName(currentCommand);
+        outputs.add(CreatePlaylist.createPlaylist(getUsername(currentCommand),
+                playlistName, timestamp, memory));
+    }
+
+    private String getPlaylistName(JsonNode currentCommand) {
+        return currentCommand.get("playlistName").toString().replace("\"", "");
+    }
+
     private String getType(final JsonNode currentCommand) {
         return currentCommand.get("type").toString().replace("\"", "");
     }
@@ -111,6 +137,10 @@ public final class CommandParser {
 
     private Integer getTimestamp(final JsonNode currentCommand) {
         return currentCommand.get("timestamp").asInt();
+    }
+
+    private Integer getPlaylistID(JsonNode currentCommand) {
+        return currentCommand.get("playlistId").asInt();
     }
 
     public CommandParser(final LibraryInput library, final ArrayNode outputs) {

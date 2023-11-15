@@ -104,4 +104,24 @@ public final class PodcastInput implements Audio {
     public void setArtist(final String artist) {
 
     }
+
+    @Override
+    public Integer getIsPrivate() {
+        return null;
+    }
+
+    @Override
+    public void setIsPrivate(Integer isPrivate) {
+
+    }
+
+    @Override
+    public ArrayList<SongInput> getPlaylistSongs() {
+        return null;
+    }
+
+    @Override
+    public void setPlaylistSongs(ArrayList<SongInput> playlistSongs) {
+
+    }
 }

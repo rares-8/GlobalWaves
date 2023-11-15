@@ -5,11 +5,21 @@
   "message" : "Search returned 3 results",
   "results" : [ "Stairway to Heaven", "Start Me Up", "Stargazing" ]
 }, {
+  "command" : "select",
+  "user" : "alice22",
+  "timestamp" : 15,
+  "message" : "Successfully selected Stairway to Heaven."
+}, {
   "command" : "search",
   "user" : "alice22",
   "timestamp" : 20,
   "message" : "Search returned 3 results",
   "results" : [ "Shape of You", "Happier", "Castle on the Hill" ]
+}, {
+  "command" : "select",
+  "user" : "alice22",
+  "timestamp" : 25,
+  "message" : "The selected ID is too high."
 }, {
   "command" : "search",
   "user" : "alice22",
@@ -55,9 +65,13 @@
 }, {
   "command" : "search",
   "user" : "alice22",
-  "timestamp" : 100
+  "timestamp" : 100,
+  "message" : "Search returned 5 results",
+  "results" : [ "The Joe Rogan Experience", "The Daily", "The Michelle Obama Podcast", "The Daily Show With Trevor Noah", "The Happiness Lab" ]
 }, {
   "command" : "search",
   "user" : "alice22",
-  "timestamp" : 110
+  "timestamp" : 110,
+  "message" : "Search returned 2 results",
+  "results" : [ "How I Built This", "TED Radio Hour" ]
 } ]

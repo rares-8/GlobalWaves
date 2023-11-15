@@ -1,0 +1,68 @@
+[ {
+  "command" : "createPlaylist",
+  "user" : "emily30",
+  "timestamp" : 3210,
+  "message" : "Playlist created successfully"
+}, {
+  "command" : "search",
+  "user" : "emily30",
+  "timestamp" : 3215,
+  "message" : "Search returned 5 results",
+  "results" : [ "Shape of You", "Dream On", "Black Dog", "Sad But True", "Maps" ]
+}, {
+  "command" : "select",
+  "user" : "emily30",
+  "timestamp" : 3260,
+  "message" : "Successfully selected Shape of You."
+}, {
+  "command" : "search",
+  "user" : "emily30",
+  "timestamp" : 3315,
+  "message" : "Search returned 2 results",
+  "results" : [ "TED Talks Daily", "TED-Ed: Lessons Worth Sharing" ]
+}, {
+  "command" : "search",
+  "user" : "emily30",
+  "timestamp" : 3375,
+  "message" : "Search returned 1 results",
+  "results" : [ "LoFi music" ]
+}, {
+  "command" : "search",
+  "user" : "emily30",
+  "timestamp" : 3415,
+  "message" : "Search returned 5 results",
+  "results" : [ "The Man", "Delicate", "Love Story", "Blank Space", "Begin Again" ]
+}, {
+  "command" : "select",
+  "user" : "emily30",
+  "timestamp" : 3560,
+  "message" : "Successfully selected The Man."
+}, {
+  "command" : "search",
+  "user" : "emily30",
+  "timestamp" : 3815,
+  "message" : "Search returned 3 results",
+  "results" : [ "Shape of You", "Happier", "Castle on the Hill" ]
+}, {
+  "command" : "select",
+  "user" : "emily30",
+  "timestamp" : 3860,
+  "message" : "Successfully selected Shape of You."
+}, {
+  "command" : "search",
+  "user" : "emily30",
+  "timestamp" : 4015,
+  "message" : "Search returned 1 results",
+  "results" : [ "LoFi music" ]
+}, {
+  "command" : "select",
+  "user" : "emily30",
+  "timestamp" : 4060,
+  "message" : "Successfully selected LoFi music."
+}, {
+  "command" : "search",
+  "user" : "emily30",
+  "timestamp" : 4295,
+  "message" : "Search returned 5 results",
+  "results" : [ "Money Trees", "Big Pimpin'", "Whatever You Need", "Sicko Mode", "Empire State of Mind" ]
+} ]

@@ -1,0 +1,50 @@
+[ {
+  "command" : "search",
+  "user" : "emily30",
+  "timestamp" : 1000,
+  "message" : "Search returned 4 results",
+  "results" : [ "The Unforgiven", "Sad But True", "Nothing Else Matters", "Enter Sandman" ]
+}, {
+  "command" : "select",
+  "user" : "emily30",
+  "timestamp" : 1100,
+  "message" : "Successfully selected The Unforgiven."
+}, {
+  "command" : "search",
+  "user" : "emily30",
+  "timestamp" : 2245,
+  "message" : "Search returned 0 results",
+  "results" : [ ]
+}, {
+  "command" : "createPlaylist",
+  "user" : "emily30",
+  "timestamp" : 3150,
+  "message" : "Playlist created successfully"
+}, {
+  "command" : "search",
+  "user" : "emily30",
+  "timestamp" : 3170,
+  "message" : "Search returned 1 results",
+  "results" : [ "99 Problems" ]
+}, {
+  "command" : "select",
+  "user" : "emily30",
+  "timestamp" : 3190,
+  "message" : "Successfully selected 99 Problems."
+}, {
+  "command" : "search",
+  "user" : "emily30",
+  "timestamp" : 3260,
+  "message" : "Search returned 1 results",
+  "results" : [ "My favourite songs" ]
+}, {
+  "command" : "select",
+  "user" : "emily30",
+  "timestamp" : 3290,
+  "message" : "Successfully selected My favourite songs."
+}, {
+  "command" : "createPlaylist",
+  "user" : "emily30",
+  "timestamp" : 3405,
+  "message" : "A playlist with the same name already exists."
+} ]

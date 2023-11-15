@@ -1,0 +1,83 @@
+[ {
+  "command" : "search",
+  "user" : "alice22",
+  "timestamp" : 10,
+  "message" : "Search returned 1 results",
+  "results" : [ "Dream Chaser" ]
+}, {
+  "command" : "select",
+  "user" : "alice22",
+  "timestamp" : 15,
+  "message" : "Successfully selected Dream Chaser."
+}, {
+  "command" : "createPlaylist",
+  "user" : "alice22",
+  "timestamp" : 1005,
+  "message" : "Playlist created successfully"
+}, {
+  "command" : "search",
+  "user" : "alice22",
+  "timestamp" : 1006,
+  "message" : "Search returned 1 results",
+  "results" : [ "99 Problems" ]
+}, {
+  "command" : "select",
+  "user" : "alice22",
+  "timestamp" : 1007,
+  "message" : "Successfully selected 99 Problems."
+}, {
+  "command" : "search",
+  "user" : "alice22",
+  "timestamp" : 1010,
+  "message" : "Search returned 1 results",
+  "results" : [ "Hustle Hard" ]
+}, {
+  "command" : "select",
+  "user" : "alice22",
+  "timestamp" : 1011,
+  "message" : "Successfully selected Hustle Hard."
+}, {
+  "command" : "search",
+  "user" : "alice22",
+  "timestamp" : 1014,
+  "message" : "Search returned 1 results",
+  "results" : [ "Butterfly Effect" ]
+}, {
+  "command" : "select",
+  "user" : "alice22",
+  "timestamp" : 1015,
+  "message" : "Successfully selected Butterfly Effect."
+}, {
+  "command" : "search",
+  "user" : "alice22",
+  "timestamp" : 1018,
+  "message" : "Search returned 1 results",
+  "results" : [ "Moves Like Jagger" ]
+}, {
+  "command" : "select",
+  "user" : "alice22",
+  "timestamp" : 1019,
+  "message" : "Successfully selected Moves Like Jagger."
+}, {
+  "command" : "search",
+  "user" : "alice22",
+  "timestamp" : 1022,
+  "message" : "Search returned 1 results",
+  "results" : [ "Dream Chaser" ]
+}, {
+  "command" : "select",
+  "user" : "alice22",
+  "timestamp" : 1023,
+  "message" : "Successfully selected Dream Chaser."
+}, {
+  "command" : "search",
+  "user" : "alice22",
+  "timestamp" : 1026,
+  "message" : "Search returned 1 results",
+  "results" : [ "My favourite songs" ]
+}, {
+  "command" : "select",
+  "user" : "alice22",
+  "timestamp" : 1027,
+  "message" : "Successfully selected My favourite songs."
+} ]

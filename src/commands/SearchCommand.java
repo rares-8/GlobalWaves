@@ -9,6 +9,7 @@ import fileio.input.*;
 import user.memory.UserMemory;
 
 import java.util.ArrayList;
+import java.util.Comparator;
 import java.util.List;
 import java.util.Map;
 
@@ -37,7 +38,7 @@ public abstract class SearchCommand implements Constants {
         ArrayNode auxNode;
 
         ArrayList<Audio> audioResult = new ArrayList<>();
-        searchAudio(tags, library, otherFilters, audioResult, type, memory);
+        searchAudio(username, tags, library, otherFilters, audioResult, type, memory);
 
         if (audioResult.size() > SEARCH_MAX_SIZE) {
             audioResult = new ArrayList<>(audioResult.subList(0, SEARCH_MAX_SIZE));
@@ -54,14 +55,16 @@ public abstract class SearchCommand implements Constants {
     }
 
     /**
+     * @param username
      * @param tags         - tags in case of search for a song
      * @param library      - library with all users, podcasts, songs
      * @param otherFilters - all other filters except tags
      * @param audioResult  - list that contains all files that match the search filters
      * @param type         - search type
-     * @param memory - memory for users
+     * @param memory       - memory for users
      */
-    private static void searchAudio(final List<String> tags, final LibraryInput library,
+    private static void searchAudio(String username, final List<String> tags,
+                                    final LibraryInput library,
                                     final Map<String, String> otherFilters,
                                     final ArrayList<Audio> audioResult, final String type,
                                     final UserMemory memory) {
@@ -86,11 +89,25 @@ public abstract class SearchCommand implements Constants {
                     searchAudioByFilter(element, currentPlaylist, audioResult);
                 }
             }
-            // should search for private playlists too
+            if (!memory.getUserPlaylists().containsKey(username))
+                return;
+
+            for (PlaylistInput currentPlaylist : memory.getUserPlaylists().get(username))
+                if (currentPlaylist.getIsPrivate() == 1) {
+                    for (Map.Entry<String, String> element : otherFilters.entrySet()) {
+                        searchAudioByFilter(element, currentPlaylist, audioResult);
+                    }
+                }
+            audioResult.sort(new Comparator<Audio>() {
+                @Override
+                public int compare(Audio o1, Audio o2) {
+                    return o1.getReleaseYear() - o2.getReleaseYear();
+                }
+            });
             return;
         }
 
-
+        // search for songs
         for (SongInput currentSong : library.getSongs()) {
             for (Map.Entry<String, String> element : otherFilters.entrySet()) {
                 searchAudioByFilter(element, currentSong, audioResult);

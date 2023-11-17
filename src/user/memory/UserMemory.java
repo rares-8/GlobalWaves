@@ -13,6 +13,7 @@ public final class UserMemory {
     private final Map<String, Audio> currentSelect;
     private final Map<String, ArrayList<PlaylistInput>> userPlaylists;
     private final ArrayList<PlaylistInput> publicPlaylists;
+    private final Map<String, ArrayList<Audio>> followedPlaylists;
 
     private static UserMemory uniqueInstance = null;
 
@@ -22,6 +23,7 @@ public final class UserMemory {
         currentSelect = new HashMap<>();
         userPlaylists = new HashMap<>();
         publicPlaylists = new ArrayList<>();
+        followedPlaylists = new HashMap<>();
     }
 
     /**
@@ -75,5 +77,9 @@ public final class UserMemory {
 
     public ArrayList<PlaylistInput> getPublicPlaylists() {
         return publicPlaylists;
+    }
+
+    public Map<String, ArrayList<Audio>> getFollowedPlaylists() {
+        return followedPlaylists;
     }
 }

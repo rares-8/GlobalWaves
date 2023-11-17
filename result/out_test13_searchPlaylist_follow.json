@@ -85,6 +85,11 @@
   "timestamp" : 1010,
   "message" : "Successfully selected My first playlist."
 }, {
+  "command" : "follow",
+  "user" : "carol19",
+  "timestamp" : 1050,
+  "message" : "Playlist followed successfully."
+}, {
   "command" : "switchVisibility",
   "user" : "bob35",
   "timestamp" : 1130,
@@ -101,6 +106,11 @@
   "timestamp" : 1210,
   "message" : "Successfully selected The best."
 }, {
+  "command" : "follow",
+  "user" : "david27",
+  "timestamp" : 1250,
+  "message" : "Playlist followed successfully."
+}, {
   "command" : "search",
   "user" : "emily30",
   "timestamp" : 1300,
@@ -111,6 +121,11 @@
   "user" : "emily30",
   "timestamp" : 1310,
   "message" : "Successfully selected The best."
+}, {
+  "command" : "follow",
+  "user" : "emily30",
+  "timestamp" : 1350,
+  "message" : "Playlist followed successfully."
 }, {
   "command" : "switchVisibility",
   "user" : "carol19",

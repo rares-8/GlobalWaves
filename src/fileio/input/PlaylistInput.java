@@ -1,6 +1,7 @@
 package fileio.input;
 
 import java.util.ArrayList;
+import java.util.Map;
 
 public class PlaylistInput implements Audio {
     private String name;
@@ -137,4 +138,16 @@ public class PlaylistInput implements Audio {
     public void setTimeCreated(int timeCreated) {
         this.timeCreated = timeCreated;
     }
+
+    @Override
+    public String getAudioType() {
+        return "playlist";
+    }
+
+    @Override
+    public Map<String, ArrayList<Audio>> getFollowedPlaylists() {
+        return null;
+    }
+
+
 }

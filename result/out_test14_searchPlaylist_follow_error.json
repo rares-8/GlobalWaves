@@ -69,6 +69,11 @@
   "timestamp" : 1190,
   "message" : "Successfully selected The Michelle Obama Podcast."
 }, {
+  "command" : "follow",
+  "user" : "emily30",
+  "timestamp" : 1250,
+  "message" : "The selected source is not a playlist."
+}, {
   "command" : "search",
   "user" : "carol19",
   "timestamp" : 1270,
@@ -79,6 +84,11 @@
   "user" : "carol19",
   "timestamp" : 1290,
   "message" : "Successfully selected The Man."
+}, {
+  "command" : "follow",
+  "user" : "emily30",
+  "timestamp" : 1350,
+  "message" : "The selected source is not a playlist."
 }, {
   "command" : "search",
   "user" : "carol19",
@@ -91,10 +101,20 @@
   "timestamp" : 1410,
   "message" : "Successfully selected My second playlist."
 }, {
+  "command" : "follow",
+  "user" : "carol19",
+  "timestamp" : 1450,
+  "message" : "Playlist followed successfully."
+}, {
   "command" : "switchVisibility",
   "user" : "bob35",
   "timestamp" : 1530,
   "message" : "Visibility status updated successfully to private."
+}, {
+  "command" : "follow",
+  "user" : "david27",
+  "timestamp" : 1650,
+  "message" : "Please select a source before following or unfollowing."
 }, {
   "command" : "search",
   "user" : "david27",
@@ -106,6 +126,11 @@
   "user" : "david27",
   "timestamp" : 1710,
   "message" : "The selected ID is too high."
+}, {
+  "command" : "follow",
+  "user" : "david27",
+  "timestamp" : 1750,
+  "message" : "Please select a source before following or unfollowing."
 }, {
   "command" : "switchVisibility",
   "user" : "bob35",
@@ -123,6 +148,11 @@
   "timestamp" : 1810,
   "message" : "Successfully selected My second playlist."
 }, {
+  "command" : "follow",
+  "user" : "david27",
+  "timestamp" : 1850,
+  "message" : "Playlist followed successfully."
+}, {
   "command" : "search",
   "user" : "emily30",
   "timestamp" : 1865,
@@ -133,4 +163,9 @@
   "user" : "emily30",
   "timestamp" : 1870,
   "message" : "Successfully selected My second playlist."
+}, {
+  "command" : "follow",
+  "user" : "emily30",
+  "timestamp" : 1890,
+  "message" : "Playlist followed successfully."
 } ]

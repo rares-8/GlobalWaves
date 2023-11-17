@@ -1,6 +1,7 @@
 package fileio.input;
 
 import java.util.ArrayList;
+import java.util.Map;
 
 /**
  * Interface used by songs and podcasts, useful for polymorphic arrays
@@ -133,4 +134,12 @@ public interface Audio {
     ArrayList<SongInput> getPlaylistSongs();
 
     void setPlaylistSongs(ArrayList<SongInput> playlistSongs);
+
+    int getTimeCreated();
+
+    void setTimeCreated(int timeCreated);
+
+    String getAudioType();
+
+    public Map<String, ArrayList<Audio>> getFollowedPlaylists();
 }

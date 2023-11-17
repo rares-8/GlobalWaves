@@ -4,10 +4,7 @@ import com.fasterxml.jackson.core.type.TypeReference;
 import com.fasterxml.jackson.databind.JsonNode;
 import com.fasterxml.jackson.databind.ObjectMapper;
 import com.fasterxml.jackson.databind.node.ArrayNode;
-import commands.CreatePlaylist;
-import commands.SearchCommand;
-import commands.SelectCommand;
-import commands.SwitchVisibility;
+import commands.*;
 import fileio.input.LibraryInput;
 import user.memory.UserMemory;
 
@@ -44,11 +41,33 @@ public final class CommandParser {
             case "switchVisibility":
                 switchParse(currentCommand, memory, timestamp);
                 break;
+            case "follow":
+                followParse(currentCommand, memory, timestamp);
+                break;
             default:
                 System.out.println("Unknown command : " + command);
         }
     }
 
+    /**
+     * Get the rest of the fields from "follow" command and call method
+     *      * to solve the command
+     * @param currentCommand - command from input file
+     * @param memory - memory database for users
+     * @param timestamp - timestamp from command
+     */
+    private void followParse(final JsonNode currentCommand, final UserMemory memory, Integer timestamp) {
+        String username = getUsername(currentCommand);
+        outputs.add(FollowPlaylist.follow(username, memory, timestamp));
+    }
+
+    /**
+     *Get the rest of the fields from "switchVisibility" command and call method
+     *      * to solve the command
+     * @param currentCommand - command from input file
+     * @param memory - memory database for users
+     * @param timestamp - timestamp from command
+     */
     private void switchParse(final JsonNode currentCommand, final UserMemory memory,
                              final Integer timestamp) {
         String username = getUsername(currentCommand);

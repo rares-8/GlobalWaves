@@ -1,6 +1,7 @@
 package fileio.input;
 
 import java.util.ArrayList;
+import java.util.Map;
 
 public final class SongInput implements Audio {
     private String name;
@@ -80,6 +81,17 @@ public final class SongInput implements Audio {
     }
 
     @Override
+    public String getAudioType() {
+        return "song";
+    }
+
+    // these methods are not used, only declared because it is not an abstract class
+    @Override
+    public Map<String, ArrayList<Audio>> getFollowedPlaylists() {
+        return null;
+    }
+
+    @Override
     public Integer getIsPrivate() {
         return null;
     }
@@ -99,7 +111,16 @@ public final class SongInput implements Audio {
 
     }
 
-    // these methods are not used, only declared because it is not an abstract class
+    @Override
+    public int getTimeCreated() {
+        return 0;
+    }
+
+    @Override
+    public void setTimeCreated(int timeCreated) {
+
+    }
+
     @Override
     public String getOwner() {
         return null;

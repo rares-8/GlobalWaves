@@ -10,11 +10,65 @@
   "timestamp" : 1100,
   "message" : "Successfully selected The Unforgiven."
 }, {
+  "command" : "load",
+  "user" : "emily30",
+  "timestamp" : 1120,
+  "message" : "Playback loaded successfully."
+}, {
+  "command" : "status",
+  "user" : "emily30",
+  "timestamp" : 1190,
+  "stats" : {
+    "name" : "The Unforgiven",
+    "remainedTime" : 316,
+    "repeat" : "No Repeat",
+    "shuffle" : false,
+    "paused" : false
+  }
+}, {
+  "command" : "status",
+  "user" : "emily30",
+  "timestamp" : 2100,
+  "stats" : {
+    "name" : "",
+    "remainedTime" : 0,
+    "repeat" : "No Repeat",
+    "shuffle" : false,
+    "paused" : false
+  }
+}, {
+  "command" : "status",
+  "user" : "emily30",
+  "timestamp" : 2200,
+  "stats" : {
+    "name" : "",
+    "remainedTime" : 0,
+    "repeat" : "No Repeat",
+    "shuffle" : false,
+    "paused" : false
+  }
+}, {
   "command" : "search",
   "user" : "emily30",
   "timestamp" : 2245,
   "message" : "Search returned 0 results",
   "results" : [ ]
+}, {
+  "command" : "load",
+  "user" : "emily30",
+  "timestamp" : 3000,
+  "message" : "Playback loaded successfully."
+}, {
+  "command" : "status",
+  "user" : "emily30",
+  "timestamp" : 3100,
+  "stats" : {
+    "name" : "",
+    "remainedTime" : 0,
+    "repeat" : "No Repeat",
+    "shuffle" : false,
+    "paused" : false
+  }
 }, {
   "command" : "createPlaylist",
   "user" : "emily30",
@@ -32,6 +86,22 @@
   "timestamp" : 3190,
   "message" : "Successfully selected 99 Problems."
 }, {
+  "command" : "load",
+  "user" : "emily30",
+  "timestamp" : 3195,
+  "message" : "Playback loaded successfully."
+}, {
+  "command" : "status",
+  "user" : "emily30",
+  "timestamp" : 3220,
+  "stats" : {
+    "name" : "99 Problems",
+    "remainedTime" : 209,
+    "repeat" : "No Repeat",
+    "shuffle" : false,
+    "paused" : false
+  }
+}, {
   "command" : "search",
   "user" : "emily30",
   "timestamp" : 3260,
@@ -43,8 +113,41 @@
   "timestamp" : 3290,
   "message" : "Successfully selected My favourite songs."
 }, {
+  "command" : "status",
+  "user" : "emily30",
+  "timestamp" : 3310,
+  "stats" : {
+    "name" : "99 Problems",
+    "remainedTime" : 119,
+    "repeat" : "No Repeat",
+    "shuffle" : false,
+    "paused" : false
+  }
+}, {
+  "command" : "status",
+  "user" : "emily30",
+  "timestamp" : 3400,
+  "stats" : {
+    "name" : "99 Problems",
+    "remainedTime" : 29,
+    "repeat" : "No Repeat",
+    "shuffle" : false,
+    "paused" : false
+  }
+}, {
   "command" : "createPlaylist",
   "user" : "emily30",
   "timestamp" : 3405,
   "message" : "A playlist with the same name already exists."
+}, {
+  "command" : "status",
+  "user" : "emily30",
+  "timestamp" : 3450,
+  "stats" : {
+    "name" : "",
+    "remainedTime" : 0,
+    "repeat" : "No Repeat",
+    "shuffle" : false,
+    "paused" : false
+  }
 } ]

@@ -1,12 +1,35 @@
 package user.memory;
 
 import fileio.input.Audio;
+import fileio.input.EpisodeInput;
 import fileio.input.PlaylistInput;
+import fileio.input.PodcastInput;
 
 import java.util.ArrayList;
 import java.util.HashMap;
 import java.util.Map;
 
+/**
+ *  This class keeps all configurations made by users.
+ *  Instance variables:
+ *
+ *  lastSearch - last search for every user
+ *  lastTimestamp - timestamp the last command was given at
+ *  currentSelect - currently selected audio file
+ *  userPlaylists - all playlists
+ *  publicPlaylists - all public playlists
+ *  followedPlaylists - playlists a user follows
+ *  loadedAudio - currently loaded audio file
+ *  remainingTime - remaining time for the loaded audio file
+ *  lastPodcastEpisode - last podcast episode that a user was listening to
+ *  lastPodcast - last podcast that a user was listening to
+ *  episodeRemainingTime - remaining time of the last podcast episode
+ *  collectionIndexes - arrays of indexes, used to decide which audio file to play next
+ *                      Makes shuffle and load easier to implement
+ *  currentIndex - current index from collectionIndexes
+ *  isPaused - check if a user's player is paused
+ *
+ */
 public final class UserMemory {
     private final Map<String, ArrayList<Audio>> lastSearch;
     private final Map<String, Integer> lastTimestamp;
@@ -14,6 +37,16 @@ public final class UserMemory {
     private final Map<String, ArrayList<PlaylistInput>> userPlaylists;
     private final ArrayList<PlaylistInput> publicPlaylists;
     private final Map<String, ArrayList<Audio>> followedPlaylists;
+    private final Map<String, Audio> loadedAudio;
+    private final Map<String, Integer> remainingTime;
+    private final Map<String, EpisodeInput> lastPodcastEpisode;
+    private final Map<String, ArrayList<PodcastInput>> lastPodcast;
+    private final Map<String, Integer> episodeRemainingTime;
+    private final Map<String, ArrayList<Integer>> collectionIndexes;
+    private final Map<String, Integer> currentIndex;
+    private final Map<String, Integer> isPaused;
+    private final Map<String, Integer> isShuffled;
+    private final Map<String, Integer> isRepeating;
 
     private static UserMemory uniqueInstance = null;
 
@@ -24,6 +57,16 @@ public final class UserMemory {
         userPlaylists = new HashMap<>();
         publicPlaylists = new ArrayList<>();
         followedPlaylists = new HashMap<>();
+        loadedAudio = new HashMap<>();
+        remainingTime = new HashMap<>();
+        lastPodcastEpisode = new HashMap<>();
+        lastPodcast = new HashMap<>();
+        episodeRemainingTime = new HashMap<>();
+        collectionIndexes = new HashMap<>();
+        currentIndex = new HashMap<>();
+        isPaused = new HashMap<>();
+        isShuffled = new HashMap<>();
+        isRepeating = new HashMap<>();
     }
 
     /**
@@ -81,5 +124,45 @@ public final class UserMemory {
 
     public Map<String, ArrayList<Audio>> getFollowedPlaylists() {
         return followedPlaylists;
+    }
+
+    public Map<String, Audio> getLoadedAudio() {
+        return loadedAudio;
+    }
+
+    public Map<String, Integer> getRemainingTime() {
+        return remainingTime;
+    }
+
+    public Map<String, EpisodeInput> getLastPodcastEpisode() {
+        return lastPodcastEpisode;
+    }
+
+    public Map<String, ArrayList<PodcastInput>> getLastPodcast() {
+        return lastPodcast;
+    }
+
+    public Map<String, Integer> getEpisodeRemainingTime() {
+        return episodeRemainingTime;
+    }
+
+    public Map<String, ArrayList<Integer>> getCollectionIndexes() {
+        return collectionIndexes;
+    }
+
+    public Map<String, Integer> getCurrentIndex() {
+        return currentIndex;
+    }
+
+    public Map<String, Integer> getIsPaused() {
+        return isPaused;
+    }
+
+    public Map<String, Integer> getIsShuffled() {
+        return isShuffled;
+    }
+
+    public Map<String, Integer> getIsRepeating() {
+        return isRepeating;
     }
 }

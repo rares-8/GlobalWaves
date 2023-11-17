@@ -8,7 +8,7 @@ import user.memory.UserMemory;
 
 import java.util.ArrayList;
 
-public abstract class SelectCommand {
+public abstract class Select {
 
     /**
      *

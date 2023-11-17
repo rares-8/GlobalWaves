@@ -15,6 +15,11 @@
   "timestamp" : 190,
   "message" : "Successfully selected Going Bad."
 }, {
+  "command" : "load",
+  "user" : "emily30",
+  "timestamp" : 195,
+  "message" : "Playback loaded successfully."
+}, {
   "command" : "search",
   "user" : "emily30",
   "timestamp" : 270,
@@ -26,16 +31,70 @@
   "timestamp" : 290,
   "message" : "Successfully selected Swimming Pools (Drank)."
 }, {
+  "command" : "load",
+  "user" : "emily30",
+  "timestamp" : 300,
+  "message" : "Playback loaded successfully."
+}, {
   "command" : "search",
   "user" : "emily30",
   "timestamp" : 1000,
   "message" : "Search returned 1 results",
   "results" : [ "My favourite songs" ]
 }, {
+  "command" : "status",
+  "user" : "emily30",
+  "timestamp" : 1140,
+  "stats" : {
+    "name" : "",
+    "remainedTime" : 0,
+    "repeat" : "No Repeat",
+    "shuffle" : false,
+    "paused" : false
+  }
+}, {
   "command" : "select",
   "user" : "emily30",
   "timestamp" : 1190,
   "message" : "Successfully selected My favourite songs."
+}, {
+  "command" : "load",
+  "user" : "emily30",
+  "timestamp" : 1195,
+  "message" : "You can't load an empty audio collection!"
+}, {
+  "command" : "status",
+  "user" : "emily30",
+  "timestamp" : 1220,
+  "stats" : {
+    "name" : "",
+    "remainedTime" : 0,
+    "repeat" : "No Repeat",
+    "shuffle" : false,
+    "paused" : false
+  }
+}, {
+  "command" : "status",
+  "user" : "emily30",
+  "timestamp" : 1250,
+  "stats" : {
+    "name" : "",
+    "remainedTime" : 0,
+    "repeat" : "No Repeat",
+    "shuffle" : false,
+    "paused" : false
+  }
+}, {
+  "command" : "status",
+  "user" : "emily30",
+  "timestamp" : 1320,
+  "stats" : {
+    "name" : "",
+    "remainedTime" : 0,
+    "repeat" : "No Repeat",
+    "shuffle" : false,
+    "paused" : false
+  }
 }, {
   "command" : "search",
   "user" : "emily30",
@@ -48,6 +107,32 @@
   "timestamp" : 2190,
   "message" : "Successfully selected The Daily."
 }, {
+  "command" : "load",
+  "user" : "emily30",
+  "timestamp" : 2200
+}, {
+  "command" : "status",
+  "user" : "emily30",
+  "timestamp" : 3220,
+  "stats" : {
+    "name" : "",
+    "remainedTime" : 0,
+    "repeat" : "No Repeat",
+    "shuffle" : false,
+    "paused" : false
+  }
+}, {
+  "command" : "status",
+  "user" : "emily30",
+  "timestamp" : 3920,
+  "stats" : {
+    "name" : "",
+    "remainedTime" : 0,
+    "repeat" : "No Repeat",
+    "shuffle" : false,
+    "paused" : false
+  }
+}, {
   "command" : "search",
   "user" : "emily30",
   "timestamp" : 4200,
@@ -58,4 +143,20 @@
   "user" : "emily30",
   "timestamp" : 4220,
   "message" : "Successfully selected Championships."
+}, {
+  "command" : "status",
+  "user" : "emily30",
+  "timestamp" : 4330,
+  "stats" : {
+    "name" : "",
+    "remainedTime" : 0,
+    "repeat" : "No Repeat",
+    "shuffle" : false,
+    "paused" : false
+  }
+}, {
+  "command" : "load",
+  "user" : "emily30",
+  "timestamp" : 4350,
+  "message" : "Playback loaded successfully."
 } ]

@@ -15,6 +15,11 @@
   "timestamp" : 190,
   "message" : "Successfully selected Stairway to Heaven."
 }, {
+  "command" : "load",
+  "user" : "bob35",
+  "timestamp" : 200,
+  "message" : "Playback loaded successfully."
+}, {
   "command" : "createPlaylist",
   "user" : "bob35",
   "timestamp" : 450,
@@ -31,6 +36,11 @@
   "timestamp" : 490,
   "message" : "Successfully selected Shape of You."
 }, {
+  "command" : "load",
+  "user" : "bob35",
+  "timestamp" : 500,
+  "message" : "Playback loaded successfully."
+}, {
   "command" : "search",
   "user" : "bob35",
   "timestamp" : 570,
@@ -41,6 +51,11 @@
   "user" : "bob35",
   "timestamp" : 590,
   "message" : "Successfully selected Stairway to Heaven."
+}, {
+  "command" : "load",
+  "user" : "bob35",
+  "timestamp" : 600,
+  "message" : "Playback loaded successfully."
 }, {
   "command" : "createPlaylist",
   "user" : "carol19",
@@ -57,6 +72,11 @@
   "user" : "carol19",
   "timestamp" : 890,
   "message" : "Successfully selected Shape of You."
+}, {
+  "command" : "load",
+  "user" : "carol19",
+  "timestamp" : 900,
+  "message" : "Playback loaded successfully."
 }, {
   "command" : "search",
   "user" : "emily30",
@@ -106,10 +126,50 @@
   "timestamp" : 1450,
   "message" : "Playlist followed successfully."
 }, {
+  "command" : "showPlaylists",
+  "user" : "bob35",
+  "timestamp" : 1460,
+  "result" : [ {
+    "name" : "My first playlist",
+    "songs" : [ ],
+    "visibility" : "public",
+    "followers" : 0
+  }, {
+    "name" : "My second playlist",
+    "songs" : [ ],
+    "visibility" : "public",
+    "followers" : 1
+  } ]
+}, {
+  "command" : "showPlaylists",
+  "user" : "carol19",
+  "timestamp" : 1500,
+  "result" : [ {
+    "name" : "The best",
+    "songs" : [ ],
+    "visibility" : "public",
+    "followers" : 0
+  } ]
+}, {
   "command" : "switchVisibility",
   "user" : "bob35",
   "timestamp" : 1530,
   "message" : "Visibility status updated successfully to private."
+}, {
+  "command" : "showPlaylists",
+  "user" : "bob35",
+  "timestamp" : 1560,
+  "result" : [ {
+    "name" : "My first playlist",
+    "songs" : [ ],
+    "visibility" : "public",
+    "followers" : 0
+  }, {
+    "name" : "My second playlist",
+    "songs" : [ ],
+    "visibility" : "private",
+    "followers" : 1
+  } ]
 }, {
   "command" : "follow",
   "user" : "david27",
@@ -168,4 +228,19 @@
   "user" : "emily30",
   "timestamp" : 1890,
   "message" : "Playlist followed successfully."
+}, {
+  "command" : "showPlaylists",
+  "user" : "bob35",
+  "timestamp" : 1900,
+  "result" : [ {
+    "name" : "My first playlist",
+    "songs" : [ ],
+    "visibility" : "public",
+    "followers" : 0
+  }, {
+    "name" : "My second playlist",
+    "songs" : [ ],
+    "visibility" : "public",
+    "followers" : 3
+  } ]
 } ]

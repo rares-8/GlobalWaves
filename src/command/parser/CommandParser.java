@@ -7,6 +7,8 @@ import com.fasterxml.jackson.databind.node.ArrayNode;
 import commands.*;
 import fileio.input.LibraryInput;
 import user.memory.UserMemory;
+import utils.UpdatePlayer;
+import utils.UpdateTimestamp;
 
 import java.util.EnumSet;
 import java.util.ArrayList;
@@ -28,12 +30,20 @@ public final class CommandParser {
         String command = getCommand(currentCommand);
         Integer timestamp = getTimestamp(currentCommand);
 
+        if (currentCommand.has("username")) {
+            UpdatePlayer.updatePlayer(getUsername(currentCommand), timestamp, memory);
+        }
+
+
         switch (command) {
             case "search":
                 searchParse(currentCommand, memory, timestamp);
                 break;
             case "select":
                 selectParse(currentCommand, memory, timestamp);
+                break;
+            case "load":
+                loadParse(currentCommand, memory, timestamp);
                 break;
             case "createPlaylist":
                 createPlaylistParse(currentCommand, memory, timestamp);
@@ -44,17 +54,63 @@ public final class CommandParser {
             case "follow":
                 followParse(currentCommand, memory, timestamp);
                 break;
+            case "showPlaylists":
+                showParse(currentCommand, memory, timestamp);
+                break;
+            case "status":
+                statusParse(currentCommand, memory, timestamp);
+                break;
             default:
                 System.out.println("Unknown command : " + command);
         }
     }
 
     /**
-     * Get the rest of the fields from "follow" command and call method
-     *      * to solve the command
+     * Get the rest of the fields from "status" command and call method
+     * to solve the command
+     *
      * @param currentCommand - command from input file
-     * @param memory - memory database for users
-     * @param timestamp - timestamp from command
+     * @param memory         - memory database for users
+     * @param timestamp      - timestamp from command
+     */
+    private void statusParse(JsonNode currentCommand, UserMemory memory, Integer timestamp) {
+        String username = getUsername(currentCommand);
+        outputs.add(Status.status(username, memory, timestamp));
+    }
+
+    /**
+     * Get the rest of the fields from "load" command and call method
+     * to solve the command
+     *
+     * @param currentCommand - command from input file
+     * @param memory         - memory database for users
+     * @param timestamp      - timestamp from command
+     */
+    private void loadParse(JsonNode currentCommand, UserMemory memory, Integer timestamp) {
+        String username = getUsername(currentCommand);
+        outputs.add(Load.load(username, memory, timestamp));
+    }
+
+    /**
+     * Get the rest of the fields from "show" command and call method
+     * to solve the command
+     *
+     * @param currentCommand - command from input file
+     * @param memory         - memory database for users
+     * @param timestamp      - timestamp from command
+     */
+    private void showParse(JsonNode currentCommand, UserMemory memory, Integer timestamp) {
+        String username = getUsername(currentCommand);
+        outputs.add(ShowPlaylists.show(username, memory, timestamp));
+    }
+
+    /**
+     * Get the rest of the fields from "follow" command and call method
+     * to solve the command
+     *
+     * @param currentCommand - command from input file
+     * @param memory         - memory database for users
+     * @param timestamp      - timestamp from command
      */
     private void followParse(final JsonNode currentCommand, final UserMemory memory, Integer timestamp) {
         String username = getUsername(currentCommand);
@@ -62,11 +118,12 @@ public final class CommandParser {
     }
 
     /**
-     *Get the rest of the fields from "switchVisibility" command and call method
-     *      * to solve the command
+     * Get the rest of the fields from "switchVisibility" command and call method
+     * to solve the command
+     *
      * @param currentCommand - command from input file
-     * @param memory - memory database for users
-     * @param timestamp - timestamp from command
+     * @param memory         - memory database for users
+     * @param timestamp      - timestamp from command
      */
     private void switchParse(final JsonNode currentCommand, final UserMemory memory,
                              final Integer timestamp) {
@@ -87,7 +144,7 @@ public final class CommandParser {
                              final Integer timestamp) {
         String username = getUsername(currentCommand);
         Integer itemNumber = getItemNumber(currentCommand);
-        outputs.add(SelectCommand.select(username, itemNumber, timestamp, memory));
+        outputs.add(Select.select(username, itemNumber, timestamp, memory));
     }
 
     /**
@@ -122,7 +179,7 @@ public final class CommandParser {
         }
 
         String username = getUsername(currentCommand);
-        outputs.add(SearchCommand.search(username, type, tags, otherFilters,
+        outputs.add(Search.search(username, type, tags, otherFilters,
                 library, getTimestamp(currentCommand), memory));
     }
 

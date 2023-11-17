@@ -15,6 +15,11 @@
   "timestamp" : 190,
   "message" : "Successfully selected Nothing Else Matters."
 }, {
+  "command" : "load",
+  "user" : "bob35",
+  "timestamp" : 195,
+  "message" : "Playback loaded successfully."
+}, {
   "command" : "search",
   "user" : "bob35",
   "timestamp" : 270,
@@ -25,6 +30,11 @@
   "user" : "bob35",
   "timestamp" : 290,
   "message" : "Successfully selected Crazy."
+}, {
+  "command" : "load",
+  "user" : "bob35",
+  "timestamp" : 320,
+  "message" : "Playback loaded successfully."
 }, {
   "command" : "search",
   "user" : "bob35",
@@ -37,6 +47,11 @@
   "timestamp" : 390,
   "message" : "Successfully selected Elevate."
 }, {
+  "command" : "load",
+  "user" : "bob35",
+  "timestamp" : 400,
+  "message" : "Playback loaded successfully."
+}, {
   "command" : "search",
   "user" : "bob35",
   "timestamp" : 445,
@@ -47,6 +62,11 @@
   "user" : "bob35",
   "timestamp" : 450,
   "message" : "Successfully selected I Don't Wanna Live Forever."
+}, {
+  "command" : "load",
+  "user" : "bob35",
+  "timestamp" : 460,
+  "message" : "Playback loaded successfully."
 }, {
   "command" : "search",
   "user" : "bob35",
@@ -59,6 +79,11 @@
   "timestamp" : 510,
   "message" : "Successfully selected Hustle Hard."
 }, {
+  "command" : "load",
+  "user" : "bob35",
+  "timestamp" : 520,
+  "message" : "Playback loaded successfully."
+}, {
   "command" : "search",
   "user" : "bob35",
   "timestamp" : 590,
@@ -69,6 +94,11 @@
   "user" : "bob35",
   "timestamp" : 650,
   "message" : "Successfully selected Begin Again."
+}, {
+  "command" : "load",
+  "user" : "bob35",
+  "timestamp" : 660,
+  "message" : "Playback loaded successfully."
 }, {
   "command" : "search",
   "user" : "bob35",
@@ -81,6 +111,88 @@
   "timestamp" : 710,
   "message" : "Successfully selected My playlist."
 }, {
+  "command" : "load",
+  "user" : "bob35",
+  "timestamp" : 740,
+  "message" : "You can't load an empty audio collection!"
+}, {
+  "command" : "status",
+  "user" : "bob35",
+  "timestamp" : 800,
+  "stats" : {
+    "name" : "Begin Again",
+    "remainedTime" : 98,
+    "repeat" : "No Repeat",
+    "shuffle" : false,
+    "paused" : false
+  }
+}, {
+  "command" : "status",
+  "user" : "bob35",
+  "timestamp" : 900,
+  "stats" : {
+    "name" : "",
+    "remainedTime" : 0,
+    "repeat" : "No Repeat",
+    "shuffle" : false,
+    "paused" : false
+  }
+}, {
+  "command" : "status",
+  "user" : "bob35",
+  "timestamp" : 1250,
+  "stats" : {
+    "name" : "",
+    "remainedTime" : 0,
+    "repeat" : "No Repeat",
+    "shuffle" : false,
+    "paused" : false
+  }
+}, {
+  "command" : "status",
+  "user" : "bob35",
+  "timestamp" : 1600,
+  "stats" : {
+    "name" : "",
+    "remainedTime" : 0,
+    "repeat" : "No Repeat",
+    "shuffle" : false,
+    "paused" : false
+  }
+}, {
+  "command" : "status",
+  "user" : "bob35",
+  "timestamp" : 1660,
+  "stats" : {
+    "name" : "",
+    "remainedTime" : 0,
+    "repeat" : "No Repeat",
+    "shuffle" : false,
+    "paused" : false
+  }
+}, {
+  "command" : "status",
+  "user" : "bob35",
+  "timestamp" : 2000,
+  "stats" : {
+    "name" : "",
+    "remainedTime" : 0,
+    "repeat" : "No Repeat",
+    "shuffle" : false,
+    "paused" : false
+  }
+}, {
+  "command" : "status",
+  "user" : "bob35",
+  "timestamp" : 2350,
+  "stats" : {
+    "name" : "",
+    "remainedTime" : 0,
+    "repeat" : "No Repeat",
+    "shuffle" : false,
+    "paused" : false
+  }
+}, {
   "command" : "search",
   "user" : "bob35",
   "timestamp" : 2351,
@@ -91,4 +203,42 @@
   "user" : "bob35",
   "timestamp" : 2352,
   "message" : "Successfully selected My playlist."
+}, {
+  "command" : "load",
+  "user" : "bob35",
+  "timestamp" : 2353,
+  "message" : "You can't load an empty audio collection!"
+}, {
+  "command" : "status",
+  "user" : "bob35",
+  "timestamp" : 2410,
+  "stats" : {
+    "name" : "",
+    "remainedTime" : 0,
+    "repeat" : "No Repeat",
+    "shuffle" : false,
+    "paused" : false
+  }
+}, {
+  "command" : "status",
+  "user" : "bob35",
+  "timestamp" : 2750,
+  "stats" : {
+    "name" : "",
+    "remainedTime" : 0,
+    "repeat" : "No Repeat",
+    "shuffle" : false,
+    "paused" : false
+  }
+}, {
+  "command" : "status",
+  "user" : "bob35",
+  "timestamp" : 3100,
+  "stats" : {
+    "name" : "",
+    "remainedTime" : 0,
+    "repeat" : "No Repeat",
+    "shuffle" : false,
+    "paused" : false
+  }
 } ]

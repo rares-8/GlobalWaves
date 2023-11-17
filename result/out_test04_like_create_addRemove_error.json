@@ -10,6 +10,11 @@
   "timestamp" : 10,
   "message" : "Successfully selected Big Pimpin'."
 }, {
+  "command" : "load",
+  "user" : "emily30",
+  "timestamp" : 15,
+  "message" : "Playback loaded successfully."
+}, {
   "command" : "search",
   "user" : "emily30",
   "timestamp" : 25,
@@ -20,6 +25,10 @@
   "user" : "emily30",
   "timestamp" : 30,
   "message" : "Successfully selected The Joe Rogan Experience."
+}, {
+  "command" : "load",
+  "user" : "emily30",
+  "timestamp" : 31
 }, {
   "command" : "createPlaylist",
   "user" : "emily30",
@@ -48,6 +57,11 @@
   "timestamp" : 70,
   "message" : "Successfully selected Get Lucky."
 }, {
+  "command" : "load",
+  "user" : "emily30",
+  "timestamp" : 71,
+  "message" : "Playback loaded successfully."
+}, {
   "command" : "search",
   "user" : "emily30",
   "timestamp" : 75,
@@ -58,4 +72,19 @@
   "user" : "emily30",
   "timestamp" : 85,
   "message" : "Successfully selected Playlist alb pentru zile negre."
+}, {
+  "command" : "load",
+  "user" : "emily30",
+  "timestamp" : 86,
+  "message" : "You can't load an empty audio collection!"
+}, {
+  "command" : "showPlaylists",
+  "user" : "emily30",
+  "timestamp" : 95,
+  "result" : [ {
+    "name" : "Playlist alb pentru zile negre",
+    "songs" : [ ],
+    "visibility" : "public",
+    "followers" : 0
+  } ]
 } ]

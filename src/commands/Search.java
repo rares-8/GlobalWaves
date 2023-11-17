@@ -4,7 +4,7 @@ import com.fasterxml.jackson.databind.JsonNode;
 import com.fasterxml.jackson.databind.ObjectMapper;
 import com.fasterxml.jackson.databind.node.ArrayNode;
 import com.fasterxml.jackson.databind.node.ObjectNode;
-import constants.Constants;
+import utils.Constants;
 import fileio.input.*;
 import user.memory.UserMemory;
 
@@ -13,7 +13,7 @@ import java.util.Comparator;
 import java.util.List;
 import java.util.Map;
 
-public abstract class SearchCommand implements Constants {
+public abstract class Search implements Constants {
 
     /**
      * @param username     - user that issued the command

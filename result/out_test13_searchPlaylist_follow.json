@@ -15,10 +15,20 @@
   "timestamp" : 190,
   "message" : "Successfully selected Start Me Up."
 }, {
+  "command" : "load",
+  "user" : "bob35",
+  "timestamp" : 200,
+  "message" : "Playback loaded successfully."
+}, {
   "command" : "select",
   "user" : "bob35",
   "timestamp" : 290,
   "message" : "Successfully selected Start Me Up."
+}, {
+  "command" : "load",
+  "user" : "bob35",
+  "timestamp" : 300,
+  "message" : "Playback loaded successfully."
 }, {
   "command" : "search",
   "user" : "bob35",
@@ -30,6 +40,11 @@
   "user" : "bob35",
   "timestamp" : 390,
   "message" : "Successfully selected Start Me Up."
+}, {
+  "command" : "load",
+  "user" : "bob35",
+  "timestamp" : 400,
+  "message" : "Playback loaded successfully."
 }, {
   "command" : "createPlaylist",
   "user" : "bob35",
@@ -47,6 +62,11 @@
   "timestamp" : 490,
   "message" : "Successfully selected Start Me Up."
 }, {
+  "command" : "load",
+  "user" : "bob35",
+  "timestamp" : 500,
+  "message" : "Playback loaded successfully."
+}, {
   "command" : "search",
   "user" : "bob35",
   "timestamp" : 570,
@@ -57,6 +77,11 @@
   "user" : "bob35",
   "timestamp" : 590,
   "message" : "Successfully selected Start Me Up."
+}, {
+  "command" : "load",
+  "user" : "bob35",
+  "timestamp" : 600,
+  "message" : "Playback loaded successfully."
 }, {
   "command" : "createPlaylist",
   "user" : "carol19",
@@ -74,6 +99,11 @@
   "timestamp" : 890,
   "message" : "Successfully selected Start Me Up."
 }, {
+  "command" : "load",
+  "user" : "carol19",
+  "timestamp" : 900,
+  "message" : "Playback loaded successfully."
+}, {
   "command" : "search",
   "user" : "carol19",
   "timestamp" : 1000,
@@ -90,10 +120,50 @@
   "timestamp" : 1050,
   "message" : "Playlist followed successfully."
 }, {
+  "command" : "showPlaylists",
+  "user" : "bob35",
+  "timestamp" : 1060,
+  "result" : [ {
+    "name" : "My first playlist",
+    "songs" : [ ],
+    "visibility" : "public",
+    "followers" : 1
+  }, {
+    "name" : "My second playlist",
+    "songs" : [ ],
+    "visibility" : "public",
+    "followers" : 0
+  } ]
+}, {
+  "command" : "showPlaylists",
+  "user" : "carol19",
+  "timestamp" : 1100,
+  "result" : [ {
+    "name" : "The best",
+    "songs" : [ ],
+    "visibility" : "public",
+    "followers" : 0
+  } ]
+}, {
   "command" : "switchVisibility",
   "user" : "bob35",
   "timestamp" : 1130,
   "message" : "Visibility status updated successfully to private."
+}, {
+  "command" : "showPlaylists",
+  "user" : "bob35",
+  "timestamp" : 1160,
+  "result" : [ {
+    "name" : "My first playlist",
+    "songs" : [ ],
+    "visibility" : "private",
+    "followers" : 1
+  }, {
+    "name" : "My second playlist",
+    "songs" : [ ],
+    "visibility" : "public",
+    "followers" : 0
+  } ]
 }, {
   "command" : "search",
   "user" : "david27",
@@ -127,13 +197,43 @@
   "timestamp" : 1350,
   "message" : "Playlist followed successfully."
 }, {
+  "command" : "showPlaylists",
+  "user" : "carol19",
+  "timestamp" : 1370,
+  "result" : [ {
+    "name" : "The best",
+    "songs" : [ ],
+    "visibility" : "public",
+    "followers" : 2
+  } ]
+}, {
   "command" : "switchVisibility",
   "user" : "carol19",
   "timestamp" : 1400,
   "message" : "Visibility status updated successfully to private."
 }, {
+  "command" : "showPlaylists",
+  "user" : "carol19",
+  "timestamp" : 1500,
+  "result" : [ {
+    "name" : "The best",
+    "songs" : [ ],
+    "visibility" : "private",
+    "followers" : 2
+  } ]
+}, {
   "command" : "switchVisibility",
   "user" : "carol19",
   "timestamp" : 1560,
   "message" : "Visibility status updated successfully to public."
+}, {
+  "command" : "showPlaylists",
+  "user" : "carol19",
+  "timestamp" : 1600,
+  "result" : [ {
+    "name" : "The best",
+    "songs" : [ ],
+    "visibility" : "public",
+    "followers" : 2
+  } ]
 } ]

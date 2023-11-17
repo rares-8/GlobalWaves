@@ -15,6 +15,11 @@
   "timestamp" : 15,
   "message" : "Successfully selected Stairway to Heaven."
 }, {
+  "command" : "load",
+  "user" : "alice22",
+  "timestamp" : 20,
+  "message" : "Playback loaded successfully."
+}, {
   "command" : "search",
   "user" : "alice22",
   "timestamp" : 30,
@@ -26,6 +31,11 @@
   "timestamp" : 35,
   "message" : "Successfully selected The Unforgiven."
 }, {
+  "command" : "load",
+  "user" : "alice22",
+  "timestamp" : 40,
+  "message" : "Playback loaded successfully."
+}, {
   "command" : "search",
   "user" : "alice22",
   "timestamp" : 63,
@@ -36,4 +46,14 @@
   "user" : "alice22",
   "timestamp" : 64,
   "message" : "Successfully selected Playlist bengos."
+}, {
+  "command" : "showPlaylists",
+  "user" : "alice22",
+  "timestamp" : 65,
+  "result" : [ {
+    "name" : "Playlist bengos",
+    "songs" : [ ],
+    "visibility" : "public",
+    "followers" : 0
+  } ]
 } ]

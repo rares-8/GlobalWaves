@@ -118,7 +118,7 @@ public final class PodcastInput implements Audio {
     }
 
     @Override
-    public void setIsPrivate(Integer isPrivate) {
+    public void setIsPrivate(final Integer isPrivate) {
 
     }
 
@@ -128,7 +128,7 @@ public final class PodcastInput implements Audio {
     }
 
     @Override
-    public void setPlaylistSongs(ArrayList<SongInput> playlistSongs) {
+    public void setPlaylistSongs(final ArrayList<SongInput> playlistSongs) {
 
     }
 
@@ -138,12 +138,28 @@ public final class PodcastInput implements Audio {
     }
 
     @Override
-    public void setTimeCreated(int timeCreated) {
+    public void setTimeCreated(final int timeCreated) {
 
     }
 
     @Override
     public Map<String, ArrayList<Audio>> getFollowedPlaylists() {
         return null;
+    }
+
+    /**
+     * @return episode description
+     */
+    @Override
+    public String getDescription() {
+        return null;
+    }
+
+    /**
+     * @param description
+     */
+    @Override
+    public void setDescription(final String description) {
+
     }
 }

@@ -12,14 +12,15 @@
 }, {
   "command" : "load",
   "user" : "alice22",
-  "timestamp" : 20
+  "timestamp" : 20,
+  "message" : "Playback loaded successfully."
 }, {
   "command" : "status",
   "user" : "alice22",
   "timestamp" : 59,
   "stats" : {
-    "name" : "",
-    "remainedTime" : 0,
+    "name" : "The Power of Design",
+    "remainedTime" : 3065,
     "repeat" : "No Repeat",
     "shuffle" : false,
     "paused" : false
@@ -54,34 +55,40 @@
 }, {
   "command" : "load",
   "user" : "alice22",
-  "timestamp" : 85
+  "timestamp" : 85,
+  "message" : "Playback loaded successfully."
 }, {
   "command" : "status",
   "user" : "alice22",
   "timestamp" : 86,
   "stats" : {
-    "name" : "Stairway to Heaven",
-    "remainedTime" : 466,
+    "name" : "The Power of Design",
+    "remainedTime" : 3063,
     "repeat" : "No Repeat",
     "shuffle" : false,
     "paused" : false
   }
+}, {
+  "command" : "playPause",
+  "user" : "alice22",
+  "timestamp" : 3200,
+  "message" : "Playback paused successfully."
 }, {
   "command" : "status",
   "user" : "alice22",
   "timestamp" : 3201,
   "stats" : {
-    "name" : "",
-    "remainedTime" : 0,
+    "name" : "The Science of Us",
+    "remainedTime" : 3081,
     "repeat" : "No Repeat",
     "shuffle" : false,
-    "paused" : false
+    "paused" : true
   }
 }, {
   "command" : "createPlaylist",
   "user" : "alice22",
   "timestamp" : 3210,
-  "message" : "Playlist created successfully"
+  "message" : "Playlist created successfully."
 }, {
   "command" : "search",
   "user" : "alice22",
@@ -99,6 +106,11 @@
   "timestamp" : 3225,
   "message" : "Playback loaded successfully."
 }, {
+  "command" : "addRemoveInPlaylist",
+  "user" : "alice22",
+  "timestamp" : 3230,
+  "message" : "Successfully added to playlist."
+}, {
   "command" : "search",
   "user" : "alice22",
   "timestamp" : 3235,
@@ -115,6 +127,11 @@
   "timestamp" : 3245,
   "message" : "Playback loaded successfully."
 }, {
+  "command" : "addRemoveInPlaylist",
+  "user" : "alice22",
+  "timestamp" : 3250,
+  "message" : "Successfully added to playlist."
+}, {
   "command" : "search",
   "user" : "alice22",
   "timestamp" : 3255,
@@ -129,14 +146,14 @@
   "command" : "load",
   "user" : "alice22",
   "timestamp" : 3265,
-  "message" : "You can't load an empty audio collection!"
+  "message" : "Playback loaded successfully."
 }, {
   "command" : "status",
   "user" : "alice22",
   "timestamp" : 3270,
   "stats" : {
-    "name" : "Happier",
-    "remainedTime" : 182,
+    "name" : "Freedom",
+    "remainedTime" : 173,
     "repeat" : "No Repeat",
     "shuffle" : false,
     "paused" : false
@@ -147,7 +164,7 @@
   "timestamp" : 3448,
   "stats" : {
     "name" : "Happier",
-    "remainedTime" : 4,
+    "remainedTime" : 202,
     "repeat" : "No Repeat",
     "shuffle" : false,
     "paused" : false
@@ -161,6 +178,6 @@
     "remainedTime" : 0,
     "repeat" : "No Repeat",
     "shuffle" : false,
-    "paused" : false
+    "paused" : true
   }
 } ]

@@ -127,19 +127,63 @@ public interface Audio {
      */
     void setArtist(String artist);
 
+    /**
+     *
+     * @return isPrivate
+     */
     Integer getIsPrivate();
 
+    /**
+     *
+     * @param isPrivate
+     */
     void setIsPrivate(Integer isPrivate);
 
+    /**
+     *
+     * @return playlistSongs
+     */
     ArrayList<SongInput> getPlaylistSongs();
 
+    /**
+     *
+     * @param playlistSongs
+     */
     void setPlaylistSongs(ArrayList<SongInput> playlistSongs);
 
+    /**
+     *
+     * @return timeCreated
+     */
     int getTimeCreated();
 
+    /**
+     *
+     * @param timeCreated
+     */
     void setTimeCreated(int timeCreated);
 
+    /**
+     *
+     * @return audio type
+     */
     String getAudioType();
 
-    public Map<String, ArrayList<Audio>> getFollowedPlaylists();
+    /**
+     *
+     * @return followed playlists
+     */
+    Map<String, ArrayList<Audio>> getFollowedPlaylists();
+
+    /**
+     *
+     * @return episode description
+     */
+    String getDescription();
+
+    /**
+     *
+     * @param description
+     */
+    void setDescription(String description);
 }

@@ -2,7 +2,7 @@
   "command" : "createPlaylist",
   "user" : "bob35",
   "timestamp" : 150,
-  "message" : "Playlist created successfully"
+  "message" : "Playlist created successfully."
 }, {
   "command" : "search",
   "user" : "bob35",
@@ -20,10 +20,15 @@
   "timestamp" : 200,
   "message" : "Playback loaded successfully."
 }, {
+  "command" : "addRemoveInPlaylist",
+  "user" : "bob35",
+  "timestamp" : 240,
+  "message" : "Successfully added to playlist."
+}, {
   "command" : "createPlaylist",
   "user" : "bob35",
   "timestamp" : 450,
-  "message" : "Playlist created successfully"
+  "message" : "Playlist created successfully."
 }, {
   "command" : "search",
   "user" : "bob35",
@@ -41,6 +46,11 @@
   "timestamp" : 500,
   "message" : "Playback loaded successfully."
 }, {
+  "command" : "addRemoveInPlaylist",
+  "user" : "bob35",
+  "timestamp" : 540,
+  "message" : "Successfully added to playlist."
+}, {
   "command" : "search",
   "user" : "bob35",
   "timestamp" : 570,
@@ -57,16 +67,21 @@
   "timestamp" : 600,
   "message" : "Playback loaded successfully."
 }, {
+  "command" : "addRemoveInPlaylist",
+  "user" : "bob35",
+  "timestamp" : 640,
+  "message" : "Successfully added to playlist."
+}, {
   "command" : "createPlaylist",
   "user" : "carol19",
   "timestamp" : 750,
-  "message" : "Playlist created successfully"
+  "message" : "Playlist created successfully."
 }, {
   "command" : "search",
   "user" : "carol19",
   "timestamp" : 870,
   "message" : "Search returned 5 results",
-  "results" : [ "Shape of You", "Don't", "Money Trees", "Dream On", "The Unforgiven" ]
+  "results" : [ "Shape of You", "Don't", "Stairway to Heaven", "Money Trees", "Under Pressure" ]
 }, {
   "command" : "select",
   "user" : "carol19",
@@ -77,6 +92,11 @@
   "user" : "carol19",
   "timestamp" : 900,
   "message" : "Playback loaded successfully."
+}, {
+  "command" : "addRemoveInPlaylist",
+  "user" : "carol19",
+  "timestamp" : 940,
+  "message" : "Successfully added to playlist."
 }, {
   "command" : "search",
   "user" : "emily30",
@@ -131,12 +151,12 @@
   "timestamp" : 1460,
   "result" : [ {
     "name" : "My first playlist",
-    "songs" : [ ],
+    "songs" : [ "Stairway to Heaven" ],
     "visibility" : "public",
     "followers" : 0
   }, {
     "name" : "My second playlist",
-    "songs" : [ ],
+    "songs" : [ "Shape of You", "Stairway to Heaven" ],
     "visibility" : "public",
     "followers" : 1
   } ]
@@ -146,7 +166,7 @@
   "timestamp" : 1500,
   "result" : [ {
     "name" : "The best",
-    "songs" : [ ],
+    "songs" : [ "Shape of You" ],
     "visibility" : "public",
     "followers" : 0
   } ]
@@ -161,12 +181,12 @@
   "timestamp" : 1560,
   "result" : [ {
     "name" : "My first playlist",
-    "songs" : [ ],
+    "songs" : [ "Stairway to Heaven" ],
     "visibility" : "public",
     "followers" : 0
   }, {
     "name" : "My second playlist",
-    "songs" : [ ],
+    "songs" : [ "Shape of You", "Stairway to Heaven" ],
     "visibility" : "private",
     "followers" : 1
   } ]
@@ -234,12 +254,12 @@
   "timestamp" : 1900,
   "result" : [ {
     "name" : "My first playlist",
-    "songs" : [ ],
+    "songs" : [ "Stairway to Heaven" ],
     "visibility" : "public",
     "followers" : 0
   }, {
     "name" : "My second playlist",
-    "songs" : [ ],
+    "songs" : [ "Shape of You", "Stairway to Heaven" ],
     "visibility" : "public",
     "followers" : 3
   } ]

@@ -7,12 +7,12 @@
   "command" : "createPlaylist",
   "user" : "alice22",
   "timestamp" : 100,
-  "message" : "Playlist created successfully"
+  "message" : "Playlist created successfully."
 }, {
   "command" : "createPlaylist",
   "user" : "bob35",
   "timestamp" : 110,
-  "message" : "Playlist created successfully"
+  "message" : "Playlist created successfully."
 }, {
   "command" : "switchVisibility",
   "user" : "carol19",
@@ -22,32 +22,32 @@
   "command" : "createPlaylist",
   "user" : "carol19",
   "timestamp" : 120,
-  "message" : "Playlist created successfully"
+  "message" : "Playlist created successfully."
 }, {
   "command" : "createPlaylist",
   "user" : "david27",
   "timestamp" : 130,
-  "message" : "Playlist created successfully"
+  "message" : "Playlist created successfully."
 }, {
   "command" : "createPlaylist",
   "user" : "emily30",
   "timestamp" : 140,
-  "message" : "Playlist created successfully"
+  "message" : "Playlist created successfully."
 }, {
   "command" : "createPlaylist",
   "user" : "frank21",
   "timestamp" : 150,
-  "message" : "Playlist created successfully"
+  "message" : "Playlist created successfully."
 }, {
   "command" : "createPlaylist",
   "user" : "grace25",
   "timestamp" : 160,
-  "message" : "Playlist created successfully"
+  "message" : "Playlist created successfully."
 }, {
   "command" : "createPlaylist",
   "user" : "henry26",
   "timestamp" : 170,
-  "message" : "Playlist created successfully"
+  "message" : "Playlist created successfully."
 }, {
   "command" : "switchVisibility",
   "user" : "irene33",
@@ -57,7 +57,7 @@
   "command" : "createPlaylist",
   "user" : "irene33",
   "timestamp" : 180,
-  "message" : "Playlist created successfully"
+  "message" : "Playlist created successfully."
 }, {
   "command" : "switchVisibility",
   "user" : "jack29",
@@ -67,17 +67,17 @@
   "command" : "createPlaylist",
   "user" : "jack29",
   "timestamp" : 190,
-  "message" : "Playlist created successfully"
+  "message" : "Playlist created successfully."
 }, {
   "command" : "createPlaylist",
   "user" : "alice22",
   "timestamp" : 200,
-  "message" : "Playlist created successfully"
+  "message" : "Playlist created successfully."
 }, {
   "command" : "createPlaylist",
   "user" : "bob35",
   "timestamp" : 210,
-  "message" : "Playlist created successfully"
+  "message" : "Playlist created successfully."
 }, {
   "command" : "switchVisibility",
   "user" : "carol19",
@@ -87,42 +87,42 @@
   "command" : "createPlaylist",
   "user" : "carol19",
   "timestamp" : 220,
-  "message" : "Playlist created successfully"
+  "message" : "Playlist created successfully."
 }, {
   "command" : "createPlaylist",
   "user" : "david27",
   "timestamp" : 230,
-  "message" : "Playlist created successfully"
+  "message" : "Playlist created successfully."
 }, {
   "command" : "createPlaylist",
   "user" : "emily30",
   "timestamp" : 240,
-  "message" : "Playlist created successfully"
+  "message" : "Playlist created successfully."
 }, {
   "command" : "createPlaylist",
   "user" : "frank21",
   "timestamp" : 250,
-  "message" : "Playlist created successfully"
+  "message" : "Playlist created successfully."
 }, {
   "command" : "createPlaylist",
   "user" : "grace25",
   "timestamp" : 260,
-  "message" : "Playlist created successfully"
+  "message" : "Playlist created successfully."
 }, {
   "command" : "createPlaylist",
   "user" : "henry26",
   "timestamp" : 270,
-  "message" : "Playlist created successfully"
+  "message" : "Playlist created successfully."
 }, {
   "command" : "createPlaylist",
   "user" : "irene33",
   "timestamp" : 280,
-  "message" : "Playlist created successfully"
+  "message" : "Playlist created successfully."
 }, {
   "command" : "createPlaylist",
   "user" : "jack29",
   "timestamp" : 290,
-  "message" : "Playlist created successfully"
+  "message" : "Playlist created successfully."
 }, {
   "command" : "search",
   "user" : "alice22",
@@ -140,6 +140,11 @@
   "timestamp" : 310,
   "message" : "Please select a source before attempting to load."
 }, {
+  "command" : "addRemoveInPlaylist",
+  "user" : "alice22",
+  "timestamp" : 315,
+  "message" : "Please load a source before adding to or removing from the playlist."
+}, {
   "command" : "search",
   "user" : "alice22",
   "timestamp" : 325,
@@ -155,6 +160,11 @@
   "user" : "alice22",
   "timestamp" : 335,
   "message" : "Playback loaded successfully."
+}, {
+  "command" : "addRemoveInPlaylist",
+  "user" : "alice22",
+  "timestamp" : 340,
+  "message" : "Successfully added to playlist."
 }, {
   "command" : "search",
   "user" : "alice22",
@@ -172,6 +182,11 @@
   "timestamp" : 360,
   "message" : "Playback loaded successfully."
 }, {
+  "command" : "addRemoveInPlaylist",
+  "user" : "alice22",
+  "timestamp" : 365,
+  "message" : "Successfully added to playlist."
+}, {
   "command" : "search",
   "user" : "alice22",
   "timestamp" : 375,
@@ -187,6 +202,11 @@
   "user" : "alice22",
   "timestamp" : 385,
   "message" : "Playback loaded successfully."
+}, {
+  "command" : "addRemoveInPlaylist",
+  "user" : "alice22",
+  "timestamp" : 390,
+  "message" : "Successfully removed from playlist."
 }, {
   "command" : "search",
   "user" : "alice22",
@@ -204,21 +224,31 @@
   "timestamp" : 410,
   "message" : "Playback loaded successfully."
 }, {
+  "command" : "addRemoveInPlaylist",
+  "user" : "alice22",
+  "timestamp" : 415,
+  "message" : "The specified playlist does not exist."
+}, {
   "command" : "search",
   "user" : "alice22",
   "timestamp" : 425,
   "message" : "Search returned 5 results",
-  "results" : [ "Don't", "Sad But True", "Maps", "Gimme Shelter", "Bohemian Rhapsody" ]
+  "results" : [ "Don't", "Start Me Up", "Sad But True", "Maps", "Gimme Shelter" ]
 }, {
   "command" : "select",
   "user" : "alice22",
   "timestamp" : 430,
-  "message" : "Successfully selected Sad But True."
+  "message" : "Successfully selected Start Me Up."
 }, {
   "command" : "load",
   "user" : "alice22",
   "timestamp" : 435,
   "message" : "Playback loaded successfully."
+}, {
+  "command" : "addRemoveInPlaylist",
+  "user" : "alice22",
+  "timestamp" : 440,
+  "message" : "The specified playlist does not exist."
 }, {
   "command" : "search",
   "user" : "alice22",
@@ -234,7 +264,12 @@
   "command" : "load",
   "user" : "alice22",
   "timestamp" : 460,
-  "message" : "Playback loaded successfully."
+  "message" : "Please select a source before attempting to load."
+}, {
+  "command" : "addRemoveInPlaylist",
+  "user" : "alice22",
+  "timestamp" : 465,
+  "message" : "Please load a source before adding to or removing from the playlist."
 }, {
   "command" : "search",
   "user" : "alice22",
@@ -252,6 +287,11 @@
   "timestamp" : 485,
   "message" : "Playback loaded successfully."
 }, {
+  "command" : "addRemoveInPlaylist",
+  "user" : "alice22",
+  "timestamp" : 490,
+  "message" : "Successfully removed from playlist."
+}, {
   "command" : "search",
   "user" : "alice22",
   "timestamp" : 500,
@@ -267,6 +307,11 @@
   "user" : "alice22",
   "timestamp" : 510,
   "message" : "Playback loaded successfully."
+}, {
+  "command" : "addRemoveInPlaylist",
+  "user" : "alice22",
+  "timestamp" : 515,
+  "message" : "The specified playlist does not exist."
 }, {
   "command" : "search",
   "user" : "alice22",
@@ -284,6 +329,11 @@
   "timestamp" : 535,
   "message" : "Playback loaded successfully."
 }, {
+  "command" : "addRemoveInPlaylist",
+  "user" : "alice22",
+  "timestamp" : 540,
+  "message" : "The specified playlist does not exist."
+}, {
   "command" : "search",
   "user" : "alice22",
   "timestamp" : 550,
@@ -299,6 +349,11 @@
   "user" : "alice22",
   "timestamp" : 560,
   "message" : "Playback loaded successfully."
+}, {
+  "command" : "addRemoveInPlaylist",
+  "user" : "alice22",
+  "timestamp" : 565,
+  "message" : "Successfully added to playlist."
 }, {
   "command" : "search",
   "user" : "alice22",
@@ -316,6 +371,11 @@
   "timestamp" : 585,
   "message" : "Playback loaded successfully."
 }, {
+  "command" : "addRemoveInPlaylist",
+  "user" : "alice22",
+  "timestamp" : 590,
+  "message" : "The specified playlist does not exist."
+}, {
   "command" : "search",
   "user" : "alice22",
   "timestamp" : 600,
@@ -331,6 +391,11 @@
   "user" : "alice22",
   "timestamp" : 610,
   "message" : "Playback loaded successfully."
+}, {
+  "command" : "addRemoveInPlaylist",
+  "user" : "alice22",
+  "timestamp" : 615,
+  "message" : "Successfully added to playlist."
 }, {
   "command" : "search",
   "user" : "alice22",
@@ -348,6 +413,11 @@
   "timestamp" : 635,
   "message" : "Playback loaded successfully."
 }, {
+  "command" : "addRemoveInPlaylist",
+  "user" : "alice22",
+  "timestamp" : 640,
+  "message" : "Successfully added to playlist."
+}, {
   "command" : "search",
   "user" : "alice22",
   "timestamp" : 650,
@@ -362,7 +432,12 @@
   "command" : "load",
   "user" : "alice22",
   "timestamp" : 660,
-  "message" : "Playback loaded successfully."
+  "message" : "Please select a source before attempting to load."
+}, {
+  "command" : "addRemoveInPlaylist",
+  "user" : "alice22",
+  "timestamp" : 665,
+  "message" : "Please load a source before adding to or removing from the playlist."
 }, {
   "command" : "search",
   "user" : "alice22",
@@ -380,6 +455,11 @@
   "timestamp" : 685,
   "message" : "Playback loaded successfully."
 }, {
+  "command" : "addRemoveInPlaylist",
+  "user" : "alice22",
+  "timestamp" : 690,
+  "message" : "Successfully removed from playlist."
+}, {
   "command" : "search",
   "user" : "alice22",
   "timestamp" : 700,
@@ -395,6 +475,11 @@
   "user" : "alice22",
   "timestamp" : 710,
   "message" : "Playback loaded successfully."
+}, {
+  "command" : "addRemoveInPlaylist",
+  "user" : "alice22",
+  "timestamp" : 715,
+  "message" : "The specified playlist does not exist."
 }, {
   "command" : "search",
   "user" : "alice22",
@@ -412,6 +497,11 @@
   "timestamp" : 735,
   "message" : "Playback loaded successfully."
 }, {
+  "command" : "addRemoveInPlaylist",
+  "user" : "alice22",
+  "timestamp" : 740,
+  "message" : "Successfully added to playlist."
+}, {
   "command" : "search",
   "user" : "alice22",
   "timestamp" : 750,
@@ -427,6 +517,11 @@
   "user" : "alice22",
   "timestamp" : 760,
   "message" : "Playback loaded successfully."
+}, {
+  "command" : "addRemoveInPlaylist",
+  "user" : "alice22",
+  "timestamp" : 765,
+  "message" : "Successfully added to playlist."
 }, {
   "command" : "search",
   "user" : "alice22",
@@ -444,6 +539,11 @@
   "timestamp" : 785,
   "message" : "Playback loaded successfully."
 }, {
+  "command" : "addRemoveInPlaylist",
+  "user" : "alice22",
+  "timestamp" : 790,
+  "message" : "The specified playlist does not exist."
+}, {
   "command" : "search",
   "user" : "bob35",
   "timestamp" : 800,
@@ -459,6 +559,11 @@
   "user" : "bob35",
   "timestamp" : 810,
   "message" : "Playback loaded successfully."
+}, {
+  "command" : "addRemoveInPlaylist",
+  "user" : "bob35",
+  "timestamp" : 815,
+  "message" : "Successfully added to playlist."
 }, {
   "command" : "search",
   "user" : "bob35",
@@ -476,6 +581,11 @@
   "timestamp" : 835,
   "message" : "Playback loaded successfully."
 }, {
+  "command" : "addRemoveInPlaylist",
+  "user" : "bob35",
+  "timestamp" : 840,
+  "message" : "The specified playlist does not exist."
+}, {
   "command" : "search",
   "user" : "bob35",
   "timestamp" : 850,
@@ -492,6 +602,11 @@
   "timestamp" : 860,
   "message" : "Playback loaded successfully."
 }, {
+  "command" : "addRemoveInPlaylist",
+  "user" : "bob35",
+  "timestamp" : 865,
+  "message" : "The specified playlist does not exist."
+}, {
   "command" : "search",
   "user" : "bob35",
   "timestamp" : 875,
@@ -506,7 +621,12 @@
   "command" : "load",
   "user" : "bob35",
   "timestamp" : 885,
-  "message" : "Playback loaded successfully."
+  "message" : "Please select a source before attempting to load."
+}, {
+  "command" : "addRemoveInPlaylist",
+  "user" : "bob35",
+  "timestamp" : 890,
+  "message" : "Please load a source before adding to or removing from the playlist."
 }, {
   "command" : "search",
   "user" : "bob35",
@@ -522,7 +642,12 @@
   "command" : "load",
   "user" : "bob35",
   "timestamp" : 910,
-  "message" : "Playback loaded successfully."
+  "message" : "Please select a source before attempting to load."
+}, {
+  "command" : "addRemoveInPlaylist",
+  "user" : "bob35",
+  "timestamp" : 915,
+  "message" : "Please load a source before adding to or removing from the playlist."
 }, {
   "command" : "search",
   "user" : "bob35",
@@ -540,6 +665,11 @@
   "timestamp" : 935,
   "message" : "Playback loaded successfully."
 }, {
+  "command" : "addRemoveInPlaylist",
+  "user" : "bob35",
+  "timestamp" : 940,
+  "message" : "Successfully added to playlist."
+}, {
   "command" : "search",
   "user" : "bob35",
   "timestamp" : 950,
@@ -554,7 +684,12 @@
   "command" : "load",
   "user" : "bob35",
   "timestamp" : 960,
-  "message" : "Playback loaded successfully."
+  "message" : "Please select a source before attempting to load."
+}, {
+  "command" : "addRemoveInPlaylist",
+  "user" : "bob35",
+  "timestamp" : 965,
+  "message" : "Please load a source before adding to or removing from the playlist."
 }, {
   "command" : "search",
   "user" : "bob35",
@@ -572,21 +707,31 @@
   "timestamp" : 985,
   "message" : "Playback loaded successfully."
 }, {
+  "command" : "addRemoveInPlaylist",
+  "user" : "bob35",
+  "timestamp" : 990,
+  "message" : "Successfully added to playlist."
+}, {
   "command" : "search",
   "user" : "bob35",
   "timestamp" : 1000,
   "message" : "Search returned 5 results",
-  "results" : [ "Don't", "Sad But True", "Maps", "Gimme Shelter", "Bohemian Rhapsody" ]
+  "results" : [ "Don't", "Start Me Up", "Sad But True", "Maps", "Gimme Shelter" ]
 }, {
   "command" : "select",
   "user" : "bob35",
   "timestamp" : 1005,
-  "message" : "Successfully selected Maps."
+  "message" : "Successfully selected Sad But True."
 }, {
   "command" : "load",
   "user" : "bob35",
   "timestamp" : 1010,
   "message" : "Playback loaded successfully."
+}, {
+  "command" : "addRemoveInPlaylist",
+  "user" : "bob35",
+  "timestamp" : 1015,
+  "message" : "Successfully added to playlist."
 }, {
   "command" : "search",
   "user" : "bob35",
@@ -604,21 +749,31 @@
   "timestamp" : 1035,
   "message" : "Playback loaded successfully."
 }, {
+  "command" : "addRemoveInPlaylist",
+  "user" : "bob35",
+  "timestamp" : 1040,
+  "message" : "The specified playlist does not exist."
+}, {
   "command" : "search",
   "user" : "bob35",
   "timestamp" : 1050,
   "message" : "Search returned 5 results",
-  "results" : [ "Don't", "Sad But True", "Maps", "Gimme Shelter", "Bohemian Rhapsody" ]
+  "results" : [ "Don't", "Start Me Up", "Sad But True", "Maps", "Gimme Shelter" ]
 }, {
   "command" : "select",
   "user" : "bob35",
   "timestamp" : 1055,
-  "message" : "Successfully selected Maps."
+  "message" : "Successfully selected Sad But True."
 }, {
   "command" : "load",
   "user" : "bob35",
   "timestamp" : 1060,
   "message" : "Playback loaded successfully."
+}, {
+  "command" : "addRemoveInPlaylist",
+  "user" : "bob35",
+  "timestamp" : 1065,
+  "message" : "Successfully removed from playlist."
 }, {
   "command" : "search",
   "user" : "bob35",
@@ -636,6 +791,11 @@
   "timestamp" : 1085,
   "message" : "Playback loaded successfully."
 }, {
+  "command" : "addRemoveInPlaylist",
+  "user" : "bob35",
+  "timestamp" : 1090,
+  "message" : "The specified playlist does not exist."
+}, {
   "command" : "search",
   "user" : "bob35",
   "timestamp" : 1100,
@@ -651,6 +811,11 @@
   "user" : "bob35",
   "timestamp" : 1110,
   "message" : "Playback loaded successfully."
+}, {
+  "command" : "addRemoveInPlaylist",
+  "user" : "bob35",
+  "timestamp" : 1115,
+  "message" : "Successfully added to playlist."
 }, {
   "command" : "search",
   "user" : "bob35",
@@ -668,6 +833,11 @@
   "timestamp" : 1135,
   "message" : "Playback loaded successfully."
 }, {
+  "command" : "addRemoveInPlaylist",
+  "user" : "bob35",
+  "timestamp" : 1140,
+  "message" : "The specified playlist does not exist."
+}, {
   "command" : "search",
   "user" : "bob35",
   "timestamp" : 1150,
@@ -683,6 +853,11 @@
   "user" : "bob35",
   "timestamp" : 1160,
   "message" : "Playback loaded successfully."
+}, {
+  "command" : "addRemoveInPlaylist",
+  "user" : "bob35",
+  "timestamp" : 1165,
+  "message" : "The specified playlist does not exist."
 }, {
   "command" : "search",
   "user" : "bob35",
@@ -700,6 +875,11 @@
   "timestamp" : 1185,
   "message" : "Playback loaded successfully."
 }, {
+  "command" : "addRemoveInPlaylist",
+  "user" : "bob35",
+  "timestamp" : 1190,
+  "message" : "The specified playlist does not exist."
+}, {
   "command" : "search",
   "user" : "bob35",
   "timestamp" : 1200,
@@ -714,7 +894,12 @@
   "command" : "load",
   "user" : "bob35",
   "timestamp" : 1210,
-  "message" : "Playback loaded successfully."
+  "message" : "Please select a source before attempting to load."
+}, {
+  "command" : "addRemoveInPlaylist",
+  "user" : "bob35",
+  "timestamp" : 1215,
+  "message" : "Please load a source before adding to or removing from the playlist."
 }, {
   "command" : "search",
   "user" : "bob35",
@@ -730,7 +915,12 @@
   "command" : "load",
   "user" : "bob35",
   "timestamp" : 1235,
-  "message" : "Playback loaded successfully."
+  "message" : "Please select a source before attempting to load."
+}, {
+  "command" : "addRemoveInPlaylist",
+  "user" : "bob35",
+  "timestamp" : 1240,
+  "message" : "Please load a source before adding to or removing from the playlist."
 }, {
   "command" : "search",
   "user" : "bob35",
@@ -746,7 +936,12 @@
   "command" : "load",
   "user" : "bob35",
   "timestamp" : 1260,
-  "message" : "Playback loaded successfully."
+  "message" : "Please select a source before attempting to load."
+}, {
+  "command" : "addRemoveInPlaylist",
+  "user" : "bob35",
+  "timestamp" : 1265,
+  "message" : "Please load a source before adding to or removing from the playlist."
 }, {
   "command" : "search",
   "user" : "bob35",
@@ -764,6 +959,11 @@
   "timestamp" : 1285,
   "message" : "Playback loaded successfully."
 }, {
+  "command" : "addRemoveInPlaylist",
+  "user" : "bob35",
+  "timestamp" : 1290,
+  "message" : "Successfully removed from playlist."
+}, {
   "command" : "search",
   "user" : "carol19",
   "timestamp" : 1300,
@@ -779,6 +979,11 @@
   "user" : "carol19",
   "timestamp" : 1310,
   "message" : "Playback loaded successfully."
+}, {
+  "command" : "addRemoveInPlaylist",
+  "user" : "carol19",
+  "timestamp" : 1315,
+  "message" : "The specified playlist does not exist."
 }, {
   "command" : "search",
   "user" : "carol19",
@@ -796,6 +1001,11 @@
   "timestamp" : 1335,
   "message" : "Playback loaded successfully."
 }, {
+  "command" : "addRemoveInPlaylist",
+  "user" : "carol19",
+  "timestamp" : 1340,
+  "message" : "The specified playlist does not exist."
+}, {
   "command" : "search",
   "user" : "carol19",
   "timestamp" : 1350,
@@ -810,7 +1020,12 @@
   "command" : "load",
   "user" : "carol19",
   "timestamp" : 1360,
-  "message" : "Playback loaded successfully."
+  "message" : "Please select a source before attempting to load."
+}, {
+  "command" : "addRemoveInPlaylist",
+  "user" : "carol19",
+  "timestamp" : 1365,
+  "message" : "Please load a source before adding to or removing from the playlist."
 }, {
   "command" : "search",
   "user" : "carol19",
@@ -828,6 +1043,11 @@
   "timestamp" : 1385,
   "message" : "Playback loaded successfully."
 }, {
+  "command" : "addRemoveInPlaylist",
+  "user" : "carol19",
+  "timestamp" : 1390,
+  "message" : "Successfully added to playlist."
+}, {
   "command" : "search",
   "user" : "carol19",
   "timestamp" : 1400,
@@ -842,23 +1062,33 @@
   "command" : "load",
   "user" : "carol19",
   "timestamp" : 1410,
-  "message" : "Playback loaded successfully."
+  "message" : "Please select a source before attempting to load."
+}, {
+  "command" : "addRemoveInPlaylist",
+  "user" : "carol19",
+  "timestamp" : 1415,
+  "message" : "Please load a source before adding to or removing from the playlist."
 }, {
   "command" : "search",
   "user" : "carol19",
   "timestamp" : 1425,
   "message" : "Search returned 5 results",
-  "results" : [ "Don't", "Sad But True", "Maps", "Gimme Shelter", "Bohemian Rhapsody" ]
+  "results" : [ "Don't", "Start Me Up", "Sad But True", "Maps", "Gimme Shelter" ]
 }, {
   "command" : "select",
   "user" : "carol19",
   "timestamp" : 1430,
-  "message" : "Successfully selected Maps."
+  "message" : "Successfully selected Sad But True."
 }, {
   "command" : "load",
   "user" : "carol19",
   "timestamp" : 1435,
   "message" : "Playback loaded successfully."
+}, {
+  "command" : "addRemoveInPlaylist",
+  "user" : "carol19",
+  "timestamp" : 1440,
+  "message" : "The specified playlist does not exist."
 }, {
   "command" : "search",
   "user" : "carol19",
@@ -876,6 +1106,11 @@
   "timestamp" : 1460,
   "message" : "Playback loaded successfully."
 }, {
+  "command" : "addRemoveInPlaylist",
+  "user" : "carol19",
+  "timestamp" : 1465,
+  "message" : "The specified playlist does not exist."
+}, {
   "command" : "search",
   "user" : "carol19",
   "timestamp" : 1475,
@@ -891,6 +1126,11 @@
   "user" : "carol19",
   "timestamp" : 1485,
   "message" : "Playback loaded successfully."
+}, {
+  "command" : "addRemoveInPlaylist",
+  "user" : "carol19",
+  "timestamp" : 1490,
+  "message" : "The specified playlist does not exist."
 }, {
   "command" : "search",
   "user" : "carol19",
@@ -908,6 +1148,11 @@
   "timestamp" : 1510,
   "message" : "Playback loaded successfully."
 }, {
+  "command" : "addRemoveInPlaylist",
+  "user" : "carol19",
+  "timestamp" : 1515,
+  "message" : "Successfully added to playlist."
+}, {
   "command" : "search",
   "user" : "carol19",
   "timestamp" : 1525,
@@ -923,6 +1168,11 @@
   "user" : "carol19",
   "timestamp" : 1535,
   "message" : "Playback loaded successfully."
+}, {
+  "command" : "addRemoveInPlaylist",
+  "user" : "carol19",
+  "timestamp" : 1540,
+  "message" : "The specified playlist does not exist."
 }, {
   "command" : "search",
   "user" : "carol19",
@@ -940,6 +1190,11 @@
   "timestamp" : 1560,
   "message" : "Playback loaded successfully."
 }, {
+  "command" : "addRemoveInPlaylist",
+  "user" : "carol19",
+  "timestamp" : 1565,
+  "message" : "Successfully added to playlist."
+}, {
   "command" : "search",
   "user" : "carol19",
   "timestamp" : 1575,
@@ -955,6 +1210,11 @@
   "user" : "carol19",
   "timestamp" : 1585,
   "message" : "Playback loaded successfully."
+}, {
+  "command" : "addRemoveInPlaylist",
+  "user" : "carol19",
+  "timestamp" : 1590,
+  "message" : "The specified playlist does not exist."
 }, {
   "command" : "search",
   "user" : "carol19",
@@ -972,6 +1232,11 @@
   "timestamp" : 1610,
   "message" : "Playback loaded successfully."
 }, {
+  "command" : "addRemoveInPlaylist",
+  "user" : "carol19",
+  "timestamp" : 1615,
+  "message" : "The specified playlist does not exist."
+}, {
   "command" : "search",
   "user" : "carol19",
   "timestamp" : 1625,
@@ -987,6 +1252,11 @@
   "user" : "carol19",
   "timestamp" : 1635,
   "message" : "Playback loaded successfully."
+}, {
+  "command" : "addRemoveInPlaylist",
+  "user" : "carol19",
+  "timestamp" : 1640,
+  "message" : "Successfully added to playlist."
 }, {
   "command" : "search",
   "user" : "carol19",
@@ -1004,6 +1274,11 @@
   "timestamp" : 1660,
   "message" : "Playback loaded successfully."
 }, {
+  "command" : "addRemoveInPlaylist",
+  "user" : "carol19",
+  "timestamp" : 1665,
+  "message" : "The specified playlist does not exist."
+}, {
   "command" : "search",
   "user" : "carol19",
   "timestamp" : 1675,
@@ -1019,6 +1294,11 @@
   "user" : "carol19",
   "timestamp" : 1685,
   "message" : "Playback loaded successfully."
+}, {
+  "command" : "addRemoveInPlaylist",
+  "user" : "carol19",
+  "timestamp" : 1690,
+  "message" : "The specified playlist does not exist."
 }, {
   "command" : "search",
   "user" : "carol19",
@@ -1036,21 +1316,31 @@
   "timestamp" : 1710,
   "message" : "Playback loaded successfully."
 }, {
+  "command" : "addRemoveInPlaylist",
+  "user" : "carol19",
+  "timestamp" : 1715,
+  "message" : "The specified playlist does not exist."
+}, {
   "command" : "search",
   "user" : "carol19",
   "timestamp" : 1725,
   "message" : "Search returned 5 results",
-  "results" : [ "Don't", "Sad But True", "Maps", "Gimme Shelter", "Bohemian Rhapsody" ]
+  "results" : [ "Don't", "Start Me Up", "Sad But True", "Maps", "Gimme Shelter" ]
 }, {
   "command" : "select",
   "user" : "carol19",
   "timestamp" : 1730,
-  "message" : "Successfully selected Gimme Shelter."
+  "message" : "Successfully selected Maps."
 }, {
   "command" : "load",
   "user" : "carol19",
   "timestamp" : 1735,
   "message" : "Playback loaded successfully."
+}, {
+  "command" : "addRemoveInPlaylist",
+  "user" : "carol19",
+  "timestamp" : 1740,
+  "message" : "Successfully added to playlist."
 }, {
   "command" : "search",
   "user" : "carol19",
@@ -1068,6 +1358,11 @@
   "timestamp" : 1760,
   "message" : "Playback loaded successfully."
 }, {
+  "command" : "addRemoveInPlaylist",
+  "user" : "carol19",
+  "timestamp" : 1765,
+  "message" : "Successfully added to playlist."
+}, {
   "command" : "search",
   "user" : "carol19",
   "timestamp" : 1775,
@@ -1083,6 +1378,11 @@
   "user" : "carol19",
   "timestamp" : 1785,
   "message" : "Playback loaded successfully."
+}, {
+  "command" : "addRemoveInPlaylist",
+  "user" : "carol19",
+  "timestamp" : 1790,
+  "message" : "The specified playlist does not exist."
 }, {
   "command" : "search",
   "user" : "david27",
@@ -1100,6 +1400,11 @@
   "timestamp" : 1810,
   "message" : "Please select a source before attempting to load."
 }, {
+  "command" : "addRemoveInPlaylist",
+  "user" : "david27",
+  "timestamp" : 1815,
+  "message" : "Please load a source before adding to or removing from the playlist."
+}, {
   "command" : "search",
   "user" : "david27",
   "timestamp" : 1825,
@@ -1115,6 +1420,11 @@
   "user" : "david27",
   "timestamp" : 1835,
   "message" : "Playback loaded successfully."
+}, {
+  "command" : "addRemoveInPlaylist",
+  "user" : "david27",
+  "timestamp" : 1840,
+  "message" : "The specified playlist does not exist."
 }, {
   "command" : "search",
   "user" : "david27",
@@ -1132,11 +1442,16 @@
   "timestamp" : 1860,
   "message" : "Playback loaded successfully."
 }, {
+  "command" : "addRemoveInPlaylist",
+  "user" : "david27",
+  "timestamp" : 1865,
+  "message" : "The specified playlist does not exist."
+}, {
   "command" : "search",
   "user" : "david27",
   "timestamp" : 1875,
   "message" : "Search returned 5 results",
-  "results" : [ "Don't", "Sad But True", "Maps", "Gimme Shelter", "Bohemian Rhapsody" ]
+  "results" : [ "Don't", "Start Me Up", "Sad But True", "Maps", "Gimme Shelter" ]
 }, {
   "command" : "select",
   "user" : "david27",
@@ -1147,6 +1462,11 @@
   "user" : "david27",
   "timestamp" : 1885,
   "message" : "Playback loaded successfully."
+}, {
+  "command" : "addRemoveInPlaylist",
+  "user" : "david27",
+  "timestamp" : 1890,
+  "message" : "Successfully added to playlist."
 }, {
   "command" : "search",
   "user" : "david27",
@@ -1164,37 +1484,52 @@
   "timestamp" : 1910,
   "message" : "Playback loaded successfully."
 }, {
+  "command" : "addRemoveInPlaylist",
+  "user" : "david27",
+  "timestamp" : 1915,
+  "message" : "Successfully removed from playlist."
+}, {
   "command" : "search",
   "user" : "david27",
   "timestamp" : 1925,
   "message" : "Search returned 5 results",
-  "results" : [ "Don't", "Sad But True", "Maps", "Gimme Shelter", "Bohemian Rhapsody" ]
+  "results" : [ "Don't", "Start Me Up", "Sad But True", "Maps", "Gimme Shelter" ]
 }, {
   "command" : "select",
   "user" : "david27",
   "timestamp" : 1930,
-  "message" : "Successfully selected Sad But True."
+  "message" : "Successfully selected Start Me Up."
 }, {
   "command" : "load",
   "user" : "david27",
   "timestamp" : 1935,
   "message" : "Playback loaded successfully."
 }, {
+  "command" : "addRemoveInPlaylist",
+  "user" : "david27",
+  "timestamp" : 1940,
+  "message" : "The specified playlist does not exist."
+}, {
   "command" : "search",
   "user" : "david27",
   "timestamp" : 1950,
   "message" : "Search returned 5 results",
-  "results" : [ "Don't", "Sad But True", "Maps", "Gimme Shelter", "Bohemian Rhapsody" ]
+  "results" : [ "Don't", "Start Me Up", "Sad But True", "Maps", "Gimme Shelter" ]
 }, {
   "command" : "select",
   "user" : "david27",
   "timestamp" : 1955,
-  "message" : "Successfully selected Bohemian Rhapsody."
+  "message" : "Successfully selected Gimme Shelter."
 }, {
   "command" : "load",
   "user" : "david27",
   "timestamp" : 1960,
   "message" : "Playback loaded successfully."
+}, {
+  "command" : "addRemoveInPlaylist",
+  "user" : "david27",
+  "timestamp" : 1965,
+  "message" : "The specified playlist does not exist."
 }, {
   "command" : "search",
   "user" : "david27",
@@ -1212,11 +1547,16 @@
   "timestamp" : 1985,
   "message" : "Playback loaded successfully."
 }, {
+  "command" : "addRemoveInPlaylist",
+  "user" : "david27",
+  "timestamp" : 1990,
+  "message" : "Successfully added to playlist."
+}, {
   "command" : "search",
   "user" : "david27",
   "timestamp" : 2000,
   "message" : "Search returned 5 results",
-  "results" : [ "Don't", "Sad But True", "Maps", "Gimme Shelter", "Bohemian Rhapsody" ]
+  "results" : [ "Don't", "Start Me Up", "Sad But True", "Maps", "Gimme Shelter" ]
 }, {
   "command" : "select",
   "user" : "david27",
@@ -1228,21 +1568,31 @@
   "timestamp" : 2010,
   "message" : "Playback loaded successfully."
 }, {
+  "command" : "addRemoveInPlaylist",
+  "user" : "david27",
+  "timestamp" : 2015,
+  "message" : "Successfully added to playlist."
+}, {
   "command" : "search",
   "user" : "david27",
   "timestamp" : 2025,
   "message" : "Search returned 5 results",
-  "results" : [ "Don't", "Sad But True", "Maps", "Gimme Shelter", "Bohemian Rhapsody" ]
+  "results" : [ "Don't", "Start Me Up", "Sad But True", "Maps", "Gimme Shelter" ]
 }, {
   "command" : "select",
   "user" : "david27",
   "timestamp" : 2030,
-  "message" : "Successfully selected Bohemian Rhapsody."
+  "message" : "Successfully selected Gimme Shelter."
 }, {
   "command" : "load",
   "user" : "david27",
   "timestamp" : 2035,
   "message" : "Playback loaded successfully."
+}, {
+  "command" : "addRemoveInPlaylist",
+  "user" : "david27",
+  "timestamp" : 2040,
+  "message" : "The specified playlist does not exist."
 }, {
   "command" : "search",
   "user" : "david27",
@@ -1260,6 +1610,11 @@
   "timestamp" : 2060,
   "message" : "Playback loaded successfully."
 }, {
+  "command" : "addRemoveInPlaylist",
+  "user" : "david27",
+  "timestamp" : 2065,
+  "message" : "The specified playlist does not exist."
+}, {
   "command" : "search",
   "user" : "david27",
   "timestamp" : 2075,
@@ -1275,6 +1630,11 @@
   "user" : "david27",
   "timestamp" : 2085,
   "message" : "Playback loaded successfully."
+}, {
+  "command" : "addRemoveInPlaylist",
+  "user" : "david27",
+  "timestamp" : 2090,
+  "message" : "Successfully removed from playlist."
 }, {
   "command" : "search",
   "user" : "david27",
@@ -1292,6 +1652,11 @@
   "timestamp" : 2110,
   "message" : "Playback loaded successfully."
 }, {
+  "command" : "addRemoveInPlaylist",
+  "user" : "david27",
+  "timestamp" : 2115,
+  "message" : "Successfully removed from playlist."
+}, {
   "command" : "search",
   "user" : "david27",
   "timestamp" : 2125,
@@ -1308,6 +1673,11 @@
   "timestamp" : 2135,
   "message" : "Playback loaded successfully."
 }, {
+  "command" : "addRemoveInPlaylist",
+  "user" : "david27",
+  "timestamp" : 2140,
+  "message" : "The specified playlist does not exist."
+}, {
   "command" : "search",
   "user" : "david27",
   "timestamp" : 2150,
@@ -1322,7 +1692,12 @@
   "command" : "load",
   "user" : "david27",
   "timestamp" : 2160,
-  "message" : "Playback loaded successfully."
+  "message" : "Please select a source before attempting to load."
+}, {
+  "command" : "addRemoveInPlaylist",
+  "user" : "david27",
+  "timestamp" : 2165,
+  "message" : "Please load a source before adding to or removing from the playlist."
 }, {
   "command" : "search",
   "user" : "david27",
@@ -1338,7 +1713,12 @@
   "command" : "load",
   "user" : "david27",
   "timestamp" : 2185,
-  "message" : "Playback loaded successfully."
+  "message" : "Please select a source before attempting to load."
+}, {
+  "command" : "addRemoveInPlaylist",
+  "user" : "david27",
+  "timestamp" : 2190,
+  "message" : "Please load a source before adding to or removing from the playlist."
 }, {
   "command" : "search",
   "user" : "david27",
@@ -1356,6 +1736,11 @@
   "timestamp" : 2210,
   "message" : "Playback loaded successfully."
 }, {
+  "command" : "addRemoveInPlaylist",
+  "user" : "david27",
+  "timestamp" : 2215,
+  "message" : "Successfully added to playlist."
+}, {
   "command" : "search",
   "user" : "david27",
   "timestamp" : 2225,
@@ -1370,23 +1755,33 @@
   "command" : "load",
   "user" : "david27",
   "timestamp" : 2235,
-  "message" : "Playback loaded successfully."
+  "message" : "Please select a source before attempting to load."
+}, {
+  "command" : "addRemoveInPlaylist",
+  "user" : "david27",
+  "timestamp" : 2240,
+  "message" : "Please load a source before adding to or removing from the playlist."
 }, {
   "command" : "search",
   "user" : "david27",
   "timestamp" : 2250,
   "message" : "Search returned 5 results",
-  "results" : [ "Don't", "Sad But True", "Maps", "Gimme Shelter", "Bohemian Rhapsody" ]
+  "results" : [ "Don't", "Start Me Up", "Sad But True", "Maps", "Gimme Shelter" ]
 }, {
   "command" : "select",
   "user" : "david27",
   "timestamp" : 2255,
-  "message" : "Successfully selected Maps."
+  "message" : "Successfully selected Sad But True."
 }, {
   "command" : "load",
   "user" : "david27",
   "timestamp" : 2260,
   "message" : "Playback loaded successfully."
+}, {
+  "command" : "addRemoveInPlaylist",
+  "user" : "david27",
+  "timestamp" : 2265,
+  "message" : "Successfully added to playlist."
 }, {
   "command" : "search",
   "user" : "david27",
@@ -1404,6 +1799,11 @@
   "timestamp" : 2285,
   "message" : "Playback loaded successfully."
 }, {
+  "command" : "addRemoveInPlaylist",
+  "user" : "david27",
+  "timestamp" : 2290,
+  "message" : "Successfully added to playlist."
+}, {
   "command" : "search",
   "user" : "emily30",
   "timestamp" : 2300,
@@ -1419,6 +1819,11 @@
   "user" : "emily30",
   "timestamp" : 2310,
   "message" : "Playback loaded successfully."
+}, {
+  "command" : "addRemoveInPlaylist",
+  "user" : "emily30",
+  "timestamp" : 2315,
+  "message" : "Successfully added to playlist."
 }, {
   "command" : "search",
   "user" : "emily30",
@@ -1436,6 +1841,11 @@
   "timestamp" : 2335,
   "message" : "Playback loaded successfully."
 }, {
+  "command" : "addRemoveInPlaylist",
+  "user" : "emily30",
+  "timestamp" : 2340,
+  "message" : "The specified playlist does not exist."
+}, {
   "command" : "search",
   "user" : "emily30",
   "timestamp" : 2350,
@@ -1451,6 +1861,11 @@
   "user" : "emily30",
   "timestamp" : 2360,
   "message" : "Playback loaded successfully."
+}, {
+  "command" : "addRemoveInPlaylist",
+  "user" : "emily30",
+  "timestamp" : 2365,
+  "message" : "The specified playlist does not exist."
 }, {
   "command" : "search",
   "user" : "emily30",
@@ -1468,6 +1883,11 @@
   "timestamp" : 2385,
   "message" : "Playback loaded successfully."
 }, {
+  "command" : "addRemoveInPlaylist",
+  "user" : "emily30",
+  "timestamp" : 2390,
+  "message" : "Successfully added to playlist."
+}, {
   "command" : "search",
   "user" : "emily30",
   "timestamp" : 2400,
@@ -1483,6 +1903,11 @@
   "user" : "emily30",
   "timestamp" : 2410,
   "message" : "Playback loaded successfully."
+}, {
+  "command" : "addRemoveInPlaylist",
+  "user" : "emily30",
+  "timestamp" : 2415,
+  "message" : "The specified playlist does not exist."
 }, {
   "command" : "search",
   "user" : "emily30",
@@ -1500,6 +1925,11 @@
   "timestamp" : 2435,
   "message" : "Playback loaded successfully."
 }, {
+  "command" : "addRemoveInPlaylist",
+  "user" : "emily30",
+  "timestamp" : 2440,
+  "message" : "Successfully added to playlist."
+}, {
   "command" : "search",
   "user" : "emily30",
   "timestamp" : 2450,
@@ -1516,6 +1946,11 @@
   "timestamp" : 2460,
   "message" : "Playback loaded successfully."
 }, {
+  "command" : "addRemoveInPlaylist",
+  "user" : "emily30",
+  "timestamp" : 2465,
+  "message" : "The specified playlist does not exist."
+}, {
   "command" : "search",
   "user" : "emily30",
   "timestamp" : 2475,
@@ -1530,7 +1965,12 @@
   "command" : "load",
   "user" : "emily30",
   "timestamp" : 2485,
-  "message" : "Playback loaded successfully."
+  "message" : "Please select a source before attempting to load."
+}, {
+  "command" : "addRemoveInPlaylist",
+  "user" : "emily30",
+  "timestamp" : 2490,
+  "message" : "Please load a source before adding to or removing from the playlist."
 }, {
   "command" : "search",
   "user" : "emily30",
@@ -1548,6 +1988,11 @@
   "timestamp" : 2510,
   "message" : "Playback loaded successfully."
 }, {
+  "command" : "addRemoveInPlaylist",
+  "user" : "emily30",
+  "timestamp" : 2515,
+  "message" : "Successfully added to playlist."
+}, {
   "command" : "search",
   "user" : "emily30",
   "timestamp" : 2525,
@@ -1563,6 +2008,11 @@
   "user" : "emily30",
   "timestamp" : 2535,
   "message" : "Playback loaded successfully."
+}, {
+  "command" : "addRemoveInPlaylist",
+  "user" : "emily30",
+  "timestamp" : 2540,
+  "message" : "Successfully added to playlist."
 }, {
   "command" : "search",
   "user" : "emily30",
@@ -1580,6 +2030,11 @@
   "timestamp" : 2560,
   "message" : "Playback loaded successfully."
 }, {
+  "command" : "addRemoveInPlaylist",
+  "user" : "emily30",
+  "timestamp" : 2565,
+  "message" : "Successfully removed from playlist."
+}, {
   "command" : "search",
   "user" : "emily30",
   "timestamp" : 2575,
@@ -1595,6 +2050,11 @@
   "user" : "emily30",
   "timestamp" : 2585,
   "message" : "Playback loaded successfully."
+}, {
+  "command" : "addRemoveInPlaylist",
+  "user" : "emily30",
+  "timestamp" : 2590,
+  "message" : "The specified playlist does not exist."
 }, {
   "command" : "search",
   "user" : "emily30",
@@ -1612,6 +2072,11 @@
   "timestamp" : 2610,
   "message" : "Playback loaded successfully."
 }, {
+  "command" : "addRemoveInPlaylist",
+  "user" : "emily30",
+  "timestamp" : 2615,
+  "message" : "The specified playlist does not exist."
+}, {
   "command" : "search",
   "user" : "emily30",
   "timestamp" : 2625,
@@ -1627,6 +2092,11 @@
   "user" : "emily30",
   "timestamp" : 2635,
   "message" : "Playback loaded successfully."
+}, {
+  "command" : "addRemoveInPlaylist",
+  "user" : "emily30",
+  "timestamp" : 2640,
+  "message" : "Successfully removed from playlist."
 }, {
   "command" : "search",
   "user" : "emily30",
@@ -1644,6 +2114,11 @@
   "timestamp" : 2660,
   "message" : "Playback loaded successfully."
 }, {
+  "command" : "addRemoveInPlaylist",
+  "user" : "emily30",
+  "timestamp" : 2665,
+  "message" : "Successfully added to playlist."
+}, {
   "command" : "search",
   "user" : "emily30",
   "timestamp" : 2675,
@@ -1659,6 +2134,11 @@
   "user" : "emily30",
   "timestamp" : 2685,
   "message" : "Playback loaded successfully."
+}, {
+  "command" : "addRemoveInPlaylist",
+  "user" : "emily30",
+  "timestamp" : 2690,
+  "message" : "The specified playlist does not exist."
 }, {
   "command" : "search",
   "user" : "emily30",
@@ -1676,6 +2156,11 @@
   "timestamp" : 2710,
   "message" : "Playback loaded successfully."
 }, {
+  "command" : "addRemoveInPlaylist",
+  "user" : "emily30",
+  "timestamp" : 2715,
+  "message" : "Successfully added to playlist."
+}, {
   "command" : "search",
   "user" : "emily30",
   "timestamp" : 2725,
@@ -1691,6 +2176,11 @@
   "user" : "emily30",
   "timestamp" : 2735,
   "message" : "Playback loaded successfully."
+}, {
+  "command" : "addRemoveInPlaylist",
+  "user" : "emily30",
+  "timestamp" : 2740,
+  "message" : "The specified playlist does not exist."
 }, {
   "command" : "search",
   "user" : "emily30",
@@ -1708,6 +2198,11 @@
   "timestamp" : 2760,
   "message" : "Playback loaded successfully."
 }, {
+  "command" : "addRemoveInPlaylist",
+  "user" : "emily30",
+  "timestamp" : 2765,
+  "message" : "Successfully added to playlist."
+}, {
   "command" : "search",
   "user" : "emily30",
   "timestamp" : 2775,
@@ -1722,7 +2217,12 @@
   "command" : "load",
   "user" : "emily30",
   "timestamp" : 2785,
-  "message" : "Playback loaded successfully."
+  "message" : "Please select a source before attempting to load."
+}, {
+  "command" : "addRemoveInPlaylist",
+  "user" : "emily30",
+  "timestamp" : 2790,
+  "message" : "Please load a source before adding to or removing from the playlist."
 }, {
   "command" : "search",
   "user" : "frank21",
@@ -1740,6 +2240,11 @@
   "timestamp" : 2810,
   "message" : "Playback loaded successfully."
 }, {
+  "command" : "addRemoveInPlaylist",
+  "user" : "frank21",
+  "timestamp" : 2815,
+  "message" : "The specified playlist does not exist."
+}, {
   "command" : "search",
   "user" : "frank21",
   "timestamp" : 2825,
@@ -1756,21 +2261,31 @@
   "timestamp" : 2835,
   "message" : "Playback loaded successfully."
 }, {
+  "command" : "addRemoveInPlaylist",
+  "user" : "frank21",
+  "timestamp" : 2840,
+  "message" : "Successfully added to playlist."
+}, {
   "command" : "search",
   "user" : "frank21",
   "timestamp" : 2850,
   "message" : "Search returned 5 results",
-  "results" : [ "Don't", "Sad But True", "Maps", "Gimme Shelter", "Bohemian Rhapsody" ]
+  "results" : [ "Don't", "Start Me Up", "Sad But True", "Maps", "Gimme Shelter" ]
 }, {
   "command" : "select",
   "user" : "frank21",
   "timestamp" : 2855,
-  "message" : "Successfully selected Gimme Shelter."
+  "message" : "Successfully selected Maps."
 }, {
   "command" : "load",
   "user" : "frank21",
   "timestamp" : 2860,
   "message" : "Playback loaded successfully."
+}, {
+  "command" : "addRemoveInPlaylist",
+  "user" : "frank21",
+  "timestamp" : 2865,
+  "message" : "Successfully removed from playlist."
 }, {
   "command" : "search",
   "user" : "frank21",
@@ -1788,6 +2303,11 @@
   "timestamp" : 2885,
   "message" : "Playback loaded successfully."
 }, {
+  "command" : "addRemoveInPlaylist",
+  "user" : "frank21",
+  "timestamp" : 2890,
+  "message" : "The specified playlist does not exist."
+}, {
   "command" : "search",
   "user" : "frank21",
   "timestamp" : 2900,
@@ -1803,6 +2323,11 @@
   "user" : "frank21",
   "timestamp" : 2910,
   "message" : "Playback loaded successfully."
+}, {
+  "command" : "addRemoveInPlaylist",
+  "user" : "frank21",
+  "timestamp" : 2915,
+  "message" : "Successfully added to playlist."
 }, {
   "command" : "search",
   "user" : "frank21",
@@ -1820,6 +2345,11 @@
   "timestamp" : 2935,
   "message" : "Playback loaded successfully."
 }, {
+  "command" : "addRemoveInPlaylist",
+  "user" : "frank21",
+  "timestamp" : 2940,
+  "message" : "The specified playlist does not exist."
+}, {
   "command" : "search",
   "user" : "frank21",
   "timestamp" : 2950,
@@ -1834,7 +2364,12 @@
   "command" : "load",
   "user" : "frank21",
   "timestamp" : 2960,
-  "message" : "Playback loaded successfully."
+  "message" : "Please select a source before attempting to load."
+}, {
+  "command" : "addRemoveInPlaylist",
+  "user" : "frank21",
+  "timestamp" : 2965,
+  "message" : "Please load a source before adding to or removing from the playlist."
 }, {
   "command" : "search",
   "user" : "frank21",
@@ -1850,7 +2385,12 @@
   "command" : "load",
   "user" : "frank21",
   "timestamp" : 2985,
-  "message" : "Playback loaded successfully."
+  "message" : "Please select a source before attempting to load."
+}, {
+  "command" : "addRemoveInPlaylist",
+  "user" : "frank21",
+  "timestamp" : 2990,
+  "message" : "Please load a source before adding to or removing from the playlist."
 }, {
   "command" : "search",
   "user" : "frank21",
@@ -1866,7 +2406,12 @@
   "command" : "load",
   "user" : "frank21",
   "timestamp" : 3010,
-  "message" : "Playback loaded successfully."
+  "message" : "Please select a source before attempting to load."
+}, {
+  "command" : "addRemoveInPlaylist",
+  "user" : "frank21",
+  "timestamp" : 3015,
+  "message" : "Please load a source before adding to or removing from the playlist."
 }, {
   "command" : "search",
   "user" : "frank21",
@@ -1884,11 +2429,16 @@
   "timestamp" : 3035,
   "message" : "Playback loaded successfully."
 }, {
+  "command" : "addRemoveInPlaylist",
+  "user" : "frank21",
+  "timestamp" : 3040,
+  "message" : "The specified playlist does not exist."
+}, {
   "command" : "search",
   "user" : "frank21",
   "timestamp" : 3050,
   "message" : "Search returned 5 results",
-  "results" : [ "Don't", "Sad But True", "Maps", "Gimme Shelter", "Bohemian Rhapsody" ]
+  "results" : [ "Don't", "Start Me Up", "Sad But True", "Maps", "Gimme Shelter" ]
 }, {
   "command" : "select",
   "user" : "frank21",
@@ -1899,6 +2449,11 @@
   "user" : "frank21",
   "timestamp" : 3060,
   "message" : "Playback loaded successfully."
+}, {
+  "command" : "addRemoveInPlaylist",
+  "user" : "frank21",
+  "timestamp" : 3065,
+  "message" : "The specified playlist does not exist."
 }, {
   "command" : "search",
   "user" : "frank21",
@@ -1916,6 +2471,11 @@
   "timestamp" : 3085,
   "message" : "Playback loaded successfully."
 }, {
+  "command" : "addRemoveInPlaylist",
+  "user" : "frank21",
+  "timestamp" : 3090,
+  "message" : "The specified playlist does not exist."
+}, {
   "command" : "search",
   "user" : "frank21",
   "timestamp" : 3100,
@@ -1931,6 +2491,11 @@
   "user" : "frank21",
   "timestamp" : 3110,
   "message" : "Playback loaded successfully."
+}, {
+  "command" : "addRemoveInPlaylist",
+  "user" : "frank21",
+  "timestamp" : 3115,
+  "message" : "Successfully added to playlist."
 }, {
   "command" : "search",
   "user" : "frank21",
@@ -1948,6 +2513,11 @@
   "timestamp" : 3135,
   "message" : "Playback loaded successfully."
 }, {
+  "command" : "addRemoveInPlaylist",
+  "user" : "frank21",
+  "timestamp" : 3140,
+  "message" : "The specified playlist does not exist."
+}, {
   "command" : "search",
   "user" : "frank21",
   "timestamp" : 3150,
@@ -1963,6 +2533,11 @@
   "user" : "frank21",
   "timestamp" : 3160,
   "message" : "Playback loaded successfully."
+}, {
+  "command" : "addRemoveInPlaylist",
+  "user" : "frank21",
+  "timestamp" : 3165,
+  "message" : "The specified playlist does not exist."
 }, {
   "command" : "search",
   "user" : "frank21",
@@ -1980,6 +2555,11 @@
   "timestamp" : 3185,
   "message" : "Playback loaded successfully."
 }, {
+  "command" : "addRemoveInPlaylist",
+  "user" : "frank21",
+  "timestamp" : 3190,
+  "message" : "The specified playlist does not exist."
+}, {
   "command" : "search",
   "user" : "frank21",
   "timestamp" : 3200,
@@ -1996,6 +2576,11 @@
   "timestamp" : 3210,
   "message" : "Playback loaded successfully."
 }, {
+  "command" : "addRemoveInPlaylist",
+  "user" : "frank21",
+  "timestamp" : 3215,
+  "message" : "Successfully added to playlist."
+}, {
   "command" : "search",
   "user" : "frank21",
   "timestamp" : 3225,
@@ -2010,7 +2595,12 @@
   "command" : "load",
   "user" : "frank21",
   "timestamp" : 3235,
-  "message" : "Playback loaded successfully."
+  "message" : "Please select a source before attempting to load."
+}, {
+  "command" : "addRemoveInPlaylist",
+  "user" : "frank21",
+  "timestamp" : 3240,
+  "message" : "Please load a source before adding to or removing from the playlist."
 }, {
   "command" : "search",
   "user" : "frank21",
@@ -2028,6 +2618,11 @@
   "timestamp" : 3260,
   "message" : "Playback loaded successfully."
 }, {
+  "command" : "addRemoveInPlaylist",
+  "user" : "frank21",
+  "timestamp" : 3265,
+  "message" : "Successfully added to playlist."
+}, {
   "command" : "search",
   "user" : "frank21",
   "timestamp" : 3275,
@@ -2042,7 +2637,12 @@
   "command" : "load",
   "user" : "frank21",
   "timestamp" : 3285,
-  "message" : "Playback loaded successfully."
+  "message" : "Please select a source before attempting to load."
+}, {
+  "command" : "addRemoveInPlaylist",
+  "user" : "frank21",
+  "timestamp" : 3290,
+  "message" : "Please load a source before adding to or removing from the playlist."
 }, {
   "command" : "search",
   "user" : "grace25",
@@ -2060,6 +2660,11 @@
   "timestamp" : 3310,
   "message" : "Please select a source before attempting to load."
 }, {
+  "command" : "addRemoveInPlaylist",
+  "user" : "grace25",
+  "timestamp" : 3315,
+  "message" : "Please load a source before adding to or removing from the playlist."
+}, {
   "command" : "search",
   "user" : "grace25",
   "timestamp" : 3325,
@@ -2075,6 +2680,11 @@
   "user" : "grace25",
   "timestamp" : 3335,
   "message" : "Please select a source before attempting to load."
+}, {
+  "command" : "addRemoveInPlaylist",
+  "user" : "grace25",
+  "timestamp" : 3340,
+  "message" : "Please load a source before adding to or removing from the playlist."
 }, {
   "command" : "search",
   "user" : "grace25",
@@ -2092,6 +2702,11 @@
   "timestamp" : 3360,
   "message" : "Playback loaded successfully."
 }, {
+  "command" : "addRemoveInPlaylist",
+  "user" : "grace25",
+  "timestamp" : 3365,
+  "message" : "The specified playlist does not exist."
+}, {
   "command" : "search",
   "user" : "grace25",
   "timestamp" : 3375,
@@ -2108,6 +2723,11 @@
   "timestamp" : 3385,
   "message" : "Playback loaded successfully."
 }, {
+  "command" : "addRemoveInPlaylist",
+  "user" : "grace25",
+  "timestamp" : 3390,
+  "message" : "The specified playlist does not exist."
+}, {
   "command" : "search",
   "user" : "grace25",
   "timestamp" : 3400,
@@ -2122,7 +2742,12 @@
   "command" : "load",
   "user" : "grace25",
   "timestamp" : 3410,
-  "message" : "Playback loaded successfully."
+  "message" : "Please select a source before attempting to load."
+}, {
+  "command" : "addRemoveInPlaylist",
+  "user" : "grace25",
+  "timestamp" : 3415,
+  "message" : "Please load a source before adding to or removing from the playlist."
 }, {
   "command" : "search",
   "user" : "grace25",
@@ -2140,6 +2765,11 @@
   "timestamp" : 3435,
   "message" : "Playback loaded successfully."
 }, {
+  "command" : "addRemoveInPlaylist",
+  "user" : "grace25",
+  "timestamp" : 3440,
+  "message" : "The specified playlist does not exist."
+}, {
   "command" : "search",
   "user" : "grace25",
   "timestamp" : 3450,
@@ -2154,7 +2784,12 @@
   "command" : "load",
   "user" : "grace25",
   "timestamp" : 3460,
-  "message" : "Playback loaded successfully."
+  "message" : "Please select a source before attempting to load."
+}, {
+  "command" : "addRemoveInPlaylist",
+  "user" : "grace25",
+  "timestamp" : 3465,
+  "message" : "Please load a source before adding to or removing from the playlist."
 }, {
   "command" : "search",
   "user" : "grace25",
@@ -2172,6 +2807,11 @@
   "timestamp" : 3485,
   "message" : "Playback loaded successfully."
 }, {
+  "command" : "addRemoveInPlaylist",
+  "user" : "grace25",
+  "timestamp" : 3490,
+  "message" : "The specified playlist does not exist."
+}, {
   "command" : "search",
   "user" : "grace25",
   "timestamp" : 3500,
@@ -2186,23 +2826,33 @@
   "command" : "load",
   "user" : "grace25",
   "timestamp" : 3510,
-  "message" : "Playback loaded successfully."
+  "message" : "Please select a source before attempting to load."
+}, {
+  "command" : "addRemoveInPlaylist",
+  "user" : "grace25",
+  "timestamp" : 3515,
+  "message" : "Please load a source before adding to or removing from the playlist."
 }, {
   "command" : "search",
   "user" : "grace25",
   "timestamp" : 3525,
   "message" : "Search returned 5 results",
-  "results" : [ "Don't", "Sad But True", "Maps", "Gimme Shelter", "Bohemian Rhapsody" ]
+  "results" : [ "Don't", "Start Me Up", "Sad But True", "Maps", "Gimme Shelter" ]
 }, {
   "command" : "select",
   "user" : "grace25",
   "timestamp" : 3530,
-  "message" : "Successfully selected Gimme Shelter."
+  "message" : "Successfully selected Maps."
 }, {
   "command" : "load",
   "user" : "grace25",
   "timestamp" : 3535,
   "message" : "Playback loaded successfully."
+}, {
+  "command" : "addRemoveInPlaylist",
+  "user" : "grace25",
+  "timestamp" : 3540,
+  "message" : "Successfully added to playlist."
 }, {
   "command" : "search",
   "user" : "grace25",
@@ -2218,7 +2868,12 @@
   "command" : "load",
   "user" : "grace25",
   "timestamp" : 3560,
-  "message" : "Playback loaded successfully."
+  "message" : "Please select a source before attempting to load."
+}, {
+  "command" : "addRemoveInPlaylist",
+  "user" : "grace25",
+  "timestamp" : 3565,
+  "message" : "Please load a source before adding to or removing from the playlist."
 }, {
   "command" : "search",
   "user" : "grace25",
@@ -2236,6 +2891,11 @@
   "timestamp" : 3585,
   "message" : "Playback loaded successfully."
 }, {
+  "command" : "addRemoveInPlaylist",
+  "user" : "grace25",
+  "timestamp" : 3590,
+  "message" : "Successfully added to playlist."
+}, {
   "command" : "search",
   "user" : "grace25",
   "timestamp" : 3600,
@@ -2251,6 +2911,11 @@
   "user" : "grace25",
   "timestamp" : 3610,
   "message" : "Playback loaded successfully."
+}, {
+  "command" : "addRemoveInPlaylist",
+  "user" : "grace25",
+  "timestamp" : 3615,
+  "message" : "The specified playlist does not exist."
 }, {
   "command" : "search",
   "user" : "grace25",
@@ -2268,6 +2933,11 @@
   "timestamp" : 3635,
   "message" : "Playback loaded successfully."
 }, {
+  "command" : "addRemoveInPlaylist",
+  "user" : "grace25",
+  "timestamp" : 3640,
+  "message" : "Successfully added to playlist."
+}, {
   "command" : "search",
   "user" : "grace25",
   "timestamp" : 3650,
@@ -2283,6 +2953,11 @@
   "user" : "grace25",
   "timestamp" : 3660,
   "message" : "Playback loaded successfully."
+}, {
+  "command" : "addRemoveInPlaylist",
+  "user" : "grace25",
+  "timestamp" : 3665,
+  "message" : "The specified playlist does not exist."
 }, {
   "command" : "search",
   "user" : "grace25",
@@ -2300,6 +2975,11 @@
   "timestamp" : 3685,
   "message" : "Playback loaded successfully."
 }, {
+  "command" : "addRemoveInPlaylist",
+  "user" : "grace25",
+  "timestamp" : 3690,
+  "message" : "Successfully added to playlist."
+}, {
   "command" : "search",
   "user" : "grace25",
   "timestamp" : 3700,
@@ -2315,6 +2995,11 @@
   "user" : "grace25",
   "timestamp" : 3710,
   "message" : "Playback loaded successfully."
+}, {
+  "command" : "addRemoveInPlaylist",
+  "user" : "grace25",
+  "timestamp" : 3715,
+  "message" : "The specified playlist does not exist."
 }, {
   "command" : "search",
   "user" : "grace25",
@@ -2332,6 +3017,11 @@
   "timestamp" : 3735,
   "message" : "Playback loaded successfully."
 }, {
+  "command" : "addRemoveInPlaylist",
+  "user" : "grace25",
+  "timestamp" : 3740,
+  "message" : "The specified playlist does not exist."
+}, {
   "command" : "search",
   "user" : "grace25",
   "timestamp" : 3750,
@@ -2346,7 +3036,12 @@
   "command" : "load",
   "user" : "grace25",
   "timestamp" : 3760,
-  "message" : "Playback loaded successfully."
+  "message" : "Please select a source before attempting to load."
+}, {
+  "command" : "addRemoveInPlaylist",
+  "user" : "grace25",
+  "timestamp" : 3765,
+  "message" : "Please load a source before adding to or removing from the playlist."
 }, {
   "command" : "search",
   "user" : "grace25",
@@ -2364,6 +3059,11 @@
   "timestamp" : 3785,
   "message" : "Playback loaded successfully."
 }, {
+  "command" : "addRemoveInPlaylist",
+  "user" : "grace25",
+  "timestamp" : 3790,
+  "message" : "Successfully added to playlist."
+}, {
   "command" : "search",
   "user" : "henry26",
   "timestamp" : 3800,
@@ -2380,21 +3080,31 @@
   "timestamp" : 3810,
   "message" : "Please select a source before attempting to load."
 }, {
+  "command" : "addRemoveInPlaylist",
+  "user" : "henry26",
+  "timestamp" : 3815,
+  "message" : "Please load a source before adding to or removing from the playlist."
+}, {
   "command" : "search",
   "user" : "henry26",
   "timestamp" : 3825,
   "message" : "Search returned 5 results",
-  "results" : [ "Don't", "Sad But True", "Maps", "Gimme Shelter", "Bohemian Rhapsody" ]
+  "results" : [ "Don't", "Start Me Up", "Sad But True", "Maps", "Gimme Shelter" ]
 }, {
   "command" : "select",
   "user" : "henry26",
   "timestamp" : 3830,
-  "message" : "Successfully selected Maps."
+  "message" : "Successfully selected Sad But True."
 }, {
   "command" : "load",
   "user" : "henry26",
   "timestamp" : 3835,
   "message" : "Playback loaded successfully."
+}, {
+  "command" : "addRemoveInPlaylist",
+  "user" : "henry26",
+  "timestamp" : 3840,
+  "message" : "Successfully added to playlist."
 }, {
   "command" : "search",
   "user" : "henry26",
@@ -2412,6 +3122,11 @@
   "timestamp" : 3860,
   "message" : "Playback loaded successfully."
 }, {
+  "command" : "addRemoveInPlaylist",
+  "user" : "henry26",
+  "timestamp" : 3865,
+  "message" : "Successfully added to playlist."
+}, {
   "command" : "search",
   "user" : "henry26",
   "timestamp" : 3875,
@@ -2427,6 +3142,11 @@
   "user" : "henry26",
   "timestamp" : 3885,
   "message" : "Playback loaded successfully."
+}, {
+  "command" : "addRemoveInPlaylist",
+  "user" : "henry26",
+  "timestamp" : 3890,
+  "message" : "The specified playlist does not exist."
 }, {
   "command" : "search",
   "user" : "henry26",
@@ -2444,11 +3164,16 @@
   "timestamp" : 3910,
   "message" : "Playback loaded successfully."
 }, {
+  "command" : "addRemoveInPlaylist",
+  "user" : "henry26",
+  "timestamp" : 3915,
+  "message" : "The specified playlist does not exist."
+}, {
   "command" : "search",
   "user" : "henry26",
   "timestamp" : 3925,
   "message" : "Search returned 5 results",
-  "results" : [ "Don't", "Sad But True", "Maps", "Gimme Shelter", "Bohemian Rhapsody" ]
+  "results" : [ "Don't", "Start Me Up", "Sad But True", "Maps", "Gimme Shelter" ]
 }, {
   "command" : "select",
   "user" : "henry26",
@@ -2459,6 +3184,11 @@
   "user" : "henry26",
   "timestamp" : 3935,
   "message" : "Playback loaded successfully."
+}, {
+  "command" : "addRemoveInPlaylist",
+  "user" : "henry26",
+  "timestamp" : 3940,
+  "message" : "The specified playlist does not exist."
 }, {
   "command" : "search",
   "user" : "henry26",
@@ -2476,6 +3206,11 @@
   "timestamp" : 3960,
   "message" : "Playback loaded successfully."
 }, {
+  "command" : "addRemoveInPlaylist",
+  "user" : "henry26",
+  "timestamp" : 3965,
+  "message" : "Successfully removed from playlist."
+}, {
   "command" : "search",
   "user" : "henry26",
   "timestamp" : 3975,
@@ -2492,21 +3227,31 @@
   "timestamp" : 3985,
   "message" : "Playback loaded successfully."
 }, {
+  "command" : "addRemoveInPlaylist",
+  "user" : "henry26",
+  "timestamp" : 3990,
+  "message" : "The specified playlist does not exist."
+}, {
   "command" : "search",
   "user" : "henry26",
   "timestamp" : 4000,
   "message" : "Search returned 5 results",
-  "results" : [ "Don't", "Sad But True", "Maps", "Gimme Shelter", "Bohemian Rhapsody" ]
+  "results" : [ "Don't", "Start Me Up", "Sad But True", "Maps", "Gimme Shelter" ]
 }, {
   "command" : "select",
   "user" : "henry26",
   "timestamp" : 4005,
-  "message" : "Successfully selected Bohemian Rhapsody."
+  "message" : "Successfully selected Gimme Shelter."
 }, {
   "command" : "load",
   "user" : "henry26",
   "timestamp" : 4010,
   "message" : "Playback loaded successfully."
+}, {
+  "command" : "addRemoveInPlaylist",
+  "user" : "henry26",
+  "timestamp" : 4015,
+  "message" : "Successfully added to playlist."
 }, {
   "command" : "search",
   "user" : "henry26",
@@ -2524,6 +3269,11 @@
   "timestamp" : 4035,
   "message" : "Playback loaded successfully."
 }, {
+  "command" : "addRemoveInPlaylist",
+  "user" : "henry26",
+  "timestamp" : 4040,
+  "message" : "Successfully added to playlist."
+}, {
   "command" : "search",
   "user" : "henry26",
   "timestamp" : 4050,
@@ -2540,21 +3290,31 @@
   "timestamp" : 4060,
   "message" : "Playback loaded successfully."
 }, {
+  "command" : "addRemoveInPlaylist",
+  "user" : "henry26",
+  "timestamp" : 4065,
+  "message" : "The specified playlist does not exist."
+}, {
   "command" : "search",
   "user" : "henry26",
   "timestamp" : 4075,
   "message" : "Search returned 5 results",
-  "results" : [ "Don't", "Sad But True", "Maps", "Gimme Shelter", "Bohemian Rhapsody" ]
+  "results" : [ "Don't", "Start Me Up", "Sad But True", "Maps", "Gimme Shelter" ]
 }, {
   "command" : "select",
   "user" : "henry26",
   "timestamp" : 4080,
-  "message" : "Successfully selected Gimme Shelter."
+  "message" : "Successfully selected Maps."
 }, {
   "command" : "load",
   "user" : "henry26",
   "timestamp" : 4085,
   "message" : "Playback loaded successfully."
+}, {
+  "command" : "addRemoveInPlaylist",
+  "user" : "henry26",
+  "timestamp" : 4090,
+  "message" : "The specified playlist does not exist."
 }, {
   "command" : "search",
   "user" : "henry26",
@@ -2572,6 +3332,11 @@
   "timestamp" : 4110,
   "message" : "Playback loaded successfully."
 }, {
+  "command" : "addRemoveInPlaylist",
+  "user" : "henry26",
+  "timestamp" : 4115,
+  "message" : "Successfully removed from playlist."
+}, {
   "command" : "search",
   "user" : "henry26",
   "timestamp" : 4125,
@@ -2587,6 +3352,11 @@
   "user" : "henry26",
   "timestamp" : 4135,
   "message" : "Playback loaded successfully."
+}, {
+  "command" : "addRemoveInPlaylist",
+  "user" : "henry26",
+  "timestamp" : 4140,
+  "message" : "Successfully added to playlist."
 }, {
   "command" : "search",
   "user" : "henry26",
@@ -2604,6 +3374,11 @@
   "timestamp" : 4160,
   "message" : "Playback loaded successfully."
 }, {
+  "command" : "addRemoveInPlaylist",
+  "user" : "henry26",
+  "timestamp" : 4165,
+  "message" : "The specified playlist does not exist."
+}, {
   "command" : "search",
   "user" : "henry26",
   "timestamp" : 4175,
@@ -2618,7 +3393,12 @@
   "command" : "load",
   "user" : "henry26",
   "timestamp" : 4185,
-  "message" : "Playback loaded successfully."
+  "message" : "Please select a source before attempting to load."
+}, {
+  "command" : "addRemoveInPlaylist",
+  "user" : "henry26",
+  "timestamp" : 4190,
+  "message" : "Please load a source before adding to or removing from the playlist."
 }, {
   "command" : "search",
   "user" : "henry26",
@@ -2636,6 +3416,11 @@
   "timestamp" : 4210,
   "message" : "Playback loaded successfully."
 }, {
+  "command" : "addRemoveInPlaylist",
+  "user" : "henry26",
+  "timestamp" : 4215,
+  "message" : "Successfully removed from playlist."
+}, {
   "command" : "search",
   "user" : "henry26",
   "timestamp" : 4225,
@@ -2650,7 +3435,12 @@
   "command" : "load",
   "user" : "henry26",
   "timestamp" : 4235,
-  "message" : "Playback loaded successfully."
+  "message" : "Please select a source before attempting to load."
+}, {
+  "command" : "addRemoveInPlaylist",
+  "user" : "henry26",
+  "timestamp" : 4240,
+  "message" : "Please load a source before adding to or removing from the playlist."
 }, {
   "command" : "search",
   "user" : "henry26",
@@ -2668,6 +3458,11 @@
   "timestamp" : 4260,
   "message" : "Playback loaded successfully."
 }, {
+  "command" : "addRemoveInPlaylist",
+  "user" : "henry26",
+  "timestamp" : 4265,
+  "message" : "The specified playlist does not exist."
+}, {
   "command" : "search",
   "user" : "henry26",
   "timestamp" : 4275,
@@ -2683,6 +3478,11 @@
   "user" : "henry26",
   "timestamp" : 4285,
   "message" : "Playback loaded successfully."
+}, {
+  "command" : "addRemoveInPlaylist",
+  "user" : "henry26",
+  "timestamp" : 4290,
+  "message" : "Successfully added to playlist."
 }, {
   "command" : "search",
   "user" : "irene33",
@@ -2700,21 +3500,31 @@
   "timestamp" : 4310,
   "message" : "Please select a source before attempting to load."
 }, {
+  "command" : "addRemoveInPlaylist",
+  "user" : "irene33",
+  "timestamp" : 4315,
+  "message" : "Please load a source before adding to or removing from the playlist."
+}, {
   "command" : "search",
   "user" : "irene33",
   "timestamp" : 4325,
   "message" : "Search returned 5 results",
-  "results" : [ "Don't", "Sad But True", "Maps", "Gimme Shelter", "Bohemian Rhapsody" ]
+  "results" : [ "Don't", "Start Me Up", "Sad But True", "Maps", "Gimme Shelter" ]
 }, {
   "command" : "select",
   "user" : "irene33",
   "timestamp" : 4330,
-  "message" : "Successfully selected Maps."
+  "message" : "Successfully selected Sad But True."
 }, {
   "command" : "load",
   "user" : "irene33",
   "timestamp" : 4335,
   "message" : "Playback loaded successfully."
+}, {
+  "command" : "addRemoveInPlaylist",
+  "user" : "irene33",
+  "timestamp" : 4340,
+  "message" : "Successfully added to playlist."
 }, {
   "command" : "search",
   "user" : "irene33",
@@ -2732,6 +3542,11 @@
   "timestamp" : 4360,
   "message" : "Playback loaded successfully."
 }, {
+  "command" : "addRemoveInPlaylist",
+  "user" : "irene33",
+  "timestamp" : 4365,
+  "message" : "Successfully added to playlist."
+}, {
   "command" : "search",
   "user" : "irene33",
   "timestamp" : 4375,
@@ -2747,6 +3562,11 @@
   "user" : "irene33",
   "timestamp" : 4385,
   "message" : "Playback loaded successfully."
+}, {
+  "command" : "addRemoveInPlaylist",
+  "user" : "irene33",
+  "timestamp" : 4390,
+  "message" : "The specified playlist does not exist."
 }, {
   "command" : "search",
   "user" : "irene33",
@@ -2764,6 +3584,11 @@
   "timestamp" : 4410,
   "message" : "Playback loaded successfully."
 }, {
+  "command" : "addRemoveInPlaylist",
+  "user" : "irene33",
+  "timestamp" : 4415,
+  "message" : "Successfully added to playlist."
+}, {
   "command" : "search",
   "user" : "irene33",
   "timestamp" : 4425,
@@ -2778,7 +3603,12 @@
   "command" : "load",
   "user" : "irene33",
   "timestamp" : 4435,
-  "message" : "Playback loaded successfully."
+  "message" : "Please select a source before attempting to load."
+}, {
+  "command" : "addRemoveInPlaylist",
+  "user" : "irene33",
+  "timestamp" : 4440,
+  "message" : "Please load a source before adding to or removing from the playlist."
 }, {
   "command" : "search",
   "user" : "irene33",
@@ -2796,6 +3626,11 @@
   "timestamp" : 4460,
   "message" : "Playback loaded successfully."
 }, {
+  "command" : "addRemoveInPlaylist",
+  "user" : "irene33",
+  "timestamp" : 4465,
+  "message" : "Successfully added to playlist."
+}, {
   "command" : "search",
   "user" : "irene33",
   "timestamp" : 4475,
@@ -2812,21 +3647,31 @@
   "timestamp" : 4485,
   "message" : "Playback loaded successfully."
 }, {
+  "command" : "addRemoveInPlaylist",
+  "user" : "irene33",
+  "timestamp" : 4490,
+  "message" : "Successfully added to playlist."
+}, {
   "command" : "search",
   "user" : "irene33",
   "timestamp" : 4500,
   "message" : "Search returned 5 results",
-  "results" : [ "Don't", "Sad But True", "Maps", "Gimme Shelter", "Bohemian Rhapsody" ]
+  "results" : [ "Don't", "Start Me Up", "Sad But True", "Maps", "Gimme Shelter" ]
 }, {
   "command" : "select",
   "user" : "irene33",
   "timestamp" : 4505,
-  "message" : "Successfully selected Sad But True."
+  "message" : "Successfully selected Start Me Up."
 }, {
   "command" : "load",
   "user" : "irene33",
   "timestamp" : 4510,
   "message" : "Playback loaded successfully."
+}, {
+  "command" : "addRemoveInPlaylist",
+  "user" : "irene33",
+  "timestamp" : 4515,
+  "message" : "Successfully added to playlist."
 }, {
   "command" : "search",
   "user" : "irene33",
@@ -2842,7 +3687,12 @@
   "command" : "load",
   "user" : "irene33",
   "timestamp" : 4535,
-  "message" : "Playback loaded successfully."
+  "message" : "Please select a source before attempting to load."
+}, {
+  "command" : "addRemoveInPlaylist",
+  "user" : "irene33",
+  "timestamp" : 4540,
+  "message" : "Please load a source before adding to or removing from the playlist."
 }, {
   "command" : "search",
   "user" : "irene33",
@@ -2860,21 +3710,31 @@
   "timestamp" : 4560,
   "message" : "Playback loaded successfully."
 }, {
+  "command" : "addRemoveInPlaylist",
+  "user" : "irene33",
+  "timestamp" : 4565,
+  "message" : "Successfully removed from playlist."
+}, {
   "command" : "search",
   "user" : "irene33",
   "timestamp" : 4575,
   "message" : "Search returned 5 results",
-  "results" : [ "Don't", "Sad But True", "Maps", "Gimme Shelter", "Bohemian Rhapsody" ]
+  "results" : [ "Don't", "Start Me Up", "Sad But True", "Maps", "Gimme Shelter" ]
 }, {
   "command" : "select",
   "user" : "irene33",
   "timestamp" : 4580,
-  "message" : "Successfully selected Bohemian Rhapsody."
+  "message" : "Successfully selected Gimme Shelter."
 }, {
   "command" : "load",
   "user" : "irene33",
   "timestamp" : 4585,
   "message" : "Playback loaded successfully."
+}, {
+  "command" : "addRemoveInPlaylist",
+  "user" : "irene33",
+  "timestamp" : 4590,
+  "message" : "Successfully added to playlist."
 }, {
   "command" : "search",
   "user" : "irene33",
@@ -2892,11 +3752,16 @@
   "timestamp" : 4610,
   "message" : "Playback loaded successfully."
 }, {
+  "command" : "addRemoveInPlaylist",
+  "user" : "irene33",
+  "timestamp" : 4615,
+  "message" : "The specified playlist does not exist."
+}, {
   "command" : "search",
   "user" : "irene33",
   "timestamp" : 4625,
   "message" : "Search returned 5 results",
-  "results" : [ "Don't", "Sad But True", "Maps", "Gimme Shelter", "Bohemian Rhapsody" ]
+  "results" : [ "Don't", "Start Me Up", "Sad But True", "Maps", "Gimme Shelter" ]
 }, {
   "command" : "select",
   "user" : "irene33",
@@ -2907,6 +3772,11 @@
   "user" : "irene33",
   "timestamp" : 4635,
   "message" : "Playback loaded successfully."
+}, {
+  "command" : "addRemoveInPlaylist",
+  "user" : "irene33",
+  "timestamp" : 4640,
+  "message" : "The specified playlist does not exist."
 }, {
   "command" : "search",
   "user" : "irene33",
@@ -2924,6 +3794,11 @@
   "timestamp" : 4660,
   "message" : "Playback loaded successfully."
 }, {
+  "command" : "addRemoveInPlaylist",
+  "user" : "irene33",
+  "timestamp" : 4665,
+  "message" : "The specified playlist does not exist."
+}, {
   "command" : "search",
   "user" : "irene33",
   "timestamp" : 4675,
@@ -2940,6 +3815,11 @@
   "timestamp" : 4685,
   "message" : "Playback loaded successfully."
 }, {
+  "command" : "addRemoveInPlaylist",
+  "user" : "irene33",
+  "timestamp" : 4690,
+  "message" : "The specified playlist does not exist."
+}, {
   "command" : "search",
   "user" : "irene33",
   "timestamp" : 4700,
@@ -2954,7 +3834,12 @@
   "command" : "load",
   "user" : "irene33",
   "timestamp" : 4710,
-  "message" : "Playback loaded successfully."
+  "message" : "Please select a source before attempting to load."
+}, {
+  "command" : "addRemoveInPlaylist",
+  "user" : "irene33",
+  "timestamp" : 4715,
+  "message" : "Please load a source before adding to or removing from the playlist."
 }, {
   "command" : "search",
   "user" : "irene33",
@@ -2972,6 +3857,11 @@
   "timestamp" : 4735,
   "message" : "Playback loaded successfully."
 }, {
+  "command" : "addRemoveInPlaylist",
+  "user" : "irene33",
+  "timestamp" : 4740,
+  "message" : "The specified playlist does not exist."
+}, {
   "command" : "search",
   "user" : "irene33",
   "timestamp" : 4750,
@@ -2986,7 +3876,12 @@
   "command" : "load",
   "user" : "irene33",
   "timestamp" : 4760,
-  "message" : "Playback loaded successfully."
+  "message" : "Please select a source before attempting to load."
+}, {
+  "command" : "addRemoveInPlaylist",
+  "user" : "irene33",
+  "timestamp" : 4765,
+  "message" : "Please load a source before adding to or removing from the playlist."
 }, {
   "command" : "search",
   "user" : "irene33",
@@ -3004,21 +3899,31 @@
   "timestamp" : 4785,
   "message" : "Playback loaded successfully."
 }, {
+  "command" : "addRemoveInPlaylist",
+  "user" : "irene33",
+  "timestamp" : 4790,
+  "message" : "Successfully removed from playlist."
+}, {
   "command" : "search",
   "user" : "jack29",
   "timestamp" : 4800,
   "message" : "Search returned 5 results",
-  "results" : [ "Don't", "Sad But True", "Maps", "Gimme Shelter", "Bohemian Rhapsody" ]
+  "results" : [ "Don't", "Start Me Up", "Sad But True", "Maps", "Gimme Shelter" ]
 }, {
   "command" : "select",
   "user" : "jack29",
   "timestamp" : 4805,
-  "message" : "Successfully selected Gimme Shelter."
+  "message" : "Successfully selected Maps."
 }, {
   "command" : "load",
   "user" : "jack29",
   "timestamp" : 4810,
   "message" : "Playback loaded successfully."
+}, {
+  "command" : "addRemoveInPlaylist",
+  "user" : "jack29",
+  "timestamp" : 4815,
+  "message" : "Successfully added to playlist."
 }, {
   "command" : "search",
   "user" : "jack29",
@@ -3036,6 +3941,11 @@
   "timestamp" : 4835,
   "message" : "Playback loaded successfully."
 }, {
+  "command" : "addRemoveInPlaylist",
+  "user" : "jack29",
+  "timestamp" : 4840,
+  "message" : "The specified playlist does not exist."
+}, {
   "command" : "search",
   "user" : "jack29",
   "timestamp" : 4850,
@@ -3050,7 +3960,12 @@
   "command" : "load",
   "user" : "jack29",
   "timestamp" : 4860,
-  "message" : "Playback loaded successfully."
+  "message" : "Please select a source before attempting to load."
+}, {
+  "command" : "addRemoveInPlaylist",
+  "user" : "jack29",
+  "timestamp" : 4865,
+  "message" : "Please load a source before adding to or removing from the playlist."
 }, {
   "command" : "search",
   "user" : "jack29",
@@ -3068,6 +3983,11 @@
   "timestamp" : 4885,
   "message" : "Playback loaded successfully."
 }, {
+  "command" : "addRemoveInPlaylist",
+  "user" : "jack29",
+  "timestamp" : 4890,
+  "message" : "Successfully added to playlist."
+}, {
   "command" : "search",
   "user" : "jack29",
   "timestamp" : 4900,
@@ -3083,6 +4003,11 @@
   "user" : "jack29",
   "timestamp" : 4910,
   "message" : "Playback loaded successfully."
+}, {
+  "command" : "addRemoveInPlaylist",
+  "user" : "jack29",
+  "timestamp" : 4915,
+  "message" : "Successfully added to playlist."
 }, {
   "command" : "search",
   "user" : "jack29",
@@ -3100,6 +4025,11 @@
   "timestamp" : 4935,
   "message" : "Playback loaded successfully."
 }, {
+  "command" : "addRemoveInPlaylist",
+  "user" : "jack29",
+  "timestamp" : 4940,
+  "message" : "The specified playlist does not exist."
+}, {
   "command" : "search",
   "user" : "jack29",
   "timestamp" : 4950,
@@ -3115,6 +4045,11 @@
   "user" : "jack29",
   "timestamp" : 4960,
   "message" : "Playback loaded successfully."
+}, {
+  "command" : "addRemoveInPlaylist",
+  "user" : "jack29",
+  "timestamp" : 4965,
+  "message" : "Successfully added to playlist."
 }, {
   "command" : "search",
   "user" : "jack29",
@@ -3132,6 +4067,11 @@
   "timestamp" : 4985,
   "message" : "Playback loaded successfully."
 }, {
+  "command" : "addRemoveInPlaylist",
+  "user" : "jack29",
+  "timestamp" : 4990,
+  "message" : "The specified playlist does not exist."
+}, {
   "command" : "search",
   "user" : "jack29",
   "timestamp" : 5000,
@@ -3148,21 +4088,31 @@
   "timestamp" : 5010,
   "message" : "Playback loaded successfully."
 }, {
+  "command" : "addRemoveInPlaylist",
+  "user" : "jack29",
+  "timestamp" : 5015,
+  "message" : "Successfully added to playlist."
+}, {
   "command" : "search",
   "user" : "jack29",
   "timestamp" : 5025,
   "message" : "Search returned 5 results",
-  "results" : [ "Don't", "Sad But True", "Maps", "Gimme Shelter", "Bohemian Rhapsody" ]
+  "results" : [ "Don't", "Start Me Up", "Sad But True", "Maps", "Gimme Shelter" ]
 }, {
   "command" : "select",
   "user" : "jack29",
   "timestamp" : 5030,
-  "message" : "Successfully selected Gimme Shelter."
+  "message" : "Successfully selected Maps."
 }, {
   "command" : "load",
   "user" : "jack29",
   "timestamp" : 5035,
   "message" : "Playback loaded successfully."
+}, {
+  "command" : "addRemoveInPlaylist",
+  "user" : "jack29",
+  "timestamp" : 5040,
+  "message" : "The specified playlist does not exist."
 }, {
   "command" : "search",
   "user" : "jack29",
@@ -3180,6 +4130,11 @@
   "timestamp" : 5060,
   "message" : "Playback loaded successfully."
 }, {
+  "command" : "addRemoveInPlaylist",
+  "user" : "jack29",
+  "timestamp" : 5065,
+  "message" : "Successfully added to playlist."
+}, {
   "command" : "search",
   "user" : "jack29",
   "timestamp" : 5075,
@@ -3195,6 +4150,11 @@
   "user" : "jack29",
   "timestamp" : 5085,
   "message" : "Playback loaded successfully."
+}, {
+  "command" : "addRemoveInPlaylist",
+  "user" : "jack29",
+  "timestamp" : 5090,
+  "message" : "Successfully added to playlist."
 }, {
   "command" : "search",
   "user" : "jack29",
@@ -3212,6 +4172,11 @@
   "timestamp" : 5110,
   "message" : "Playback loaded successfully."
 }, {
+  "command" : "addRemoveInPlaylist",
+  "user" : "jack29",
+  "timestamp" : 5115,
+  "message" : "Successfully added to playlist."
+}, {
   "command" : "search",
   "user" : "jack29",
   "timestamp" : 5125,
@@ -3227,6 +4192,11 @@
   "user" : "jack29",
   "timestamp" : 5135,
   "message" : "Playback loaded successfully."
+}, {
+  "command" : "addRemoveInPlaylist",
+  "user" : "jack29",
+  "timestamp" : 5140,
+  "message" : "The specified playlist does not exist."
 }, {
   "command" : "search",
   "user" : "jack29",
@@ -3244,6 +4214,11 @@
   "timestamp" : 5160,
   "message" : "Playback loaded successfully."
 }, {
+  "command" : "addRemoveInPlaylist",
+  "user" : "jack29",
+  "timestamp" : 5165,
+  "message" : "The specified playlist does not exist."
+}, {
   "command" : "search",
   "user" : "jack29",
   "timestamp" : 5175,
@@ -3260,6 +4235,11 @@
   "timestamp" : 5185,
   "message" : "Playback loaded successfully."
 }, {
+  "command" : "addRemoveInPlaylist",
+  "user" : "jack29",
+  "timestamp" : 5190,
+  "message" : "The specified playlist does not exist."
+}, {
   "command" : "search",
   "user" : "jack29",
   "timestamp" : 5200,
@@ -3274,23 +4254,33 @@
   "command" : "load",
   "user" : "jack29",
   "timestamp" : 5210,
-  "message" : "Playback loaded successfully."
+  "message" : "Please select a source before attempting to load."
+}, {
+  "command" : "addRemoveInPlaylist",
+  "user" : "jack29",
+  "timestamp" : 5215,
+  "message" : "Please load a source before adding to or removing from the playlist."
 }, {
   "command" : "search",
   "user" : "jack29",
   "timestamp" : 5225,
   "message" : "Search returned 5 results",
-  "results" : [ "Don't", "Sad But True", "Maps", "Gimme Shelter", "Bohemian Rhapsody" ]
+  "results" : [ "Don't", "Start Me Up", "Sad But True", "Maps", "Gimme Shelter" ]
 }, {
   "command" : "select",
   "user" : "jack29",
   "timestamp" : 5230,
-  "message" : "Successfully selected Sad But True."
+  "message" : "Successfully selected Start Me Up."
 }, {
   "command" : "load",
   "user" : "jack29",
   "timestamp" : 5235,
   "message" : "Playback loaded successfully."
+}, {
+  "command" : "addRemoveInPlaylist",
+  "user" : "jack29",
+  "timestamp" : 5240,
+  "message" : "The specified playlist does not exist."
 }, {
   "command" : "search",
   "user" : "jack29",
@@ -3306,7 +4296,12 @@
   "command" : "load",
   "user" : "jack29",
   "timestamp" : 5260,
-  "message" : "Playback loaded successfully."
+  "message" : "Please select a source before attempting to load."
+}, {
+  "command" : "addRemoveInPlaylist",
+  "user" : "jack29",
+  "timestamp" : 5265,
+  "message" : "Please load a source before adding to or removing from the playlist."
 }, {
   "command" : "search",
   "user" : "jack29",
@@ -3324,6 +4319,11 @@
   "timestamp" : 5285,
   "message" : "Playback loaded successfully."
 }, {
+  "command" : "addRemoveInPlaylist",
+  "user" : "jack29",
+  "timestamp" : 5290,
+  "message" : "The specified playlist does not exist."
+}, {
   "command" : "showPlaylists",
   "user" : "alice22",
   "timestamp" : 5300,
@@ -3334,7 +4334,7 @@
     "followers" : 0
   }, {
     "name" : "Classic Grooves Escape #2",
-    "songs" : [ ],
+    "songs" : [ "Start Me Up", "Shape of You", "Begin Again", "Dream On" ],
     "visibility" : "public",
     "followers" : 0
   } ]
@@ -3349,7 +4349,7 @@
     "followers" : 0
   }, {
     "name" : "Dynamic Tracks Trek #2",
-    "songs" : [ ],
+    "songs" : [ "Bohemian Rhapsody", "The Unforgiven", "Begin Again" ],
     "visibility" : "public",
     "followers" : 0
   } ]
@@ -3364,7 +4364,7 @@
     "followers" : 0
   }, {
     "name" : "Chill Grooves Quest #2",
-    "songs" : [ ],
+    "songs" : [ "Whatever You Need", "Black Dog", "Gimme Shelter", "Stairway to Heaven", "Maps", "Shape of You" ],
     "visibility" : "public",
     "followers" : 0
   } ]
@@ -3379,7 +4379,7 @@
     "followers" : 0
   }, {
     "name" : "Groovy Beats Expedition #2",
-    "songs" : [ ],
+    "songs" : [ "Don't", "Sad But True", "Under Pressure" ],
     "visibility" : "public",
     "followers" : 0
   } ]
@@ -3394,7 +4394,7 @@
     "followers" : 0
   }, {
     "name" : "Electric Tunes Dream #2",
-    "songs" : [ ],
+    "songs" : [ "Bohemian Rhapsody", "The Man", "Delicate", "Angie", "Paint It Black", "Begin Again" ],
     "visibility" : "public",
     "followers" : 0
   } ]
@@ -3409,7 +4409,7 @@
     "followers" : 0
   }, {
     "name" : "Breezy Bangers Quest #2",
-    "songs" : [ ],
+    "songs" : [ "Blank Space", "Don't", "Whatever You Need", "Big Pimpin'" ],
     "visibility" : "public",
     "followers" : 0
   } ]
@@ -3424,7 +4424,7 @@
     "followers" : 0
   }, {
     "name" : "Electric Beats Escape #2",
-    "songs" : [ ],
+    "songs" : [ "Maps", "Dream On", "Whatever You Need", "Begin Again", "Start Me Up" ],
     "visibility" : "public",
     "followers" : 0
   } ]
@@ -3439,7 +4439,7 @@
     "followers" : 0
   }, {
     "name" : "Chill Tracks Safari #2",
-    "songs" : [ ],
+    "songs" : [ "Sad But True", "Gimme Shelter", "Paint It Black" ],
     "visibility" : "public",
     "followers" : 0
   } ]
@@ -3454,7 +4454,7 @@
     "followers" : 0
   }, {
     "name" : "Stellar Rhythms Safari #2",
-    "songs" : [ ],
+    "songs" : [ "Sad But True", "The Man", "Big Pimpin'", "Start Me Up", "Gimme Shelter" ],
     "visibility" : "public",
     "followers" : 0
   } ]
@@ -3469,7 +4469,7 @@
     "followers" : 0
   }, {
     "name" : "Mellow Tracks Safari #2",
-    "songs" : [ ],
+    "songs" : [ "Maps", "The Man", "Blank Space", "Money Trees", "Shape of You", "The Unforgiven", "Big Pimpin'", "Love Story" ],
     "visibility" : "public",
     "followers" : 0
   } ]
@@ -3504,7 +4504,7 @@
   "command" : "load",
   "user" : "bob35",
   "timestamp" : 5412,
-  "message" : "You can't load an empty audio collection!"
+  "message" : "Playback loaded successfully."
 }, {
   "command" : "search",
   "user" : "carol19",
@@ -3568,7 +4568,7 @@
   "command" : "load",
   "user" : "frank21",
   "timestamp" : 5452,
-  "message" : "You can't load an empty audio collection!"
+  "message" : "Playback loaded successfully."
 }, {
   "command" : "search",
   "user" : "grace25",
@@ -3632,7 +4632,12 @@
   "command" : "load",
   "user" : "jack29",
   "timestamp" : 5492,
-  "message" : "You can't load an empty audio collection!"
+  "message" : "Playback loaded successfully."
+}, {
+  "command" : "like",
+  "user" : "alice22",
+  "timestamp" : 5500,
+  "message" : "Please load a source before liking or unliking."
 }, {
   "command" : "status",
   "user" : "alice22",
@@ -3642,7 +4647,7 @@
     "remainedTime" : 0,
     "repeat" : "No Repeat",
     "shuffle" : false,
-    "paused" : false
+    "paused" : true
   }
 }, {
   "command" : "switchVisibility",
@@ -3654,8 +4659,8 @@
   "user" : "bob35",
   "timestamp" : 5510,
   "stats" : {
-    "name" : "",
-    "remainedTime" : 0,
+    "name" : "Bohemian Rhapsody",
+    "remainedTime" : 155,
     "repeat" : "No Repeat",
     "shuffle" : false,
     "paused" : false
@@ -3669,8 +4674,13 @@
     "remainedTime" : 0,
     "repeat" : "No Repeat",
     "shuffle" : false,
-    "paused" : false
+    "paused" : true
   }
+}, {
+  "command" : "playPause",
+  "user" : "david27",
+  "timestamp" : 5530,
+  "message" : "Please load a source before attempting to pause or resume playback."
 }, {
   "command" : "status",
   "user" : "david27",
@@ -3680,7 +4690,7 @@
     "remainedTime" : 0,
     "repeat" : "No Repeat",
     "shuffle" : false,
-    "paused" : false
+    "paused" : true
   }
 }, {
   "command" : "switchVisibility",
@@ -3688,6 +4698,11 @@
   "timestamp" : 5540,
   "message" : "The specified playlist ID is too high"
 }, {
+  "command" : "repeat",
+  "user" : "emily30",
+  "timestamp" : 5540,
+  "message" : "Please load a source before setting the repeat status."
+}, {
   "command" : "status",
   "user" : "emily30",
   "timestamp" : 5540,
@@ -3696,19 +4711,29 @@
     "remainedTime" : 0,
     "repeat" : "No Repeat",
     "shuffle" : false,
-    "paused" : false
+    "paused" : true
   }
+}, {
+  "command" : "playPause",
+  "user" : "frank21",
+  "timestamp" : 5550,
+  "message" : "Playback paused successfully."
 }, {
   "command" : "status",
   "user" : "frank21",
   "timestamp" : 5550,
   "stats" : {
-    "name" : "",
-    "remainedTime" : 0,
+    "name" : "Blank Space",
+    "remainedTime" : 133,
     "repeat" : "No Repeat",
     "shuffle" : false,
-    "paused" : false
+    "paused" : true
   }
+}, {
+  "command" : "playPause",
+  "user" : "grace25",
+  "timestamp" : 5560,
+  "message" : "Please load a source before attempting to pause or resume playback."
 }, {
   "command" : "status",
   "user" : "grace25",
@@ -3718,8 +4743,13 @@
     "remainedTime" : 0,
     "repeat" : "No Repeat",
     "shuffle" : false,
-    "paused" : false
+    "paused" : true
   }
+}, {
+  "command" : "playPause",
+  "user" : "henry26",
+  "timestamp" : 5570,
+  "message" : "Please load a source before attempting to pause or resume playback."
 }, {
   "command" : "status",
   "user" : "henry26",
@@ -3729,7 +4759,7 @@
     "remainedTime" : 0,
     "repeat" : "No Repeat",
     "shuffle" : false,
-    "paused" : false
+    "paused" : true
   }
 }, {
   "command" : "status",
@@ -3740,15 +4770,15 @@
     "remainedTime" : 0,
     "repeat" : "No Repeat",
     "shuffle" : false,
-    "paused" : false
+    "paused" : true
   }
 }, {
   "command" : "status",
   "user" : "jack29",
   "timestamp" : 5590,
   "stats" : {
-    "name" : "",
-    "remainedTime" : 0,
+    "name" : "Maps",
+    "remainedTime" : 92,
     "repeat" : "No Repeat",
     "shuffle" : false,
     "paused" : false
@@ -3758,12 +4788,17 @@
   "user" : "jack29",
   "timestamp" : 5590,
   "stats" : {
-    "name" : "",
-    "remainedTime" : 0,
+    "name" : "Maps",
+    "remainedTime" : 92,
     "repeat" : "No Repeat",
     "shuffle" : false,
     "paused" : false
   }
+}, {
+  "command" : "repeat",
+  "user" : "alice22",
+  "timestamp" : 5600,
+  "message" : "Please load a source before setting the repeat status."
 }, {
   "command" : "status",
   "user" : "alice22",
@@ -3773,15 +4808,15 @@
     "remainedTime" : 0,
     "repeat" : "No Repeat",
     "shuffle" : false,
-    "paused" : false
+    "paused" : true
   }
 }, {
   "command" : "status",
   "user" : "bob35",
   "timestamp" : 5610,
   "stats" : {
-    "name" : "",
-    "remainedTime" : 0,
+    "name" : "Bohemian Rhapsody",
+    "remainedTime" : 55,
     "repeat" : "No Repeat",
     "shuffle" : false,
     "paused" : false
@@ -3800,7 +4835,7 @@
     "remainedTime" : 0,
     "repeat" : "No Repeat",
     "shuffle" : false,
-    "paused" : false
+    "paused" : true
   }
 }, {
   "command" : "status",
@@ -3811,8 +4846,13 @@
     "remainedTime" : 0,
     "repeat" : "No Repeat",
     "shuffle" : false,
-    "paused" : false
+    "paused" : true
   }
+}, {
+  "command" : "playPause",
+  "user" : "david27",
+  "timestamp" : 5630,
+  "message" : "Please load a source before attempting to pause or resume playback."
 }, {
   "command" : "status",
   "user" : "david27",
@@ -3822,7 +4862,7 @@
     "remainedTime" : 0,
     "repeat" : "No Repeat",
     "shuffle" : false,
-    "paused" : false
+    "paused" : true
   }
 }, {
   "command" : "status",
@@ -3833,18 +4873,18 @@
     "remainedTime" : 0,
     "repeat" : "No Repeat",
     "shuffle" : false,
-    "paused" : false
+    "paused" : true
   }
 }, {
   "command" : "status",
   "user" : "frank21",
   "timestamp" : 5650,
   "stats" : {
-    "name" : "",
-    "remainedTime" : 0,
+    "name" : "Blank Space",
+    "remainedTime" : 133,
     "repeat" : "No Repeat",
     "shuffle" : false,
-    "paused" : false
+    "paused" : true
   }
 }, {
   "command" : "status",
@@ -3855,8 +4895,13 @@
     "remainedTime" : 0,
     "repeat" : "No Repeat",
     "shuffle" : false,
-    "paused" : false
+    "paused" : true
   }
+}, {
+  "command" : "repeat",
+  "user" : "henry26",
+  "timestamp" : 5670,
+  "message" : "Please load a source before setting the repeat status."
 }, {
   "command" : "status",
   "user" : "henry26",
@@ -3866,8 +4911,13 @@
     "remainedTime" : 0,
     "repeat" : "No Repeat",
     "shuffle" : false,
-    "paused" : false
+    "paused" : true
   }
+}, {
+  "command" : "playPause",
+  "user" : "irene33",
+  "timestamp" : 5680,
+  "message" : "Please load a source before attempting to pause or resume playback."
 }, {
   "command" : "status",
   "user" : "irene33",
@@ -3877,15 +4927,15 @@
     "remainedTime" : 0,
     "repeat" : "No Repeat",
     "shuffle" : false,
-    "paused" : false
+    "paused" : true
   }
 }, {
   "command" : "status",
   "user" : "jack29",
   "timestamp" : 5690,
   "stats" : {
-    "name" : "",
-    "remainedTime" : 0,
+    "name" : "The Man",
+    "remainedTime" : 182,
     "repeat" : "No Repeat",
     "shuffle" : false,
     "paused" : false
@@ -3895,12 +4945,17 @@
   "user" : "jack29",
   "timestamp" : 5690,
   "stats" : {
-    "name" : "",
-    "remainedTime" : 0,
+    "name" : "The Man",
+    "remainedTime" : 182,
     "repeat" : "No Repeat",
     "shuffle" : false,
     "paused" : false
   }
+}, {
+  "command" : "like",
+  "user" : "alice22",
+  "timestamp" : 5700,
+  "message" : "Please load a source before liking or unliking."
 }, {
   "command" : "status",
   "user" : "alice22",
@@ -3910,15 +4965,15 @@
     "remainedTime" : 0,
     "repeat" : "No Repeat",
     "shuffle" : false,
-    "paused" : false
+    "paused" : true
   }
 }, {
   "command" : "status",
   "user" : "bob35",
   "timestamp" : 5710,
   "stats" : {
-    "name" : "",
-    "remainedTime" : 0,
+    "name" : "The Unforgiven",
+    "remainedTime" : 341,
     "repeat" : "No Repeat",
     "shuffle" : false,
     "paused" : false
@@ -3932,7 +4987,7 @@
     "remainedTime" : 0,
     "repeat" : "No Repeat",
     "shuffle" : false,
-    "paused" : false
+    "paused" : true
   }
 }, {
   "command" : "status",
@@ -3943,8 +4998,13 @@
     "remainedTime" : 0,
     "repeat" : "No Repeat",
     "shuffle" : false,
-    "paused" : false
+    "paused" : true
   }
+}, {
+  "command" : "playPause",
+  "user" : "emily30",
+  "timestamp" : 5740,
+  "message" : "Please load a source before attempting to pause or resume playback."
 }, {
   "command" : "status",
   "user" : "emily30",
@@ -3954,29 +5014,29 @@
     "remainedTime" : 0,
     "repeat" : "No Repeat",
     "shuffle" : false,
-    "paused" : false
+    "paused" : true
   }
 }, {
   "command" : "status",
   "user" : "frank21",
   "timestamp" : 5750,
   "stats" : {
-    "name" : "",
-    "remainedTime" : 0,
+    "name" : "Blank Space",
+    "remainedTime" : 133,
     "repeat" : "No Repeat",
     "shuffle" : false,
-    "paused" : false
+    "paused" : true
   }
 }, {
   "command" : "status",
   "user" : "frank21",
   "timestamp" : 5750,
   "stats" : {
-    "name" : "",
-    "remainedTime" : 0,
+    "name" : "Blank Space",
+    "remainedTime" : 133,
     "repeat" : "No Repeat",
     "shuffle" : false,
-    "paused" : false
+    "paused" : true
   }
 }, {
   "command" : "status",
@@ -3987,7 +5047,7 @@
     "remainedTime" : 0,
     "repeat" : "No Repeat",
     "shuffle" : false,
-    "paused" : false
+    "paused" : true
   }
 }, {
   "command" : "status",
@@ -3998,7 +5058,7 @@
     "remainedTime" : 0,
     "repeat" : "No Repeat",
     "shuffle" : false,
-    "paused" : false
+    "paused" : true
   }
 }, {
   "command" : "switchVisibility",
@@ -4014,15 +5074,20 @@
     "remainedTime" : 0,
     "repeat" : "No Repeat",
     "shuffle" : false,
-    "paused" : false
+    "paused" : true
   }
+}, {
+  "command" : "like",
+  "user" : "jack29",
+  "timestamp" : 5790,
+  "message" : "Like registered successfully."
 }, {
   "command" : "status",
   "user" : "jack29",
   "timestamp" : 5790,
   "stats" : {
-    "name" : "",
-    "remainedTime" : 0,
+    "name" : "The Man",
+    "remainedTime" : 82,
     "repeat" : "No Repeat",
     "shuffle" : false,
     "paused" : false
@@ -4033,6 +5098,11 @@
   "timestamp" : 5800,
   "message" : "Visibility status updated successfully to private."
 }, {
+  "command" : "playPause",
+  "user" : "alice22",
+  "timestamp" : 5800,
+  "message" : "Please load a source before attempting to pause or resume playback."
+}, {
   "command" : "status",
   "user" : "alice22",
   "timestamp" : 5800,
@@ -4041,19 +5111,24 @@
     "remainedTime" : 0,
     "repeat" : "No Repeat",
     "shuffle" : false,
-    "paused" : false
+    "paused" : true
   }
 }, {
   "command" : "status",
   "user" : "bob35",
   "timestamp" : 5810,
   "stats" : {
-    "name" : "",
-    "remainedTime" : 0,
+    "name" : "The Unforgiven",
+    "remainedTime" : 241,
     "repeat" : "No Repeat",
     "shuffle" : false,
     "paused" : false
   }
+}, {
+  "command" : "playPause",
+  "user" : "carol19",
+  "timestamp" : 5820,
+  "message" : "Please load a source before attempting to pause or resume playback."
 }, {
   "command" : "status",
   "user" : "carol19",
@@ -4063,7 +5138,7 @@
     "remainedTime" : 0,
     "repeat" : "No Repeat",
     "shuffle" : false,
-    "paused" : false
+    "paused" : true
   }
 }, {
   "command" : "status",
@@ -4074,7 +5149,7 @@
     "remainedTime" : 0,
     "repeat" : "No Repeat",
     "shuffle" : false,
-    "paused" : false
+    "paused" : true
   }
 }, {
   "command" : "switchVisibility",
@@ -4082,6 +5157,11 @@
   "timestamp" : 5840,
   "message" : "Visibility status updated successfully to private."
 }, {
+  "command" : "like",
+  "user" : "emily30",
+  "timestamp" : 5840,
+  "message" : "Please load a source before liking or unliking."
+}, {
   "command" : "status",
   "user" : "emily30",
   "timestamp" : 5840,
@@ -4090,29 +5170,29 @@
     "remainedTime" : 0,
     "repeat" : "No Repeat",
     "shuffle" : false,
-    "paused" : false
+    "paused" : true
   }
 }, {
   "command" : "status",
   "user" : "frank21",
   "timestamp" : 5850,
   "stats" : {
-    "name" : "",
-    "remainedTime" : 0,
+    "name" : "Blank Space",
+    "remainedTime" : 133,
     "repeat" : "No Repeat",
     "shuffle" : false,
-    "paused" : false
+    "paused" : true
   }
 }, {
   "command" : "status",
   "user" : "frank21",
   "timestamp" : 5850,
   "stats" : {
-    "name" : "",
-    "remainedTime" : 0,
+    "name" : "Blank Space",
+    "remainedTime" : 133,
     "repeat" : "No Repeat",
     "shuffle" : false,
-    "paused" : false
+    "paused" : true
   }
 }, {
   "command" : "status",
@@ -4123,7 +5203,7 @@
     "remainedTime" : 0,
     "repeat" : "No Repeat",
     "shuffle" : false,
-    "paused" : false
+    "paused" : true
   }
 }, {
   "command" : "status",
@@ -4134,7 +5214,7 @@
     "remainedTime" : 0,
     "repeat" : "No Repeat",
     "shuffle" : false,
-    "paused" : false
+    "paused" : true
   }
 }, {
   "command" : "status",
@@ -4145,7 +5225,7 @@
     "remainedTime" : 0,
     "repeat" : "No Repeat",
     "shuffle" : false,
-    "paused" : false
+    "paused" : true
   }
 }, {
   "command" : "status",
@@ -4156,7 +5236,7 @@
     "remainedTime" : 0,
     "repeat" : "No Repeat",
     "shuffle" : false,
-    "paused" : false
+    "paused" : true
   }
 }, {
   "command" : "status",
@@ -4167,7 +5247,7 @@
     "remainedTime" : 0,
     "repeat" : "No Repeat",
     "shuffle" : false,
-    "paused" : false
+    "paused" : true
   }
 }, {
   "command" : "switchVisibility",
@@ -4179,8 +5259,8 @@
   "user" : "jack29",
   "timestamp" : 5890,
   "stats" : {
-    "name" : "",
-    "remainedTime" : 0,
+    "name" : "Blank Space",
+    "remainedTime" : 213,
     "repeat" : "No Repeat",
     "shuffle" : false,
     "paused" : false
@@ -4191,6 +5271,11 @@
   "timestamp" : 5900,
   "message" : "The specified playlist ID is too high"
 }, {
+  "command" : "playPause",
+  "user" : "alice22",
+  "timestamp" : 5900,
+  "message" : "Please load a source before attempting to pause or resume playback."
+}, {
   "command" : "status",
   "user" : "alice22",
   "timestamp" : 5900,
@@ -4199,15 +5284,20 @@
     "remainedTime" : 0,
     "repeat" : "No Repeat",
     "shuffle" : false,
-    "paused" : false
+    "paused" : true
   }
+}, {
+  "command" : "like",
+  "user" : "bob35",
+  "timestamp" : 5910,
+  "message" : "Like registered successfully."
 }, {
   "command" : "status",
   "user" : "bob35",
   "timestamp" : 5910,
   "stats" : {
-    "name" : "",
-    "remainedTime" : 0,
+    "name" : "The Unforgiven",
+    "remainedTime" : 141,
     "repeat" : "No Repeat",
     "shuffle" : false,
     "paused" : false
@@ -4218,6 +5308,11 @@
   "timestamp" : 5920,
   "message" : "The specified playlist ID is too high"
 }, {
+  "command" : "like",
+  "user" : "carol19",
+  "timestamp" : 5920,
+  "message" : "Please load a source before liking or unliking."
+}, {
   "command" : "status",
   "user" : "carol19",
   "timestamp" : 5920,
@@ -4226,7 +5321,7 @@
     "remainedTime" : 0,
     "repeat" : "No Repeat",
     "shuffle" : false,
-    "paused" : false
+    "paused" : true
   }
 }, {
   "command" : "status",
@@ -4237,8 +5332,13 @@
     "remainedTime" : 0,
     "repeat" : "No Repeat",
     "shuffle" : false,
-    "paused" : false
+    "paused" : true
   }
+}, {
+  "command" : "repeat",
+  "user" : "emily30",
+  "timestamp" : 5940,
+  "message" : "Please load a source before setting the repeat status."
 }, {
   "command" : "status",
   "user" : "emily30",
@@ -4248,18 +5348,18 @@
     "remainedTime" : 0,
     "repeat" : "No Repeat",
     "shuffle" : false,
-    "paused" : false
+    "paused" : true
   }
 }, {
   "command" : "status",
   "user" : "frank21",
   "timestamp" : 5950,
   "stats" : {
-    "name" : "",
-    "remainedTime" : 0,
+    "name" : "Blank Space",
+    "remainedTime" : 133,
     "repeat" : "No Repeat",
     "shuffle" : false,
-    "paused" : false
+    "paused" : true
   }
 }, {
   "command" : "status",
@@ -4270,8 +5370,13 @@
     "remainedTime" : 0,
     "repeat" : "No Repeat",
     "shuffle" : false,
-    "paused" : false
+    "paused" : true
   }
+}, {
+  "command" : "playPause",
+  "user" : "henry26",
+  "timestamp" : 5970,
+  "message" : "Please load a source before attempting to pause or resume playback."
 }, {
   "command" : "status",
   "user" : "henry26",
@@ -4281,8 +5386,13 @@
     "remainedTime" : 0,
     "repeat" : "No Repeat",
     "shuffle" : false,
-    "paused" : false
+    "paused" : true
   }
+}, {
+  "command" : "like",
+  "user" : "irene33",
+  "timestamp" : 5980,
+  "message" : "Please load a source before liking or unliking."
 }, {
   "command" : "status",
   "user" : "irene33",
@@ -4292,15 +5402,15 @@
     "remainedTime" : 0,
     "repeat" : "No Repeat",
     "shuffle" : false,
-    "paused" : false
+    "paused" : true
   }
 }, {
   "command" : "status",
   "user" : "jack29",
   "timestamp" : 5990,
   "stats" : {
-    "name" : "",
-    "remainedTime" : 0,
+    "name" : "Blank Space",
+    "remainedTime" : 113,
     "repeat" : "No Repeat",
     "shuffle" : false,
     "paused" : false
@@ -4310,8 +5420,8 @@
   "user" : "jack29",
   "timestamp" : 5990,
   "stats" : {
-    "name" : "",
-    "remainedTime" : 0,
+    "name" : "Blank Space",
+    "remainedTime" : 113,
     "repeat" : "No Repeat",
     "shuffle" : false,
     "paused" : false
@@ -4325,19 +5435,24 @@
     "remainedTime" : 0,
     "repeat" : "No Repeat",
     "shuffle" : false,
-    "paused" : false
+    "paused" : true
   }
 }, {
   "command" : "status",
   "user" : "bob35",
   "timestamp" : 6010,
   "stats" : {
-    "name" : "",
-    "remainedTime" : 0,
+    "name" : "The Unforgiven",
+    "remainedTime" : 41,
     "repeat" : "No Repeat",
     "shuffle" : false,
     "paused" : false
   }
+}, {
+  "command" : "like",
+  "user" : "carol19",
+  "timestamp" : 6020,
+  "message" : "Please load a source before liking or unliking."
 }, {
   "command" : "status",
   "user" : "carol19",
@@ -4347,7 +5462,7 @@
     "remainedTime" : 0,
     "repeat" : "No Repeat",
     "shuffle" : false,
-    "paused" : false
+    "paused" : true
   }
 }, {
   "command" : "status",
@@ -4358,7 +5473,7 @@
     "remainedTime" : 0,
     "repeat" : "No Repeat",
     "shuffle" : false,
-    "paused" : false
+    "paused" : true
   }
 }, {
   "command" : "status",
@@ -4369,18 +5484,18 @@
     "remainedTime" : 0,
     "repeat" : "No Repeat",
     "shuffle" : false,
-    "paused" : false
+    "paused" : true
   }
 }, {
   "command" : "status",
   "user" : "frank21",
   "timestamp" : 6050,
   "stats" : {
-    "name" : "",
-    "remainedTime" : 0,
+    "name" : "Blank Space",
+    "remainedTime" : 133,
     "repeat" : "No Repeat",
     "shuffle" : false,
-    "paused" : false
+    "paused" : true
   }
 }, {
   "command" : "switchVisibility",
@@ -4396,8 +5511,13 @@
     "remainedTime" : 0,
     "repeat" : "No Repeat",
     "shuffle" : false,
-    "paused" : false
+    "paused" : true
   }
+}, {
+  "command" : "playPause",
+  "user" : "henry26",
+  "timestamp" : 6070,
+  "message" : "Please load a source before attempting to pause or resume playback."
 }, {
   "command" : "status",
   "user" : "henry26",
@@ -4407,7 +5527,7 @@
     "remainedTime" : 0,
     "repeat" : "No Repeat",
     "shuffle" : false,
-    "paused" : false
+    "paused" : true
   }
 }, {
   "command" : "status",
@@ -4418,19 +5538,24 @@
     "remainedTime" : 0,
     "repeat" : "No Repeat",
     "shuffle" : false,
-    "paused" : false
+    "paused" : true
   }
 }, {
   "command" : "status",
   "user" : "jack29",
   "timestamp" : 6090,
   "stats" : {
-    "name" : "",
-    "remainedTime" : 0,
+    "name" : "Blank Space",
+    "remainedTime" : 13,
     "repeat" : "No Repeat",
     "shuffle" : false,
     "paused" : false
   }
+}, {
+  "command" : "like",
+  "user" : "alice22",
+  "timestamp" : 6100,
+  "message" : "Please load a source before liking or unliking."
 }, {
   "command" : "status",
   "user" : "alice22",
@@ -4440,19 +5565,24 @@
     "remainedTime" : 0,
     "repeat" : "No Repeat",
     "shuffle" : false,
-    "paused" : false
+    "paused" : true
   }
 }, {
   "command" : "status",
   "user" : "bob35",
   "timestamp" : 6110,
   "stats" : {
-    "name" : "",
-    "remainedTime" : 0,
+    "name" : "Begin Again",
+    "remainedTime" : 179,
     "repeat" : "No Repeat",
     "shuffle" : false,
     "paused" : false
   }
+}, {
+  "command" : "playPause",
+  "user" : "carol19",
+  "timestamp" : 6120,
+  "message" : "Please load a source before attempting to pause or resume playback."
 }, {
   "command" : "status",
   "user" : "carol19",
@@ -4462,8 +5592,13 @@
     "remainedTime" : 0,
     "repeat" : "No Repeat",
     "shuffle" : false,
-    "paused" : false
+    "paused" : true
   }
+}, {
+  "command" : "playPause",
+  "user" : "david27",
+  "timestamp" : 6130,
+  "message" : "Please load a source before attempting to pause or resume playback."
 }, {
   "command" : "status",
   "user" : "david27",
@@ -4473,7 +5608,7 @@
     "remainedTime" : 0,
     "repeat" : "No Repeat",
     "shuffle" : false,
-    "paused" : false
+    "paused" : true
   }
 }, {
   "command" : "status",
@@ -4484,7 +5619,7 @@
     "remainedTime" : 0,
     "repeat" : "No Repeat",
     "shuffle" : false,
-    "paused" : false
+    "paused" : true
   }
 }, {
   "command" : "switchVisibility",
@@ -4492,16 +5627,26 @@
   "timestamp" : 6150,
   "message" : "Visibility status updated successfully to private."
 }, {
+  "command" : "repeat",
+  "user" : "frank21",
+  "timestamp" : 6150,
+  "message" : "Repeat mode changed to repeat all."
+}, {
   "command" : "status",
   "user" : "frank21",
   "timestamp" : 6150,
   "stats" : {
-    "name" : "",
-    "remainedTime" : 0,
-    "repeat" : "No Repeat",
+    "name" : "Blank Space",
+    "remainedTime" : 133,
+    "repeat" : "Repeat All",
     "shuffle" : false,
-    "paused" : false
+    "paused" : true
   }
+}, {
+  "command" : "repeat",
+  "user" : "grace25",
+  "timestamp" : 6160,
+  "message" : "Please load a source before setting the repeat status."
 }, {
   "command" : "status",
   "user" : "grace25",
@@ -4511,7 +5656,7 @@
     "remainedTime" : 0,
     "repeat" : "No Repeat",
     "shuffle" : false,
-    "paused" : false
+    "paused" : true
   }
 }, {
   "command" : "status",
@@ -4522,7 +5667,7 @@
     "remainedTime" : 0,
     "repeat" : "No Repeat",
     "shuffle" : false,
-    "paused" : false
+    "paused" : true
   }
 }, {
   "command" : "switchVisibility",
@@ -4538,7 +5683,7 @@
     "remainedTime" : 0,
     "repeat" : "No Repeat",
     "shuffle" : false,
-    "paused" : false
+    "paused" : true
   }
 }, {
   "command" : "status",
@@ -4549,7 +5694,7 @@
     "remainedTime" : 0,
     "repeat" : "No Repeat",
     "shuffle" : false,
-    "paused" : false
+    "paused" : true
   }
 }, {
   "command" : "switchVisibility",
@@ -4557,13 +5702,18 @@
   "timestamp" : 6190,
   "message" : "Visibility status updated successfully to private."
 }, {
+  "command" : "repeat",
+  "user" : "jack29",
+  "timestamp" : 6190,
+  "message" : "Repeat mode changed to repeat all."
+}, {
   "command" : "status",
   "user" : "jack29",
   "timestamp" : 6190,
   "stats" : {
-    "name" : "",
-    "remainedTime" : 0,
-    "repeat" : "No Repeat",
+    "name" : "Money Trees",
+    "remainedTime" : 300,
+    "repeat" : "Repeat All",
     "shuffle" : false,
     "paused" : false
   }
@@ -4573,6 +5723,11 @@
   "timestamp" : 6200,
   "message" : "Visibility status updated successfully to public."
 }, {
+  "command" : "playPause",
+  "user" : "alice22",
+  "timestamp" : 6200,
+  "message" : "Please load a source before attempting to pause or resume playback."
+}, {
   "command" : "status",
   "user" : "alice22",
   "timestamp" : 6200,
@@ -4581,19 +5736,29 @@
     "remainedTime" : 0,
     "repeat" : "No Repeat",
     "shuffle" : false,
-    "paused" : false
+    "paused" : true
   }
+}, {
+  "command" : "like",
+  "user" : "bob35",
+  "timestamp" : 6210,
+  "message" : "Like registered successfully."
 }, {
   "command" : "status",
   "user" : "bob35",
   "timestamp" : 6210,
   "stats" : {
-    "name" : "",
-    "remainedTime" : 0,
+    "name" : "Begin Again",
+    "remainedTime" : 79,
     "repeat" : "No Repeat",
     "shuffle" : false,
     "paused" : false
   }
+}, {
+  "command" : "playPause",
+  "user" : "carol19",
+  "timestamp" : 6220,
+  "message" : "Please load a source before attempting to pause or resume playback."
 }, {
   "command" : "status",
   "user" : "carol19",
@@ -4603,7 +5768,7 @@
     "remainedTime" : 0,
     "repeat" : "No Repeat",
     "shuffle" : false,
-    "paused" : false
+    "paused" : true
   }
 }, {
   "command" : "switchVisibility",
@@ -4619,7 +5784,7 @@
     "remainedTime" : 0,
     "repeat" : "No Repeat",
     "shuffle" : false,
-    "paused" : false
+    "paused" : true
   }
 }, {
   "command" : "status",
@@ -4630,18 +5795,18 @@
     "remainedTime" : 0,
     "repeat" : "No Repeat",
     "shuffle" : false,
-    "paused" : false
+    "paused" : true
   }
 }, {
   "command" : "status",
   "user" : "frank21",
   "timestamp" : 6250,
   "stats" : {
-    "name" : "",
-    "remainedTime" : 0,
-    "repeat" : "No Repeat",
+    "name" : "Blank Space",
+    "remainedTime" : 133,
+    "repeat" : "Repeat All",
     "shuffle" : false,
-    "paused" : false
+    "paused" : true
   }
 }, {
   "command" : "status",
@@ -4652,7 +5817,7 @@
     "remainedTime" : 0,
     "repeat" : "No Repeat",
     "shuffle" : false,
-    "paused" : false
+    "paused" : true
   }
 }, {
   "command" : "status",
@@ -4663,7 +5828,7 @@
     "remainedTime" : 0,
     "repeat" : "No Repeat",
     "shuffle" : false,
-    "paused" : false
+    "paused" : true
   }
 }, {
   "command" : "switchVisibility",
@@ -4671,6 +5836,11 @@
   "timestamp" : 6280,
   "message" : "Visibility status updated successfully to private."
 }, {
+  "command" : "playPause",
+  "user" : "irene33",
+  "timestamp" : 6280,
+  "message" : "Please load a source before attempting to pause or resume playback."
+}, {
   "command" : "status",
   "user" : "irene33",
   "timestamp" : 6280,
@@ -4679,16 +5849,16 @@
     "remainedTime" : 0,
     "repeat" : "No Repeat",
     "shuffle" : false,
-    "paused" : false
+    "paused" : true
   }
 }, {
   "command" : "status",
   "user" : "jack29",
   "timestamp" : 6290,
   "stats" : {
-    "name" : "",
-    "remainedTime" : 0,
-    "repeat" : "No Repeat",
+    "name" : "Money Trees",
+    "remainedTime" : 200,
+    "repeat" : "Repeat All",
     "shuffle" : false,
     "paused" : false
   }
@@ -4697,9 +5867,9 @@
   "user" : "jack29",
   "timestamp" : 6290,
   "stats" : {
-    "name" : "",
-    "remainedTime" : 0,
-    "repeat" : "No Repeat",
+    "name" : "Money Trees",
+    "remainedTime" : 200,
+    "repeat" : "Repeat All",
     "shuffle" : false,
     "paused" : false
   }
@@ -4712,7 +5882,7 @@
     "remainedTime" : 0,
     "repeat" : "No Repeat",
     "shuffle" : false,
-    "paused" : false
+    "paused" : true
   }
 }, {
   "command" : "status",
@@ -4723,8 +5893,13 @@
     "remainedTime" : 0,
     "repeat" : "No Repeat",
     "shuffle" : false,
-    "paused" : false
+    "paused" : true
   }
+}, {
+  "command" : "like",
+  "user" : "bob35",
+  "timestamp" : 6310,
+  "message" : "Please load a source before liking or unliking."
 }, {
   "command" : "status",
   "user" : "bob35",
@@ -4734,8 +5909,13 @@
     "remainedTime" : 0,
     "repeat" : "No Repeat",
     "shuffle" : false,
-    "paused" : false
+    "paused" : true
   }
+}, {
+  "command" : "like",
+  "user" : "carol19",
+  "timestamp" : 6320,
+  "message" : "Please load a source before liking or unliking."
 }, {
   "command" : "status",
   "user" : "carol19",
@@ -4745,8 +5925,13 @@
     "remainedTime" : 0,
     "repeat" : "No Repeat",
     "shuffle" : false,
-    "paused" : false
+    "paused" : true
   }
+}, {
+  "command" : "playPause",
+  "user" : "david27",
+  "timestamp" : 6330,
+  "message" : "Please load a source before attempting to pause or resume playback."
 }, {
   "command" : "status",
   "user" : "david27",
@@ -4756,7 +5941,7 @@
     "remainedTime" : 0,
     "repeat" : "No Repeat",
     "shuffle" : false,
-    "paused" : false
+    "paused" : true
   }
 }, {
   "command" : "status",
@@ -4767,18 +5952,18 @@
     "remainedTime" : 0,
     "repeat" : "No Repeat",
     "shuffle" : false,
-    "paused" : false
+    "paused" : true
   }
 }, {
   "command" : "status",
   "user" : "frank21",
   "timestamp" : 6350,
   "stats" : {
-    "name" : "",
-    "remainedTime" : 0,
-    "repeat" : "No Repeat",
+    "name" : "Blank Space",
+    "remainedTime" : 133,
+    "repeat" : "Repeat All",
     "shuffle" : false,
-    "paused" : false
+    "paused" : true
   }
 }, {
   "command" : "status",
@@ -4789,7 +5974,7 @@
     "remainedTime" : 0,
     "repeat" : "No Repeat",
     "shuffle" : false,
-    "paused" : false
+    "paused" : true
   }
 }, {
   "command" : "status",
@@ -4800,7 +5985,7 @@
     "remainedTime" : 0,
     "repeat" : "No Repeat",
     "shuffle" : false,
-    "paused" : false
+    "paused" : true
   }
 }, {
   "command" : "status",
@@ -4811,8 +5996,13 @@
     "remainedTime" : 0,
     "repeat" : "No Repeat",
     "shuffle" : false,
-    "paused" : false
+    "paused" : true
   }
+}, {
+  "command" : "like",
+  "user" : "irene33",
+  "timestamp" : 6380,
+  "message" : "Please load a source before liking or unliking."
 }, {
   "command" : "status",
   "user" : "irene33",
@@ -4822,19 +6012,24 @@
     "remainedTime" : 0,
     "repeat" : "No Repeat",
     "shuffle" : false,
-    "paused" : false
+    "paused" : true
   }
 }, {
   "command" : "status",
   "user" : "jack29",
   "timestamp" : 6390,
   "stats" : {
-    "name" : "",
-    "remainedTime" : 0,
-    "repeat" : "No Repeat",
+    "name" : "Money Trees",
+    "remainedTime" : 100,
+    "repeat" : "Repeat All",
     "shuffle" : false,
     "paused" : false
   }
+}, {
+  "command" : "like",
+  "user" : "alice22",
+  "timestamp" : 6400,
+  "message" : "Please load a source before liking or unliking."
 }, {
   "command" : "status",
   "user" : "alice22",
@@ -4844,7 +6039,7 @@
     "remainedTime" : 0,
     "repeat" : "No Repeat",
     "shuffle" : false,
-    "paused" : false
+    "paused" : true
   }
 }, {
   "command" : "status",
@@ -4855,7 +6050,7 @@
     "remainedTime" : 0,
     "repeat" : "No Repeat",
     "shuffle" : false,
-    "paused" : false
+    "paused" : true
   }
 }, {
   "command" : "status",
@@ -4866,7 +6061,7 @@
     "remainedTime" : 0,
     "repeat" : "No Repeat",
     "shuffle" : false,
-    "paused" : false
+    "paused" : true
   }
 }, {
   "command" : "switchVisibility",
@@ -4882,7 +6077,7 @@
     "remainedTime" : 0,
     "repeat" : "No Repeat",
     "shuffle" : false,
-    "paused" : false
+    "paused" : true
   }
 }, {
   "command" : "status",
@@ -4893,7 +6088,7 @@
     "remainedTime" : 0,
     "repeat" : "No Repeat",
     "shuffle" : false,
-    "paused" : false
+    "paused" : true
   }
 }, {
   "command" : "status",
@@ -4904,18 +6099,23 @@
     "remainedTime" : 0,
     "repeat" : "No Repeat",
     "shuffle" : false,
-    "paused" : false
+    "paused" : true
   }
+}, {
+  "command" : "like",
+  "user" : "frank21",
+  "timestamp" : 6450,
+  "message" : "Like registered successfully."
 }, {
   "command" : "status",
   "user" : "frank21",
   "timestamp" : 6450,
   "stats" : {
-    "name" : "",
-    "remainedTime" : 0,
-    "repeat" : "No Repeat",
+    "name" : "Blank Space",
+    "remainedTime" : 133,
+    "repeat" : "Repeat All",
     "shuffle" : false,
-    "paused" : false
+    "paused" : true
   }
 }, {
   "command" : "status",
@@ -4926,7 +6126,7 @@
     "remainedTime" : 0,
     "repeat" : "No Repeat",
     "shuffle" : false,
-    "paused" : false
+    "paused" : true
   }
 }, {
   "command" : "switchVisibility",
@@ -4942,7 +6142,7 @@
     "remainedTime" : 0,
     "repeat" : "No Repeat",
     "shuffle" : false,
-    "paused" : false
+    "paused" : true
   }
 }, {
   "command" : "status",
@@ -4953,19 +6153,29 @@
     "remainedTime" : 0,
     "repeat" : "No Repeat",
     "shuffle" : false,
-    "paused" : false
+    "paused" : true
   }
+}, {
+  "command" : "like",
+  "user" : "jack29",
+  "timestamp" : 6490,
+  "message" : "Like registered successfully."
 }, {
   "command" : "status",
   "user" : "jack29",
   "timestamp" : 6490,
   "stats" : {
-    "name" : "",
-    "remainedTime" : 0,
-    "repeat" : "No Repeat",
+    "name" : "Shape of You",
+    "remainedTime" : 233,
+    "repeat" : "Repeat All",
     "shuffle" : false,
     "paused" : false
   }
+}, {
+  "command" : "playPause",
+  "user" : "alice22",
+  "timestamp" : 6500,
+  "message" : "Please load a source before attempting to pause or resume playback."
 }, {
   "command" : "status",
   "user" : "alice22",
@@ -4975,7 +6185,7 @@
     "remainedTime" : 0,
     "repeat" : "No Repeat",
     "shuffle" : false,
-    "paused" : false
+    "paused" : true
   }
 }, {
   "command" : "status",
@@ -4986,13 +6196,18 @@
     "remainedTime" : 0,
     "repeat" : "No Repeat",
     "shuffle" : false,
-    "paused" : false
+    "paused" : true
   }
 }, {
   "command" : "switchVisibility",
   "user" : "carol19",
   "timestamp" : 6520,
   "message" : "Visibility status updated successfully to private."
+}, {
+  "command" : "playPause",
+  "user" : "carol19",
+  "timestamp" : 6520,
+  "message" : "Please load a source before attempting to pause or resume playback."
 }, {
   "command" : "status",
   "user" : "carol19",
@@ -5002,8 +6217,13 @@
     "remainedTime" : 0,
     "repeat" : "No Repeat",
     "shuffle" : false,
-    "paused" : false
+    "paused" : true
   }
+}, {
+  "command" : "playPause",
+  "user" : "david27",
+  "timestamp" : 6530,
+  "message" : "Please load a source before attempting to pause or resume playback."
 }, {
   "command" : "status",
   "user" : "david27",
@@ -5013,7 +6233,7 @@
     "remainedTime" : 0,
     "repeat" : "No Repeat",
     "shuffle" : false,
-    "paused" : false
+    "paused" : true
   }
 }, {
   "command" : "status",
@@ -5024,18 +6244,23 @@
     "remainedTime" : 0,
     "repeat" : "No Repeat",
     "shuffle" : false,
-    "paused" : false
+    "paused" : true
   }
+}, {
+  "command" : "like",
+  "user" : "frank21",
+  "timestamp" : 6550,
+  "message" : "Unlike registered successfully."
 }, {
   "command" : "status",
   "user" : "frank21",
   "timestamp" : 6550,
   "stats" : {
-    "name" : "",
-    "remainedTime" : 0,
-    "repeat" : "No Repeat",
+    "name" : "Blank Space",
+    "remainedTime" : 133,
+    "repeat" : "Repeat All",
     "shuffle" : false,
-    "paused" : false
+    "paused" : true
   }
 }, {
   "command" : "status",
@@ -5046,8 +6271,13 @@
     "remainedTime" : 0,
     "repeat" : "No Repeat",
     "shuffle" : false,
-    "paused" : false
+    "paused" : true
   }
+}, {
+  "command" : "repeat",
+  "user" : "henry26",
+  "timestamp" : 6570,
+  "message" : "Please load a source before setting the repeat status."
 }, {
   "command" : "status",
   "user" : "henry26",
@@ -5057,7 +6287,7 @@
     "remainedTime" : 0,
     "repeat" : "No Repeat",
     "shuffle" : false,
-    "paused" : false
+    "paused" : true
   }
 }, {
   "command" : "status",
@@ -5068,16 +6298,16 @@
     "remainedTime" : 0,
     "repeat" : "No Repeat",
     "shuffle" : false,
-    "paused" : false
+    "paused" : true
   }
 }, {
   "command" : "status",
   "user" : "jack29",
   "timestamp" : 6590,
   "stats" : {
-    "name" : "",
-    "remainedTime" : 0,
-    "repeat" : "No Repeat",
+    "name" : "Shape of You",
+    "remainedTime" : 133,
+    "repeat" : "Repeat All",
     "shuffle" : false,
     "paused" : false
   }
@@ -5086,12 +6316,17 @@
   "user" : "jack29",
   "timestamp" : 6590,
   "stats" : {
-    "name" : "",
-    "remainedTime" : 0,
-    "repeat" : "No Repeat",
+    "name" : "Shape of You",
+    "remainedTime" : 133,
+    "repeat" : "Repeat All",
     "shuffle" : false,
     "paused" : false
   }
+}, {
+  "command" : "like",
+  "user" : "alice22",
+  "timestamp" : 6600,
+  "message" : "Please load a source before liking or unliking."
 }, {
   "command" : "status",
   "user" : "alice22",
@@ -5101,7 +6336,7 @@
     "remainedTime" : 0,
     "repeat" : "No Repeat",
     "shuffle" : false,
-    "paused" : false
+    "paused" : true
   }
 }, {
   "command" : "status",
@@ -5112,7 +6347,7 @@
     "remainedTime" : 0,
     "repeat" : "No Repeat",
     "shuffle" : false,
-    "paused" : false
+    "paused" : true
   }
 }, {
   "command" : "switchVisibility",
@@ -5128,8 +6363,13 @@
     "remainedTime" : 0,
     "repeat" : "No Repeat",
     "shuffle" : false,
-    "paused" : false
+    "paused" : true
   }
+}, {
+  "command" : "like",
+  "user" : "david27",
+  "timestamp" : 6630,
+  "message" : "Please load a source before liking or unliking."
 }, {
   "command" : "status",
   "user" : "david27",
@@ -5139,7 +6379,7 @@
     "remainedTime" : 0,
     "repeat" : "No Repeat",
     "shuffle" : false,
-    "paused" : false
+    "paused" : true
   }
 }, {
   "command" : "status",
@@ -5150,7 +6390,7 @@
     "remainedTime" : 0,
     "repeat" : "No Repeat",
     "shuffle" : false,
-    "paused" : false
+    "paused" : true
   }
 }, {
   "command" : "switchVisibility",
@@ -5158,16 +6398,26 @@
   "timestamp" : 6650,
   "message" : "Visibility status updated successfully to public."
 }, {
+  "command" : "like",
+  "user" : "frank21",
+  "timestamp" : 6650,
+  "message" : "Like registered successfully."
+}, {
   "command" : "status",
   "user" : "frank21",
   "timestamp" : 6650,
   "stats" : {
-    "name" : "",
-    "remainedTime" : 0,
-    "repeat" : "No Repeat",
+    "name" : "Blank Space",
+    "remainedTime" : 133,
+    "repeat" : "Repeat All",
     "shuffle" : false,
-    "paused" : false
+    "paused" : true
   }
+}, {
+  "command" : "playPause",
+  "user" : "grace25",
+  "timestamp" : 6660,
+  "message" : "Please load a source before attempting to pause or resume playback."
 }, {
   "command" : "status",
   "user" : "grace25",
@@ -5177,8 +6427,13 @@
     "remainedTime" : 0,
     "repeat" : "No Repeat",
     "shuffle" : false,
-    "paused" : false
+    "paused" : true
   }
+}, {
+  "command" : "playPause",
+  "user" : "henry26",
+  "timestamp" : 6670,
+  "message" : "Please load a source before attempting to pause or resume playback."
 }, {
   "command" : "status",
   "user" : "henry26",
@@ -5188,7 +6443,7 @@
     "remainedTime" : 0,
     "repeat" : "No Repeat",
     "shuffle" : false,
-    "paused" : false
+    "paused" : true
   }
 }, {
   "command" : "status",
@@ -5199,19 +6454,29 @@
     "remainedTime" : 0,
     "repeat" : "No Repeat",
     "shuffle" : false,
-    "paused" : false
+    "paused" : true
   }
+}, {
+  "command" : "playPause",
+  "user" : "jack29",
+  "timestamp" : 6690,
+  "message" : "Playback paused successfully."
 }, {
   "command" : "status",
   "user" : "jack29",
   "timestamp" : 6690,
   "stats" : {
-    "name" : "",
-    "remainedTime" : 0,
-    "repeat" : "No Repeat",
+    "name" : "Shape of You",
+    "remainedTime" : 33,
+    "repeat" : "Repeat All",
     "shuffle" : false,
-    "paused" : false
+    "paused" : true
   }
+}, {
+  "command" : "repeat",
+  "user" : "alice22",
+  "timestamp" : 6700,
+  "message" : "Please load a source before setting the repeat status."
 }, {
   "command" : "status",
   "user" : "alice22",
@@ -5221,8 +6486,13 @@
     "remainedTime" : 0,
     "repeat" : "No Repeat",
     "shuffle" : false,
-    "paused" : false
+    "paused" : true
   }
+}, {
+  "command" : "like",
+  "user" : "bob35",
+  "timestamp" : 6710,
+  "message" : "Please load a source before liking or unliking."
 }, {
   "command" : "status",
   "user" : "bob35",
@@ -5232,7 +6502,7 @@
     "remainedTime" : 0,
     "repeat" : "No Repeat",
     "shuffle" : false,
-    "paused" : false
+    "paused" : true
   }
 }, {
   "command" : "status",
@@ -5243,7 +6513,7 @@
     "remainedTime" : 0,
     "repeat" : "No Repeat",
     "shuffle" : false,
-    "paused" : false
+    "paused" : true
   }
 }, {
   "command" : "switchVisibility",
@@ -5259,7 +6529,7 @@
     "remainedTime" : 0,
     "repeat" : "No Repeat",
     "shuffle" : false,
-    "paused" : false
+    "paused" : true
   }
 }, {
   "command" : "status",
@@ -5270,8 +6540,13 @@
     "remainedTime" : 0,
     "repeat" : "No Repeat",
     "shuffle" : false,
-    "paused" : false
+    "paused" : true
   }
+}, {
+  "command" : "repeat",
+  "user" : "emily30",
+  "timestamp" : 6740,
+  "message" : "Please load a source before setting the repeat status."
 }, {
   "command" : "status",
   "user" : "emily30",
@@ -5281,18 +6556,23 @@
     "remainedTime" : 0,
     "repeat" : "No Repeat",
     "shuffle" : false,
-    "paused" : false
+    "paused" : true
   }
+}, {
+  "command" : "repeat",
+  "user" : "frank21",
+  "timestamp" : 6750,
+  "message" : "Repeat mode changed to repeat current song."
 }, {
   "command" : "status",
   "user" : "frank21",
   "timestamp" : 6750,
   "stats" : {
-    "name" : "",
-    "remainedTime" : 0,
-    "repeat" : "No Repeat",
+    "name" : "Blank Space",
+    "remainedTime" : 133,
+    "repeat" : "Repeat Current Song",
     "shuffle" : false,
-    "paused" : false
+    "paused" : true
   }
 }, {
   "command" : "switchVisibility",
@@ -5308,7 +6588,7 @@
     "remainedTime" : 0,
     "repeat" : "No Repeat",
     "shuffle" : false,
-    "paused" : false
+    "paused" : true
   }
 }, {
   "command" : "status",
@@ -5319,7 +6599,7 @@
     "remainedTime" : 0,
     "repeat" : "No Repeat",
     "shuffle" : false,
-    "paused" : false
+    "paused" : true
   }
 }, {
   "command" : "switchVisibility",
@@ -5327,6 +6607,11 @@
   "timestamp" : 6780,
   "message" : "Visibility status updated successfully to public."
 }, {
+  "command" : "like",
+  "user" : "irene33",
+  "timestamp" : 6780,
+  "message" : "Please load a source before liking or unliking."
+}, {
   "command" : "status",
   "user" : "irene33",
   "timestamp" : 6780,
@@ -5335,18 +6620,23 @@
     "remainedTime" : 0,
     "repeat" : "No Repeat",
     "shuffle" : false,
-    "paused" : false
+    "paused" : true
   }
+}, {
+  "command" : "repeat",
+  "user" : "jack29",
+  "timestamp" : 6790,
+  "message" : "Repeat mode changed to repeat current song."
 }, {
   "command" : "status",
   "user" : "jack29",
   "timestamp" : 6790,
   "stats" : {
-    "name" : "",
-    "remainedTime" : 0,
-    "repeat" : "No Repeat",
+    "name" : "Shape of You",
+    "remainedTime" : 33,
+    "repeat" : "Repeat Current Song",
     "shuffle" : false,
-    "paused" : false
+    "paused" : true
   }
 }, {
   "command" : "status",
@@ -5357,7 +6647,7 @@
     "remainedTime" : 0,
     "repeat" : "No Repeat",
     "shuffle" : false,
-    "paused" : false
+    "paused" : true
   }
 }, {
   "command" : "status",
@@ -5368,7 +6658,7 @@
     "remainedTime" : 0,
     "repeat" : "No Repeat",
     "shuffle" : false,
-    "paused" : false
+    "paused" : true
   }
 }, {
   "command" : "status",
@@ -5379,8 +6669,13 @@
     "remainedTime" : 0,
     "repeat" : "No Repeat",
     "shuffle" : false,
-    "paused" : false
+    "paused" : true
   }
+}, {
+  "command" : "repeat",
+  "user" : "carol19",
+  "timestamp" : 6820,
+  "message" : "Please load a source before setting the repeat status."
 }, {
   "command" : "status",
   "user" : "carol19",
@@ -5390,8 +6685,13 @@
     "remainedTime" : 0,
     "repeat" : "No Repeat",
     "shuffle" : false,
-    "paused" : false
+    "paused" : true
   }
+}, {
+  "command" : "like",
+  "user" : "david27",
+  "timestamp" : 6830,
+  "message" : "Please load a source before liking or unliking."
 }, {
   "command" : "status",
   "user" : "david27",
@@ -5401,13 +6701,18 @@
     "remainedTime" : 0,
     "repeat" : "No Repeat",
     "shuffle" : false,
-    "paused" : false
+    "paused" : true
   }
 }, {
   "command" : "switchVisibility",
   "user" : "emily30",
   "timestamp" : 6840,
   "message" : "Visibility status updated successfully to public."
+}, {
+  "command" : "repeat",
+  "user" : "emily30",
+  "timestamp" : 6840,
+  "message" : "Please load a source before setting the repeat status."
 }, {
   "command" : "status",
   "user" : "emily30",
@@ -5417,7 +6722,7 @@
     "remainedTime" : 0,
     "repeat" : "No Repeat",
     "shuffle" : false,
-    "paused" : false
+    "paused" : true
   }
 }, {
   "command" : "switchVisibility",
@@ -5429,22 +6734,22 @@
   "user" : "frank21",
   "timestamp" : 6850,
   "stats" : {
-    "name" : "",
-    "remainedTime" : 0,
-    "repeat" : "No Repeat",
+    "name" : "Blank Space",
+    "remainedTime" : 133,
+    "repeat" : "Repeat Current Song",
     "shuffle" : false,
-    "paused" : false
+    "paused" : true
   }
 }, {
   "command" : "status",
   "user" : "frank21",
   "timestamp" : 6850,
   "stats" : {
-    "name" : "",
-    "remainedTime" : 0,
-    "repeat" : "No Repeat",
+    "name" : "Blank Space",
+    "remainedTime" : 133,
+    "repeat" : "Repeat Current Song",
     "shuffle" : false,
-    "paused" : false
+    "paused" : true
   }
 }, {
   "command" : "status",
@@ -5455,8 +6760,13 @@
     "remainedTime" : 0,
     "repeat" : "No Repeat",
     "shuffle" : false,
-    "paused" : false
+    "paused" : true
   }
+}, {
+  "command" : "like",
+  "user" : "henry26",
+  "timestamp" : 6870,
+  "message" : "Please load a source before liking or unliking."
 }, {
   "command" : "status",
   "user" : "henry26",
@@ -5466,8 +6776,13 @@
     "remainedTime" : 0,
     "repeat" : "No Repeat",
     "shuffle" : false,
-    "paused" : false
+    "paused" : true
   }
+}, {
+  "command" : "like",
+  "user" : "irene33",
+  "timestamp" : 6880,
+  "message" : "Please load a source before liking or unliking."
 }, {
   "command" : "status",
   "user" : "irene33",
@@ -5477,18 +6792,23 @@
     "remainedTime" : 0,
     "repeat" : "No Repeat",
     "shuffle" : false,
-    "paused" : false
+    "paused" : true
   }
+}, {
+  "command" : "like",
+  "user" : "jack29",
+  "timestamp" : 6890,
+  "message" : "Unlike registered successfully."
 }, {
   "command" : "status",
   "user" : "jack29",
   "timestamp" : 6890,
   "stats" : {
-    "name" : "",
-    "remainedTime" : 0,
-    "repeat" : "No Repeat",
+    "name" : "Shape of You",
+    "remainedTime" : 33,
+    "repeat" : "Repeat Current Song",
     "shuffle" : false,
-    "paused" : false
+    "paused" : true
   }
 }, {
   "command" : "status",
@@ -5499,13 +6819,18 @@
     "remainedTime" : 0,
     "repeat" : "No Repeat",
     "shuffle" : false,
-    "paused" : false
+    "paused" : true
   }
 }, {
   "command" : "switchVisibility",
   "user" : "bob35",
   "timestamp" : 6910,
   "message" : "Visibility status updated successfully to private."
+}, {
+  "command" : "playPause",
+  "user" : "bob35",
+  "timestamp" : 6910,
+  "message" : "Please load a source before attempting to pause or resume playback."
 }, {
   "command" : "status",
   "user" : "bob35",
@@ -5515,8 +6840,13 @@
     "remainedTime" : 0,
     "repeat" : "No Repeat",
     "shuffle" : false,
-    "paused" : false
+    "paused" : true
   }
+}, {
+  "command" : "like",
+  "user" : "carol19",
+  "timestamp" : 6920,
+  "message" : "Please load a source before liking or unliking."
 }, {
   "command" : "status",
   "user" : "carol19",
@@ -5526,7 +6856,7 @@
     "remainedTime" : 0,
     "repeat" : "No Repeat",
     "shuffle" : false,
-    "paused" : false
+    "paused" : true
   }
 }, {
   "command" : "switchVisibility",
@@ -5542,7 +6872,7 @@
     "remainedTime" : 0,
     "repeat" : "No Repeat",
     "shuffle" : false,
-    "paused" : false
+    "paused" : true
   }
 }, {
   "command" : "status",
@@ -5553,8 +6883,13 @@
     "remainedTime" : 0,
     "repeat" : "No Repeat",
     "shuffle" : false,
-    "paused" : false
+    "paused" : true
   }
+}, {
+  "command" : "playPause",
+  "user" : "emily30",
+  "timestamp" : 6940,
+  "message" : "Please load a source before attempting to pause or resume playback."
 }, {
   "command" : "status",
   "user" : "emily30",
@@ -5564,18 +6899,23 @@
     "remainedTime" : 0,
     "repeat" : "No Repeat",
     "shuffle" : false,
-    "paused" : false
+    "paused" : true
   }
+}, {
+  "command" : "repeat",
+  "user" : "frank21",
+  "timestamp" : 6950,
+  "message" : "Repeat mode changed to no repeat."
 }, {
   "command" : "status",
   "user" : "frank21",
   "timestamp" : 6950,
   "stats" : {
-    "name" : "",
-    "remainedTime" : 0,
+    "name" : "Blank Space",
+    "remainedTime" : 133,
     "repeat" : "No Repeat",
     "shuffle" : false,
-    "paused" : false
+    "paused" : true
   }
 }, {
   "command" : "status",
@@ -5586,13 +6926,18 @@
     "remainedTime" : 0,
     "repeat" : "No Repeat",
     "shuffle" : false,
-    "paused" : false
+    "paused" : true
   }
 }, {
   "command" : "switchVisibility",
   "user" : "henry26",
   "timestamp" : 6970,
   "message" : "The specified playlist ID is too high"
+}, {
+  "command" : "playPause",
+  "user" : "henry26",
+  "timestamp" : 6970,
+  "message" : "Please load a source before attempting to pause or resume playback."
 }, {
   "command" : "status",
   "user" : "henry26",
@@ -5602,8 +6947,13 @@
     "remainedTime" : 0,
     "repeat" : "No Repeat",
     "shuffle" : false,
-    "paused" : false
+    "paused" : true
   }
+}, {
+  "command" : "repeat",
+  "user" : "irene33",
+  "timestamp" : 6980,
+  "message" : "Please load a source before setting the repeat status."
 }, {
   "command" : "status",
   "user" : "irene33",
@@ -5613,7 +6963,7 @@
     "remainedTime" : 0,
     "repeat" : "No Repeat",
     "shuffle" : false,
-    "paused" : false
+    "paused" : true
   }
 }, {
   "command" : "switchVisibility",
@@ -5621,15 +6971,20 @@
   "timestamp" : 6990,
   "message" : "Visibility status updated successfully to public."
 }, {
+  "command" : "repeat",
+  "user" : "jack29",
+  "timestamp" : 6990,
+  "message" : "Repeat mode changed to no repeat."
+}, {
   "command" : "status",
   "user" : "jack29",
   "timestamp" : 6990,
   "stats" : {
-    "name" : "",
-    "remainedTime" : 0,
+    "name" : "Shape of You",
+    "remainedTime" : 33,
     "repeat" : "No Repeat",
     "shuffle" : false,
-    "paused" : false
+    "paused" : true
   }
 }, {
   "command" : "search",
@@ -5726,7 +7081,7 @@
   "command" : "follow",
   "user" : "frank21",
   "timestamp" : 7040,
-  "message" : "You cannot follow or unfollow your own playlist."
+  "message" : "Please select a source before following or unfollowing."
 }, {
   "command" : "search",
   "user" : "grace25",
@@ -5886,7 +7241,7 @@
   "command" : "follow",
   "user" : "frank21",
   "timestamp" : 7140,
-  "message" : "You cannot follow or unfollow your own playlist."
+  "message" : "Please select a source before following or unfollowing."
 }, {
   "command" : "search",
   "user" : "grace25",
@@ -8042,10 +9397,15 @@
     "followers" : 2
   }, {
     "name" : "Classic Grooves Escape #2",
-    "songs" : [ ],
+    "songs" : [ "Start Me Up", "Shape of You", "Begin Again", "Dream On" ],
     "visibility" : "public",
     "followers" : 1
   } ]
+}, {
+  "command" : "showPreferredSongs",
+  "user" : "alice22",
+  "timestamp" : 8490,
+  "result" : "[]"
 }, {
   "command" : "showPlaylists",
   "user" : "bob35",
@@ -8057,10 +9417,15 @@
     "followers" : 0
   }, {
     "name" : "Dynamic Tracks Trek #2",
-    "songs" : [ ],
+    "songs" : [ "Bohemian Rhapsody", "The Unforgiven", "Begin Again" ],
     "visibility" : "public",
     "followers" : 4
   } ]
+}, {
+  "command" : "showPreferredSongs",
+  "user" : "bob35",
+  "timestamp" : 8500,
+  "result" : [ "The Unforgiven", "Begin Again" ]
 }, {
   "command" : "showPlaylists",
   "user" : "carol19",
@@ -8072,10 +9437,15 @@
     "followers" : 0
   }, {
     "name" : "Chill Grooves Quest #2",
-    "songs" : [ ],
+    "songs" : [ "Whatever You Need", "Black Dog", "Gimme Shelter", "Stairway to Heaven", "Maps", "Shape of You" ],
     "visibility" : "private",
     "followers" : 0
   } ]
+}, {
+  "command" : "showPreferredSongs",
+  "user" : "carol19",
+  "timestamp" : 8510,
+  "result" : "[]"
 }, {
   "command" : "showPlaylists",
   "user" : "david27",
@@ -8087,10 +9457,15 @@
     "followers" : 0
   }, {
     "name" : "Groovy Beats Expedition #2",
-    "songs" : [ ],
+    "songs" : [ "Don't", "Sad But True", "Under Pressure" ],
     "visibility" : "private",
     "followers" : 0
   } ]
+}, {
+  "command" : "showPreferredSongs",
+  "user" : "david27",
+  "timestamp" : 8520,
+  "result" : "[]"
 }, {
   "command" : "showPlaylists",
   "user" : "emily30",
@@ -8102,10 +9477,15 @@
     "followers" : 1
   }, {
     "name" : "Electric Tunes Dream #2",
-    "songs" : [ ],
+    "songs" : [ "Bohemian Rhapsody", "The Man", "Delicate", "Angie", "Paint It Black", "Begin Again" ],
     "visibility" : "public",
     "followers" : 3
   } ]
+}, {
+  "command" : "showPreferredSongs",
+  "user" : "emily30",
+  "timestamp" : 8530,
+  "result" : "[]"
 }, {
   "command" : "showPlaylists",
   "user" : "frank21",
@@ -8117,10 +9497,15 @@
     "followers" : 0
   }, {
     "name" : "Breezy Bangers Quest #2",
-    "songs" : [ ],
+    "songs" : [ "Blank Space", "Don't", "Whatever You Need", "Big Pimpin'" ],
     "visibility" : "public",
     "followers" : 3
   } ]
+}, {
+  "command" : "showPreferredSongs",
+  "user" : "frank21",
+  "timestamp" : 8540,
+  "result" : [ "Blank Space" ]
 }, {
   "command" : "showPlaylists",
   "user" : "grace25",
@@ -8132,10 +9517,15 @@
     "followers" : 4
   }, {
     "name" : "Electric Beats Escape #2",
-    "songs" : [ ],
+    "songs" : [ "Maps", "Dream On", "Whatever You Need", "Begin Again", "Start Me Up" ],
     "visibility" : "public",
     "followers" : 1
   } ]
+}, {
+  "command" : "showPreferredSongs",
+  "user" : "grace25",
+  "timestamp" : 8550,
+  "result" : "[]"
 }, {
   "command" : "showPlaylists",
   "user" : "henry26",
@@ -8147,10 +9537,15 @@
     "followers" : 0
   }, {
     "name" : "Chill Tracks Safari #2",
-    "songs" : [ ],
+    "songs" : [ "Sad But True", "Gimme Shelter", "Paint It Black" ],
     "visibility" : "public",
     "followers" : 0
   } ]
+}, {
+  "command" : "showPreferredSongs",
+  "user" : "henry26",
+  "timestamp" : 8560,
+  "result" : "[]"
 }, {
   "command" : "showPlaylists",
   "user" : "irene33",
@@ -8162,10 +9557,15 @@
     "followers" : 2
   }, {
     "name" : "Stellar Rhythms Safari #2",
-    "songs" : [ ],
+    "songs" : [ "Sad But True", "The Man", "Big Pimpin'", "Start Me Up", "Gimme Shelter" ],
     "visibility" : "public",
     "followers" : 1
   } ]
+}, {
+  "command" : "showPreferredSongs",
+  "user" : "irene33",
+  "timestamp" : 8570,
+  "result" : "[]"
 }, {
   "command" : "showPlaylists",
   "user" : "jack29",
@@ -8177,8 +9577,13 @@
     "followers" : 1
   }, {
     "name" : "Mellow Tracks Safari #2",
-    "songs" : [ ],
+    "songs" : [ "Maps", "The Man", "Blank Space", "Money Trees", "Shape of You", "The Unforgiven", "Big Pimpin'", "Love Story" ],
     "visibility" : "private",
     "followers" : 0
   } ]
+}, {
+  "command" : "showPreferredSongs",
+  "user" : "jack29",
+  "timestamp" : 8580,
+  "result" : [ "The Man" ]
 } ]

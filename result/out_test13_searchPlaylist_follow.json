@@ -2,7 +2,7 @@
   "command" : "createPlaylist",
   "user" : "bob35",
   "timestamp" : 150,
-  "message" : "Playlist created successfully"
+  "message" : "Playlist created successfully."
 }, {
   "command" : "search",
   "user" : "bob35",
@@ -20,15 +20,25 @@
   "timestamp" : 200,
   "message" : "Playback loaded successfully."
 }, {
+  "command" : "addRemoveInPlaylist",
+  "user" : "bob35",
+  "timestamp" : 240,
+  "message" : "Successfully added to playlist."
+}, {
   "command" : "select",
   "user" : "bob35",
   "timestamp" : 290,
-  "message" : "Successfully selected Start Me Up."
+  "message" : "Please conduct a search before making a selection."
 }, {
   "command" : "load",
   "user" : "bob35",
   "timestamp" : 300,
-  "message" : "Playback loaded successfully."
+  "message" : "Please select a source before attempting to load."
+}, {
+  "command" : "addRemoveInPlaylist",
+  "user" : "bob35",
+  "timestamp" : 340,
+  "message" : "Successfully removed from playlist."
 }, {
   "command" : "search",
   "user" : "bob35",
@@ -46,10 +56,15 @@
   "timestamp" : 400,
   "message" : "Playback loaded successfully."
 }, {
+  "command" : "addRemoveInPlaylist",
+  "user" : "bob35",
+  "timestamp" : 440,
+  "message" : "Successfully added to playlist."
+}, {
   "command" : "createPlaylist",
   "user" : "bob35",
   "timestamp" : 450,
-  "message" : "Playlist created successfully"
+  "message" : "Playlist created successfully."
 }, {
   "command" : "search",
   "user" : "bob35",
@@ -67,6 +82,11 @@
   "timestamp" : 500,
   "message" : "Playback loaded successfully."
 }, {
+  "command" : "addRemoveInPlaylist",
+  "user" : "bob35",
+  "timestamp" : 540,
+  "message" : "Successfully added to playlist."
+}, {
   "command" : "search",
   "user" : "bob35",
   "timestamp" : 570,
@@ -83,10 +103,15 @@
   "timestamp" : 600,
   "message" : "Playback loaded successfully."
 }, {
+  "command" : "addRemoveInPlaylist",
+  "user" : "bob35",
+  "timestamp" : 640,
+  "message" : "Successfully removed from playlist."
+}, {
   "command" : "createPlaylist",
   "user" : "carol19",
   "timestamp" : 750,
-  "message" : "Playlist created successfully"
+  "message" : "Playlist created successfully."
 }, {
   "command" : "search",
   "user" : "carol19",
@@ -103,6 +128,11 @@
   "user" : "carol19",
   "timestamp" : 900,
   "message" : "Playback loaded successfully."
+}, {
+  "command" : "addRemoveInPlaylist",
+  "user" : "carol19",
+  "timestamp" : 940,
+  "message" : "Successfully added to playlist."
 }, {
   "command" : "search",
   "user" : "carol19",
@@ -125,7 +155,7 @@
   "timestamp" : 1060,
   "result" : [ {
     "name" : "My first playlist",
-    "songs" : [ ],
+    "songs" : [ "Start Me Up" ],
     "visibility" : "public",
     "followers" : 1
   }, {
@@ -140,7 +170,7 @@
   "timestamp" : 1100,
   "result" : [ {
     "name" : "The best",
-    "songs" : [ ],
+    "songs" : [ "Start Me Up" ],
     "visibility" : "public",
     "followers" : 0
   } ]
@@ -155,7 +185,7 @@
   "timestamp" : 1160,
   "result" : [ {
     "name" : "My first playlist",
-    "songs" : [ ],
+    "songs" : [ "Start Me Up" ],
     "visibility" : "private",
     "followers" : 1
   }, {
@@ -202,7 +232,7 @@
   "timestamp" : 1370,
   "result" : [ {
     "name" : "The best",
-    "songs" : [ ],
+    "songs" : [ "Start Me Up" ],
     "visibility" : "public",
     "followers" : 2
   } ]
@@ -217,7 +247,7 @@
   "timestamp" : 1500,
   "result" : [ {
     "name" : "The best",
-    "songs" : [ ],
+    "songs" : [ "Start Me Up" ],
     "visibility" : "private",
     "followers" : 2
   } ]
@@ -232,7 +262,7 @@
   "timestamp" : 1600,
   "result" : [ {
     "name" : "The best",
-    "songs" : [ ],
+    "songs" : [ "Start Me Up" ],
     "visibility" : "public",
     "followers" : 2
   } ]

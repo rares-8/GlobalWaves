@@ -2,10 +2,16 @@ package utils;
 
 import user.memory.UserMemory;
 
-import java.util.ArrayList;
-
 public abstract class UpdateTimestamp {
-    public static void updateTimestamp(String username, Integer timestamp, UserMemory memory) {
+    /**
+     * Put the current timestamp in a hashtable, for the user that issued the command
+     *
+     * @param username  - user that issued the command
+     * @param timestamp - current timestamp
+     * @param memory    - database for users
+     */
+    public static void updateTimestamp(final String username, final Integer timestamp,
+                                       final UserMemory memory) {
         memory.getLastTimestamp().put(username, timestamp);
     }
 }

@@ -15,6 +15,11 @@
   "timestamp" : 15,
   "message" : "Playback loaded successfully."
 }, {
+  "command" : "addRemoveInPlaylist",
+  "user" : "emily30",
+  "timestamp" : 20,
+  "message" : "The specified playlist does not exist."
+}, {
   "command" : "search",
   "user" : "emily30",
   "timestamp" : 25,
@@ -28,18 +33,29 @@
 }, {
   "command" : "load",
   "user" : "emily30",
-  "timestamp" : 31
+  "timestamp" : 31,
+  "message" : "Playback loaded successfully."
 }, {
   "command" : "createPlaylist",
   "user" : "emily30",
   "timestamp" : 35,
-  "message" : "Playlist created successfully"
+  "message" : "Playlist created successfully."
+}, {
+  "command" : "addRemoveInPlaylist",
+  "user" : "emily30",
+  "timestamp" : 40,
+  "message" : "The loaded source is not a song."
 }, {
   "command" : "search",
   "user" : "emily30",
   "timestamp" : 45,
   "message" : "Search returned 3 results",
   "results" : [ "Bohemian Rhapsody", "We Will Rock You", "Radio Ga Ga" ]
+}, {
+  "command" : "addRemoveInPlaylist",
+  "user" : "emily30",
+  "timestamp" : 50,
+  "message" : "Please load a source before adding to or removing from the playlist."
 }, {
   "command" : "createPlaylist",
   "user" : "emily30",
@@ -62,11 +78,21 @@
   "timestamp" : 71,
   "message" : "Playback loaded successfully."
 }, {
+  "command" : "addRemoveInPlaylist",
+  "user" : "emily30",
+  "timestamp" : 72,
+  "message" : "Successfully added to playlist."
+}, {
   "command" : "search",
   "user" : "emily30",
   "timestamp" : 75,
   "message" : "Search returned 1 results",
   "results" : [ "Playlist alb pentru zile negre" ]
+}, {
+  "command" : "like",
+  "user" : "emily30",
+  "timestamp" : 80,
+  "message" : "Please load a source before liking or unliking."
 }, {
   "command" : "select",
   "user" : "emily30",
@@ -76,14 +102,19 @@
   "command" : "load",
   "user" : "emily30",
   "timestamp" : 86,
-  "message" : "You can't load an empty audio collection!"
+  "message" : "Playback loaded successfully."
+}, {
+  "command" : "like",
+  "user" : "emily30",
+  "timestamp" : 90,
+  "message" : "Like registered successfully."
 }, {
   "command" : "showPlaylists",
   "user" : "emily30",
   "timestamp" : 95,
   "result" : [ {
     "name" : "Playlist alb pentru zile negre",
-    "songs" : [ ],
+    "songs" : [ "Get Lucky" ],
     "visibility" : "public",
     "followers" : 0
   } ]

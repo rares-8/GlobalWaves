@@ -2,7 +2,7 @@
   "command" : "createPlaylist",
   "user" : "bob35",
   "timestamp" : 150,
-  "message" : "Playlist created successfully"
+  "message" : "Playlist created successfully."
 }, {
   "command" : "search",
   "user" : "bob35",
@@ -20,6 +20,11 @@
   "timestamp" : 195,
   "message" : "Playback loaded successfully."
 }, {
+  "command" : "addRemoveInPlaylist",
+  "user" : "bob35",
+  "timestamp" : 240,
+  "message" : "Successfully added to playlist."
+}, {
   "command" : "search",
   "user" : "bob35",
   "timestamp" : 270,
@@ -35,6 +40,11 @@
   "user" : "bob35",
   "timestamp" : 320,
   "message" : "Playback loaded successfully."
+}, {
+  "command" : "addRemoveInPlaylist",
+  "user" : "bob35",
+  "timestamp" : 340,
+  "message" : "Successfully added to playlist."
 }, {
   "command" : "search",
   "user" : "bob35",
@@ -52,6 +62,11 @@
   "timestamp" : 400,
   "message" : "Playback loaded successfully."
 }, {
+  "command" : "addRemoveInPlaylist",
+  "user" : "bob35",
+  "timestamp" : 430,
+  "message" : "Successfully added to playlist."
+}, {
   "command" : "search",
   "user" : "bob35",
   "timestamp" : 445,
@@ -67,6 +82,11 @@
   "user" : "bob35",
   "timestamp" : 460,
   "message" : "Playback loaded successfully."
+}, {
+  "command" : "addRemoveInPlaylist",
+  "user" : "bob35",
+  "timestamp" : 480,
+  "message" : "Successfully added to playlist."
 }, {
   "command" : "search",
   "user" : "bob35",
@@ -84,6 +104,11 @@
   "timestamp" : 520,
   "message" : "Playback loaded successfully."
 }, {
+  "command" : "addRemoveInPlaylist",
+  "user" : "bob35",
+  "timestamp" : 540,
+  "message" : "Successfully added to playlist."
+}, {
   "command" : "search",
   "user" : "bob35",
   "timestamp" : 590,
@@ -100,6 +125,11 @@
   "timestamp" : 660,
   "message" : "Playback loaded successfully."
 }, {
+  "command" : "addRemoveInPlaylist",
+  "user" : "bob35",
+  "timestamp" : 690,
+  "message" : "Successfully added to playlist."
+}, {
   "command" : "search",
   "user" : "bob35",
   "timestamp" : 700,
@@ -114,14 +144,14 @@
   "command" : "load",
   "user" : "bob35",
   "timestamp" : 740,
-  "message" : "You can't load an empty audio collection!"
+  "message" : "Playback loaded successfully."
 }, {
   "command" : "status",
   "user" : "bob35",
   "timestamp" : 800,
   "stats" : {
-    "name" : "Begin Again",
-    "remainedTime" : 98,
+    "name" : "Nothing Else Matters",
+    "remainedTime" : 329,
     "repeat" : "No Repeat",
     "shuffle" : false,
     "paused" : false
@@ -131,8 +161,8 @@
   "user" : "bob35",
   "timestamp" : 900,
   "stats" : {
-    "name" : "",
-    "remainedTime" : 0,
+    "name" : "Nothing Else Matters",
+    "remainedTime" : 229,
     "repeat" : "No Repeat",
     "shuffle" : false,
     "paused" : false
@@ -142,8 +172,8 @@
   "user" : "bob35",
   "timestamp" : 1250,
   "stats" : {
-    "name" : "",
-    "remainedTime" : 0,
+    "name" : "Crazy",
+    "remainedTime" : 193,
     "repeat" : "No Repeat",
     "shuffle" : false,
     "paused" : false
@@ -153,8 +183,8 @@
   "user" : "bob35",
   "timestamp" : 1600,
   "stats" : {
-    "name" : "",
-    "remainedTime" : 0,
+    "name" : "Elevate",
+    "remainedTime" : 68,
     "repeat" : "No Repeat",
     "shuffle" : false,
     "paused" : false
@@ -164,8 +194,8 @@
   "user" : "bob35",
   "timestamp" : 1660,
   "stats" : {
-    "name" : "",
-    "remainedTime" : 0,
+    "name" : "Elevate",
+    "remainedTime" : 8,
     "repeat" : "No Repeat",
     "shuffle" : false,
     "paused" : false
@@ -175,8 +205,8 @@
   "user" : "bob35",
   "timestamp" : 2000,
   "stats" : {
-    "name" : "",
-    "remainedTime" : 0,
+    "name" : "Hustle Hard",
+    "remainedTime" : 145,
     "repeat" : "No Repeat",
     "shuffle" : false,
     "paused" : false
@@ -186,8 +216,8 @@
   "user" : "bob35",
   "timestamp" : 2350,
   "stats" : {
-    "name" : "",
-    "remainedTime" : 0,
+    "name" : "Begin Again",
+    "remainedTime" : 33,
     "repeat" : "No Repeat",
     "shuffle" : false,
     "paused" : false
@@ -207,14 +237,14 @@
   "command" : "load",
   "user" : "bob35",
   "timestamp" : 2353,
-  "message" : "You can't load an empty audio collection!"
+  "message" : "Playback loaded successfully."
 }, {
   "command" : "status",
   "user" : "bob35",
   "timestamp" : 2410,
   "stats" : {
-    "name" : "",
-    "remainedTime" : 0,
+    "name" : "Nothing Else Matters",
+    "remainedTime" : 332,
     "repeat" : "No Repeat",
     "shuffle" : false,
     "paused" : false
@@ -224,8 +254,8 @@
   "user" : "bob35",
   "timestamp" : 2750,
   "stats" : {
-    "name" : "",
-    "remainedTime" : 0,
+    "name" : "Crazy",
+    "remainedTime" : 306,
     "repeat" : "No Repeat",
     "shuffle" : false,
     "paused" : false
@@ -235,8 +265,8 @@
   "user" : "bob35",
   "timestamp" : 3100,
   "stats" : {
-    "name" : "",
-    "remainedTime" : 0,
+    "name" : "Elevate",
+    "remainedTime" : 181,
     "repeat" : "No Repeat",
     "shuffle" : false,
     "paused" : false

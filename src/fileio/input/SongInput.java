@@ -97,7 +97,7 @@ public final class SongInput implements Audio {
     }
 
     @Override
-    public void setIsPrivate(Integer isPrivate) {
+    public void setIsPrivate(final Integer isPrivate) {
 
     }
 
@@ -107,7 +107,7 @@ public final class SongInput implements Audio {
     }
 
     @Override
-    public void setPlaylistSongs(ArrayList<SongInput> playlistSongs) {
+    public void setPlaylistSongs(final ArrayList<SongInput> playlistSongs) {
 
     }
 
@@ -117,7 +117,7 @@ public final class SongInput implements Audio {
     }
 
     @Override
-    public void setTimeCreated(int timeCreated) {
+    public void setTimeCreated(final int timeCreated) {
 
     }
 
@@ -138,6 +138,22 @@ public final class SongInput implements Audio {
 
     @Override
     public void setEpisodes(final ArrayList<EpisodeInput> episodes) {
+
+    }
+
+    /**
+     * @return episode description
+     */
+    @Override
+    public String getDescription() {
+        return null;
+    }
+
+    /**
+     * @param description
+     */
+    @Override
+    public void setDescription(final String description) {
 
     }
 }

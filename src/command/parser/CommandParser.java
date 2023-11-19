@@ -8,7 +8,6 @@ import commands.*;
 import fileio.input.LibraryInput;
 import user.memory.UserMemory;
 import utils.UpdatePlayer;
-import utils.UpdateTimestamp;
 
 import java.util.EnumSet;
 import java.util.ArrayList;
@@ -31,9 +30,10 @@ public final class CommandParser {
         Integer timestamp = getTimestamp(currentCommand);
 
         if (currentCommand.has("username")) {
-            UpdatePlayer.updatePlayer(getUsername(currentCommand), timestamp, memory);
+            if (!memory.getIsPaused().containsKey(getUsername(currentCommand))) {
+                UpdatePlayer.updatePlayer(getUsername(currentCommand), timestamp, memory);
+            }
         }
-
 
         switch (command) {
             case "search":
@@ -45,8 +45,20 @@ public final class CommandParser {
             case "load":
                 loadParse(currentCommand, memory, timestamp);
                 break;
+            case "repeat":
+                repeatParse(currentCommand, memory, timestamp);
+                break;
+            case "playPause":
+                pauseParse(currentCommand, memory, timestamp);
+                break;
             case "createPlaylist":
                 createPlaylistParse(currentCommand, memory, timestamp);
+                break;
+            case "addRemoveInPlaylist":
+                addRemoveParse(currentCommand, memory, timestamp);
+                break;
+            case "like":
+                likeParse(currentCommand, memory, timestamp);
                 break;
             case "switchVisibility":
                 switchParse(currentCommand, memory, timestamp);
@@ -60,9 +72,82 @@ public final class CommandParser {
             case "status":
                 statusParse(currentCommand, memory, timestamp);
                 break;
+            case "showPreferredSongs":
+                showPrefferedParse(currentCommand, memory, timestamp);
+                break;
             default:
                 System.out.println("Unknown command : " + command);
         }
+    }
+
+    /**
+     * Get the rest of the fields from "repeat" command and call method
+     * to solve the command
+     *
+     * @param currentCommand - command from input file
+     * @param memory         - memory database for users
+     * @param timestamp      - timestamp from command
+     */
+    private void repeatParse(JsonNode currentCommand, UserMemory memory, Integer timestamp) {
+        String username = getUsername(currentCommand);
+        outputs.add(Repeat.repeat(username, memory, timestamp));
+    }
+
+    /**
+     * Get the rest of the fields from "showPreferredSongs" command and call method
+     * to solve the command
+     *
+     * @param currentCommand - command from input file
+     * @param memory         - memory database for users
+     * @param timestamp      - timestamp from command
+     */
+    private void showPrefferedParse(final JsonNode currentCommand, final UserMemory memory,
+                                    final Integer timestamp) {
+        String username = getUsername(currentCommand);
+        outputs.add(ShowPreferredSongs.showPreferred(username, memory, timestamp));
+    }
+
+    /**
+     * Get the rest of the fields from "like" command and call method
+     * to solve the command
+     *
+     * @param currentCommand - command from input file
+     * @param memory         - memory database for users
+     * @param timestamp      - timestamp from command
+     */
+    private void likeParse(final JsonNode currentCommand, final UserMemory memory,
+                           final Integer timestamp) {
+        String username = getUsername(currentCommand);
+        outputs.add(Like.like(username, memory, timestamp));
+    }
+
+    /**
+     * Get the rest of the fields from "addRemoveInPlaylist" command and call method
+     * to solve the command
+     *
+     * @param currentCommand - command from input file
+     * @param memory         - memory database for users
+     * @param timestamp      - timestamp from command
+     */
+    private void addRemoveParse(final JsonNode currentCommand, final UserMemory memory,
+                                final Integer timestamp) {
+        String username = getUsername(currentCommand);
+        Integer playlistId = getPlaylistID(currentCommand);
+        outputs.add(AddRemoveInPlaylist.addRemove(username, playlistId, memory, timestamp));
+    }
+
+    /**
+     * Get the rest of the fields from "pause" command and call method
+     * to solve the command
+     *
+     * @param currentCommand - command from input file
+     * @param memory         - memory database for users
+     * @param timestamp      - timestamp from command
+     */
+    private void pauseParse(final JsonNode currentCommand, final UserMemory memory,
+                            final Integer timestamp) {
+        String username = getUsername(currentCommand);
+        outputs.add(Pause.pause(username, memory, timestamp));
     }
 
     /**
@@ -73,7 +158,8 @@ public final class CommandParser {
      * @param memory         - memory database for users
      * @param timestamp      - timestamp from command
      */
-    private void statusParse(JsonNode currentCommand, UserMemory memory, Integer timestamp) {
+    private void statusParse(final JsonNode currentCommand, final UserMemory memory,
+                             final Integer timestamp) {
         String username = getUsername(currentCommand);
         outputs.add(Status.status(username, memory, timestamp));
     }
@@ -86,7 +172,8 @@ public final class CommandParser {
      * @param memory         - memory database for users
      * @param timestamp      - timestamp from command
      */
-    private void loadParse(JsonNode currentCommand, UserMemory memory, Integer timestamp) {
+    private void loadParse(final JsonNode currentCommand, final UserMemory memory,
+                           final Integer timestamp) {
         String username = getUsername(currentCommand);
         outputs.add(Load.load(username, memory, timestamp));
     }
@@ -99,7 +186,8 @@ public final class CommandParser {
      * @param memory         - memory database for users
      * @param timestamp      - timestamp from command
      */
-    private void showParse(JsonNode currentCommand, UserMemory memory, Integer timestamp) {
+    private void showParse(final JsonNode currentCommand, final UserMemory memory,
+                           final Integer timestamp) {
         String username = getUsername(currentCommand);
         outputs.add(ShowPlaylists.show(username, memory, timestamp));
     }
@@ -112,7 +200,8 @@ public final class CommandParser {
      * @param memory         - memory database for users
      * @param timestamp      - timestamp from command
      */
-    private void followParse(final JsonNode currentCommand, final UserMemory memory, Integer timestamp) {
+    private void followParse(final JsonNode currentCommand, final UserMemory memory,
+                             final Integer timestamp) {
         String username = getUsername(currentCommand);
         outputs.add(FollowPlaylist.follow(username, memory, timestamp));
     }
@@ -191,7 +280,7 @@ public final class CommandParser {
                 playlistName, timestamp, memory));
     }
 
-    private String getPlaylistName(JsonNode currentCommand) {
+    private String getPlaylistName(final JsonNode currentCommand) {
         return currentCommand.get("playlistName").toString().replace("\"", "");
     }
 
@@ -215,7 +304,7 @@ public final class CommandParser {
         return currentCommand.get("timestamp").asInt();
     }
 
-    private Integer getPlaylistID(JsonNode currentCommand) {
+    private Integer getPlaylistID(final JsonNode currentCommand) {
         return currentCommand.get("playlistId").asInt();
     }
 

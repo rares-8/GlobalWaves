@@ -2,7 +2,7 @@
   "command" : "createPlaylist",
   "user" : "emily30",
   "timestamp" : 150,
-  "message" : "Playlist created successfully"
+  "message" : "Playlist created successfully."
 }, {
   "command" : "search",
   "user" : "emily30",
@@ -20,6 +20,11 @@
   "timestamp" : 195,
   "message" : "Playback loaded successfully."
 }, {
+  "command" : "addRemoveInPlaylist",
+  "user" : "emily30",
+  "timestamp" : 240,
+  "message" : "Successfully added to playlist."
+}, {
   "command" : "search",
   "user" : "emily30",
   "timestamp" : 270,
@@ -36,6 +41,11 @@
   "timestamp" : 300,
   "message" : "Playback loaded successfully."
 }, {
+  "command" : "addRemoveInPlaylist",
+  "user" : "emily30",
+  "timestamp" : 340,
+  "message" : "Successfully added to playlist."
+}, {
   "command" : "search",
   "user" : "emily30",
   "timestamp" : 1000,
@@ -50,7 +60,7 @@
     "remainedTime" : 0,
     "repeat" : "No Repeat",
     "shuffle" : false,
-    "paused" : false
+    "paused" : true
   }
 }, {
   "command" : "select",
@@ -61,14 +71,14 @@
   "command" : "load",
   "user" : "emily30",
   "timestamp" : 1195,
-  "message" : "You can't load an empty audio collection!"
+  "message" : "Playback loaded successfully."
 }, {
   "command" : "status",
   "user" : "emily30",
   "timestamp" : 1220,
   "stats" : {
-    "name" : "",
-    "remainedTime" : 0,
+    "name" : "Swimming Pools (Drank)",
+    "remainedTime" : 207,
     "repeat" : "No Repeat",
     "shuffle" : false,
     "paused" : false
@@ -78,8 +88,8 @@
   "user" : "emily30",
   "timestamp" : 1250,
   "stats" : {
-    "name" : "",
-    "remainedTime" : 0,
+    "name" : "Swimming Pools (Drank)",
+    "remainedTime" : 177,
     "repeat" : "No Repeat",
     "shuffle" : false,
     "paused" : false
@@ -89,8 +99,8 @@
   "user" : "emily30",
   "timestamp" : 1320,
   "stats" : {
-    "name" : "",
-    "remainedTime" : 0,
+    "name" : "Swimming Pools (Drank)",
+    "remainedTime" : 107,
     "repeat" : "No Repeat",
     "shuffle" : false,
     "paused" : false
@@ -109,14 +119,15 @@
 }, {
   "command" : "load",
   "user" : "emily30",
-  "timestamp" : 2200
+  "timestamp" : 2200,
+  "message" : "Playback loaded successfully."
 }, {
   "command" : "status",
   "user" : "emily30",
   "timestamp" : 3220,
   "stats" : {
-    "name" : "",
-    "remainedTime" : 0,
+    "name" : "The Capitol Riot, 1 Year Later",
+    "remainedTime" : 150,
     "repeat" : "No Repeat",
     "shuffle" : false,
     "paused" : false
@@ -126,8 +137,8 @@
   "user" : "emily30",
   "timestamp" : 3920,
   "stats" : {
-    "name" : "",
-    "remainedTime" : 0,
+    "name" : "Inside the Vaccine Mandate Showdown",
+    "remainedTime" : 861,
     "repeat" : "No Repeat",
     "shuffle" : false,
     "paused" : false
@@ -152,7 +163,7 @@
     "remainedTime" : 0,
     "repeat" : "No Repeat",
     "shuffle" : false,
-    "paused" : false
+    "paused" : true
   }
 }, {
   "command" : "load",

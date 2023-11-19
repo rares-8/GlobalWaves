@@ -35,6 +35,7 @@ public abstract class Select {
                         + lastSearch.get(itemNumber - 1).getName() + ".");
                 memory.getCurrentSelect().put(username, lastSearch.get(itemNumber - 1));
             }
+            memory.getLastSearch().remove(username);
         } else {
             commandResult.put("message", "Please conduct a search before making a selection.");
         }

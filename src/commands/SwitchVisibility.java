@@ -7,6 +7,14 @@ import fileio.input.PlaylistInput;
 import user.memory.UserMemory;
 
 public abstract class SwitchVisibility {
+    /**
+     *
+     * @param username - user that issued the command
+     * @param playlistId - id for playlist that needs to switch visibility
+     * @param timestamp - current playlist
+     * @param memory - database
+     * @return command result
+     */
     public static JsonNode switchVisibility(final String username, final Integer playlistId,
                                             final Integer timestamp, final UserMemory memory) {
         ObjectMapper mapper = new ObjectMapper();

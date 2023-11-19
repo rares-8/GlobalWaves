@@ -3,14 +3,16 @@ package fileio.input;
 import java.util.ArrayList;
 import java.util.Map;
 
-public class PlaylistInput implements Audio {
+public final class PlaylistInput implements Audio {
     private String name;
     private int isPrivate;
     private ArrayList<SongInput> playlistSongs;
     private String owner;
     private Integer timeCreated;
 
-    public PlaylistInput(String name, int isPrivate, ArrayList<SongInput> playlistSongs, String owner, int timeCreated) {
+    public PlaylistInput(final String name, final int isPrivate,
+                         final ArrayList<SongInput> playlistSongs,
+                         final String owner, final int timeCreated) {
         this.name = name;
         this.isPrivate = isPrivate;
         this.playlistSongs = playlistSongs;
@@ -22,7 +24,7 @@ public class PlaylistInput implements Audio {
         return name;
     }
 
-    public void setName(String name) {
+    public void setName(final String name) {
         this.name = name;
     }
 
@@ -30,7 +32,7 @@ public class PlaylistInput implements Audio {
         return isPrivate;
     }
 
-    public void setIsPrivate(Integer isPrivate) {
+    public void setIsPrivate(final Integer isPrivate) {
         this.isPrivate = isPrivate;
     }
 
@@ -38,7 +40,7 @@ public class PlaylistInput implements Audio {
         return playlistSongs;
     }
 
-    public void setPlaylistSongs(ArrayList<SongInput> playlistSongs) {
+    public void setPlaylistSongs(final ArrayList<SongInput> playlistSongs) {
         this.playlistSongs = playlistSongs;
     }
 
@@ -46,7 +48,7 @@ public class PlaylistInput implements Audio {
         return owner;
     }
 
-    public void setOwner(String owner) {
+    public void setOwner(final String owner) {
         this.owner = owner;
     }
 
@@ -57,7 +59,7 @@ public class PlaylistInput implements Audio {
     }
 
     @Override
-    public void setEpisodes(ArrayList<EpisodeInput> episodes) {
+    public void setEpisodes(final ArrayList<EpisodeInput> episodes) {
 
     }
 
@@ -67,7 +69,7 @@ public class PlaylistInput implements Audio {
     }
 
     @Override
-    public void setDuration(Integer duration) {
+    public void setDuration(final Integer duration) {
 
     }
 
@@ -77,7 +79,7 @@ public class PlaylistInput implements Audio {
     }
 
     @Override
-    public void setAlbum(String album) {
+    public void setAlbum(final String album) {
 
     }
 
@@ -87,7 +89,7 @@ public class PlaylistInput implements Audio {
     }
 
     @Override
-    public void setTags(ArrayList<String> tags) {
+    public void setTags(final ArrayList<String> tags) {
 
     }
 
@@ -97,7 +99,7 @@ public class PlaylistInput implements Audio {
     }
 
     @Override
-    public void setLyrics(String lyrics) {
+    public void setLyrics(final String lyrics) {
 
     }
 
@@ -107,7 +109,7 @@ public class PlaylistInput implements Audio {
     }
 
     @Override
-    public void setGenre(String genre) {
+    public void setGenre(final String genre) {
 
     }
 
@@ -117,7 +119,7 @@ public class PlaylistInput implements Audio {
     }
 
     @Override
-    public void setReleaseYear(int releaseYear) {
+    public void setReleaseYear(final int releaseYear) {
 
     }
 
@@ -127,7 +129,7 @@ public class PlaylistInput implements Audio {
     }
 
     @Override
-    public void setArtist(String artist) {
+    public void setArtist(final String artist) {
 
     }
 
@@ -135,7 +137,7 @@ public class PlaylistInput implements Audio {
         return timeCreated;
     }
 
-    public void setTimeCreated(int timeCreated) {
+    public void setTimeCreated(final int timeCreated) {
         this.timeCreated = timeCreated;
     }
 
@@ -149,5 +151,19 @@ public class PlaylistInput implements Audio {
         return null;
     }
 
+    /**
+     * @return episode description
+     */
+    @Override
+    public String getDescription() {
+        return null;
+    }
 
+    /**
+     * @param description
+     */
+    @Override
+    public void setDescription(final String description) {
+
+    }
 }

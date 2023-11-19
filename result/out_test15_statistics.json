@@ -2,7 +2,7 @@
   "command" : "createPlaylist",
   "user" : "bob35",
   "timestamp" : 150,
-  "message" : "Playlist created successfully"
+  "message" : "Playlist created successfully."
 }, {
   "command" : "search",
   "user" : "bob35",
@@ -20,10 +20,20 @@
   "timestamp" : 200,
   "message" : "Playback loaded successfully."
 }, {
+  "command" : "like",
+  "user" : "bob35",
+  "timestamp" : 205,
+  "message" : "Like registered successfully."
+}, {
+  "command" : "addRemoveInPlaylist",
+  "user" : "bob35",
+  "timestamp" : 240,
+  "message" : "Successfully added to playlist."
+}, {
   "command" : "createPlaylist",
   "user" : "carol19",
   "timestamp" : 250,
-  "message" : "Playlist created successfully"
+  "message" : "Playlist created successfully."
 }, {
   "command" : "search",
   "user" : "carol19",
@@ -41,6 +51,16 @@
   "timestamp" : 300,
   "message" : "Playback loaded successfully."
 }, {
+  "command" : "like",
+  "user" : "carol19",
+  "timestamp" : 305,
+  "message" : "Like registered successfully."
+}, {
+  "command" : "addRemoveInPlaylist",
+  "user" : "carol19",
+  "timestamp" : 340,
+  "message" : "Successfully added to playlist."
+}, {
   "command" : "search",
   "user" : "carol19",
   "timestamp" : 370,
@@ -56,6 +76,11 @@
   "user" : "carol19",
   "timestamp" : 400,
   "message" : "Playback loaded successfully."
+}, {
+  "command" : "like",
+  "user" : "carol19",
+  "timestamp" : 405,
+  "message" : "Like registered successfully."
 }, {
   "command" : "search",
   "user" : "carol19",
@@ -73,6 +98,11 @@
   "timestamp" : 500,
   "message" : "Playback loaded successfully."
 }, {
+  "command" : "addRemoveInPlaylist",
+  "user" : "carol19",
+  "timestamp" : 540,
+  "message" : "Successfully added to playlist."
+}, {
   "command" : "search",
   "user" : "carol19",
   "timestamp" : 770,
@@ -89,10 +119,20 @@
   "timestamp" : 800,
   "message" : "Playback loaded successfully."
 }, {
+  "command" : "like",
+  "user" : "carol19",
+  "timestamp" : 805,
+  "message" : "Unlike registered successfully."
+}, {
+  "command" : "showPreferredSongs",
+  "user" : "carol19",
+  "timestamp" : 1000,
+  "result" : [ "Bohemian Rhapsody" ]
+}, {
   "command" : "createPlaylist",
   "user" : "david27",
   "timestamp" : 1150,
-  "message" : "Playlist created successfully"
+  "message" : "Playlist created successfully."
 }, {
   "command" : "search",
   "user" : "david27",
@@ -110,10 +150,20 @@
   "timestamp" : 1200,
   "message" : "Playback loaded successfully."
 }, {
+  "command" : "like",
+  "user" : "david27",
+  "timestamp" : 1205,
+  "message" : "Like registered successfully."
+}, {
+  "command" : "addRemoveInPlaylist",
+  "user" : "david27",
+  "timestamp" : 1240,
+  "message" : "Successfully added to playlist."
+}, {
   "command" : "createPlaylist",
   "user" : "emily30",
   "timestamp" : 2150,
-  "message" : "Playlist created successfully"
+  "message" : "Playlist created successfully."
 }, {
   "command" : "search",
   "user" : "emily30",
@@ -130,6 +180,26 @@
   "user" : "emily30",
   "timestamp" : 2295,
   "message" : "Playback loaded successfully."
+}, {
+  "command" : "showPreferredSongs",
+  "user" : "emily30",
+  "timestamp" : 2300,
+  "result" : "[]"
+}, {
+  "command" : "like",
+  "user" : "emily30",
+  "timestamp" : 2350,
+  "message" : "Like registered successfully."
+}, {
+  "command" : "addRemoveInPlaylist",
+  "user" : "emily30",
+  "timestamp" : 2370,
+  "message" : "Successfully added to playlist."
+}, {
+  "command" : "showPreferredSongs",
+  "user" : "emily30",
+  "timestamp" : 2400,
+  "result" : [ "Bohemian Rhapsody" ]
 }, {
   "command" : "search",
   "user" : "emily30",
@@ -178,4 +248,14 @@
   "user" : "david27",
   "timestamp" : 2850,
   "message" : "Playlist followed successfully."
+}, {
+  "command" : "showPreferredSongs",
+  "user" : "bob35",
+  "timestamp" : 3100,
+  "result" : [ "Bohemian Rhapsody" ]
+}, {
+  "command" : "showPreferredSongs",
+  "user" : "carol19",
+  "timestamp" : 3200,
+  "result" : [ "Bohemian Rhapsody" ]
 } ]

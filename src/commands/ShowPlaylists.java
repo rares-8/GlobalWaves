@@ -13,7 +13,14 @@ import java.util.ArrayList;
 import java.util.Map;
 
 public abstract class ShowPlaylists {
-    public static JsonNode show(final String username, final UserMemory memory, final Integer timestamp) {
+    /**
+     * @param username  - user that issued the command
+     * @param memory    - database
+     * @param timestamp - current timestamp
+     * @return command result
+     */
+    public static JsonNode show(final String username, final UserMemory memory,
+                                final Integer timestamp) {
         ObjectMapper mapper = new ObjectMapper();
         ObjectNode commandResult = mapper.createObjectNode();
         commandResult.put("command", "showPlaylists");
@@ -54,7 +61,15 @@ public abstract class ShowPlaylists {
         return commandResult;
     }
 
-    public static Integer countFollowers(Map<String, ArrayList<Audio>> followedPlaylists, PlaylistInput playlist) {
+    /**
+     * Count followers for a given playlist
+     *
+     * @param followedPlaylists -
+     * @param playlist          - playlist to check followers for
+     * @return number of followers
+     */
+    public static Integer countFollowers(final Map<String, ArrayList<Audio>> followedPlaylists,
+                                         final PlaylistInput playlist) {
         Integer count = 0;
         for (Map.Entry<String, ArrayList<Audio>> element : followedPlaylists.entrySet()) {
             ArrayList<Audio> userFollows = element.getValue();

@@ -222,7 +222,7 @@
   "stats" : {
     "name" : "99 Problems",
     "remainedTime" : 225,
-    "repeat" : "Repeat All",
+    "repeat" : "Repeat Once",
     "shuffle" : false,
     "paused" : false
   }
@@ -231,9 +231,9 @@
   "user" : "alice22",
   "timestamp" : 2099,
   "stats" : {
-    "name" : "99 Problems",
-    "remainedTime" : 225,
-    "repeat" : "Repeat All",
+    "name" : "Hustle Hard",
+    "remainedTime" : 223,
+    "repeat" : "Repeat Once",
     "shuffle" : false,
     "paused" : false
   }
@@ -247,9 +247,9 @@
   "user" : "alice22",
   "timestamp" : 2101,
   "stats" : {
-    "name" : "99 Problems",
-    "remainedTime" : 223,
-    "repeat" : "Repeat Current Song",
+    "name" : "Hustle Hard",
+    "remainedTime" : 221,
+    "repeat" : "Repeat Infinite",
     "shuffle" : false,
     "paused" : false
   }
@@ -258,9 +258,9 @@
   "user" : "alice22",
   "timestamp" : 2334,
   "stats" : {
-    "name" : "99 Problems",
-    "remainedTime" : 224,
-    "repeat" : "Repeat Current Song",
+    "name" : "Butterfly Effect",
+    "remainedTime" : 178,
+    "repeat" : "Repeat Infinite",
     "shuffle" : false,
     "paused" : false
   }
@@ -268,14 +268,14 @@
   "command" : "repeat",
   "user" : "alice22",
   "timestamp" : 2335,
-  "message" : "Repeat mode changed to no repeat."
+  "message" : "Repeat mode changed to no repeat"
 }, {
   "command" : "status",
   "user" : "alice22",
   "timestamp" : 2336,
   "stats" : {
-    "name" : "99 Problems",
-    "remainedTime" : 222,
+    "name" : "Butterfly Effect",
+    "remainedTime" : 176,
     "repeat" : "No Repeat",
     "shuffle" : false,
     "paused" : false

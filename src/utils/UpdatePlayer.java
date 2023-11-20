@@ -40,7 +40,6 @@ public abstract class UpdatePlayer {
      */
     private static void updateForPodcast(final String username, final Integer timestamp,
                                          final UserMemory memory) {
-        // TODO: CHANGE THIS AFTER IMPLEMENTING SHUFFLE AND REPEAT
         Integer currentEpIndex = memory.getCurrentIndex().get(username);
         PodcastInput currentPodcast = (PodcastInput) memory.getLoadedAudio().get(username);
         ArrayList<Integer> indexes = memory.getCollectionIndexes().get(username);
@@ -51,9 +50,18 @@ public abstract class UpdatePlayer {
         UpdateRemainingTimeEpisode.updateEp(username, timestamp, currentEpisode, podcastIndex, memory);
         UpdateTimestamp.updateTimestamp(username, timestamp, memory);
 
+        Integer repeatingMode = 0;
+        if (memory.getIsRepeating().containsKey(username)) {
+            repeatingMode = memory.getIsRepeating().get(username);
+        }
+
+        if (repeatingMode != 0) {
+            repeatPodcast(currentEpisode, podcastIndex, memory, username, timestamp, repeatingMode);
+        }
+
         Integer remainingTime = memory.getEpisodeRemainingTime().get(username).get(podcastIndex);
         while (remainingTime <= 0) {
-            if (currentEpIndex == indexes.size() - 1) {
+            if (indexes.indexOf(currentEpIndex) == indexes.size() - 1) {
                 memory.getLoadedAudio().remove(username);
                 memory.getIsPaused().put(username, 1);
                 memory.getEpisodeRemainingTime().get(username).remove(podcastIndex);
@@ -72,6 +80,39 @@ public abstract class UpdatePlayer {
     }
 
     /**
+     * Method used to repeat the podcast loaded in the player.
+     * @param currentEpisode - episode currently running
+     * @param podcastIndex - index for loadedPodcasts hashmap
+     * @param memory - database
+     * @param username - user that issued the command
+     * @param timestamp - current timestamp
+     */
+    private static void repeatPodcast(final EpisodeInput currentEpisode, final int podcastIndex,
+                                      final UserMemory memory, final String username,
+                                      final Integer timestamp, final Integer repeatMode) {
+        int remainingTime, timePassed, timestampFinished;
+        if (repeatMode == 1) {
+            remainingTime = memory.getEpisodeRemainingTime().get(username).get(podcastIndex);
+            if (remainingTime <= 0) {
+                timestampFinished = timestamp + remainingTime;
+                timePassed = timestamp - timestampFinished;
+                remainingTime = currentEpisode.getDuration() - timePassed;
+                memory.getEpisodeRemainingTime().get(username).set(podcastIndex, remainingTime);
+                memory.getIsRepeating().remove(username);
+            }
+            return;
+        }
+
+        remainingTime = memory.getEpisodeRemainingTime().get(username).get(podcastIndex);
+        while (remainingTime <= 0) {
+            timestampFinished = timestamp + remainingTime;
+            timePassed = timestamp - timestampFinished;
+            remainingTime = currentEpisode.getDuration() - timePassed;
+            memory.getEpisodeRemainingTime().get(username).set(podcastIndex, remainingTime);
+        }
+    }
+
+    /**
      * Update the player when a playlist is loaded
      *
      * @param username
@@ -80,7 +121,6 @@ public abstract class UpdatePlayer {
      */
     private static void updateForPlaylist(final String username, final Integer timestamp,
                                           final UserMemory memory) {
-        // TODO: CHANGE THIS AFTER IMPLEMENTING SHUFFLE AND REPEAT
         Integer currentIndex = memory.getCurrentIndex().get(username);
         PlaylistInput currentPlaylist = (PlaylistInput) memory.getLoadedAudio().get(username);
         ArrayList<Integer> indexes = memory.getCollectionIndexes().get(username);
@@ -90,8 +130,9 @@ public abstract class UpdatePlayer {
         UpdateTimestamp.updateTimestamp(username, timestamp, memory);
 
         Integer repeatMode = 0;
-        if (memory.getIsRepeating().containsKey(username))
+        if (memory.getIsRepeating().containsKey(username)) {
             repeatMode = memory.getIsRepeating().get(username);
+        }
 
         Integer remainingTime = memory.getRemainingTime().get(username);
 
@@ -105,7 +146,7 @@ public abstract class UpdatePlayer {
         while (remainingTime <= 0) {
             int repeat = 0;
 
-            if (currentIndex == indexes.size() - 1) {
+            if (indexes.indexOf(currentIndex) == indexes.size() - 1) {
                 if (repeatMode == 1) {
                     currentIndex = indexes.get(0);
                     repeat = 1;
@@ -113,6 +154,7 @@ public abstract class UpdatePlayer {
                     memory.getLoadedAudio().remove(username);
                     memory.getIsPaused().put(username, 1);
                     memory.getRemainingTime().remove(username);
+                    memory.getIsShuffled().remove(username);
                     break;
                 }
             }
@@ -144,8 +186,9 @@ public abstract class UpdatePlayer {
         UpdateTimestamp.updateTimestamp(username, timestamp, memory);
 
         Integer repeatMode = 0;
-        if (memory.getIsRepeating().containsKey(username))
+        if (memory.getIsRepeating().containsKey(username)) {
             repeatMode = memory.getIsRepeating().get(username);
+        }
 
         if (repeatMode != 0) {
             repeatLoadedSong(username, timestamp, repeatMode, memory);

@@ -8,6 +8,8 @@ import commands.*;
 import fileio.input.LibraryInput;
 import user.memory.UserMemory;
 import utils.UpdatePlayer;
+import utils.UpdateRemainingTime;
+import utils.UpdateTimestamp;
 
 import java.util.EnumSet;
 import java.util.ArrayList;
@@ -30,8 +32,12 @@ public final class CommandParser {
         Integer timestamp = getTimestamp(currentCommand);
 
         if (currentCommand.has("username")) {
-            if (!memory.getIsPaused().containsKey(getUsername(currentCommand))) {
+            boolean isPaused = memory.getIsPaused().containsKey(getUsername(currentCommand));
+            boolean update = command.equals("load") || command.equals("next");
+            if (!isPaused) {
                 UpdatePlayer.updatePlayer(getUsername(currentCommand), timestamp, memory);
+            } else if (update) {
+                UpdateTimestamp.updateTimestamp(getUsername(currentCommand), timestamp, memory);
             }
         }
 
@@ -73,11 +79,48 @@ public final class CommandParser {
                 statusParse(currentCommand, memory, timestamp);
                 break;
             case "showPreferredSongs":
-                showPrefferedParse(currentCommand, memory, timestamp);
+                showPreferredParse(currentCommand, memory, timestamp);
+                break;
+            case "shuffle":
+                shuffleParse(currentCommand, memory, timestamp);
+                break;
+            case "next":
+                nextParse(currentCommand, memory, timestamp);
                 break;
             default:
                 System.out.println("Unknown command : " + command);
         }
+    }
+
+    /**
+     * Get the rest of the fields from "next" command and call method
+     * to solve the command
+     *
+     * @param currentCommand - command from input file
+     * @param memory         - memory database for users
+     * @param timestamp      - timestamp from command
+     */
+    private void nextParse(JsonNode currentCommand, UserMemory memory, Integer timestamp) {
+        String username = getUsername(currentCommand);
+        outputs.add(Next.next(username, memory, timestamp));
+    }
+
+    /**
+     * Get the rest of the fields from "shuffle" command and call method
+     * to solve the command
+     *
+     * @param currentCommand - command from input file
+     * @param memory         - memory database for users
+     * @param timestamp      - timestamp from command
+     */
+    private void shuffleParse(final JsonNode currentCommand, final UserMemory memory,
+                              final Integer timestamp) {
+        String username = getUsername(currentCommand);
+        int seed = 0;
+        if (currentCommand.has("seed")) {
+            seed = getSeed(currentCommand);
+        }
+        outputs.add(Shuffle.shuffle(username, seed, memory, timestamp));
     }
 
     /**
@@ -88,7 +131,8 @@ public final class CommandParser {
      * @param memory         - memory database for users
      * @param timestamp      - timestamp from command
      */
-    private void repeatParse(JsonNode currentCommand, UserMemory memory, Integer timestamp) {
+    private void repeatParse(final JsonNode currentCommand, final UserMemory memory,
+                             final Integer timestamp) {
         String username = getUsername(currentCommand);
         outputs.add(Repeat.repeat(username, memory, timestamp));
     }
@@ -101,7 +145,7 @@ public final class CommandParser {
      * @param memory         - memory database for users
      * @param timestamp      - timestamp from command
      */
-    private void showPrefferedParse(final JsonNode currentCommand, final UserMemory memory,
+    private void showPreferredParse(final JsonNode currentCommand, final UserMemory memory,
                                     final Integer timestamp) {
         String username = getUsername(currentCommand);
         outputs.add(ShowPreferredSongs.showPreferred(username, memory, timestamp));
@@ -306,6 +350,10 @@ public final class CommandParser {
 
     private Integer getPlaylistID(final JsonNode currentCommand) {
         return currentCommand.get("playlistId").asInt();
+    }
+
+    private Integer getSeed(final JsonNode currentCommand) {
+        return currentCommand.get("seed").asInt();
     }
 
     public CommandParser(final LibraryInput library, final ArrayNode outputs) {

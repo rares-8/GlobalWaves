@@ -52,6 +52,11 @@
   "message" : "Search returned 1 results",
   "results" : [ "My favourite songs" ]
 }, {
+  "command" : "next",
+  "user" : "emily30",
+  "timestamp" : 1130,
+  "message" : "Please load a source before skipping to the next track."
+}, {
   "command" : "status",
   "user" : "emily30",
   "timestamp" : 1140,
@@ -77,19 +82,24 @@
   "user" : "emily30",
   "timestamp" : 1220,
   "stats" : {
-    "name" : "Swimming Pools (Drank)",
-    "remainedTime" : 207,
+    "name" : "Going Bad",
+    "remainedTime" : 155,
     "repeat" : "No Repeat",
     "shuffle" : false,
     "paused" : false
   }
+}, {
+  "command" : "next",
+  "user" : "emily30",
+  "timestamp" : 1240,
+  "message" : "Skipped to next track successfully. The current track is Swimming Pools (Drank)."
 }, {
   "command" : "status",
   "user" : "emily30",
   "timestamp" : 1250,
   "stats" : {
     "name" : "Swimming Pools (Drank)",
-    "remainedTime" : 177,
+    "remainedTime" : 237,
     "repeat" : "No Repeat",
     "shuffle" : false,
     "paused" : false
@@ -100,7 +110,7 @@
   "timestamp" : 1320,
   "stats" : {
     "name" : "Swimming Pools (Drank)",
-    "remainedTime" : 107,
+    "remainedTime" : 167,
     "repeat" : "No Repeat",
     "shuffle" : false,
     "paused" : false
@@ -127,7 +137,7 @@
   "timestamp" : 3220,
   "stats" : {
     "name" : "The Capitol Riot, 1 Year Later",
-    "remainedTime" : 150,
+    "remainedTime" : 350,
     "repeat" : "No Repeat",
     "shuffle" : false,
     "paused" : false
@@ -138,11 +148,16 @@
   "timestamp" : 3920,
   "stats" : {
     "name" : "Inside the Vaccine Mandate Showdown",
-    "remainedTime" : 861,
+    "remainedTime" : 1061,
     "repeat" : "No Repeat",
     "shuffle" : false,
     "paused" : false
   }
+}, {
+  "command" : "next",
+  "user" : "emily30",
+  "timestamp" : 4120,
+  "message" : "Please load a source before skipping to the next track."
 }, {
   "command" : "search",
   "user" : "emily30",

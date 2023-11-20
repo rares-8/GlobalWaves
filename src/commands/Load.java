@@ -52,7 +52,7 @@ public abstract class Load {
 
             ArrayList<Integer> indexes = new ArrayList<>();
             int size = currentSelect.getPlaylistSongs().size();
-            // TODO CHANGE THIS PART WHEN DOING SHUFFLE
+
             for (int iterator = 0; iterator < size; iterator++) {
                 indexes.add(iterator);
             }
@@ -87,7 +87,6 @@ public abstract class Load {
         memory.getLoadedAudio().put(username, selectedPodcast);
         memory.getIsPaused().remove(username);
 
-        // TODO CHANGE THIS WHEN IMPLEMENTING SHUFFLE
         ArrayList<Integer> indexes = new ArrayList<>();
         int size = selectedPodcast.getEpisodes().size();
         for (int iterator = 0; iterator < size; iterator++) {
@@ -118,7 +117,7 @@ public abstract class Load {
             }
         }
 
-        // if the podcasts are different, simply load the podcast from the beggining
+        // if the podcasts are different, simply load the podcast from the beginning
         if (different == 1) {
             addNewPodcast(username, memory, selectedPodcast, indexes);
             return;

@@ -25,10 +25,10 @@ public abstract class SwitchVisibility {
 
         // if user has no playlists
         if (!memory.getUserPlaylists().containsKey(username)) {
-            commandResult.put("message", "The specified playlist ID is too high");
+            commandResult.put("message", "The specified playlist ID is too high.");
             return commandResult;
         } else if (memory.getUserPlaylists().get(username).size() < playlistId) {
-            commandResult.put("message", "The specified playlist ID is too high");
+            commandResult.put("message", "The specified playlist ID is too high.");
             return commandResult;
         }
 

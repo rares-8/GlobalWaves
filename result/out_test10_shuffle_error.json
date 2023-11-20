@@ -20,6 +20,11 @@
   "timestamp" : 115,
   "message" : "Playback loaded successfully."
 }, {
+  "command" : "shuffle",
+  "user" : "bob35",
+  "timestamp" : 120,
+  "message" : "The loaded source is not a playlist."
+}, {
   "command" : "search",
   "user" : "bob35",
   "timestamp" : 200,
@@ -77,6 +82,11 @@
   "user" : "bob35",
   "timestamp" : 415,
   "message" : "Playback loaded successfully."
+}, {
+  "command" : "shuffle",
+  "user" : "bob35",
+  "timestamp" : 420,
+  "message" : "The loaded source is not a playlist."
 }, {
   "command" : "search",
   "user" : "bob35",
@@ -137,6 +147,11 @@
   "message" : "Search returned 1 results",
   "results" : [ "Colaj" ]
 }, {
+  "command" : "shuffle",
+  "user" : "bob35",
+  "timestamp" : 3120,
+  "message" : "Please load a source before using the shuffle function."
+}, {
   "command" : "select",
   "user" : "bob35",
   "timestamp" : 3130,
@@ -152,7 +167,7 @@
   "timestamp" : 3150,
   "stats" : {
     "name" : "Blank Space",
-    "remainedTime" : 181,
+    "remainedTime" : 221,
     "repeat" : "No Repeat",
     "shuffle" : false,
     "paused" : false
@@ -163,7 +178,7 @@
   "timestamp" : 3200,
   "stats" : {
     "name" : "Blank Space",
-    "remainedTime" : 131,
+    "remainedTime" : 171,
     "repeat" : "No Repeat",
     "shuffle" : false,
     "paused" : false
@@ -174,20 +189,25 @@
   "timestamp" : 3250,
   "stats" : {
     "name" : "Blank Space",
-    "remainedTime" : 81,
+    "remainedTime" : 121,
     "repeat" : "No Repeat",
     "shuffle" : false,
     "paused" : false
   }
+}, {
+  "command" : "shuffle",
+  "user" : "bob35",
+  "timestamp" : 3260,
+  "message" : "Shuffle function activated successfully."
 }, {
   "command" : "status",
   "user" : "bob35",
   "timestamp" : 3270,
   "stats" : {
     "name" : "Blank Space",
-    "remainedTime" : 61,
+    "remainedTime" : 101,
     "repeat" : "No Repeat",
-    "shuffle" : false,
+    "shuffle" : true,
     "paused" : false
   }
 }, {
@@ -196,9 +216,9 @@
   "timestamp" : 3320,
   "stats" : {
     "name" : "Blank Space",
-    "remainedTime" : 11,
+    "remainedTime" : 51,
     "repeat" : "No Repeat",
-    "shuffle" : false,
+    "shuffle" : true,
     "paused" : false
   }
 }, {
@@ -206,32 +226,37 @@
   "user" : "bob35",
   "timestamp" : 3370,
   "stats" : {
-    "name" : "Whole Lotta Love",
-    "remainedTime" : 295,
+    "name" : "Blank Space",
+    "remainedTime" : 1,
     "repeat" : "No Repeat",
-    "shuffle" : false,
+    "shuffle" : true,
     "paused" : false
   }
+}, {
+  "command" : "shuffle",
+  "user" : "bob35",
+  "timestamp" : 3680,
+  "message" : "Please load a source before using the shuffle function."
 }, {
   "command" : "status",
   "user" : "bob35",
   "timestamp" : 3690,
   "stats" : {
-    "name" : "Kings Dead",
-    "remainedTime" : 205,
+    "name" : "",
+    "remainedTime" : 0,
     "repeat" : "No Repeat",
     "shuffle" : false,
-    "paused" : false
+    "paused" : true
   }
 }, {
   "command" : "status",
   "user" : "bob35",
   "timestamp" : 3740,
   "stats" : {
-    "name" : "Kings Dead",
-    "remainedTime" : 155,
+    "name" : "",
+    "remainedTime" : 0,
     "repeat" : "No Repeat",
     "shuffle" : false,
-    "paused" : false
+    "paused" : true
   }
 } ]

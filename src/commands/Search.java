@@ -12,10 +12,8 @@ import fileio.input.PlaylistInput;
 import utils.Constants;
 import user.memory.UserMemory;
 
-import java.util.ArrayList;
-import java.util.Comparator;
-import java.util.List;
-import java.util.Map;
+import java.util.*;
+import java.util.stream.Collectors;
 
 public abstract class Search implements Constants {
 
@@ -74,13 +72,23 @@ public abstract class Search implements Constants {
                                     final Map<String, String> otherFilters,
                                     final ArrayList<Audio> audioResult, final String type,
                                     final UserMemory memory) {
+        ArrayList<Audio> copy = new ArrayList<>();
         /*
             First search for podcasts, easier to do
          */
+        int allMatch, found;
         if (type.equals("podcast")) {
             for (PodcastInput currentPodcast : library.getPodcasts()) {
+                allMatch = 1;
                 for (Map.Entry<String, String> element : otherFilters.entrySet()) {
-                    searchAudioByFilter(element, currentPodcast, audioResult);
+                    found = searchAudioByFilter(element, currentPodcast);
+                    if (found == 0) {
+                        allMatch = 0;
+                        break;
+                    }
+                }
+                if (allMatch == 1) {
+                    audioResult.add(currentPodcast);
                 }
             }
             return;
@@ -89,8 +97,16 @@ public abstract class Search implements Constants {
         //Next search for playlists
         if (type.equals("playlist")) {
             for (PlaylistInput currentPlaylist : memory.getPublicPlaylists()) {
+                allMatch = 1;
                 for (Map.Entry<String, String> element : otherFilters.entrySet()) {
-                    searchAudioByFilter(element, currentPlaylist, audioResult);
+                    found = searchAudioByFilter(element, currentPlaylist);
+                    if (found == 0) {
+                        allMatch = 0;
+                        break;
+                    }
+                }
+                if (allMatch == 1) {
+                    audioResult.add(currentPlaylist);
                 }
             }
             if (!memory.getUserPlaylists().containsKey(username)) {
@@ -98,16 +114,24 @@ public abstract class Search implements Constants {
             }
 
             for (PlaylistInput currentPlaylist : memory.getUserPlaylists().get(username)) {
+                allMatch = 1;
                 if (currentPlaylist.getIsPrivate() == 1) {
                     for (Map.Entry<String, String> element : otherFilters.entrySet()) {
-                        searchAudioByFilter(element, currentPlaylist, audioResult);
+                        found = searchAudioByFilter(element, currentPlaylist);
+                        if (found == 0) {
+                            allMatch = 0;
+                            break;
+                        }
                     }
+                }
+                if (allMatch == 1 && currentPlaylist.getIsPrivate() == 1) {
+                    audioResult.add(currentPlaylist);
                 }
             }
             audioResult.sort(new Comparator<Audio>() {
                 @Override
                 public int compare(final Audio o1, final Audio o2) {
-                    return o1.getReleaseYear() - o2.getReleaseYear();
+                    return o1.getTimeCreated() - o2.getTimeCreated();
                 }
             });
             return;
@@ -115,10 +139,19 @@ public abstract class Search implements Constants {
 
         // search for songs
         for (SongInput currentSong : library.getSongs()) {
+            allMatch = 1;
             for (Map.Entry<String, String> element : otherFilters.entrySet()) {
-                searchAudioByFilter(element, currentSong, audioResult);
+                found = searchAudioByFilter(element, currentSong);
+                if (found == 0) {
+                    allMatch = 0;
+                    break;
+                }
+            }
+            if (allMatch == 1) {
+                audioResult.add(currentSong);
             }
         }
+
 
         //If songResult is empty, then search by tags, and put all results in songResult
         if (audioResult.isEmpty() && !tags.isEmpty()) {
@@ -160,33 +193,31 @@ public abstract class Search implements Constants {
     /**
      * Loop through all the possible filters and check if they match with audio values
      *
-     * @param element      - [key, value] pair for a filter
-     * @param audio - checked to see if it matches filters
-     * @param result       - search result
+     * @param element - [key, value] pair for a filter
+     * @param audio   - checked to see if it matches filters
      */
-    private static void searchAudioByFilter(final Map.Entry<String, String> element,
-                                            final Audio audio,
-                                            final ArrayList<Audio> result) {
+    private static int searchAudioByFilter(final Map.Entry<String, String> element,
+                                           final Audio audio) {
         String keyword = element.getKey();
         switch (keyword) {
             case "name":
                 if (audio.getName().startsWith(element.getValue())) {
-                    result.add(audio);
+                    return 1;
                 }
                 break;
             case "album":
                 if (audio.getAlbum().equalsIgnoreCase(element.getValue())) {
-                    result.add(audio);
+                    return 1;
                 }
                 break;
             case "lyrics":
                 if (audio.getLyrics().toLowerCase().contains(element.getValue().toLowerCase())) {
-                    result.add(audio);
+                    return 1;
                 }
                 break;
             case "genre":
                 if (audio.getGenre().equalsIgnoreCase(element.getValue())) {
-                    result.add(audio);
+                    return 1;
                 }
                 break;
             case "releaseYear":
@@ -195,21 +226,22 @@ public abstract class Search implements Constants {
                 int releaseYear = Integer.parseInt(releaseYearString);
                 if (releaseYear < audio.getReleaseYear() && operator == '>'
                         || releaseYear > audio.getReleaseYear() && operator == '<') {
-                    result.add(audio);
+                    return 1;
                 }
                 break;
             case "artist":
                 if (audio.getArtist().equalsIgnoreCase(element.getValue())) {
-                    result.add(audio);
+                    return 1;
                 }
                 break;
             case "owner":
                 if (audio.getOwner().equalsIgnoreCase(element.getValue())) {
-                    result.add(audio);
+                    return 1;
                 }
                 break;
             default:
                 System.out.println("Unknown filter");
         }
+        return 0;
     }
 }

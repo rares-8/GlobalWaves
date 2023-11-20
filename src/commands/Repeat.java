@@ -6,7 +6,7 @@ import com.fasterxml.jackson.databind.node.ObjectNode;
 import user.memory.UserMemory;
 import fileio.input.Audio;
 
-public class Repeat {
+public abstract class Repeat {
     /**
      * @param username  - user that issued the command
      * @param memory    - database

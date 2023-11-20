@@ -8,6 +8,7 @@ import com.fasterxml.jackson.databind.ObjectWriter;
 import com.fasterxml.jackson.databind.node.ArrayNode;
 import command.parser.CommandParser;
 import fileio.input.LibraryInput;
+import fileio.input.SongInput;
 import user.memory.UserMemory;
 import java.io.File;
 import java.io.IOException;
@@ -80,6 +81,7 @@ public final class Main {
         CommandParser commandParser = new CommandParser(library, outputs);
 
         UserMemory memory = UserMemory.getInstance();
+
         for (int i = 0; i < commands.size(); i++) {
             JsonNode currentCommand = commands.get(i);
             commandParser.parse(currentCommand, memory);

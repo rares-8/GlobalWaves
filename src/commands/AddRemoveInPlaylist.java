@@ -34,7 +34,7 @@ public abstract class AddRemoveInPlaylist {
         } else if (!memory.getUserPlaylists().containsKey(username)) {
             commandResult.put("message", "The specified playlist does not exist.");
             return commandResult;
-        } else if (memory.getUserPlaylists().get(username).size() > playlistId) {
+        } else if (memory.getUserPlaylists().get(username).size() < playlistId) {
             commandResult.put("message", "The specified playlist does not exist.");
             return commandResult;
         }

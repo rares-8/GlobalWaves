@@ -33,7 +33,7 @@ public final class CommandParser {
 
         if (currentCommand.has("username")) {
             boolean isPaused = memory.getIsPaused().containsKey(getUsername(currentCommand));
-            boolean update = command.equals("load") || command.equals("next");
+            boolean update = command.equals("load") || command.equals("next") || command.equals("prev");
             if (!isPaused) {
                 UpdatePlayer.updatePlayer(getUsername(currentCommand), timestamp, memory);
             } else if (update) {
@@ -87,9 +87,25 @@ public final class CommandParser {
             case "next":
                 nextParse(currentCommand, memory, timestamp);
                 break;
+            case "prev":
+                prevParse(currentCommand, memory, timestamp);
+                break;
             default:
                 System.out.println("Unknown command : " + command);
         }
+    }
+
+    /**
+     * Get the rest of the fields from "prev" command and call method
+     * to solve the command
+     *
+     * @param currentCommand - command from input file
+     * @param memory         - memory database for users
+     * @param timestamp      - timestamp from command
+     */
+    private void prevParse(JsonNode currentCommand, UserMemory memory, Integer timestamp) {
+        String username = getUsername(currentCommand);
+        outputs.add(Prev.prev(username, memory, timestamp));
     }
 
     /**

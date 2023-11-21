@@ -184,7 +184,7 @@
   "command" : "showPreferredSongs",
   "user" : "emily30",
   "timestamp" : 2300,
-  "result" : "[]"
+  "result" : [ ]
 }, {
   "command" : "like",
   "user" : "emily30",

@@ -37,7 +37,7 @@ public class Next {
             nextSong(commandResult, username, loadedSong, memory);
         } else if (memory.getLoadedAudio().get(username).getAudioType().equals("playlist")) {
             PlaylistInput loadedPlaylist = (PlaylistInput) memory.getLoadedAudio().get(username);
-            nextPlaylist(commandResult, username, loadedPlaylist, memory, timestamp);
+            nextPlaylist(commandResult, username, loadedPlaylist, memory);
         } else {
             PodcastInput loadedPodcast = (PodcastInput) memory.getLoadedAudio().get(username);
             nextPodcast(commandResult, username, loadedPodcast, memory);
@@ -66,17 +66,28 @@ public class Next {
         int episodeIndex = loadedPodcast.getEpisodes().indexOf(loadedEpisode);
 
         if (repeatMode == 0) {
-            commandResult.put("message", "Please load a source before skipping to the next track.");
-            memory.getLoadedAudio().remove(username);
+            if (episodeIndex == loadedPodcast.getEpisodes().size() - 1) {
+                commandResult.put("message", "Please load a source before skipping to the next track.");
+                memory.getLoadedAudio().remove(username);
+                memory.getEpisodeRemainingTime().get(username).remove(podcastIndex);
+                memory.getLastEpisodes().get(username).remove(podcastIndex);
+                memory.getLoadedPodcasts().get(username).remove(podcastIndex);
+                memory.getIsPaused().remove(username);
+                memory.getIsShuffled().remove(username);
+                return;
+            }
+            EpisodeInput nextEpisode = loadedPodcast.getEpisodes().get(episodeIndex + 1);
+            memory.getLastEpisodes().get(username).set(podcastIndex, nextEpisode);
+            memory.getEpisodeRemainingTime().get(username).set(podcastIndex, nextEpisode.getDuration());
             memory.getIsPaused().remove(username);
-            memory.getIsShuffled().remove(username);
+            commandResult.put("message", "Skipped to next track successfully. The current track is " + nextEpisode.getName() + ".");
         } else {
+            commandResult.put("message", "Skipped to next track successfully. The current track is " + loadedEpisode.getName() + ".");
+            memory.getEpisodeRemainingTime().get(username).set(podcastIndex, loadedEpisode.getDuration());
+            memory.getIsPaused().remove(username);
             if (repeatMode == 1) {
                 memory.getIsRepeating().remove(username);
             }
-            commandResult.put("message", "Skipped to next track successfully. The current track is " + loadedEpisode.getName() + ".");
-            memory.getIsPaused().remove(username);
-            memory.getRemainingTime().put(username, loadedEpisode.getDuration());
         }
     }
 
@@ -90,7 +101,7 @@ public class Next {
      */
     private static void nextPlaylist(final ObjectNode commandResult, final String username,
                                      final PlaylistInput loadedPlaylist,
-                                     final UserMemory memory, final Integer timestamp) {
+                                     final UserMemory memory) {
         Integer repeatMode = 0;
         if (memory.getIsRepeating().containsKey(username)) {
             repeatMode = memory.getIsRepeating().get(username);
@@ -116,16 +127,22 @@ public class Next {
             memory.getIsPaused().remove(username);
             commandResult.put("message", "Skipped to next track successfully. The current track is " + currentSong.getName() + ".");
         } else {
-            if (repeatMode == 1) {
-                currentIndex = indexes.get(0);
+            int last = 0;
+            if (indexes.indexOf(currentIndex) == indexes.size() - 1) {
+                last = 1;
             }
 
             int indexOfCurrentSong;
-            indexOfCurrentSong = indexes.indexOf(currentIndex);
-            if (repeatMode == 1) {
+            if (repeatMode == 1 && last == 1) {
+                currentIndex = indexes.get(0);
+                indexOfCurrentSong = indexes.indexOf(currentIndex);
                 currentIndex = indexes.get(indexOfCurrentSong);
-            } else {
+            } else if (repeatMode == 1) {
+                indexOfCurrentSong = indexes.indexOf(currentIndex);
                 currentIndex = indexes.get(indexOfCurrentSong + 1);
+            } else if (repeatMode == 2) {
+                indexOfCurrentSong = indexes.indexOf(currentIndex);
+                currentIndex = indexes.get(indexOfCurrentSong);
             }
             SongInput currentSong = songs.get(currentIndex);
             memory.getCurrentIndex().put(username, currentIndex);
@@ -157,7 +174,7 @@ public class Next {
             memory.getIsPaused().remove(username);
             memory.getIsShuffled().remove(username);
         } else {
-            commandResult.put("message", "Skipped to next track successfully. The current track is " + loadedSong.getName());
+            commandResult.put("message", "Skipped to next track successfully. The current track is " + loadedSong.getName() + ".");
             memory.getIsPaused().remove(username);
             memory.getRemainingTime().put(username, loadedSong.getDuration());
             if (repeatMode == 1) {

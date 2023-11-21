@@ -24,7 +24,7 @@ public abstract class ShowPreferredSongs {
         commandResult.put("timestamp", timestamp);
 
         if (!memory.getLikedSongs().containsKey(username)) {
-            commandResult.put("result", "[]");
+            ArrayNode emptyList = commandResult.putArray("result");
             return commandResult;
         }
 

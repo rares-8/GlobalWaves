@@ -25,6 +25,7 @@ public abstract class Select {
         commandResult.put("command", "select");
         commandResult.put("user", username);
         commandResult.put("timestamp", timestamp);
+        memory.getCurrentSelect().remove(username);
 
         if (memory.getLastSearch().containsKey(username)) {
             ArrayList<Audio> lastSearch = memory.getLastSearch().get(username);

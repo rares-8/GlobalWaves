@@ -13,7 +13,6 @@ import utils.Constants;
 import user.memory.UserMemory;
 
 import java.util.*;
-import java.util.stream.Collectors;
 
 public abstract class Search implements Constants {
 
@@ -44,8 +43,8 @@ public abstract class Search implements Constants {
         ArrayList<Audio> audioResult = new ArrayList<>();
         searchAudio(username, tags, library, otherFilters, audioResult, type, memory);
 
-        if (audioResult.size() > SEARCH_MAX_SIZE) {
-            audioResult = new ArrayList<>(audioResult.subList(0, SEARCH_MAX_SIZE));
+        if (audioResult.size() > RESULT_MAX_SIZE) {
+            audioResult = new ArrayList<>(audioResult.subList(0, RESULT_MAX_SIZE));
         }
 
         memory.getLastSearch().put(username, audioResult);

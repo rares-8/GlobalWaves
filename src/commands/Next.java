@@ -76,8 +76,10 @@ public class Next {
                 memory.getIsShuffled().remove(username);
                 return;
             }
+            episodeIndex++;
             EpisodeInput nextEpisode = loadedPodcast.getEpisodes().get(episodeIndex + 1);
             memory.getLastEpisodes().get(username).set(podcastIndex, nextEpisode);
+            memory.getCurrentIndex().put(username, episodeIndex);
             memory.getEpisodeRemainingTime().get(username).set(podcastIndex, nextEpisode.getDuration());
             memory.getIsPaused().remove(username);
             commandResult.put("message", "Skipped to next track successfully. The current track is " + nextEpisode.getName() + ".");

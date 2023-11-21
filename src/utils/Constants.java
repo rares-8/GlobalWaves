@@ -1,5 +1,5 @@
 package utils;
 
 public interface Constants {
-    int SEARCH_MAX_SIZE = 5;
+    int RESULT_MAX_SIZE = 5;
 }

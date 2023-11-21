@@ -71,10 +71,16 @@ public class Prev {
             loadedEpisode = memory.getLastEpisodes().get(username).get(podcastIndex);
             memory.getCurrentIndex().put(username, episodeIndex);
             memory.getEpisodeRemainingTime().get(username).set(podcastIndex, loadedEpisode.getDuration());
+            memory.getLastEpisodes().get(username).set(podcastIndex, loadedEpisode);
             memory.getIsPaused().remove(username);
             commandResult.put("message", "Returned to previous track successfully. The current track is " + loadedEpisode.getName() + ".");
         } else {
-            // TODO HERE
+            if (repeatMode == 1) {
+                memory.getIsRepeating().remove(username);
+            }
+            memory.getEpisodeRemainingTime().get(username).set(podcastIndex, loadedEpisode.getDuration());
+            memory.getIsPaused().remove(username);
+            commandResult.put("message", "Returned to previous track successfully. The current track is " + loadedEpisode.getName() + ".");
         }
     }
 

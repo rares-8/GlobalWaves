@@ -206,12 +206,17 @@
     "paused" : false
   }
 }, {
+  "command" : "forward",
+  "user" : "bob35",
+  "timestamp" : 1050,
+  "message" : "Skipped forward successfully."
+}, {
   "command" : "status",
   "user" : "bob35",
   "timestamp" : 1051,
   "stats" : {
     "name" : "Airbnb: Joe Gebbia",
-    "remainedTime" : 2815,
+    "remainedTime" : 2725,
     "repeat" : "No Repeat",
     "shuffle" : false,
     "paused" : false
@@ -238,11 +243,16 @@
   "timestamp" : 1389,
   "stats" : {
     "name" : "Airbnb: Joe Gebbia",
-    "remainedTime" : 2479,
+    "remainedTime" : 2389,
     "repeat" : "No Repeat",
     "shuffle" : false,
     "paused" : false
   }
+}, {
+  "command" : "backward",
+  "user" : "bob35",
+  "timestamp" : 1390,
+  "message" : "Rewound successfully."
 }, {
   "command" : "status",
   "user" : "bob35",

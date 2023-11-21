@@ -33,7 +33,8 @@ public final class CommandParser {
 
         if (currentCommand.has("username")) {
             boolean isPaused = memory.getIsPaused().containsKey(getUsername(currentCommand));
-            boolean update = command.equals("load") || command.equals("next") || command.equals("prev");
+            boolean update = command.equals("load") || command.equals("next") || command.equals("prev")
+                    || command.equals("forward") || command.equals("backward");
             if (!isPaused) {
                 UpdatePlayer.updatePlayer(getUsername(currentCommand), timestamp, memory);
             } else if (update) {
@@ -90,9 +91,48 @@ public final class CommandParser {
             case "prev":
                 prevParse(currentCommand, memory, timestamp);
                 break;
+            case "forward":
+                forwardParse(currentCommand, memory, timestamp);
+                break;
+            case "backward":
+                backwardParse(currentCommand, memory, timestamp);
+                break;
+            case "getTop5Songs":
+                outputs.add(TopSongs.topSongs(timestamp, memory, library));
+                break;
+            case "getTop5Playlists":
+                outputs.add(TopPlaylists.topPlaylists(timestamp, memory));
+                break;
             default:
                 System.out.println("Unknown command : " + command);
         }
+    }
+
+    /**
+     * Get the rest of the fields from "backward" command and call method
+     * to solve the command
+     *
+     * @param currentCommand - command from input file
+     * @param memory         - memory database for users
+     * @param timestamp      - timestamp from command
+     */
+    private void backwardParse(JsonNode currentCommand, UserMemory memory, Integer timestamp) {
+        String username = getUsername(currentCommand);
+        outputs.add(Backward.backward(username, memory, timestamp));
+
+    }
+
+    /**
+     * Get the rest of the fields from "forward" command and call method
+     * to solve the command
+     *
+     * @param currentCommand - command from input file
+     * @param memory         - memory database for users
+     * @param timestamp      - timestamp from command
+     */
+    private void forwardParse(JsonNode currentCommand, UserMemory memory, Integer timestamp) {
+        String username = getUsername(currentCommand);
+        outputs.add(Forward.forward(username, memory, timestamp));
     }
 
     /**

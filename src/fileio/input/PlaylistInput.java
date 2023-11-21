@@ -20,6 +20,10 @@ public final class PlaylistInput implements Audio {
         this.timeCreated = timeCreated;
     }
 
+    public PlaylistInput() {
+
+    }
+
     public String getName() {
         return name;
     }

@@ -1,18 +1,21 @@
-package commands;
+package commands.search;
 
 import com.fasterxml.jackson.databind.JsonNode;
 import com.fasterxml.jackson.databind.ObjectMapper;
 import com.fasterxml.jackson.databind.node.ArrayNode;
 import com.fasterxml.jackson.databind.node.ObjectNode;
-import fileio.input.SongInput;
-import fileio.input.PodcastInput;
-import fileio.input.LibraryInput;
-import fileio.input.Audio;
-import fileio.input.PlaylistInput;
+import entities.Song;
+import entities.Podcast;
+import entities.Library;
+import entities.Audio;
+import entities.Playlist;
 import utils.Constants;
 import user.memory.UserMemory;
 
-import java.util.*;
+import java.util.ArrayList;
+import java.util.Comparator;
+import java.util.List;
+import java.util.Map;
 
 public abstract class Search implements Constants {
 
@@ -28,7 +31,7 @@ public abstract class Search implements Constants {
      */
     public static JsonNode search(final String username, final String type,
                                   final List<String> tags, final Map<String, String> otherFilters,
-                                  final LibraryInput library, final Integer timestamp,
+                                  final Library library, final Integer timestamp,
                                   final UserMemory memory) {
         ObjectMapper mapper = new ObjectMapper();
         ObjectNode commandResult = mapper.createObjectNode();
@@ -67,7 +70,7 @@ public abstract class Search implements Constants {
      * @param memory       - memory for users
      */
     private static void searchAudio(final String username, final List<String> tags,
-                                    final LibraryInput library,
+                                    final Library library,
                                     final Map<String, String> otherFilters,
                                     final ArrayList<Audio> audioResult, final String type,
                                     final UserMemory memory) {
@@ -77,7 +80,7 @@ public abstract class Search implements Constants {
          */
         int allMatch, found;
         if (type.equals("podcast")) {
-            for (PodcastInput currentPodcast : library.getPodcasts()) {
+            for (Podcast currentPodcast : library.getPodcasts()) {
                 allMatch = 1;
                 for (Map.Entry<String, String> element : otherFilters.entrySet()) {
                     found = searchAudioByFilter(element, currentPodcast);
@@ -95,7 +98,7 @@ public abstract class Search implements Constants {
 
         //Next search for playlists
         if (type.equals("playlist")) {
-            for (PlaylistInput currentPlaylist : memory.getPublicPlaylists()) {
+            for (Playlist currentPlaylist : memory.getPublicPlaylists()) {
                 allMatch = 1;
                 for (Map.Entry<String, String> element : otherFilters.entrySet()) {
                     found = searchAudioByFilter(element, currentPlaylist);
@@ -112,7 +115,7 @@ public abstract class Search implements Constants {
                 return;
             }
 
-            for (PlaylistInput currentPlaylist : memory.getUserPlaylists().get(username)) {
+            for (Playlist currentPlaylist : memory.getUserPlaylists().get(username)) {
                 allMatch = 1;
                 if (currentPlaylist.getIsPrivate() == 1) {
                     for (Map.Entry<String, String> element : otherFilters.entrySet()) {
@@ -137,7 +140,7 @@ public abstract class Search implements Constants {
         }
 
         // search for songs
-        for (SongInput currentSong : library.getSongs()) {
+        for (Song currentSong : library.getSongs()) {
             allMatch = 1;
             for (Map.Entry<String, String> element : otherFilters.entrySet()) {
                 found = searchAudioByFilter(element, currentSong);
@@ -154,7 +157,7 @@ public abstract class Search implements Constants {
 
         //If songResult is empty, then search by tags, and put all results in songResult
         if (audioResult.isEmpty() && !tags.isEmpty()) {
-            for (SongInput currentSong : library.getSongs()) {
+            for (Song currentSong : library.getSongs()) {
                 int ok = 1;
                 List<String> currentSongTags = currentSong.getTags();
                 for (String tag : tags) {

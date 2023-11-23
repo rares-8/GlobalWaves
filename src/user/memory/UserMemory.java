@@ -1,10 +1,10 @@
 package user.memory;
 
-import fileio.input.Audio;
-import fileio.input.EpisodeInput;
-import fileio.input.PlaylistInput;
-import fileio.input.PodcastInput;
-import fileio.input.SongInput;
+import entities.Audio;
+import entities.Episode;
+import entities.Playlist;
+import entities.Podcast;
+import entities.Song;
 
 import java.util.ArrayList;
 import java.util.HashMap;
@@ -13,7 +13,7 @@ import java.util.Map;
 /**
  * This class keeps all configurations made by users.
  * Instance variables:
- * <p>
+ *
  * lastSearch - last search for every user
  * lastTimestamp - timestamp the last command was given at
  * currentSelect - currently selected audio file
@@ -34,14 +34,14 @@ public final class UserMemory {
     private final Map<String, ArrayList<Audio>> lastSearch;
     private final Map<String, Integer> lastTimestamp;
     private final Map<String, Audio> currentSelect;
-    private final Map<String, ArrayList<PlaylistInput>> userPlaylists;
-    private final ArrayList<PlaylistInput> publicPlaylists;
+    private final Map<String, ArrayList<Playlist>> userPlaylists;
+    private final ArrayList<Playlist> publicPlaylists;
     private final Map<String, ArrayList<Audio>> followedPlaylists;
-    private final Map<String, ArrayList<SongInput>> likedSongs;
+    private final Map<String, ArrayList<Song>> likedSongs;
     private final Map<String, Audio> loadedAudio;
     private final Map<String, Integer> remainingTime;
-    private final Map<String, ArrayList<PodcastInput>> loadedPodcasts;
-    private final Map<String, ArrayList<EpisodeInput>> lastEpisodes;
+    private final Map<String, ArrayList<Podcast>> loadedPodcasts;
+    private final Map<String, ArrayList<Episode>> lastEpisodes;
     private final Map<String, ArrayList<Integer>> episodeRemainingTime;
     private final Map<String, ArrayList<Integer>> collectionIndexes;
     private final Map<String, Integer> currentIndex;
@@ -115,11 +115,11 @@ public final class UserMemory {
     /**
      * @return hashmap that keeps playlists for all users
      */
-    public Map<String, ArrayList<PlaylistInput>> getUserPlaylists() {
+    public Map<String, ArrayList<Playlist>> getUserPlaylists() {
         return userPlaylists;
     }
 
-    public ArrayList<PlaylistInput> getPublicPlaylists() {
+    public ArrayList<Playlist> getPublicPlaylists() {
         return publicPlaylists;
     }
 
@@ -151,7 +151,7 @@ public final class UserMemory {
         return isRepeating;
     }
 
-    public Map<String, ArrayList<SongInput>> getLikedSongs() {
+    public Map<String, ArrayList<Song>> getLikedSongs() {
         return likedSongs;
     }
 
@@ -159,11 +159,11 @@ public final class UserMemory {
         return remainingTime;
     }
 
-    public Map<String, ArrayList<PodcastInput>> getLoadedPodcasts() {
+    public Map<String, ArrayList<Podcast>> getLoadedPodcasts() {
         return loadedPodcasts;
     }
 
-    public Map<String, ArrayList<EpisodeInput>> getLastEpisodes() {
+    public Map<String, ArrayList<Episode>> getLastEpisodes() {
         return lastEpisodes;
     }
 

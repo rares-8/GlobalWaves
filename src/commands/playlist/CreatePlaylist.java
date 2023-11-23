@@ -1,9 +1,9 @@
-package commands;
+package commands.playlist;
 
 import com.fasterxml.jackson.databind.JsonNode;
 import com.fasterxml.jackson.databind.ObjectMapper;
 import com.fasterxml.jackson.databind.node.ObjectNode;
-import fileio.input.PlaylistInput;
+import entities.Playlist;
 import user.memory.UserMemory;
 
 import java.util.ArrayList;
@@ -28,8 +28,8 @@ public abstract class CreatePlaylist {
         //Search playlist in memory to check if it exists
         int ok = 1;
         if (memory.getUserPlaylists().containsKey(username)) {
-            ArrayList<PlaylistInput> usersPlaylists = memory.getUserPlaylists().get(username);
-            for (PlaylistInput playlist : usersPlaylists) {
+            ArrayList<Playlist> usersPlaylists = memory.getUserPlaylists().get(username);
+            for (Playlist playlist : usersPlaylists) {
                 if (playlist.getName().equals(playlistName)) {
                     ok = 0;
                     break;
@@ -39,7 +39,7 @@ public abstract class CreatePlaylist {
 
         if (ok == 1) {
             commandResult.put("message", "Playlist created successfully.");
-            PlaylistInput newPlaylist = new PlaylistInput(playlistName, 0, new ArrayList<>(),
+            Playlist newPlaylist = new Playlist(playlistName, 0, new ArrayList<>(),
                     username, timestamp);
             if (memory.getUserPlaylists().containsKey(username)) {
                 memory.getUserPlaylists().get(username).add(newPlaylist);

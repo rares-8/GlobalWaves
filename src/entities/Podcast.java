@@ -1,27 +1,19 @@
-package fileio.input;
+package entities;
 
 import java.util.ArrayList;
 import java.util.Map;
 
-public final class PlaylistInput implements Audio {
+public final class Podcast implements Audio {
     private String name;
-    private int isPrivate;
-    private ArrayList<SongInput> playlistSongs;
     private String owner;
-    private Integer timeCreated;
+    private ArrayList<Episode> episodes = new ArrayList<>();
 
-    public PlaylistInput(final String name, final int isPrivate,
-                         final ArrayList<SongInput> playlistSongs,
-                         final String owner, final int timeCreated) {
-        this.name = name;
-        this.isPrivate = isPrivate;
-        this.playlistSongs = playlistSongs;
-        this.owner = owner;
-        this.timeCreated = timeCreated;
+    public Podcast() {
     }
 
-    public PlaylistInput() {
-
+    public Podcast(final String name, final String owner) {
+        this.name = name;
+        this.owner = owner;
     }
 
     public String getName() {
@@ -32,22 +24,6 @@ public final class PlaylistInput implements Audio {
         this.name = name;
     }
 
-    public Integer getIsPrivate() {
-        return isPrivate;
-    }
-
-    public void setIsPrivate(final Integer isPrivate) {
-        this.isPrivate = isPrivate;
-    }
-
-    public ArrayList<SongInput> getPlaylistSongs() {
-        return playlistSongs;
-    }
-
-    public void setPlaylistSongs(final ArrayList<SongInput> playlistSongs) {
-        this.playlistSongs = playlistSongs;
-    }
-
     public String getOwner() {
         return owner;
     }
@@ -56,15 +32,17 @@ public final class PlaylistInput implements Audio {
         this.owner = owner;
     }
 
-    // not used, but have to be implemented
-    @Override
-    public ArrayList<EpisodeInput> getEpisodes() {
-        return null;
+    public ArrayList<Episode> getEpisodes() {
+        return episodes;
+    }
+
+    public void setEpisodes(final ArrayList<Episode> episodes) {
+        this.episodes = episodes;
     }
 
     @Override
-    public void setEpisodes(final ArrayList<EpisodeInput> episodes) {
-
+    public String getAudioType() {
+        return "podcast";
     }
 
     @Override
@@ -137,17 +115,34 @@ public final class PlaylistInput implements Audio {
 
     }
 
-    public int getTimeCreated() {
-        return timeCreated;
-    }
-
-    public void setTimeCreated(final int timeCreated) {
-        this.timeCreated = timeCreated;
+    @Override
+    public Integer getIsPrivate() {
+        return null;
     }
 
     @Override
-    public String getAudioType() {
-        return "playlist";
+    public void setIsPrivate(final Integer isPrivate) {
+
+    }
+
+    @Override
+    public ArrayList<Song> getPlaylistSongs() {
+        return null;
+    }
+
+    @Override
+    public void setPlaylistSongs(final ArrayList<Song> playlistSongs) {
+
+    }
+
+    @Override
+    public int getTimeCreated() {
+        return 0;
+    }
+
+    @Override
+    public void setTimeCreated(final int timeCreated) {
+
     }
 
     @Override
@@ -155,17 +150,11 @@ public final class PlaylistInput implements Audio {
         return null;
     }
 
-    /**
-     * @return episode description
-     */
     @Override
     public String getDescription() {
         return null;
     }
 
-    /**
-     * @param description
-     */
     @Override
     public void setDescription(final String description) {
 

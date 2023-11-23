@@ -1,6 +1,6 @@
 package utils;
 
-import fileio.input.Audio;
+import entities.Audio;
 import user.memory.UserMemory;
 
 public abstract class UpdateRemainingTime {

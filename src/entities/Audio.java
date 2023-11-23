@@ -1,4 +1,4 @@
-package fileio.input;
+package entities;
 
 import java.util.ArrayList;
 import java.util.Map;
@@ -35,13 +35,13 @@ public interface Audio {
      *
      * @return episodes
      */
-    ArrayList<EpisodeInput> getEpisodes();
+    ArrayList<Episode> getEpisodes();
 
     /**
      *
      * @param episodes
      */
-    void setEpisodes(ArrayList<EpisodeInput> episodes);
+    void setEpisodes(ArrayList<Episode> episodes);
 
     /**
      *
@@ -143,13 +143,13 @@ public interface Audio {
      *
      * @return playlistSongs
      */
-    ArrayList<SongInput> getPlaylistSongs();
+    ArrayList<Song> getPlaylistSongs();
 
     /**
      *
      * @param playlistSongs
      */
-    void setPlaylistSongs(ArrayList<SongInput> playlistSongs);
+    void setPlaylistSongs(ArrayList<Song> playlistSongs);
 
     /**
      *

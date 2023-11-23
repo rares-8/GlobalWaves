@@ -1,10 +1,10 @@
-package commands;
+package commands.statistics;
 
 import com.fasterxml.jackson.databind.JsonNode;
 import com.fasterxml.jackson.databind.ObjectMapper;
 import com.fasterxml.jackson.databind.node.ArrayNode;
 import com.fasterxml.jackson.databind.node.ObjectNode;
-import fileio.input.SongInput;
+import entities.Song;
 import user.memory.UserMemory;
 
 public abstract class ShowPreferredSongs {
@@ -29,7 +29,7 @@ public abstract class ShowPreferredSongs {
         }
 
         ArrayNode likedSongs = commandResult.putArray("result");
-        for (SongInput song : memory.getLikedSongs().get(username)) {
+        for (Song song : memory.getLikedSongs().get(username)) {
             likedSongs.add(song.getName());
         }
 

@@ -1,9 +1,8 @@
 package fileio.input;
 
 import java.util.ArrayList;
-import java.util.Map;
 
-public final class SongInput implements Audio {
+public final class SongInput {
     private String name;
     private Integer duration;
     private String album;
@@ -78,82 +77,5 @@ public final class SongInput implements Audio {
 
     public void setArtist(final String artist) {
         this.artist = artist;
-    }
-
-    @Override
-    public String getAudioType() {
-        return "song";
-    }
-
-    // these methods are not used, only declared because it is not an abstract class
-    @Override
-    public Map<String, ArrayList<Audio>> getFollowedPlaylists() {
-        return null;
-    }
-
-    @Override
-    public Integer getIsPrivate() {
-        return null;
-    }
-
-    @Override
-    public void setIsPrivate(final Integer isPrivate) {
-
-    }
-
-    @Override
-    public ArrayList<SongInput> getPlaylistSongs() {
-        return null;
-    }
-
-    @Override
-    public void setPlaylistSongs(final ArrayList<SongInput> playlistSongs) {
-
-    }
-
-    @Override
-    public int getTimeCreated() {
-        return 0;
-    }
-
-    @Override
-    public void setTimeCreated(final int timeCreated) {
-
-    }
-
-    @Override
-    public String getOwner() {
-        return null;
-    }
-
-    @Override
-    public void setOwner(final String owner) {
-
-    }
-
-    @Override
-    public ArrayList<EpisodeInput> getEpisodes() {
-        return null;
-    }
-
-    @Override
-    public void setEpisodes(final ArrayList<EpisodeInput> episodes) {
-
-    }
-
-    /**
-     * @return episode description
-     */
-    @Override
-    public String getDescription() {
-        return null;
-    }
-
-    /**
-     * @param description
-     */
-    @Override
-    public void setDescription(final String description) {
-
     }
 }

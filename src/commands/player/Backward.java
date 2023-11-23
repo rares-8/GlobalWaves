@@ -1,13 +1,15 @@
-package commands;
+package commands.player;
 
 import com.fasterxml.jackson.databind.JsonNode;
 import com.fasterxml.jackson.databind.ObjectMapper;
 import com.fasterxml.jackson.databind.node.ObjectNode;
-import fileio.input.EpisodeInput;
-import fileio.input.PodcastInput;
+import entities.Episode;
+import entities.Podcast;
 import user.memory.UserMemory;
 
-public class Backward {
+import static utils.Constants.FORWARD_BACKWARD_TIME;
+
+public abstract class Backward {
     /**
      * @param username  - user that issued the command
      * @param memory    - database
@@ -15,7 +17,7 @@ public class Backward {
      * @return command result
      */
     public static JsonNode backward(final String username, final UserMemory memory,
-                                   final Integer timestamp) {
+                                    final Integer timestamp) {
         ObjectMapper mapper = new ObjectMapper();
         ObjectNode commandResult = mapper.createObjectNode();
         commandResult.put("command", "backward");
@@ -35,21 +37,24 @@ public class Backward {
             repeatMode = memory.getIsRepeating().get(username);
         }
 
-        PodcastInput loadedPodcast = (PodcastInput) memory.getLoadedAudio().get(username);
+        Podcast loadedPodcast = (Podcast) memory.getLoadedAudio().get(username);
         int podcastIndex = memory.getLoadedPodcasts().get(username).indexOf(loadedPodcast);
-        EpisodeInput loadedEpisode = memory.getLastEpisodes().get(username).get(podcastIndex);
+        Episode loadedEpisode = memory.getLastEpisodes().get(username).get(podcastIndex);
         int episodeIndex = loadedPodcast.getEpisodes().indexOf(loadedEpisode);
 
-        int timePassed = loadedEpisode.getDuration() - memory.getEpisodeRemainingTime().get(username).get(podcastIndex);
-        if (timePassed < 90) {
-            memory.getEpisodeRemainingTime().get(username).set(podcastIndex, loadedEpisode.getDuration());
+        int timePassed = loadedEpisode.getDuration()
+                - memory.getEpisodeRemainingTime().get(username).get(podcastIndex);
+        if (timePassed < FORWARD_BACKWARD_TIME) {
+            memory.getEpisodeRemainingTime().get(username).set(podcastIndex,
+                    loadedEpisode.getDuration());
             commandResult.put("message", "Rewound successfully.");
             return commandResult;
         }
 
         commandResult.put("message", "Rewound successfully.");
         int remainingTime = memory.getEpisodeRemainingTime().get(username).get(podcastIndex);
-        memory.getEpisodeRemainingTime().get(username).set(podcastIndex, remainingTime + 90);
+        memory.getEpisodeRemainingTime().get(username).set(podcastIndex,
+                remainingTime + FORWARD_BACKWARD_TIME);
         return commandResult;
     }
 }

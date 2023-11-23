@@ -7,8 +7,12 @@ import com.fasterxml.jackson.databind.ObjectMapper;
 import com.fasterxml.jackson.databind.ObjectWriter;
 import com.fasterxml.jackson.databind.node.ArrayNode;
 import command.parser.CommandParser;
-import fileio.input.LibraryInput;
-import fileio.input.SongInput;
+import entities.Library;
+import entities.Episode;
+import entities.User;
+import entities.Song;
+import entities.Podcast;
+import fileio.input.*;
 import user.memory.UserMemory;
 import java.io.File;
 import java.io.IOException;
@@ -77,8 +81,31 @@ public final class Main {
 
         ArrayNode outputs = objectMapper.createArrayNode();
 
+        Library myLibrary = new Library();
+        for (UserInput user : library.getUsers()) {
+            User newUser = new User(user.getUsername(), user.getAge(), user.getCity());
+            myLibrary.getUsers().add(newUser);
+        }
+
+        for (SongInput song : library.getSongs()) {
+            Song newSong = new Song(song.getName(), song.getDuration(), song.getAlbum(),
+                    song.getTags(), song.getLyrics(), song.getGenre(), song.getReleaseYear(),
+                    song.getArtist());
+            myLibrary.getSongs().add(newSong);
+        }
+
+        for (PodcastInput podcast : library.getPodcasts()) {
+            Podcast newPodcast = new Podcast(podcast.getName(), podcast.getOwner());
+            for (EpisodeInput episode : podcast.getEpisodes()) {
+                Episode newEpisode = new Episode(episode.getName(), episode.getDuration(),
+                        episode.getDescription());
+                newPodcast.getEpisodes().add(newEpisode);
+            }
+            myLibrary.getPodcasts().add(newPodcast);
+        }
+
         JsonNode commands = objectMapper.readTree(new File("input/" + filePathInput));
-        CommandParser commandParser = new CommandParser(library, outputs);
+        CommandParser commandParser = new CommandParser(myLibrary, outputs);
 
         UserMemory memory = UserMemory.getInstance();
 

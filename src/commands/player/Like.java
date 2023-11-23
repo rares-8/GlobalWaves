@@ -1,9 +1,9 @@
-package commands;
+package commands.player;
 
 import com.fasterxml.jackson.databind.JsonNode;
 import com.fasterxml.jackson.databind.ObjectMapper;
 import com.fasterxml.jackson.databind.node.ObjectNode;
-import fileio.input.SongInput;
+import entities.Song;
 import user.memory.UserMemory;
 
 import java.util.ArrayList;
@@ -31,12 +31,12 @@ public abstract class Like {
             return commandResult;
         }
 
-        SongInput currentSong;
+        Song currentSong;
         if (memory.getLoadedAudio().get(username).getAudioType().equals("playlist")) {
             Integer index = memory.getCurrentIndex().get(username);
             currentSong = memory.getLoadedAudio().get(username).getPlaylistSongs().get(index);
         } else {
-            currentSong = (SongInput) memory.getLoadedAudio().get(username);
+            currentSong = (Song) memory.getLoadedAudio().get(username);
         }
         if (!memory.getLikedSongs().containsKey(username)) {
             memory.getLikedSongs().put(username, new ArrayList<>());

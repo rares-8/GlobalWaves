@@ -1,13 +1,15 @@
-package commands;
+package commands.player;
 
 import com.fasterxml.jackson.databind.JsonNode;
 import com.fasterxml.jackson.databind.ObjectMapper;
 import com.fasterxml.jackson.databind.node.ObjectNode;
-import fileio.input.EpisodeInput;
-import fileio.input.PodcastInput;
+import entities.Episode;
+import entities.Podcast;
 import user.memory.UserMemory;
 
-public class Forward {
+import static utils.Constants.FORWARD_BACKWARD_TIME;
+
+public abstract class Forward {
     /**
      * @param username  - user that issued the command
      * @param memory    - database
@@ -15,7 +17,7 @@ public class Forward {
      * @return command result
      */
     public static JsonNode forward(final String username, final UserMemory memory,
-                                final Integer timestamp) {
+                                   final Integer timestamp) {
         ObjectMapper mapper = new ObjectMapper();
         ObjectNode commandResult = mapper.createObjectNode();
         commandResult.put("command", "forward");
@@ -35,14 +37,15 @@ public class Forward {
             repeatMode = memory.getIsRepeating().get(username);
         }
 
-        PodcastInput loadedPodcast = (PodcastInput) memory.getLoadedAudio().get(username);
+        Podcast loadedPodcast = (Podcast) memory.getLoadedAudio().get(username);
         int podcastIndex = memory.getLoadedPodcasts().get(username).indexOf(loadedPodcast);
-        EpisodeInput loadedEpisode = memory.getLastEpisodes().get(username).get(podcastIndex);
+        Episode loadedEpisode = memory.getLastEpisodes().get(username).get(podcastIndex);
         int episodeIndex = loadedPodcast.getEpisodes().indexOf(loadedEpisode);
 
         int timeRemaining = memory.getEpisodeRemainingTime().get(username).get(podcastIndex);
-        if (timeRemaining > 90) {
-            memory.getEpisodeRemainingTime().get(username).set(podcastIndex, timeRemaining - 90);
+        if (timeRemaining > FORWARD_BACKWARD_TIME) {
+            memory.getEpisodeRemainingTime().get(username).set(podcastIndex,
+                    timeRemaining - FORWARD_BACKWARD_TIME);
             commandResult.put("message", "Skipped forward successfully.");
             return commandResult;
         }
@@ -59,13 +62,15 @@ public class Forward {
             episodeIndex++;
             loadedEpisode = memory.getLastEpisodes().get(username).get(podcastIndex);
             memory.getCurrentIndex().put(username, episodeIndex);
-            memory.getEpisodeRemainingTime().get(username).set(podcastIndex, loadedEpisode.getDuration());
+            memory.getEpisodeRemainingTime().get(username).set(podcastIndex,
+                    loadedEpisode.getDuration());
             memory.getLastEpisodes().get(username).set(podcastIndex, loadedEpisode);
         } else {
             if (repeatMode == 1) {
                 memory.getIsPaused().remove(username);
             }
-            memory.getEpisodeRemainingTime().get(username).set(podcastIndex, loadedEpisode.getDuration());
+            memory.getEpisodeRemainingTime().get(username).set(podcastIndex,
+                    loadedEpisode.getDuration());
         }
 
         return commandResult;

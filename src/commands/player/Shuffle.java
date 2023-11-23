@@ -1,12 +1,11 @@
-package commands;
+package commands.player;
 
 import com.fasterxml.jackson.databind.JsonNode;
 import com.fasterxml.jackson.databind.ObjectMapper;
 import com.fasterxml.jackson.databind.node.ObjectNode;
-import fileio.input.PlaylistInput;
+import entities.Playlist;
 import user.memory.UserMemory;
 
-import javax.swing.text.PlainDocument;
 import java.util.ArrayList;
 import java.util.Collections;
 import java.util.Random;
@@ -29,21 +28,23 @@ public abstract class Shuffle {
         commandResult.put("timestamp", timestamp);
 
         if (!memory.getLoadedAudio().containsKey(username)) {
-            commandResult.put("message" , "Please load a source before using the shuffle function.");
+            commandResult.put("message",
+                    "Please load a source before using the shuffle function.");
             return commandResult;
         } else if (!memory.getLoadedAudio().get(username).getAudioType().equals("playlist")) {
-            commandResult.put("message" , "The loaded source is not a playlist.");
+            commandResult.put("message",
+                    "The loaded source is not a playlist.");
             return commandResult;
         }
 
         if (!memory.getIsShuffled().containsKey(username)) {
-            commandResult.put("message" , "Shuffle function activated successfully.");
+            commandResult.put("message", "Shuffle function activated successfully.");
             Random random = new Random(seed);
             Collections.shuffle(memory.getCollectionIndexes().get(username), random);
             memory.getIsShuffled().put(username, 1);
         } else {
-            commandResult.put("message" , "Shuffle function deactivated successfully.");
-            PlaylistInput playlist = (PlaylistInput) memory.getLoadedAudio().get(username);
+            commandResult.put("message", "Shuffle function deactivated successfully.");
+            Playlist playlist = (Playlist) memory.getLoadedAudio().get(username);
             ArrayList<Integer> indexes = new ArrayList<>();
             for (int index = 0; index < playlist.getPlaylistSongs().size(); index++) {
                 indexes.add(index);

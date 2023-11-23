@@ -1,9 +1,9 @@
 package utils;
 
-import fileio.input.EpisodeInput;
-import fileio.input.PlaylistInput;
-import fileio.input.PodcastInput;
-import fileio.input.SongInput;
+import entities.Episode;
+import entities.Playlist;
+import entities.Song;
+import entities.Podcast;
 import user.memory.UserMemory;
 
 import java.util.ArrayList;
@@ -41,13 +41,14 @@ public abstract class UpdatePlayer {
     private static void updateForPodcast(final String username, final Integer timestamp,
                                          final UserMemory memory) {
         Integer currentEpIndex = memory.getCurrentIndex().get(username);
-        PodcastInput currentPodcast = (PodcastInput) memory.getLoadedAudio().get(username);
+        Podcast currentPodcast = (Podcast) memory.getLoadedAudio().get(username);
         ArrayList<Integer> indexes = memory.getCollectionIndexes().get(username);
 
-        EpisodeInput currentEpisode = currentPodcast.getEpisodes().get(currentEpIndex);
+        Episode currentEpisode = currentPodcast.getEpisodes().get(currentEpIndex);
         int podcastIndex = memory.getLoadedPodcasts().get(username).indexOf(currentPodcast);
 
-        UpdateRemainingTimeEpisode.updateEp(username, timestamp, currentEpisode, podcastIndex, memory);
+        UpdateRemainingTimeEpisode.updateEp(username, timestamp, currentEpisode,
+                podcastIndex, memory);
         UpdateTimestamp.updateTimestamp(username, timestamp, memory);
 
         Integer repeatingMode = 0;
@@ -56,7 +57,8 @@ public abstract class UpdatePlayer {
         }
 
         if (repeatingMode != 0) {
-            repeatPodcast(currentEpisode, podcastIndex, memory, username, timestamp, repeatingMode);
+            repeatPodcast(currentEpisode, podcastIndex, memory, username,
+                    timestamp, repeatingMode);
         }
 
         Integer remainingTime = memory.getEpisodeRemainingTime().get(username).get(podcastIndex);
@@ -74,7 +76,8 @@ public abstract class UpdatePlayer {
             currentEpIndex = indexes.get(indexOfCurrentEpisode + 1);
             currentEpisode = currentPodcast.getEpisodes().get(currentEpIndex);
             memory.getCurrentIndex().put(username, currentEpIndex);
-            memory.getEpisodeRemainingTime().get(username).set(podcastIndex, currentEpisode.getDuration() + remainingTime);
+            memory.getEpisodeRemainingTime().get(username).set(podcastIndex,
+                    currentEpisode.getDuration() + remainingTime);
             remainingTime = memory.getEpisodeRemainingTime().get(username).get(podcastIndex);
         }
     }
@@ -87,7 +90,7 @@ public abstract class UpdatePlayer {
      * @param username - user that issued the command
      * @param timestamp - current timestamp
      */
-    private static void repeatPodcast(final EpisodeInput currentEpisode, final int podcastIndex,
+    private static void repeatPodcast(final Episode currentEpisode, final int podcastIndex,
                                       final UserMemory memory, final String username,
                                       final Integer timestamp, final Integer repeatMode) {
         int remainingTime, timePassed, timestampFinished;
@@ -122,9 +125,9 @@ public abstract class UpdatePlayer {
     private static void updateForPlaylist(final String username, final Integer timestamp,
                                           final UserMemory memory) {
         Integer currentIndex = memory.getCurrentIndex().get(username);
-        PlaylistInput currentPlaylist = (PlaylistInput) memory.getLoadedAudio().get(username);
+        Playlist currentPlaylist = (Playlist) memory.getLoadedAudio().get(username);
         ArrayList<Integer> indexes = memory.getCollectionIndexes().get(username);
-        SongInput currentSong = currentPlaylist.getPlaylistSongs().get(currentIndex);
+        Song currentSong = currentPlaylist.getPlaylistSongs().get(currentIndex);
 
         UpdateRemainingTime.updateRemainingTime(username, timestamp, currentSong, memory);
         UpdateTimestamp.updateTimestamp(username, timestamp, memory);
@@ -182,7 +185,8 @@ public abstract class UpdatePlayer {
      */
     private static void updateForSong(final String username, final Integer timestamp,
                                       final UserMemory memory) {
-        UpdateRemainingTime.updateRemainingTime(username, timestamp, memory.getLoadedAudio().get(username), memory);
+        UpdateRemainingTime.updateRemainingTime(username, timestamp,
+                memory.getLoadedAudio().get(username), memory);
         UpdateTimestamp.updateTimestamp(username, timestamp, memory);
 
         Integer repeatMode = 0;
@@ -211,7 +215,7 @@ public abstract class UpdatePlayer {
      */
     private static void repeatLoadedSong(final String username, final Integer timestamp,
                                          final Integer repeatMode, final UserMemory memory) {
-        SongInput song = (SongInput) memory.getLoadedAudio().get(username);
+        Song song = (Song) memory.getLoadedAudio().get(username);
         int remainingTime, timePassed, timestampFinished;
         if (repeatMode == 1) {
             remainingTime = memory.getRemainingTime().get(username);

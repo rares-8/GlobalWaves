@@ -1,12 +1,11 @@
 package utils;
 
-import fileio.input.Audio;
-import fileio.input.EpisodeInput;
+import entities.Episode;
 import user.memory.UserMemory;
 
 public abstract class UpdateRemainingTimeEpisode {
     /**
-     * Update remaining time for an audio file
+     * Update remaining time for a pdocast episode
      *
      * @param username  - user that issued the command
      * @param timestamp - current timestamp
@@ -14,7 +13,7 @@ public abstract class UpdateRemainingTimeEpisode {
      * @param memory    - user database
      */
     public static void updateEp(final String username, final Integer timestamp,
-                                final EpisodeInput episode, final int podcastIndex,
+                                final Episode episode, final int podcastIndex,
                                 final UserMemory memory) {
         if (!memory.getLastTimestamp().containsKey(username)) {
             memory.getLastTimestamp().put(username, timestamp);
@@ -23,6 +22,7 @@ public abstract class UpdateRemainingTimeEpisode {
         Integer lastTimestamp = memory.getLastTimestamp().get(username);
         Integer timePassed = timestamp - lastTimestamp;
         Integer remainingTime = memory.getEpisodeRemainingTime().get(username).get(podcastIndex);
-        memory.getEpisodeRemainingTime().get(username).set(podcastIndex, remainingTime - timePassed);
+        memory.getEpisodeRemainingTime().get(username).set(podcastIndex,
+                remainingTime - timePassed);
     }
 }

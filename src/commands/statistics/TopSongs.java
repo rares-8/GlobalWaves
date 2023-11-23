@@ -1,49 +1,56 @@
-package commands;
+package commands.statistics;
 
 import com.fasterxml.jackson.databind.JsonNode;
 import com.fasterxml.jackson.databind.ObjectMapper;
 import com.fasterxml.jackson.databind.node.ArrayNode;
 import com.fasterxml.jackson.databind.node.ObjectNode;
-import fileio.input.LibraryInput;
-import fileio.input.SongInput;
+import entities.Library;
+import entities.Song;
 import user.memory.UserMemory;
-import java.util.Collections;
-import java.util.Comparator;
 import java.util.Map;
 import java.util.ArrayList;
 
 import static utils.Constants.RESULT_MAX_SIZE;
 
+
 public abstract class TopSongs {
+    /**
+     *
+     * @param timestamp
+     * @param memory
+     * @param library
+     * @return
+     */
     public static JsonNode topSongs(final Integer timestamp, final UserMemory memory,
-                                    final LibraryInput library) {
+                                    final Library library) {
         ObjectMapper mapper = new ObjectMapper();
         ObjectNode commandResult = mapper.createObjectNode();
         commandResult.put("command", "getTop5Songs");
         commandResult.put("timestamp", timestamp);
 
-        ArrayList<SongInput> allSongs = new ArrayList<>();
+        ArrayList<Song> allSongs = new ArrayList<>();
 
         // copy song names in new array
-        for (SongInput song : library.getSongs()) {
-            SongInput newSong = new SongInput();
+        for (Song song : library.getSongs()) {
+            Song newSong = new Song();
             newSong.setName(song.getName());
             allSongs.add(newSong);
         }
         ArrayNode resultNode = commandResult.putArray("result");
         ArrayList<Integer> likes = new ArrayList<>();
-        Map<String, ArrayList<SongInput>> likedSongs = memory.getLikedSongs();
+        Map<String, ArrayList<Song>> likedSongs = memory.getLikedSongs();
 
-        for (SongInput song : library.getSongs()) {
+        for (Song song : library.getSongs()) {
             int counter = 0;
-            for (ArrayList<SongInput> userLikedSongs : likedSongs.values()) {
-                if (userLikedSongs.contains(song))
+            for (ArrayList<Song> userLikedSongs : likedSongs.values()) {
+                if (userLikedSongs.contains(song)) {
                     counter++;
+                }
             }
             likes.add(counter);
         }
 
-        ArrayList<SongInput> sortedSongs = new ArrayList<>();
+        ArrayList<Song> sortedSongs = new ArrayList<>();
         for (int i = 0; i < library.getSongs().size(); i++) {
             int maxLikes = -1;
             for (Integer iterator : likes) {
@@ -57,7 +64,7 @@ public abstract class TopSongs {
             likes.remove(index);
         }
 
-        for (int i = 0; i < 5; i++) {
+        for (int i = 0; i < RESULT_MAX_SIZE; i++) {
             resultNode.add(sortedSongs.get(i).getName());
         }
 

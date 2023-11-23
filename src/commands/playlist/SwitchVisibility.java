@@ -1,9 +1,9 @@
-package commands;
+package commands.playlist;
 
 import com.fasterxml.jackson.databind.JsonNode;
 import com.fasterxml.jackson.databind.ObjectMapper;
 import com.fasterxml.jackson.databind.node.ObjectNode;
-import fileio.input.PlaylistInput;
+import entities.Playlist;
 import user.memory.UserMemory;
 
 public abstract class SwitchVisibility {
@@ -32,7 +32,7 @@ public abstract class SwitchVisibility {
             return commandResult;
         }
 
-        PlaylistInput playlist = memory.getUserPlaylists().get(username).get(playlistId - 1);
+        Playlist playlist = memory.getUserPlaylists().get(username).get(playlistId - 1);
         if (playlist.getIsPrivate() == 1) {
             playlist.setIsPrivate(0);
             memory.getPublicPlaylists().add(playlist);

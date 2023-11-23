@@ -1,17 +1,15 @@
-package commands;
+package commands.playlist;
 
 import com.fasterxml.jackson.databind.JsonNode;
 import com.fasterxml.jackson.databind.ObjectMapper;
 import com.fasterxml.jackson.databind.node.ArrayNode;
 import com.fasterxml.jackson.databind.node.ObjectNode;
-import fileio.input.Audio;
-import fileio.input.PlaylistInput;
-import fileio.input.SongInput;
+import entities.Playlist;
+import entities.Song;
 import user.memory.UserMemory;
 import utils.CountFollowers;
 
 import java.util.ArrayList;
-import java.util.Map;
 
 public abstract class ShowPlaylists {
     /**
@@ -33,20 +31,20 @@ public abstract class ShowPlaylists {
             return commandResult;
         }
 
-        ArrayList<PlaylistInput> userPlaylists = memory.getUserPlaylists().get(username);
+        ArrayList<Playlist> userPlaylists = memory.getUserPlaylists().get(username);
         if (userPlaylists == null) {
             commandResult.put("result", "[]");
             return commandResult;
         }
 
         ArrayNode auxNode = commandResult.putArray("result");
-        for (PlaylistInput playlist : userPlaylists) {
-            ArrayList<SongInput> playlistSongs = playlist.getPlaylistSongs();
+        for (Playlist playlist : userPlaylists) {
+            ArrayList<Song> playlistSongs = playlist.getPlaylistSongs();
 
             ObjectNode playlistNode = mapper.createObjectNode();
             playlistNode.put("name", playlist.getName());
             ArrayNode songs = playlistNode.putArray("songs");
-            for (SongInput song : playlistSongs) {
+            for (Song song : playlistSongs) {
                 songs.add(song.getName());
             }
 
@@ -55,7 +53,8 @@ public abstract class ShowPlaylists {
             } else {
                 playlistNode.put("visibility", "private");
             }
-            playlistNode.put("followers", CountFollowers.countFollowers(memory.getFollowedPlaylists(), playlist));
+            playlistNode.put("followers",
+                    CountFollowers.countFollowers(memory.getFollowedPlaylists(), playlist));
             auxNode.add(playlistNode);
         }
 

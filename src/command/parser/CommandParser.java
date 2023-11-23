@@ -4,11 +4,20 @@ import com.fasterxml.jackson.core.type.TypeReference;
 import com.fasterxml.jackson.databind.JsonNode;
 import com.fasterxml.jackson.databind.ObjectMapper;
 import com.fasterxml.jackson.databind.node.ArrayNode;
-import commands.*;
-import fileio.input.LibraryInput;
+import commands.player.*;
+import commands.playlist.CreatePlaylist;
+import commands.playlist.FollowPlaylist;
+import commands.playlist.ShowPlaylists;
+import commands.playlist.SwitchVisibility;
+import commands.search.Search;
+import commands.search.SearchFilters;
+import commands.search.Select;
+import commands.statistics.ShowPreferredSongs;
+import commands.statistics.TopPlaylists;
+import commands.statistics.TopSongs;
+import entities.Library;
 import user.memory.UserMemory;
 import utils.UpdatePlayer;
-import utils.UpdateRemainingTime;
 import utils.UpdateTimestamp;
 
 import java.util.EnumSet;
@@ -18,7 +27,7 @@ import java.util.List;
 import java.util.Map;
 
 public final class CommandParser {
-    private LibraryInput library;
+    private Library library;
     private ArrayNode outputs;
 
     /**
@@ -33,8 +42,9 @@ public final class CommandParser {
 
         if (currentCommand.has("username")) {
             boolean isPaused = memory.getIsPaused().containsKey(getUsername(currentCommand));
-            boolean update = command.equals("load") || command.equals("next") || command.equals("prev")
-                    || command.equals("forward") || command.equals("backward");
+            boolean update = command.equals("load") || command.equals("next")
+                    || command.equals("prev") || command.equals("forward")
+                    || command.equals("backward");
             if (!isPaused) {
                 UpdatePlayer.updatePlayer(getUsername(currentCommand), timestamp, memory);
             } else if (update) {
@@ -116,7 +126,8 @@ public final class CommandParser {
      * @param memory         - memory database for users
      * @param timestamp      - timestamp from command
      */
-    private void backwardParse(JsonNode currentCommand, UserMemory memory, Integer timestamp) {
+    private void backwardParse(final JsonNode currentCommand,
+                               final UserMemory memory, final Integer timestamp) {
         String username = getUsername(currentCommand);
         outputs.add(Backward.backward(username, memory, timestamp));
 
@@ -130,7 +141,8 @@ public final class CommandParser {
      * @param memory         - memory database for users
      * @param timestamp      - timestamp from command
      */
-    private void forwardParse(JsonNode currentCommand, UserMemory memory, Integer timestamp) {
+    private void forwardParse(final JsonNode currentCommand,
+                              final UserMemory memory, final Integer timestamp) {
         String username = getUsername(currentCommand);
         outputs.add(Forward.forward(username, memory, timestamp));
     }
@@ -143,7 +155,8 @@ public final class CommandParser {
      * @param memory         - memory database for users
      * @param timestamp      - timestamp from command
      */
-    private void prevParse(JsonNode currentCommand, UserMemory memory, Integer timestamp) {
+    private void prevParse(final JsonNode currentCommand,
+                           final UserMemory memory, final Integer timestamp) {
         String username = getUsername(currentCommand);
         outputs.add(Prev.prev(username, memory, timestamp));
     }
@@ -156,7 +169,8 @@ public final class CommandParser {
      * @param memory         - memory database for users
      * @param timestamp      - timestamp from command
      */
-    private void nextParse(JsonNode currentCommand, UserMemory memory, Integer timestamp) {
+    private void nextParse(final JsonNode currentCommand,
+                           final UserMemory memory, final Integer timestamp) {
         String username = getUsername(currentCommand);
         outputs.add(Next.next(username, memory, timestamp));
     }
@@ -412,16 +426,16 @@ public final class CommandParser {
         return currentCommand.get("seed").asInt();
     }
 
-    public CommandParser(final LibraryInput library, final ArrayNode outputs) {
+    public CommandParser(final Library library, final ArrayNode outputs) {
         this.library = library;
         this.outputs = outputs;
     }
 
-    public LibraryInput getLibrary() {
+    public Library getLibrary() {
         return library;
     }
 
-    public void setLibrary(final LibraryInput library) {
+    public void setLibrary(final Library library) {
         this.library = library;
     }
 

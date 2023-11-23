@@ -1,10 +1,10 @@
-package commands;
+package commands.player;
 
 import com.fasterxml.jackson.databind.JsonNode;
 import com.fasterxml.jackson.databind.ObjectMapper;
 import com.fasterxml.jackson.databind.node.ObjectNode;
 import user.memory.UserMemory;
-import fileio.input.Audio;
+import entities.Audio;
 
 public abstract class Repeat {
     /**
@@ -49,6 +49,7 @@ public abstract class Repeat {
                 case 2:
                     commandResult.put("message", "Repeat mode changed to repeat infinite.");
                     break;
+                default:
             }
         } else {
             switch (currentRepeatMode) {
@@ -61,6 +62,7 @@ public abstract class Repeat {
                 case 2:
                     commandResult.put("message", "Repeat mode changed to repeat current song.");
                     break;
+                default:
             }
         }
 

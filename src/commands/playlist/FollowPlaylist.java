@@ -1,9 +1,9 @@
-package commands;
+package commands.playlist;
 
 import com.fasterxml.jackson.databind.JsonNode;
 import com.fasterxml.jackson.databind.ObjectMapper;
 import com.fasterxml.jackson.databind.node.ObjectNode;
-import fileio.input.Audio;
+import entities.Audio;
 import user.memory.UserMemory;
 
 import java.util.ArrayList;

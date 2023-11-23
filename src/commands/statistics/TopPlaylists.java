@@ -1,23 +1,24 @@
-package commands;
+package commands.statistics;
 
 import com.fasterxml.jackson.databind.JsonNode;
 import com.fasterxml.jackson.databind.ObjectMapper;
 import com.fasterxml.jackson.databind.node.ArrayNode;
 import com.fasterxml.jackson.databind.node.ObjectNode;
-import fileio.input.LibraryInput;
-import fileio.input.PlaylistInput;
-import fileio.input.SongInput;
+import entities.Playlist;
 import user.memory.UserMemory;
 import utils.CountFollowers;
-
 import java.util.ArrayList;
-import java.util.Arrays;
 import java.util.Collections;
-import java.util.Comparator;
 
 import static utils.Constants.RESULT_MAX_SIZE;
 
-public class TopPlaylists {
+public abstract class TopPlaylists {
+    /**
+     *
+     * @param timestamp - current timestamp
+     * @param memory - database
+     * @return command result
+     */
     public static JsonNode topPlaylists(final Integer timestamp, final UserMemory memory) {
         ObjectMapper mapper = new ObjectMapper();
         ObjectNode commandResult = mapper.createObjectNode();
@@ -25,11 +26,11 @@ public class TopPlaylists {
         commandResult.put("timestamp", timestamp);
         ArrayNode resultNode = commandResult.putArray("result");
 
-        ArrayList<PlaylistInput> allPlaylists = new ArrayList<>();
+        ArrayList<Playlist> allPlaylists = new ArrayList<>();
 
         // copy playlist names and owners (needed to count followers)
-        for (PlaylistInput playlist : memory.getPublicPlaylists()) {
-            PlaylistInput newPlaylist = new PlaylistInput();
+        for (Playlist playlist : memory.getPublicPlaylists()) {
+            Playlist newPlaylist = new Playlist();
             newPlaylist.setName(playlist.getName());
             newPlaylist.setOwner(playlist.getOwner());
             newPlaylist.setTimeCreated(playlist.getTimeCreated());
@@ -46,11 +47,12 @@ public class TopPlaylists {
 
         // get followers for all playlists
         ArrayList<Integer> followersCount = new ArrayList<>();
-        for (PlaylistInput playlist : allPlaylists) {
-            followersCount.add(CountFollowers.countFollowers(memory.getFollowedPlaylists(), playlist));
+        for (Playlist playlist : allPlaylists) {
+            followersCount.add(CountFollowers.countFollowers(memory.getFollowedPlaylists(),
+                    playlist));
         }
 
-        ArrayList<PlaylistInput> sortedPlaylists = new ArrayList<>();
+        ArrayList<Playlist> sortedPlaylists = new ArrayList<>();
         for (int i = 0; i < memory.getPublicPlaylists().size(); i++) {
             int maxFollowers = -1;
             for (Integer iterator : followersCount) {
@@ -68,7 +70,7 @@ public class TopPlaylists {
             sortedPlaylists = new ArrayList<>(sortedPlaylists.subList(0, RESULT_MAX_SIZE));
         }
 
-        for (PlaylistInput sortedPlaylist : sortedPlaylists) {
+        for (Playlist sortedPlaylist : sortedPlaylists) {
             resultNode.add(sortedPlaylist.getName());
         }
         return commandResult;

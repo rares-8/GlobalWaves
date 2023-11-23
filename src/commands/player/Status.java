@@ -1,9 +1,9 @@
-package commands;
+package commands.player;
 
 import com.fasterxml.jackson.databind.JsonNode;
 import com.fasterxml.jackson.databind.ObjectMapper;
 import com.fasterxml.jackson.databind.node.ObjectNode;
-import fileio.input.PodcastInput;
+import entities.Podcast;
 import user.memory.UserMemory;
 
 public abstract class Status {
@@ -45,9 +45,10 @@ public abstract class Status {
         if (!memory.getLoadedAudio().get(username).getAudioType().equals("podcast")) {
             statsNode.put("remainedTime", memory.getRemainingTime().get(username));
         } else {
-            PodcastInput currentPodcast = (PodcastInput) memory.getLoadedAudio().get(username);
+            Podcast currentPodcast = (Podcast) memory.getLoadedAudio().get(username);
             int podcastIndex = memory.getLoadedPodcasts().get(username).indexOf(currentPodcast);
-            statsNode.put("remainedTime", memory.getEpisodeRemainingTime().get(username).get(podcastIndex));
+            statsNode.put("remainedTime",
+                    memory.getEpisodeRemainingTime().get(username).get(podcastIndex));
         }
 
         return putStats(username, memory, commandResult, statsNode);
@@ -61,7 +62,7 @@ public abstract class Status {
                                      final ObjectNode commandResult, final ObjectNode statsNode) {
         if (!memory.getIsRepeating().containsKey(username)) {
             statsNode.put("repeat", "No Repeat");
-        } else if (memory.getLoadedAudio().containsKey(username)){
+        } else if (memory.getLoadedAudio().containsKey(username)) {
             Integer repeatingMode = memory.getIsRepeating().get(username);
             if (memory.getLoadedAudio().get(username).getAudioType().equals("playlist")) {
                 if (repeatingMode == 1) {

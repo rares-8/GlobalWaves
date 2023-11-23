@@ -1,11 +1,11 @@
-package commands;
+package commands.player;
 
 import com.fasterxml.jackson.databind.JsonNode;
 import com.fasterxml.jackson.databind.ObjectMapper;
 import com.fasterxml.jackson.databind.node.ObjectNode;
-import fileio.input.Audio;
-import fileio.input.EpisodeInput;
-import fileio.input.PodcastInput;
+import entities.Audio;
+import entities.Episode;
+import entities.Podcast;
 import user.memory.UserMemory;
 
 import java.util.ArrayList;
@@ -83,7 +83,7 @@ public abstract class Load {
      */
     private static void loadPodcast(final String username, final UserMemory memory,
                                     final Integer timestamp) {
-        PodcastInput selectedPodcast = (PodcastInput) memory.getCurrentSelect().get(username);
+        Podcast selectedPodcast = (Podcast) memory.getCurrentSelect().get(username);
         memory.getLoadedAudio().put(username, selectedPodcast);
         memory.getIsPaused().remove(username);
 
@@ -110,7 +110,7 @@ public abstract class Load {
         /* if the username is already in the hashmap, it means user already loaded
              a podcast, so first check if now a different podcast must be loaded */
         int different = 1;
-        for (PodcastInput currentPodcast : memory.getLoadedPodcasts().get(username)) {
+        for (Podcast currentPodcast : memory.getLoadedPodcasts().get(username)) {
             if (currentPodcast == selectedPodcast) {
                 different = 0;
                 break;
@@ -125,19 +125,20 @@ public abstract class Load {
 
         // if the podcasts are not different, get the last episode loaded from the podcast
         int podcastIndex = memory.getLoadedPodcasts().get(username).indexOf(selectedPodcast);
-        EpisodeInput lastEpisode = memory.getLastEpisodes().get(username).get(podcastIndex);
+        Episode lastEpisode = memory.getLastEpisodes().get(username).get(podcastIndex);
 
         int episodeIndex = selectedPodcast.getEpisodes().indexOf(lastEpisode);
         memory.getCurrentIndex().put(username, episodeIndex);
         memory.getCollectionIndexes().put(username, indexes);
-        memory.getRemainingTime().put(username, memory.getEpisodeRemainingTime().get(username).get(podcastIndex));
+        memory.getRemainingTime().put(username,
+                memory.getEpisodeRemainingTime().get(username).get(podcastIndex));
     }
 
     private static void addNewPodcast(final String username, final UserMemory memory,
-                                      final PodcastInput selectedPodcast,
+                                      final Podcast selectedPodcast,
                                       final ArrayList<Integer> indexes) {
         memory.getLoadedPodcasts().get(username).add(selectedPodcast);
-        EpisodeInput firstEpisode = selectedPodcast.getEpisodes().get(0);
+        Episode firstEpisode = selectedPodcast.getEpisodes().get(0);
         memory.getEpisodeRemainingTime().get(username).add(firstEpisode.getDuration());
         memory.getLastEpisodes().get(username).add(firstEpisode);
         memory.getCurrentIndex().put(username, 0);

@@ -1,4 +1,4 @@
-package command.parser;
+package commands.search;
 
 public enum SearchFilters {
     name,

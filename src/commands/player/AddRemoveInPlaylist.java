@@ -1,11 +1,11 @@
-package commands;
+package commands.player;
 
 import com.fasterxml.jackson.databind.JsonNode;
 import com.fasterxml.jackson.databind.ObjectMapper;
 import com.fasterxml.jackson.databind.node.ObjectNode;
-import fileio.input.Audio;
-import fileio.input.PlaylistInput;
-import fileio.input.SongInput;
+import entities.Audio;
+import entities.Playlist;
+import entities.Song;
 import user.memory.UserMemory;
 
 public abstract class AddRemoveInPlaylist {
@@ -39,7 +39,7 @@ public abstract class AddRemoveInPlaylist {
             return commandResult;
         }
 
-        PlaylistInput selectedPlaylist =
+        Playlist selectedPlaylist =
                 memory.getUserPlaylists().get(username).get(playlistId - 1);
 
         Audio loadedSong = memory.getLoadedAudio().get(username);
@@ -56,7 +56,7 @@ public abstract class AddRemoveInPlaylist {
             selectedPlaylist.getPlaylistSongs().remove(songIndex);
         } else {
             commandResult.put("message", "Successfully added to playlist.");
-            selectedPlaylist.getPlaylistSongs().add((SongInput) loadedSong);
+            selectedPlaylist.getPlaylistSongs().add((Song) loadedSong);
         }
         return commandResult;
     }

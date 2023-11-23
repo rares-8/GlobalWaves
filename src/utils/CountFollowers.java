@@ -1,7 +1,7 @@
 package utils;
 
-import fileio.input.Audio;
-import fileio.input.PlaylistInput;
+import entities.Audio;
+import entities.Playlist;
 
 import java.util.ArrayList;
 import java.util.Map;
@@ -15,7 +15,7 @@ public abstract class CountFollowers {
      * @return number of followers
      */
     public static Integer countFollowers(final Map<String, ArrayList<Audio>> followedPlaylists,
-                                         final PlaylistInput playlist) {
+                                         final Playlist playlist) {
         Integer count = 0;
         for (Map.Entry<String, ArrayList<Audio>> element : followedPlaylists.entrySet()) {
             ArrayList<Audio> userFollows = element.getValue();

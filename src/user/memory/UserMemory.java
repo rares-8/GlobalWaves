@@ -26,7 +26,7 @@ import java.util.Map;
  * lastEpisodes - last episode loaded from every podcast
  * episodeRemainingTime - remaining time for the last loaded episode
  * collectionIndexes - arrays of indexes, used to decide which audio file to play next
- * Makes shuffle and load easier to implement
+ *                      Makes shuffle easier to implement
  * currentIndex - current index from collectionIndexes
  * isPaused - check if a user's player is paused
  */

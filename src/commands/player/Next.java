@@ -16,7 +16,7 @@ public abstract class Next {
      * @param username  - user that issued the command
      * @param memory    - database
      * @param timestamp - current timestamp
-     * @return command result
+     * @return next status
      */
     public static JsonNode next(final String username, final UserMemory memory,
                                 final Integer timestamp) {
@@ -56,16 +56,17 @@ public abstract class Next {
      */
     private static void nextPodcast(final ObjectNode commandResult, final String username,
                                     final Podcast loadedPodcast, final UserMemory memory) {
+        int podcastIndex = memory.getLoadedPodcasts().get(username).indexOf(loadedPodcast);
+        Episode loadedEpisode = memory.getLastEpisodes().get(username).get(podcastIndex);
+        int episodeIndex = loadedPodcast.getEpisodes().indexOf(loadedEpisode);
+
         Integer repeatMode = 0;
         if (memory.getIsRepeating().containsKey(username)) {
             repeatMode = memory.getIsRepeating().get(username);
         }
 
-        int podcastIndex = memory.getLoadedPodcasts().get(username).indexOf(loadedPodcast);
-        Episode loadedEpisode = memory.getLastEpisodes().get(username).get(podcastIndex);
-        int episodeIndex = loadedPodcast.getEpisodes().indexOf(loadedEpisode);
-
         if (repeatMode == 0) {
+            // if this is the last episode, remove podcast
             if (episodeIndex == loadedPodcast.getEpisodes().size() - 1) {
                 commandResult.put("message",
                         "Please load a source before skipping to the next track.");
@@ -87,6 +88,7 @@ public abstract class Next {
             commandResult.put("message", "Skipped to next track successfully."
                     + " The current track is " + nextEpisode.getName() + ".");
         } else {
+            // start episode again
             commandResult.put("message", "Skipped to next track successfully."
                     + " The current track is " + loadedEpisode.getName() + ".");
             memory.getEpisodeRemainingTime().get(username).set(podcastIndex,
@@ -109,14 +111,14 @@ public abstract class Next {
     private static void nextPlaylist(final ObjectNode commandResult, final String username,
                                      final Playlist loadedPlaylist,
                                      final UserMemory memory) {
+        Integer currentIndex = memory.getCurrentIndex().get(username);
+        ArrayList<Integer> indexes = memory.getCollectionIndexes().get(username);
+        ArrayList<Song> songs = loadedPlaylist.getPlaylistSongs();
         Integer repeatMode = 0;
         if (memory.getIsRepeating().containsKey(username)) {
             repeatMode = memory.getIsRepeating().get(username);
         }
 
-        Integer currentIndex = memory.getCurrentIndex().get(username);
-        ArrayList<Integer> indexes = memory.getCollectionIndexes().get(username);
-        ArrayList<Song> songs = loadedPlaylist.getPlaylistSongs();
         if (repeatMode == 0) {
             if (indexes.indexOf(currentIndex) == indexes.size() - 1) {
                 commandResult.put("message",
@@ -143,13 +145,16 @@ public abstract class Next {
 
             int indexOfCurrentSong;
             if (repeatMode == 1 && last == 1) {
+                // if this is the last song, start over
                 currentIndex = indexes.get(0);
                 indexOfCurrentSong = indexes.indexOf(currentIndex);
                 currentIndex = indexes.get(indexOfCurrentSong);
             } else if (repeatMode == 1) {
+                // skip to next song
                 indexOfCurrentSong = indexes.indexOf(currentIndex);
                 currentIndex = indexes.get(indexOfCurrentSong + 1);
             } else if (repeatMode == 2) {
+                // start current song again
                 indexOfCurrentSong = indexes.indexOf(currentIndex);
                 currentIndex = indexes.get(indexOfCurrentSong);
             }

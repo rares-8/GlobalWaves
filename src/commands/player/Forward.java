@@ -14,7 +14,7 @@ public abstract class Forward {
      * @param username  - user that issued the command
      * @param memory    - database
      * @param timestamp - current timestamp
-     * @return command result
+     * @return forward status
      */
     public static JsonNode forward(final String username, final UserMemory memory,
                                    final Integer timestamp) {
@@ -43,6 +43,7 @@ public abstract class Forward {
         int episodeIndex = loadedPodcast.getEpisodes().indexOf(loadedEpisode);
 
         int timeRemaining = memory.getEpisodeRemainingTime().get(username).get(podcastIndex);
+        // check if next episode has to be loaded or not
         if (timeRemaining > FORWARD_BACKWARD_TIME) {
             memory.getEpisodeRemainingTime().get(username).set(podcastIndex,
                     timeRemaining - FORWARD_BACKWARD_TIME);
@@ -51,6 +52,7 @@ public abstract class Forward {
         }
 
         commandResult.put("message", "Skipped forward successfully.");
+        // if repeat is not activated, skip to next song
         if (repeatMode == 0) {
             if (episodeIndex == loadedPodcast.getEpisodes().size() - 1) {
                 memory.getLoadedAudio().remove(username);
@@ -66,6 +68,7 @@ public abstract class Forward {
                     loadedEpisode.getDuration());
             memory.getLastEpisodes().get(username).set(podcastIndex, loadedEpisode);
         } else {
+            // if repeat is activated, start current episode again
             if (repeatMode == 1) {
                 memory.getIsPaused().remove(username);
             }

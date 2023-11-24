@@ -13,7 +13,7 @@ public abstract class SwitchVisibility {
      * @param playlistId - id for playlist that needs to switch visibility
      * @param timestamp - current playlist
      * @param memory - database
-     * @return command result
+     * @return switch status
      */
     public static JsonNode switchVisibility(final String username, final Integer playlistId,
                                             final Integer timestamp, final UserMemory memory) {

@@ -16,7 +16,7 @@ public abstract class Select {
      * @param itemNumber - item to select from search result
      * @param timestamp - timestamp for command
      * @param memory - database for users
-     * @return command result
+     * @return select status
      */
     public static JsonNode select(final String username, final Integer itemNumber,
                                   final Integer timestamp, final UserMemory memory) {

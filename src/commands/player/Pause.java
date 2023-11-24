@@ -11,7 +11,7 @@ public abstract class Pause {
      * @param username  - user that issued the command
      * @param memory    - database
      * @param timestamp - current timestamp
-     * @return command result
+     * @return pause status
      */
     public static JsonNode pause(final String username, final UserMemory memory,
                                  final Integer timestamp) {

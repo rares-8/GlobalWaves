@@ -17,7 +17,7 @@ public abstract class TopPlaylists {
      *
      * @param timestamp - current timestamp
      * @param memory - database
-     * @return command result
+     * @return top 5 playlists
      */
     public static JsonNode topPlaylists(final Integer timestamp, final UserMemory memory) {
         ObjectMapper mapper = new ObjectMapper();
@@ -37,6 +37,7 @@ public abstract class TopPlaylists {
             allPlaylists.add(newPlaylist);
         }
 
+        // sort playlists by oldest to newest
         for (int i = 0; i < allPlaylists.size() - 1; i++) {
             for (int j = i + 1; j < allPlaylists.size(); j++) {
                 if (allPlaylists.get(i).getTimeCreated() > allPlaylists.get(j).getTimeCreated()) {

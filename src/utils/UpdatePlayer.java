@@ -14,7 +14,7 @@ public abstract class UpdatePlayer {
      *
      * @param username  - user that issued the command
      * @param timestamp - current timestamp
-     * @param memory    - database for users
+     * @param memory    - database
      */
     public static void updatePlayer(final String username,
                                     final Integer timestamp, final UserMemory memory) {
@@ -34,9 +34,9 @@ public abstract class UpdatePlayer {
     /**
      * Update the player when a podcast is loaded. Similar to when a playlist is loaded
      *
-     * @param username
-     * @param timestamp
-     * @param memory
+     * @param username  - user that issued the command
+     * @param timestamp - current timestamp
+     * @param memory    - database
      */
     private static void updateForPodcast(final String username, final Integer timestamp,
                                          final UserMemory memory) {
@@ -63,6 +63,7 @@ public abstract class UpdatePlayer {
 
         Integer remainingTime = memory.getEpisodeRemainingTime().get(username).get(podcastIndex);
         while (remainingTime <= 0) {
+            // if remaining time is <= 0 and it is the last episode, remove podcast
             if (indexes.indexOf(currentEpIndex) == indexes.size() - 1) {
                 memory.getLoadedAudio().remove(username);
                 memory.getIsPaused().put(username, 1);
@@ -72,6 +73,7 @@ public abstract class UpdatePlayer {
                 break;
             }
 
+            // go to next podcast episode
             int indexOfCurrentEpisode = indexes.indexOf(currentEpIndex);
             currentEpIndex = indexes.get(indexOfCurrentEpisode + 1);
             currentEpisode = currentPodcast.getEpisodes().get(currentEpIndex);
@@ -84,17 +86,19 @@ public abstract class UpdatePlayer {
 
     /**
      * Method used to repeat the podcast loaded in the player.
+     *
      * @param currentEpisode - episode currently running
-     * @param podcastIndex - index for loadedPodcasts hashmap
-     * @param memory - database
-     * @param username - user that issued the command
-     * @param timestamp - current timestamp
+     * @param podcastIndex   - index for loadedPodcasts hashmap
+     * @param memory         - database
+     * @param username       - user that issued the command
+     * @param timestamp      - current timestamp
      */
     private static void repeatPodcast(final Episode currentEpisode, final int podcastIndex,
                                       final UserMemory memory, final String username,
                                       final Integer timestamp, final Integer repeatMode) {
         int remainingTime, timePassed, timestampFinished;
         if (repeatMode == 1) {
+            // repeat podcast episode once
             remainingTime = memory.getEpisodeRemainingTime().get(username).get(podcastIndex);
             if (remainingTime <= 0) {
                 timestampFinished = timestamp + remainingTime;
@@ -108,6 +112,7 @@ public abstract class UpdatePlayer {
 
         remainingTime = memory.getEpisodeRemainingTime().get(username).get(podcastIndex);
         while (remainingTime <= 0) {
+            // repeat until remaining time is positive
             timestampFinished = timestamp + remainingTime;
             timePassed = timestamp - timestampFinished;
             remainingTime = currentEpisode.getDuration() - timePassed;
@@ -118,9 +123,9 @@ public abstract class UpdatePlayer {
     /**
      * Update the player when a playlist is loaded
      *
-     * @param username
-     * @param timestamp
-     * @param memory
+     * @param username  - user that issued the command
+     * @param timestamp - current timestamp
+     * @param memory    - database for users
      */
     private static void updateForPlaylist(final String username, final Integer timestamp,
                                           final UserMemory memory) {
@@ -139,6 +144,7 @@ public abstract class UpdatePlayer {
 
         Integer remainingTime = memory.getRemainingTime().get(username);
 
+        // repeat current song until remaining time is positive
         while (remainingTime <= 0 && repeatMode == 2) {
             int timestampFinished = timestamp + remainingTime;
             int timePassed = timestamp - timestampFinished;
@@ -148,7 +154,7 @@ public abstract class UpdatePlayer {
 
         while (remainingTime <= 0) {
             int repeat = 0;
-
+            // if this is the last song, and there is no repeat, remove playlist from player
             if (indexes.indexOf(currentIndex) == indexes.size() - 1) {
                 if (repeatMode == 1) {
                     currentIndex = indexes.get(0);
@@ -161,6 +167,7 @@ public abstract class UpdatePlayer {
                     break;
                 }
             }
+            // go to next song
             int indexOfCurrentSong;
             indexOfCurrentSong = indexes.indexOf(currentIndex);
             if (repeat == 1) {
@@ -179,9 +186,9 @@ public abstract class UpdatePlayer {
     /**
      * Update the player when a song is loaded
      *
-     * @param username
-     * @param timestamp
-     * @param memory
+     * @param username - user that issued the command
+     * @param timestamp - current timestamp
+     * @param memory - database
      */
     private static void updateForSong(final String username, final Integer timestamp,
                                       final UserMemory memory) {
@@ -208,10 +215,11 @@ public abstract class UpdatePlayer {
 
     /**
      * Method used to repeat the song loaded in the player.
-     * @param username - user that issued the command
-     * @param timestamp - current timestamp
+     *
+     * @param username   - user that issued the command
+     * @param timestamp  - current timestamp
      * @param repeatMode - no repeat / repeat once / repeat infinite
-     * @param memory - database
+     * @param memory     - database
      */
     private static void repeatLoadedSong(final String username, final Integer timestamp,
                                          final Integer repeatMode, final UserMemory memory) {

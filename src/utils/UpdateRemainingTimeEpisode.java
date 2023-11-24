@@ -5,12 +5,12 @@ import user.memory.UserMemory;
 
 public abstract class UpdateRemainingTimeEpisode {
     /**
-     * Update remaining time for a pdocast episode
+     * Update remaining time for a podcast episode
      *
      * @param username  - user that issued the command
      * @param timestamp - current timestamp
      * @param episode   - currently loaded episode file
-     * @param memory    - user database
+     * @param memory    - database
      */
     public static void updateEp(final String username, final Integer timestamp,
                                 final Episode episode, final int podcastIndex,

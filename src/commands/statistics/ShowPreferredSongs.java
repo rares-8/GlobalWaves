@@ -13,7 +13,7 @@ public abstract class ShowPreferredSongs {
      * @param username - user that issued the command
      * @param memory - database
      * @param timestamp - current timestamp
-     * @return command result
+     * @return preffered songs
      */
     public static JsonNode showPreferred(final String username, final UserMemory memory,
                                          final Integer timestamp) {
@@ -24,7 +24,7 @@ public abstract class ShowPreferredSongs {
         commandResult.put("timestamp", timestamp);
 
         if (!memory.getLikedSongs().containsKey(username)) {
-            ArrayNode emptyList = commandResult.putArray("result");
+            commandResult.putArray("result");
             return commandResult;
         }
 

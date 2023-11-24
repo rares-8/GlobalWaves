@@ -17,7 +17,7 @@ public abstract class Shuffle {
      * @param seed - seed to randomize after
      * @param memory - database
      * @param timestamp - current timestamp
-     * @return command result
+     * @return shuffle status
      */
     public static JsonNode shuffle(final String username, final Integer seed,
                                    final UserMemory memory, final Integer timestamp) {
@@ -46,6 +46,7 @@ public abstract class Shuffle {
             commandResult.put("message", "Shuffle function deactivated successfully.");
             Playlist playlist = (Playlist) memory.getLoadedAudio().get(username);
             ArrayList<Integer> indexes = new ArrayList<>();
+            // put songs in original order
             for (int index = 0; index < playlist.getPlaylistSongs().size(); index++) {
                 indexes.add(index);
             }

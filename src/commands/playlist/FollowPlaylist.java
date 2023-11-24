@@ -13,7 +13,7 @@ public abstract class FollowPlaylist {
      * @param username  - user that issued the command
      * @param memory    - database for users
      * @param timestamp - timestamp for command
-     * @return command result
+     * @return follow status
      */
     public static JsonNode follow(final String username, final UserMemory memory,
                                   final Integer timestamp) {
@@ -45,12 +45,9 @@ public abstract class FollowPlaylist {
             memory.getFollowedPlaylists().put(username, followedPlaylists);
         }
 
-        for (Audio playlist : followedPlaylists) {
-            // check if user is already following the selected playlists (compare references)
-            if (currentSelectUser == playlist) {
-                isFollowed = 1;
-                break;
-            }
+        // check if user alredy follows the playlist
+        if (followedPlaylists.contains(currentSelectUser)) {
+            isFollowed = 1;
         }
 
         if (isFollowed == 0) {

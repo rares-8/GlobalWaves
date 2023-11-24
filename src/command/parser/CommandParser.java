@@ -34,7 +34,7 @@ public final class CommandParser {
      * Method used to parse command and call methods to solve the commands
      *
      * @param currentCommand - command from input file
-     * @param memory         - database for users
+     * @param memory         - database
      */
     public void parse(final JsonNode currentCommand, final UserMemory memory) {
         String command = getCommand(currentCommand);
@@ -123,7 +123,7 @@ public final class CommandParser {
      * to solve the command
      *
      * @param currentCommand - command from input file
-     * @param memory         - memory database for users
+     * @param memory         - database
      * @param timestamp      - timestamp from command
      */
     private void backwardParse(final JsonNode currentCommand,
@@ -138,7 +138,7 @@ public final class CommandParser {
      * to solve the command
      *
      * @param currentCommand - command from input file
-     * @param memory         - memory database for users
+     * @param memory         - database
      * @param timestamp      - timestamp from command
      */
     private void forwardParse(final JsonNode currentCommand,
@@ -152,7 +152,7 @@ public final class CommandParser {
      * to solve the command
      *
      * @param currentCommand - command from input file
-     * @param memory         - memory database for users
+     * @param memory         - database
      * @param timestamp      - timestamp from command
      */
     private void prevParse(final JsonNode currentCommand,
@@ -166,7 +166,7 @@ public final class CommandParser {
      * to solve the command
      *
      * @param currentCommand - command from input file
-     * @param memory         - memory database for users
+     * @param memory         - database
      * @param timestamp      - timestamp from command
      */
     private void nextParse(final JsonNode currentCommand,
@@ -180,7 +180,7 @@ public final class CommandParser {
      * to solve the command
      *
      * @param currentCommand - command from input file
-     * @param memory         - memory database for users
+     * @param memory         - database
      * @param timestamp      - timestamp from command
      */
     private void shuffleParse(final JsonNode currentCommand, final UserMemory memory,
@@ -198,7 +198,7 @@ public final class CommandParser {
      * to solve the command
      *
      * @param currentCommand - command from input file
-     * @param memory         - memory database for users
+     * @param memory         - database
      * @param timestamp      - timestamp from command
      */
     private void repeatParse(final JsonNode currentCommand, final UserMemory memory,
@@ -212,7 +212,7 @@ public final class CommandParser {
      * to solve the command
      *
      * @param currentCommand - command from input file
-     * @param memory         - memory database for users
+     * @param memory         - database
      * @param timestamp      - timestamp from command
      */
     private void showPreferredParse(final JsonNode currentCommand, final UserMemory memory,
@@ -226,7 +226,7 @@ public final class CommandParser {
      * to solve the command
      *
      * @param currentCommand - command from input file
-     * @param memory         - memory database for users
+     * @param memory         - database
      * @param timestamp      - timestamp from command
      */
     private void likeParse(final JsonNode currentCommand, final UserMemory memory,
@@ -240,7 +240,7 @@ public final class CommandParser {
      * to solve the command
      *
      * @param currentCommand - command from input file
-     * @param memory         - memory database for users
+     * @param memory         - database
      * @param timestamp      - timestamp from command
      */
     private void addRemoveParse(final JsonNode currentCommand, final UserMemory memory,
@@ -255,7 +255,7 @@ public final class CommandParser {
      * to solve the command
      *
      * @param currentCommand - command from input file
-     * @param memory         - memory database for users
+     * @param memory         - database
      * @param timestamp      - timestamp from command
      */
     private void pauseParse(final JsonNode currentCommand, final UserMemory memory,
@@ -269,7 +269,7 @@ public final class CommandParser {
      * to solve the command
      *
      * @param currentCommand - command from input file
-     * @param memory         - memory database for users
+     * @param memory         - database
      * @param timestamp      - timestamp from command
      */
     private void statusParse(final JsonNode currentCommand, final UserMemory memory,
@@ -283,7 +283,7 @@ public final class CommandParser {
      * to solve the command
      *
      * @param currentCommand - command from input file
-     * @param memory         - memory database for users
+     * @param memory         - database
      * @param timestamp      - timestamp from command
      */
     private void loadParse(final JsonNode currentCommand, final UserMemory memory,
@@ -297,7 +297,7 @@ public final class CommandParser {
      * to solve the command
      *
      * @param currentCommand - command from input file
-     * @param memory         - memory database for users
+     * @param memory         - database
      * @param timestamp      - timestamp from command
      */
     private void showParse(final JsonNode currentCommand, final UserMemory memory,
@@ -311,7 +311,7 @@ public final class CommandParser {
      * to solve the command
      *
      * @param currentCommand - command from input file
-     * @param memory         - memory database for users
+     * @param memory         - database
      * @param timestamp      - timestamp from command
      */
     private void followParse(final JsonNode currentCommand, final UserMemory memory,
@@ -325,7 +325,7 @@ public final class CommandParser {
      * to solve the command
      *
      * @param currentCommand - command from input file
-     * @param memory         - memory database for users
+     * @param memory         - database
      * @param timestamp      - timestamp from command
      */
     private void switchParse(final JsonNode currentCommand, final UserMemory memory,
@@ -340,7 +340,7 @@ public final class CommandParser {
      * to solve the command
      *
      * @param currentCommand - command from input file
-     * @param memory         - memory database for users
+     * @param memory         - database
      * @param timestamp      - timestamp from command
      */
     private void selectParse(final JsonNode currentCommand, final UserMemory memory,
@@ -355,7 +355,7 @@ public final class CommandParser {
      * to solve the command.
      *
      * @param currentCommand - command from input file
-     * @param memory         - memory database for users
+     * @param memory         - database
      * @param timestamp      - timestamp from command
      */
     private void searchParse(final JsonNode currentCommand, final UserMemory memory,
@@ -394,34 +394,66 @@ public final class CommandParser {
                 playlistName, timestamp, memory));
     }
 
+    /**
+     *
+     * @return value for playlistName field
+     */
     private String getPlaylistName(final JsonNode currentCommand) {
         return currentCommand.get("playlistName").toString().replace("\"", "");
     }
 
+    /**
+     *
+     * @return value for type field
+     */
     private String getType(final JsonNode currentCommand) {
         return currentCommand.get("type").toString().replace("\"", "");
     }
 
+    /**
+     *
+     * @return value for username field
+     */
     private String getUsername(final JsonNode currentCommand) {
         return currentCommand.get("username").toString().replace("\"", "");
     }
 
+    /**
+     *
+     * @return value for command field
+     */
     private String getCommand(final JsonNode currentCommand) {
         return currentCommand.get("command").toString().replace("\"", "");
     }
 
+    /**
+     *
+     * @return value for itemNumber field
+     */
     private Integer getItemNumber(final JsonNode currentCommand) {
         return currentCommand.get("itemNumber").asInt();
     }
 
+    /**
+     *
+     * @return value for timestamp field
+     */
     private Integer getTimestamp(final JsonNode currentCommand) {
         return currentCommand.get("timestamp").asInt();
     }
 
+    /**
+     *
+     * @return value for playlistId field
+     */
     private Integer getPlaylistID(final JsonNode currentCommand) {
         return currentCommand.get("playlistId").asInt();
     }
 
+    /**
+     *
+     * @return value for seed field
+     */
     private Integer getSeed(final JsonNode currentCommand) {
         return currentCommand.get("seed").asInt();
     }

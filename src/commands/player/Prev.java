@@ -47,18 +47,19 @@ public abstract class Prev {
 
     private static void prevPodcast(final ObjectNode commandResult, final String username,
                                     final Podcast loadedPodcast, final UserMemory memory) {
+        int podcastIndex = memory.getLoadedPodcasts().get(username).indexOf(loadedPodcast);
         Integer repeatMode = 0;
         if (memory.getIsRepeating().containsKey(username)) {
             repeatMode = memory.getIsRepeating().get(username);
         }
 
-        int podcastIndex = memory.getLoadedPodcasts().get(username).indexOf(loadedPodcast);
         Episode loadedEpisode = memory.getLastEpisodes().get(username).get(podcastIndex);
         int episodeIndex = loadedPodcast.getEpisodes().indexOf(loadedEpisode);
 
         int timePassed = loadedEpisode.getDuration()
                 - memory.getEpisodeRemainingTime().get(username).get(podcastIndex);
 
+        // start episode again if more than a second passed
         if (timePassed >= 1 || episodeIndex == 0) {
             memory.getEpisodeRemainingTime().get(username).set(podcastIndex,
                     loadedEpisode.getDuration());
@@ -70,25 +71,24 @@ public abstract class Prev {
         }
 
         if (repeatMode == 0) {
+            // get last episode
             episodeIndex--;
             loadedEpisode = memory.getLastEpisodes().get(username).get(podcastIndex);
             memory.getCurrentIndex().put(username, episodeIndex);
             memory.getEpisodeRemainingTime().get(username).set(podcastIndex,
                     loadedEpisode.getDuration());
             memory.getLastEpisodes().get(username).set(podcastIndex, loadedEpisode);
-            memory.getIsPaused().remove(username);
-            commandResult.put("message", "Returned to previous track successfully."
-                    + " The current track is " + loadedEpisode.getName() + ".");
         } else {
+            // start episode again
             if (repeatMode == 1) {
                 memory.getIsRepeating().remove(username);
             }
             memory.getEpisodeRemainingTime().get(username).set(podcastIndex,
                     loadedEpisode.getDuration());
-            memory.getIsPaused().remove(username);
-            commandResult.put("message", "Returned to previous track successfully."
-                    + " The current track is " + loadedEpisode.getName() + ".");
         }
+        memory.getIsPaused().remove(username);
+        commandResult.put("message", "Returned to previous track successfully."
+                + " The current track is " + loadedEpisode.getName() + ".");
     }
 
     /**

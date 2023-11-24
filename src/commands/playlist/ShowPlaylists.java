@@ -16,7 +16,7 @@ public abstract class ShowPlaylists {
      * @param username  - user that issued the command
      * @param memory    - database
      * @param timestamp - current timestamp
-     * @return command result
+     * @return show result
      */
     public static JsonNode show(final String username, final UserMemory memory,
                                 final Integer timestamp) {
@@ -33,7 +33,7 @@ public abstract class ShowPlaylists {
 
         ArrayList<Playlist> userPlaylists = memory.getUserPlaylists().get(username);
         if (userPlaylists == null) {
-            commandResult.put("result", "[]");
+            commandResult.putArray("result");
             return commandResult;
         }
 

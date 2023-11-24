@@ -10,7 +10,7 @@ public abstract class UpdateRemainingTime {
      * @param username  - user that issued the command
      * @param timestamp - current timestamp
      * @param audio     - currently loaded audio file
-     * @param memory    - user database
+     * @param memory    - database
      */
     public static void updateRemainingTime(final String username, final Integer timestamp,
                                            final Audio audio, final UserMemory memory) {

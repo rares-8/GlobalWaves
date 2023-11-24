@@ -81,14 +81,7 @@ public abstract class Search implements Constants {
         int allMatch, found;
         if (type.equals("podcast")) {
             for (Podcast currentPodcast : library.getPodcasts()) {
-                allMatch = 1;
-                for (Map.Entry<String, String> element : otherFilters.entrySet()) {
-                    found = searchAudioByFilter(element, currentPodcast);
-                    if (found == 0) {
-                        allMatch = 0;
-                        break;
-                    }
-                }
+                allMatch = checkIfAllMatch(otherFilters, currentPodcast);
                 if (allMatch == 1) {
                     audioResult.add(currentPodcast);
                 }
@@ -99,14 +92,7 @@ public abstract class Search implements Constants {
         //Next search for playlists
         if (type.equals("playlist")) {
             for (Playlist currentPlaylist : memory.getPublicPlaylists()) {
-                allMatch = 1;
-                for (Map.Entry<String, String> element : otherFilters.entrySet()) {
-                    found = searchAudioByFilter(element, currentPlaylist);
-                    if (found == 0) {
-                        allMatch = 0;
-                        break;
-                    }
-                }
+                allMatch = checkIfAllMatch(otherFilters, currentPlaylist);
                 if (allMatch == 1) {
                     audioResult.add(currentPlaylist);
                 }
@@ -118,13 +104,7 @@ public abstract class Search implements Constants {
             for (Playlist currentPlaylist : memory.getUserPlaylists().get(username)) {
                 allMatch = 1;
                 if (currentPlaylist.getIsPrivate() == 1) {
-                    for (Map.Entry<String, String> element : otherFilters.entrySet()) {
-                        found = searchAudioByFilter(element, currentPlaylist);
-                        if (found == 0) {
-                            allMatch = 0;
-                            break;
-                        }
-                    }
+                    allMatch = checkIfAllMatch(otherFilters, currentPlaylist);
                 }
                 if (allMatch == 1 && currentPlaylist.getIsPrivate() == 1) {
                     audioResult.add(currentPlaylist);
@@ -141,14 +121,7 @@ public abstract class Search implements Constants {
 
         // search for songs
         for (Song currentSong : library.getSongs()) {
-            allMatch = 1;
-            for (Map.Entry<String, String> element : otherFilters.entrySet()) {
-                found = searchAudioByFilter(element, currentSong);
-                if (found == 0) {
-                    allMatch = 0;
-                    break;
-                }
-            }
+            allMatch = checkIfAllMatch(otherFilters, currentSong);
             if (allMatch == 1) {
                 audioResult.add(currentSong);
             }
@@ -245,5 +218,17 @@ public abstract class Search implements Constants {
                 System.out.println("Unknown filter");
         }
         return 0;
+    }
+
+    private static int checkIfAllMatch(final Map<String, String> otherFilters,
+                                       final Audio loadedAudio) {
+        int found;
+        for (Map.Entry<String, String> element : otherFilters.entrySet()) {
+            found = searchAudioByFilter(element, loadedAudio);
+            if (found == 0) {
+                return 0;
+            }
+        }
+        return 1;
     }
 }

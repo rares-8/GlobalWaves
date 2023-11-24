@@ -14,7 +14,7 @@ public abstract class AddRemoveInPlaylist {
      * @param playlistId - playlist id
      * @param memory     - database
      * @param timestamp  - current timestamp
-     * @return command result
+     * @return add/remove status
      */
     public static JsonNode addRemove(final String username, final Integer playlistId,
                                      final UserMemory memory, final Integer timestamp) {
@@ -44,6 +44,7 @@ public abstract class AddRemoveInPlaylist {
 
         Audio loadedSong = memory.getLoadedAudio().get(username);
         int songExists = 0, songIndex;
+        // check if loaded Song is already in the playlist
         for (songIndex = 0; songIndex < selectedPlaylist.getPlaylistSongs().size(); songIndex++) {
             if (loadedSong == selectedPlaylist.getPlaylistSongs().get(songIndex)) {
                 songExists = 1;

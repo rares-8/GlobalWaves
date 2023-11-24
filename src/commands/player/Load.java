@@ -16,7 +16,7 @@ public abstract class Load {
      * @param username  - user that issued the command
      * @param memory    - database
      * @param timestamp - current timestamp
-     * @return command result
+     * @return load status
      */
     public static JsonNode load(final String username, final UserMemory memory,
                                 final Integer timestamp) {
@@ -143,6 +143,5 @@ public abstract class Load {
         memory.getLastEpisodes().get(username).add(firstEpisode);
         memory.getCurrentIndex().put(username, 0);
         memory.getCollectionIndexes().put(username, indexes);
-        return;
     }
 }

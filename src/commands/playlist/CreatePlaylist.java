@@ -12,10 +12,10 @@ public abstract class CreatePlaylist {
     /**
      *
      * @param username - owner of the playlist
-     * @param playlistName
+     * @param playlistName - name of playlist to be created
      * @param timestamp - current timestamp
      * @param memory - database
-     * @return command result
+     * @return create status
      */
     public static JsonNode createPlaylist(final String username, final String playlistName,
                                           final Integer timestamp, final UserMemory memory) {

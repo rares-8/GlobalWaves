@@ -8,7 +8,7 @@ public abstract class UpdateTimestamp {
      *
      * @param username  - user that issued the command
      * @param timestamp - current timestamp
-     * @param memory    - database for users
+     * @param memory    - database
      */
     public static void updateTimestamp(final String username, final Integer timestamp,
                                        final UserMemory memory) {

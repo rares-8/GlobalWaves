@@ -13,7 +13,7 @@ public abstract class Like {
      * @param username  - user that issued the command
      * @param memory    - database
      * @param timestamp - current timestamp
-     * @return command result
+     * @return like status
      */
     public static JsonNode like(final String username, final UserMemory memory,
                                 final Integer timestamp) {
@@ -33,6 +33,7 @@ public abstract class Like {
 
         Song currentSong;
         if (memory.getLoadedAudio().get(username).getAudioType().equals("playlist")) {
+            // get currently loaded song from playlist
             Integer index = memory.getCurrentIndex().get(username);
             currentSong = memory.getLoadedAudio().get(username).getPlaylistSongs().get(index);
         } else {
@@ -46,6 +47,7 @@ public abstract class Like {
         }
 
         int isLiked = 0, songIndex;
+        // check if song is already liked
         for (songIndex = 0; songIndex < memory.getLikedSongs().get(username).size(); songIndex++) {
             if (memory.getLikedSongs().get(username).get(songIndex) == currentSong) {
                 isLiked = 1;

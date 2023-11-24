@@ -10,7 +10,7 @@ public abstract class CountFollowers {
     /**
      * Count followers for a given playlist
      *
-     * @param followedPlaylists -
+     * @param followedPlaylists - playlists a user follows
      * @param playlist          - playlist to check followers for
      * @return number of followers
      */

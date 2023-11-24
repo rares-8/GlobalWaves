@@ -11,7 +11,6 @@ public abstract class Status {
      * @param username  - user that issued the command
      * @param memory    - database
      * @param timestamp - current timestamp
-     * @return command result
      */
     public static JsonNode status(final String username, final UserMemory memory,
                                   final Integer timestamp) {

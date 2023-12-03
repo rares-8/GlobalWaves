@@ -1,6 +1,0 @@
-Starting audit...
-[ERROR] /home/rares/POO/oop-project-2023/etapa1/./src/utils/Constants.java:3:1: interfaces should describe a type and hence have methods. [InterfaceIsType]
-[ERROR] /home/rares/POO/oop-project-2023/etapa1/./src/main/Main.java:15:20: Using the '.*' form of import should be avoided - fileio.input.*. [AvoidStarImport]
-[ERROR] /home/rares/POO/oop-project-2023/etapa1/./src/command/parser/CommandParser.java:7:23: Using the '.*' form of import should be avoided - commands.player.*. [AvoidStarImport]
-Audit done.
-Checkstyle ends with 3 errors.

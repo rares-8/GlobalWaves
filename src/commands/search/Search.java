@@ -39,6 +39,12 @@ public abstract class Search implements Constants {
         commandResult.put("user", username);
         commandResult.put("timestamp", timestamp);
 
+        if (!memory.getConnectionStatus().containsKey(username)) {
+            commandResult.put("message", username + " is offline.");
+            commandResult.putArray("results");
+            return commandResult;
+        }
+
         memory.getLoadedAudio().remove(username);
 
         ArrayNode auxNode;
@@ -75,6 +81,9 @@ public abstract class Search implements Constants {
                                     final ArrayList<Audio> audioResult, final String type,
                                     final UserMemory memory) {
         ArrayList<Audio> copy = new ArrayList<>();
+
+        if (type.equals("album"))
+            return;
         /*
             First search for podcasts, easier to do
          */

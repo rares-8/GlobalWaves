@@ -12,6 +12,7 @@ public final class Song implements Audio {
     private String genre;
     private Integer releaseYear;
     private String artist;
+    private int likes;
 
     public Song() {
     }
@@ -27,6 +28,7 @@ public final class Song implements Audio {
         this.genre = genre;
         this.releaseYear = releaseYear;
         this.artist = artist;
+        likes = 0;
     }
 
     public String getName() {
@@ -161,5 +163,17 @@ public final class Song implements Audio {
     @Override
     public void setDescription(final String description) {
 
+    }
+
+    public void setReleaseYear(final Integer releaseYear) {
+        this.releaseYear = releaseYear;
+    }
+
+    public int getLikes() {
+        return likes;
+    }
+
+    public void setLikes(final int likes) {
+        this.likes = likes;
     }
 }

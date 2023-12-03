@@ -24,7 +24,8 @@ public abstract class UpdatePlayer {
         }
         if (memory.getLoadedAudio().get(username).getAudioType().equals("song")) {
             updateForSong(username, timestamp, memory);
-        } else if (memory.getLoadedAudio().get(username).getAudioType().equals("playlist")) {
+        } else if (memory.getLoadedAudio().get(username).getAudioType().equals("playlist")
+        || memory.getLoadedAudio().get(username).getAudioType().equals("album")) {
             updateForPlaylist(username, timestamp, memory);
         } else {
             updateForPodcast(username, timestamp, memory);

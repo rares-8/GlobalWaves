@@ -4,6 +4,9 @@ import com.fasterxml.jackson.core.type.TypeReference;
 import com.fasterxml.jackson.databind.JsonNode;
 import com.fasterxml.jackson.databind.ObjectMapper;
 import com.fasterxml.jackson.databind.node.ArrayNode;
+import commands.admin.AddUser;
+import commands.admin.ShowAlbums;
+import commands.artist.AddAlbum;
 import commands.player.*;
 import commands.playlist.CreatePlaylist;
 import commands.playlist.FollowPlaylist;
@@ -12,10 +15,16 @@ import commands.playlist.SwitchVisibility;
 import commands.search.Search;
 import commands.search.SearchFilters;
 import commands.search.Select;
+import commands.statistics.OnlineUsers;
 import commands.statistics.ShowPreferredSongs;
 import commands.statistics.TopPlaylists;
 import commands.statistics.TopSongs;
+import commands.user.PrintCurrentPage;
+import commands.user.SwitchConnectionStatus;
+import entities.Album;
 import entities.Library;
+import entities.Song;
+import entities.User;
 import user.memory.UserMemory;
 import utils.UpdatePlayer;
 import utils.UpdateTimestamp;
@@ -40,7 +49,19 @@ public final class CommandParser {
         String command = getCommand(currentCommand);
         Integer timestamp = getTimestamp(currentCommand);
 
-        if (currentCommand.has("username")) {
+        if (currentCommand.has("username")
+                && memory.getConnectionStatus().containsKey(getUsername(currentCommand))) {
+            // TODO DELETE THIS LATER
+            int ok = 0;
+            for (User user : library.getUsers()) {
+                if (user.getUsername().equals(getUsername(currentCommand))) {
+                    ok = 1;
+                    break;
+                }
+            }
+            if (ok == 0) {
+                return;
+            }
             boolean isPaused = memory.getIsPaused().containsKey(getUsername(currentCommand));
             boolean update = command.equals("load") || command.equals("next")
                     || command.equals("prev") || command.equals("forward")
@@ -107,15 +128,132 @@ public final class CommandParser {
             case "backward":
                 backwardParse(currentCommand, memory, timestamp);
                 break;
+            case "addUser":
+                addUserParse(currentCommand, memory, timestamp);
+                break;
+            case "printCurrentPage":
+                printPageParse(currentCommand, memory, timestamp);
+                break;
+            case "addAlbum":
+                addAlbumParse(currentCommand, memory, timestamp);
+                break;
+            case "showAlbums":
+                showAlbumsParse(currentCommand, memory, timestamp);
+                break;
             case "getTop5Songs":
                 outputs.add(TopSongs.topSongs(timestamp, memory, library));
                 break;
             case "getTop5Playlists":
                 outputs.add(TopPlaylists.topPlaylists(timestamp, memory));
                 break;
+            case "switchConnectionStatus":
+                connectionParse(currentCommand, memory, timestamp);
+                break;
+            case "getOnlineUsers":
+                outputs.add(OnlineUsers.getOnlineUsers(memory, timestamp, library));
+                break;
             default:
                 System.out.println("Unknown command : " + command);
         }
+    }
+
+    /**
+     * Get the rest of the fields from "printCurrentPage" command and call method
+     * to solve the command
+     *
+     * @param currentCommand - command from input file
+     * @param memory         - database
+     * @param timestamp      - timestamp from command
+     */
+    private void printPageParse(final JsonNode currentCommand, final UserMemory memory,
+                                final Integer timestamp) {
+        String username = getUsername(currentCommand);
+        outputs.add(PrintCurrentPage.print(username, memory, timestamp, library));
+    }
+
+    /**
+     * Get the rest of the fields from "showAlbums" command and call method
+     * to solve the command
+     *
+     * @param currentCommand - command from input file
+     * @param memory         - database
+     * @param timestamp      - timestamp from command
+     */
+    private void showAlbumsParse(final JsonNode currentCommand, final UserMemory memory,
+                                 final Integer timestamp) {
+        String username = getUsername(currentCommand);
+        outputs.add(ShowAlbums.addUser(username, library, timestamp));
+    }
+
+    /**
+     * Get the rest of the fields from "addAlbum" command and call method
+     * to solve the command
+     *
+     * @param currentCommand - command from input file
+     * @param memory         - database
+     * @param timestamp      - timestamp from command
+     */
+    private void addAlbumParse(final JsonNode currentCommand, final UserMemory memory,
+                               final Integer timestamp) {
+        ObjectMapper mapper = new ObjectMapper();
+        String username = getUsername(currentCommand);
+        String name = getName(currentCommand);
+        Integer releaseYear = getReleaseYear(currentCommand);
+        String description = getDescription(currentCommand);
+
+        JsonNode songs = currentCommand.get("songs");
+        ArrayList<Song> newSongs = new ArrayList<>();
+        for (int i = 0; i < songs.size(); i++) {
+            JsonNode currentSong = songs.get(i);
+            String songName = getName(currentSong);
+            Integer duration = getDuration(currentSong);
+            String albumName = getAlbum(currentSong);
+            String lyrics = getLyrics(currentSong);
+            String genre = getGenre(currentSong);
+            Integer songReleaseYear = getReleaseYear(currentSong);
+            String artist = getArtist(currentSong);
+            ArrayList<String> tags = new ArrayList<String>();
+            tags = mapper.convertValue(currentSong.get("tags"),
+                    new TypeReference<ArrayList<String>>() {
+                    });
+            Song newSong = new Song(songName, duration, albumName,
+                    tags, lyrics, genre, songReleaseYear, artist);
+            newSongs.add(newSong);
+        }
+        Album newAlbum = new Album(name, 0, newSongs,
+                username, timestamp, description, releaseYear);
+        outputs.add(AddAlbum.addAlbum(username, timestamp, newAlbum, memory, library));
+    }
+
+    /**
+     * Get the rest of the fields from "addUser" command and call method
+     * to solve the command
+     *
+     * @param currentCommand - command from input file
+     * @param memory         - database
+     * @param timestamp      - timestamp from command
+     */
+    private void addUserParse(final JsonNode currentCommand, final UserMemory memory,
+                              final Integer timestamp) {
+        String username = getUsername(currentCommand);
+        Integer age = getAge(currentCommand);
+        String city = getCity(currentCommand);
+        String type = getType(currentCommand);
+        outputs.add(AddUser.addUser(username, city, age, type, memory, timestamp, library));
+    }
+
+    /**
+     * Get the rest of the fields from "changeConnectionStatus" command and call method
+     * to solve the command
+     *
+     * @param currentCommand - command from input file
+     * @param memory         - database
+     * @param timestamp      - timestamp from command
+     */
+    private void connectionParse(final JsonNode currentCommand, final UserMemory memory,
+                                 final Integer timestamp) {
+        String username = getUsername(currentCommand);
+        outputs.add(SwitchConnectionStatus.switchStatus(username, memory, timestamp, library));
     }
 
     /**
@@ -395,7 +533,27 @@ public final class CommandParser {
     }
 
     /**
-     *
+     * @return value for name field
+     */
+    private String getName(final JsonNode currentCommand) {
+        return currentCommand.get("name").toString().replace("\"", "");
+    }
+
+    /**
+     * @return value for artist field
+     */
+    private String getArtist(final JsonNode currentCommand) {
+        return currentCommand.get("artist").toString().replace("\"", "");
+    }
+
+    /**
+     * @return value for lyrics field
+     */
+    private String getLyrics(final JsonNode currentCommand) {
+        return currentCommand.get("lyrics").toString().replace("\"", "");
+    }
+
+    /**
      * @return value for playlistName field
      */
     private String getPlaylistName(final JsonNode currentCommand) {
@@ -403,7 +561,20 @@ public final class CommandParser {
     }
 
     /**
-     *
+     * @return value for genre field
+     */
+    private String getGenre(final JsonNode currentCommand) {
+        return currentCommand.get("genre").toString().replace("\"", "");
+    }
+
+    /**
+     * @return value for releaseYear field
+     */
+    private Integer getReleaseYear(final JsonNode currentCommand) {
+        return currentCommand.get("releaseYear").asInt();
+    }
+
+    /**
      * @return value for type field
      */
     private String getType(final JsonNode currentCommand) {
@@ -411,7 +582,6 @@ public final class CommandParser {
     }
 
     /**
-     *
      * @return value for username field
      */
     private String getUsername(final JsonNode currentCommand) {
@@ -419,7 +589,27 @@ public final class CommandParser {
     }
 
     /**
-     *
+     * @return value for age field
+     */
+    private Integer getAge(final JsonNode currentCommand) {
+        return currentCommand.get("age").asInt();
+    }
+
+    /**
+     * @return value for duration field
+     */
+    private Integer getDuration(final JsonNode currentCommand) {
+        return currentCommand.get("duration").asInt();
+    }
+
+    /**
+     * @return value for city field
+     */
+    private String getCity(final JsonNode currentCommand) {
+        return currentCommand.get("city").toString().replace("\"", "");
+    }
+
+    /**
      * @return value for command field
      */
     private String getCommand(final JsonNode currentCommand) {
@@ -427,7 +617,6 @@ public final class CommandParser {
     }
 
     /**
-     *
      * @return value for itemNumber field
      */
     private Integer getItemNumber(final JsonNode currentCommand) {
@@ -435,7 +624,6 @@ public final class CommandParser {
     }
 
     /**
-     *
      * @return value for timestamp field
      */
     private Integer getTimestamp(final JsonNode currentCommand) {
@@ -443,7 +631,6 @@ public final class CommandParser {
     }
 
     /**
-     *
      * @return value for playlistId field
      */
     private Integer getPlaylistID(final JsonNode currentCommand) {
@@ -451,7 +638,20 @@ public final class CommandParser {
     }
 
     /**
-     *
+     * @return value for description field
+     */
+    private String getDescription(final JsonNode currentCommand) {
+        return currentCommand.get("description").toString().replace("\"", "");
+    }
+
+    /**
+     * @return value for album field
+     */
+    private String getAlbum(final JsonNode currentCommand) {
+        return currentCommand.get("album").toString().replace("\"", "");
+    }
+
+    /**
      * @return value for seed field
      */
     private Integer getSeed(final JsonNode currentCommand) {

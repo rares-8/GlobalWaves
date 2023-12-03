@@ -13,7 +13,7 @@ public abstract class ShowPreferredSongs {
      * @param username - user that issued the command
      * @param memory - database
      * @param timestamp - current timestamp
-     * @return preffered songs
+     * @return preferred songs
      */
     public static JsonNode showPreferred(final String username, final UserMemory memory,
                                          final Integer timestamp) {

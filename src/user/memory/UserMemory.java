@@ -5,6 +5,7 @@ import entities.Episode;
 import entities.Playlist;
 import entities.Podcast;
 import entities.Song;
+import entities.pages.Page;
 
 import java.util.ArrayList;
 import java.util.HashMap;
@@ -29,6 +30,8 @@ import java.util.Map;
  *                      Makes shuffle easier to implement
  * currentIndex - current index from collectionIndexes
  * isPaused - check if a user's player is paused
+ * connectionStatus - online = 1 / offline = 0
+ * currentPage - page a user is currently on
  */
 public final class UserMemory {
     private final Map<String, ArrayList<Audio>> lastSearch;
@@ -48,6 +51,8 @@ public final class UserMemory {
     private final Map<String, Integer> isPaused;
     private final Map<String, Integer> isShuffled;
     private final Map<String, Integer> isRepeating;
+    private final Map<String, Integer> connectionStatus;
+    private final Map<String, Page> currentPage;
 
     private static UserMemory uniqueInstance = null;
 
@@ -69,6 +74,8 @@ public final class UserMemory {
         isPaused = new HashMap<>();
         isShuffled = new HashMap<>();
         isRepeating = new HashMap<>();
+        connectionStatus = new HashMap<>();
+        currentPage = new HashMap<>();
     }
 
     /**
@@ -169,5 +176,13 @@ public final class UserMemory {
 
     public Map<String, ArrayList<Integer>> getEpisodeRemainingTime() {
         return episodeRemainingTime;
+    }
+
+    public Map<String, Integer> getConnectionStatus() {
+        return connectionStatus;
+    }
+
+    public Map<String, Page> getCurrentPage() {
+        return currentPage;
     }
 }

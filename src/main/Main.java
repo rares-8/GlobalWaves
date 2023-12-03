@@ -12,6 +12,7 @@ import entities.Episode;
 import entities.User;
 import entities.Song;
 import entities.Podcast;
+import entities.pages.HomePage;
 import fileio.input.*;
 import user.memory.UserMemory;
 import java.io.File;
@@ -81,10 +82,13 @@ public final class Main {
 
         ArrayNode outputs = objectMapper.createArrayNode();
 
+        UserMemory memory = UserMemory.getInstance();
         Library myLibrary = new Library();
         for (UserInput user : library.getUsers()) {
-            User newUser = new User(user.getUsername(), user.getAge(), user.getCity());
+            User newUser = new User(user.getUsername(), user.getAge(), user.getCity(), "user");
+            memory.getConnectionStatus().put(newUser.getUsername(), 1);
             myLibrary.getUsers().add(newUser);
+            memory.getCurrentPage().put(user.getUsername(), new HomePage());
         }
 
         for (SongInput song : library.getSongs()) {
@@ -106,8 +110,6 @@ public final class Main {
 
         JsonNode commands = objectMapper.readTree(new File("input/" + filePathInput));
         CommandParser commandParser = new CommandParser(myLibrary, outputs);
-
-        UserMemory memory = UserMemory.getInstance();
 
         for (int i = 0; i < commands.size(); i++) {
             JsonNode currentCommand = commands.get(i);

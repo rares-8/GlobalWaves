@@ -29,6 +29,9 @@ public abstract class Like {
         } else if (memory.getLoadedAudio().get(username).getAudioType().equals("podcast")) {
             commandResult.put("message", "Loaded source is not a song.");
             return commandResult;
+        } else if (!memory.getConnectionStatus().containsKey(username)) {
+            commandResult.put("message", username + " is offline.");
+            return commandResult;
         }
 
         Song currentSong;
@@ -43,6 +46,7 @@ public abstract class Like {
             memory.getLikedSongs().put(username, new ArrayList<>());
             memory.getLikedSongs().get(username).add(currentSong);
             commandResult.put("message", "Like registered successfully.");
+            currentSong.setLikes(currentSong.getLikes() + 1);
             return commandResult;
         }
 
@@ -57,9 +61,11 @@ public abstract class Like {
 
         if (isLiked == 0) {
             commandResult.put("message", "Like registered successfully.");
+            currentSong.setLikes(currentSong.getLikes() + 1);
             memory.getLikedSongs().get(username).add(currentSong);
         } else {
             commandResult.put("message", "Unlike registered successfully.");
+            currentSong.setLikes(currentSong.getLikes() - 1);
             memory.getLikedSongs().get(username).remove(songIndex);
         }
 

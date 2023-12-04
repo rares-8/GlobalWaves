@@ -89,4 +89,20 @@ public class User {
     public ArrayList<Album> getAlbums() {
         return null;
     }
+
+    /**
+     *
+     * @return
+     */
+    public ArrayList<Event> getEvents() {
+        return null;
+    }
+
+    /**
+     * 
+     * @return
+     */
+    public ArrayList<Merch> getMerchandise() {
+        return null;
+    }
 }

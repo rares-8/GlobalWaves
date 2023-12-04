@@ -4,11 +4,7 @@ import com.fasterxml.jackson.databind.JsonNode;
 import com.fasterxml.jackson.databind.ObjectMapper;
 import com.fasterxml.jackson.databind.node.ArrayNode;
 import com.fasterxml.jackson.databind.node.ObjectNode;
-import entities.Song;
-import entities.Podcast;
-import entities.Library;
-import entities.Audio;
-import entities.Playlist;
+import entities.*;
 import utils.Constants;
 import user.memory.UserMemory;
 
@@ -49,6 +45,21 @@ public abstract class Search implements Constants {
 
         ArrayNode auxNode;
 
+        if (type.equals("artist") || type.equals("host")) {
+            ArrayList<User> userResult = new ArrayList<>();
+            searchUser(otherFilters, userResult, type, memory, library);
+            if (userResult.size() > RESULT_MAX_SIZE) {
+                userResult = new ArrayList<>(userResult.subList(0, RESULT_MAX_SIZE));
+            }
+            memory.getLastSearchUser().put(username, userResult);
+            commandResult.put("message", "Search returned " + userResult.size() + " results");
+            auxNode = commandResult.putArray("results");
+            for (User user : userResult) {
+                auxNode.add(user.getUsername());
+            }
+            return commandResult;
+        }
+
         ArrayList<Audio> audioResult = new ArrayList<>();
         searchAudio(username, tags, library, otherFilters, audioResult, type, memory);
 
@@ -56,7 +67,7 @@ public abstract class Search implements Constants {
             audioResult = new ArrayList<>(audioResult.subList(0, RESULT_MAX_SIZE));
         }
 
-        memory.getLastSearch().put(username, audioResult);
+        memory.getLastSearchAudio().put(username, audioResult);
         commandResult.put("message", "Search returned " + audioResult.size() + " results");
         auxNode = commandResult.putArray("results");
         for (Audio audio : audioResult) {
@@ -64,6 +75,27 @@ public abstract class Search implements Constants {
         }
 
         return commandResult;
+    }
+
+    /**
+     *
+     * @param otherFilters - filters to search for
+     * @param userResult - list that contains all users found
+     * @param type - type of user
+     * @param memory - memory for users
+     * @param library - library with all users, podcasts, songs
+     */
+    private static void searchUser(final Map<String, String> otherFilters,
+                                   final ArrayList<User> userResult, final String type,
+                                   final UserMemory memory, final Library library) {
+        String nameFilter = otherFilters.get("name");
+        for (User user : library.getUsers()) {
+            if (user.getType().equals(type)) {
+                if (user.getUsername().startsWith(nameFilter)) {
+                    userResult.add(user);
+                }
+            }
+        }
     }
 
     /**
@@ -80,8 +112,6 @@ public abstract class Search implements Constants {
                                     final Map<String, String> otherFilters,
                                     final ArrayList<Audio> audioResult, final String type,
                                     final UserMemory memory) {
-        ArrayList<Audio> copy = new ArrayList<>();
-
         if (type.equals("album"))
             return;
         /*

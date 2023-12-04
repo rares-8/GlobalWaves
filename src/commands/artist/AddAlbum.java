@@ -12,9 +12,11 @@ import utils.CheckUser;
 
 public abstract class AddAlbum {
     /**
-     * @param username  - user that should be added
+     * @param username  - user
      * @param memory    - database
      * @param timestamp - current timestamp
+     * @param newAlbum - album that should be added
+     * @param library - contains songs, playlists, podcasts, users
      * @return add album status
      */
     public static JsonNode addAlbum(final String username, final Integer timestamp,

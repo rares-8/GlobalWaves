@@ -4,6 +4,8 @@ import java.util.ArrayList;
 
 public final class Artist extends User {
     private final ArrayList<Album> albums = new ArrayList<>();
+    private final ArrayList<Event> events = new ArrayList<>();
+    private final ArrayList<Merch> merchandise = new ArrayList<>();
     public Artist() {
     }
 
@@ -57,5 +59,13 @@ public final class Artist extends User {
 
     public ArrayList<Album> getAlbums() {
         return albums;
+    }
+
+    public ArrayList<Event> getEvents() {
+        return events;
+    }
+
+    public ArrayList<Merch> getMerchandise() {
+        return merchandise;
     }
 }

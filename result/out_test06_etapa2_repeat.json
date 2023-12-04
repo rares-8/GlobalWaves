@@ -282,7 +282,7 @@
   "command" : "printCurrentPage",
   "user" : "alice22",
   "timestamp" : 1038,
-  "message" : ""
+  "message" : "Liked songs:\n\t[]Followed playlists:\n\t[]"
 }, {
   "command" : "search",
   "user" : "carol19",
@@ -293,7 +293,7 @@
   "command" : "printCurrentPage",
   "user" : "carol19",
   "timestamp" : 1040,
-  "message" : ""
+  "message" : "Liked songs:\n\t[]entities.Playlist@4148db48]\n\n"
 }, {
   "command" : "status",
   "user" : "alice22",
@@ -362,7 +362,7 @@
   "command" : "printCurrentPage",
   "user" : "carol19",
   "timestamp" : 2338,
-  "message" : ""
+  "message" : "Liked songs:\n\t[]entities.Playlist@282003e1]\n\n"
 }, {
   "command" : "status",
   "user" : "alice22",

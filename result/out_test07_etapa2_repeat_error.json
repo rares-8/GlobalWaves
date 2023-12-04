@@ -228,7 +228,7 @@
   "command" : "printCurrentPage",
   "user" : "rhythmicrider58",
   "timestamp" : 3300,
-  "message" : "Liked songs:\n\t[Synth Symphony]\n\n"
+  "message" : "Liked songs:\n\t[Synth Symphony]\n\nentities.Playlist@69379752]\n\n"
 }, {
   "command" : "status",
   "user" : "emily30",
@@ -307,5 +307,5 @@
   "command" : "printCurrentPage",
   "user" : "rhythmicrider58",
   "timestamp" : 7000,
-  "message" : "Liked songs:\n\t[Synth Symphony, Shape of You]\n\n"
+  "message" : "Liked songs:\n\t[Synth Symphony, Shape of You]\n\nentities.Playlist@1d7acb34]\n\n"
 } ]

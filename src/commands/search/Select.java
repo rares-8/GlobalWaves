@@ -4,6 +4,8 @@ import com.fasterxml.jackson.databind.JsonNode;
 import com.fasterxml.jackson.databind.ObjectMapper;
 import com.fasterxml.jackson.databind.node.ObjectNode;
 import entities.Audio;
+import entities.User;
+import entities.pages.ArtistPage;
 import user.memory.UserMemory;
 
 import java.util.ArrayList;
@@ -27,8 +29,8 @@ public abstract class Select {
         commandResult.put("timestamp", timestamp);
         memory.getCurrentSelect().remove(username);
 
-        if (memory.getLastSearch().containsKey(username)) {
-            ArrayList<Audio> lastSearch = memory.getLastSearch().get(username);
+        if (memory.getLastSearchAudio().containsKey(username)) {
+            ArrayList<Audio> lastSearch = memory.getLastSearchAudio().get(username);
             if (lastSearch.size() < itemNumber) {
                 commandResult.put("message", "The selected ID is too high.");
             } else {
@@ -36,7 +38,19 @@ public abstract class Select {
                         + lastSearch.get(itemNumber - 1).getName() + ".");
                 memory.getCurrentSelect().put(username, lastSearch.get(itemNumber - 1));
             }
-            memory.getLastSearch().remove(username);
+            memory.getLastSearchAudio().remove(username);
+        } else if (memory.getLastSearchUser().containsKey(username)){
+            ArrayList<User> lastSearch = memory.getLastSearchUser().get(username);
+            if (lastSearch.size() < itemNumber) {
+                commandResult.put("message", "The selected ID is too high.");
+            } else {
+                User selectedUser = memory.getLastSearchUser().get(username).get(itemNumber - 1);
+                if (selectedUser.getType().equals("artist")) {
+                    memory.getCurrentPage().put(username, new ArtistPage(selectedUser.getUsername()));
+                }
+                commandResult.put("message", "Successfully selected "
+                        + selectedUser.getUsername() + "'s page.");
+            }
         } else {
             commandResult.put("message", "Please conduct a search before making a selection.");
         }

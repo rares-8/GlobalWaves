@@ -7,6 +7,9 @@ import com.fasterxml.jackson.databind.node.ArrayNode;
 import commands.admin.AddUser;
 import commands.admin.ShowAlbums;
 import commands.artist.AddAlbum;
+import commands.artist.AddEventArtist;
+import commands.artist.AddMerchArtist;
+import commands.artist.RemoveEventArtist;
 import commands.player.*;
 import commands.playlist.CreatePlaylist;
 import commands.playlist.FollowPlaylist;
@@ -21,10 +24,7 @@ import commands.statistics.TopPlaylists;
 import commands.statistics.TopSongs;
 import commands.user.PrintCurrentPage;
 import commands.user.SwitchConnectionStatus;
-import entities.Album;
-import entities.Library;
-import entities.Song;
-import entities.User;
+import entities.*;
 import user.memory.UserMemory;
 import utils.UpdatePlayer;
 import utils.UpdateTimestamp;
@@ -140,6 +140,15 @@ public final class CommandParser {
             case "showAlbums":
                 showAlbumsParse(currentCommand, memory, timestamp);
                 break;
+            case "addEvent":
+                addEventParse(currentCommand, memory, timestamp);
+                break;
+            case "removeEvent":
+                removeEventParse(currentCommand, memory, timestamp);
+                break;
+            case "addMerch":
+                addMerchParse(currentCommand, memory, timestamp);
+                break;
             case "getTop5Songs":
                 outputs.add(TopSongs.topSongs(timestamp, memory, library));
                 break;
@@ -153,8 +162,58 @@ public final class CommandParser {
                 outputs.add(OnlineUsers.getOnlineUsers(memory, timestamp, library));
                 break;
             default:
-                System.out.println("Unknown command : " + command);
+                //System.out.println("Unknown command : " + command);
         }
+    }
+
+    /**
+     * Get the rest of the fields from "addMerch" command and call method
+     * to solve the command
+     *
+     * @param currentCommand - command from input file
+     * @param memory         - database
+     * @param timestamp      - timestamp from command
+     */
+    private void addMerchParse(JsonNode currentCommand, UserMemory memory, Integer timestamp) {
+        String username = getUsername(currentCommand);
+        String description = getDescription(currentCommand);
+        String name = getName(currentCommand);
+        Integer price = getPrice(currentCommand);
+        Merch newMerch = new Merch(description, name, price);
+        outputs.add(AddMerchArtist.addMerch(username, library, newMerch, timestamp));
+    }
+
+    /**
+     * Get the rest of the fields from "addEvent" command and call method
+     * to solve the command
+     *
+     * @param currentCommand - command from input file
+     * @param memory         - database
+     * @param timestamp      - timestamp from command
+     */
+    private void removeEventParse(final JsonNode currentCommand, final UserMemory memory,
+                                  final Integer timestamp) {
+        String username = getUsername(currentCommand);
+        String name = getName(currentCommand);
+        outputs.add(RemoveEventArtist.removeEvent(username, library, name, timestamp));
+    }
+
+    /**
+     * Get the rest of the fields from "addEvent" command and call method
+     * to solve the command
+     *
+     * @param currentCommand - command from input file
+     * @param memory         - database
+     * @param timestamp      - timestamp from command
+     */
+    private void addEventParse(final JsonNode currentCommand, final UserMemory memory,
+                               final Integer timestamp) {
+        String username = getUsername(currentCommand);
+        String description = getDescription(currentCommand);
+        String name = getName(currentCommand);
+        String date = getDate(currentCommand);
+        Event newEvent = new Event(description, date, name);
+        outputs.add(AddEventArtist.addEvent(username, library, newEvent, timestamp));
     }
 
     /**
@@ -575,6 +634,13 @@ public final class CommandParser {
     }
 
     /**
+     * @return value for price field
+     */
+    private Integer getPrice(final JsonNode currentCommand) {
+        return currentCommand.get("price").asInt();
+    }
+
+    /**
      * @return value for type field
      */
     private String getType(final JsonNode currentCommand) {
@@ -614,6 +680,13 @@ public final class CommandParser {
      */
     private String getCommand(final JsonNode currentCommand) {
         return currentCommand.get("command").toString().replace("\"", "");
+    }
+
+    /**
+     * @return value for date field
+     */
+    private String getDate(final JsonNode currentCommand) {
+        return currentCommand.get("date").toString().replace("\"", "");
     }
 
     /**

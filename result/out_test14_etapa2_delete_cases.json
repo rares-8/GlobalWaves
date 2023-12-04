@@ -131,18 +131,18 @@
   "command" : "printCurrentPage",
   "user" : "bob35",
   "timestamp" : 525,
-  "message" : "Liked songs:\n\t[Aurora Harmony]\n\n"
+  "message" : "Liked songs:\n\t[Aurora Harmony]\n\nentities.Playlist@1dd02175]\n\n"
 }, {
   "command" : "search",
   "user" : "soundseeker21",
   "timestamp" : 625,
-  "message" : "Search returned 0 results",
-  "results" : [ ]
+  "message" : "Search returned 1 results",
+  "results" : [ "audiosage" ]
 }, {
   "command" : "select",
   "user" : "soundseeker21",
   "timestamp" : 630,
-  "message" : "The selected ID is too high."
+  "message" : "Successfully selected audiosage's page."
 }, {
   "command" : "search",
   "user" : "carol19",
@@ -168,8 +168,8 @@
   "command" : "search",
   "user" : "david27",
   "timestamp" : 760,
-  "message" : "Search returned 0 results",
-  "results" : [ ]
+  "message" : "Search returned 1 results",
+  "results" : [ "sonicpainter" ]
 }, {
   "command" : "repeat",
   "user" : "carol19",
@@ -179,7 +179,7 @@
   "command" : "select",
   "user" : "david27",
   "timestamp" : 1225,
-  "message" : "The selected ID is too high."
+  "message" : "Successfully selected sonicpainter's page."
 }, {
   "command" : "repeat",
   "user" : "carol19",
@@ -194,5 +194,5 @@
   "command" : "printCurrentPage",
   "user" : "bob35",
   "timestamp" : 7900,
-  "message" : "Liked songs:\n\t[Aurora Harmony]\n\n"
+  "message" : "Liked songs:\n\t[Aurora Harmony]\n\nentities.Playlist@31206beb]\n\n"
 } ]

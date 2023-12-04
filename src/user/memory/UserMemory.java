@@ -1,10 +1,6 @@
 package user.memory;
 
-import entities.Audio;
-import entities.Episode;
-import entities.Playlist;
-import entities.Podcast;
-import entities.Song;
+import entities.*;
 import entities.pages.Page;
 
 import java.util.ArrayList;
@@ -34,7 +30,8 @@ import java.util.Map;
  * currentPage - page a user is currently on
  */
 public final class UserMemory {
-    private final Map<String, ArrayList<Audio>> lastSearch;
+    private final Map<String, ArrayList<Audio>> lastSearchAudio;
+    private final Map<String, ArrayList<User>> lastSearchUser;
     private final Map<String, Integer> lastTimestamp;
     private final Map<String, Audio> currentSelect;
     private final Map<String, ArrayList<Playlist>> userPlaylists;
@@ -57,7 +54,7 @@ public final class UserMemory {
     private static UserMemory uniqueInstance = null;
 
     private UserMemory() {
-        lastSearch = new HashMap<>();
+        lastSearchAudio = new HashMap<>();
         lastTimestamp = new HashMap<>();
         currentSelect = new HashMap<>();
         userPlaylists = new HashMap<>();
@@ -76,6 +73,7 @@ public final class UserMemory {
         isRepeating = new HashMap<>();
         connectionStatus = new HashMap<>();
         currentPage = new HashMap<>();
+        lastSearchUser = new HashMap<>();
     }
 
     /**
@@ -100,8 +98,8 @@ public final class UserMemory {
     /**
      * @return hashmap that contains last searches for users
      */
-    public Map<String, ArrayList<Audio>> getLastSearch() {
-        return lastSearch;
+    public Map<String, ArrayList<Audio>> getLastSearchAudio() {
+        return lastSearchAudio;
     }
 
     /**
@@ -184,5 +182,9 @@ public final class UserMemory {
 
     public Map<String, Page> getCurrentPage() {
         return currentPage;
+    }
+
+    public Map<String, ArrayList<User>> getLastSearchUser() {
+        return lastSearchUser;
     }
 }

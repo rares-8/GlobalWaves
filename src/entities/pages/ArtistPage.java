@@ -1,0 +1,26 @@
+package entities.pages;
+
+import entities.Library;
+import user.memory.UserMemory;
+
+public final class ArtistPage extends Page {
+    private String owner;
+
+    public ArtistPage(String owner) {
+        this.owner = owner;
+    }
+
+    @Override
+    public String accept(final Visitor v, final String username,
+                         final UserMemory memory, final Library library) {
+        return v.visit(this, owner, memory, library);
+    }
+
+    public String getOwner() {
+        return owner;
+    }
+
+    public void setOwner(String owner) {
+        this.owner = owner;
+    }
+}

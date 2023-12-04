@@ -34,18 +34,18 @@
   "command" : "search",
   "user" : "alice22",
   "timestamp" : 55,
-  "message" : "Search returned 0 results",
-  "results" : [ ]
+  "message" : "Search returned 1 results",
+  "results" : [ "soundseeker" ]
 }, {
   "command" : "select",
   "user" : "alice22",
   "timestamp" : 57,
-  "message" : "The selected ID is too high."
+  "message" : "Successfully selected soundseeker's page."
 }, {
   "command" : "printCurrentPage",
   "user" : "alice22",
   "timestamp" : 58,
-  "message" : ""
+  "message" : "Liked songs:\n\t[]Followed playlists:\n\t[]"
 }, {
   "command" : "search",
   "user" : "alice22",
@@ -204,7 +204,7 @@
   "command" : "printCurrentPage",
   "user" : "alice22",
   "timestamp" : 3275,
-  "message" : ""
+  "message" : "Liked songs:\n\t[]Followed playlists:\n\t[]"
 }, {
   "command" : "status",
   "user" : "alice22",

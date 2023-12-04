@@ -20,6 +20,11 @@
   "timestamp" : 172,
   "message" : "melodymaster has added new album successfully."
 }, {
+  "command" : "addEvent",
+  "user" : "melodymaster",
+  "timestamp" : 185,
+  "message" : "melodymaster has added new event successfully."
+}, {
   "command" : "select",
   "user" : "bob35",
   "timestamp" : 190,
@@ -44,8 +49,8 @@
   "command" : "search",
   "user" : "david27",
   "timestamp" : 270,
-  "message" : "Search returned 0 results",
-  "results" : [ ]
+  "message" : "Search returned 1 results",
+  "results" : [ "melodymaster" ]
 }, {
   "command" : "select",
   "user" : "bob35",
@@ -60,7 +65,7 @@
   "command" : "select",
   "user" : "david27",
   "timestamp" : 320,
-  "message" : "The selected ID is too high."
+  "message" : "Successfully selected melodymaster's page."
 }, {
   "command" : "addRemoveInPlaylist",
   "user" : "bob35",
@@ -104,6 +109,11 @@
   "timestamp" : 390,
   "message" : "Successfully selected Elevate."
 }, {
+  "command" : "addEvent",
+  "user" : "melodymaster",
+  "timestamp" : 395,
+  "message" : "Event for melodymaster does not have a valid date."
+}, {
   "command" : "load",
   "user" : "bob35",
   "timestamp" : 400,
@@ -117,7 +127,7 @@
   "command" : "printCurrentPage",
   "user" : "david27",
   "timestamp" : 430,
-  "message" : ""
+  "message" : "Albums:\n\t[Harmonic Horizons]\n\n"
 }, {
   "command" : "search",
   "user" : "bob35",
@@ -134,6 +144,11 @@
   "user" : "bob35",
   "timestamp" : 433,
   "message" : "Please select a source before attempting to load."
+}, {
+  "command" : "addMerch",
+  "user" : "melodymaster",
+  "timestamp" : 433,
+  "message" : "melodymaster has added new  merchandise successfully."
 }, {
   "command" : "load",
   "user" : "carol19",
@@ -171,6 +186,11 @@
   "user" : "carol19",
   "timestamp" : 690,
   "message" : "Repeat mode changed to repeat once."
+}, {
+  "command" : "addEvent",
+  "user" : "melodymaster",
+  "timestamp" : 785,
+  "message" : "melodymaster has added new event successfully."
 }, {
   "command" : "repeat",
   "user" : "carol19",
@@ -215,6 +235,11 @@
   "timestamp" : 2435,
   "message" : "Successfully selected My playlist."
 }, {
+  "command" : "removeEvent",
+  "user" : "melodymaster",
+  "timestamp" : 2440,
+  "message" : "melodymaster deleted the event successfully."
+}, {
   "command" : "search",
   "user" : "bob35",
   "timestamp" : 2445,
@@ -229,7 +254,7 @@
   "command" : "printCurrentPage",
   "user" : "carol19",
   "timestamp" : 2455,
-  "message" : "Liked songs:\n\t[Digital Dreams]\n\n"
+  "message" : "Liked songs:\n\t[Digital Dreams]\n\nFollowed playlists:\n\t[]"
 }, {
   "command" : "load",
   "user" : "bob35",
@@ -372,7 +397,7 @@
   "command" : "printCurrentPage",
   "user" : "david27",
   "timestamp" : 3900,
-  "message" : ""
+  "message" : "Albums:\n\t[Harmonic Horizons]\n\n"
 }, {
   "command" : "status",
   "user" : "bob35",
@@ -420,7 +445,7 @@
   "command" : "printCurrentPage",
   "user" : "david27",
   "timestamp" : 4400,
-  "message" : ""
+  "message" : "Albums:\n\t[Harmonic Horizons]\n\n"
 }, {
   "command" : "status",
   "user" : "bob35",
@@ -447,7 +472,7 @@
   "command" : "printCurrentPage",
   "user" : "carol19",
   "timestamp" : 5000,
-  "message" : "Liked songs:\n\t[Digital Dreams]\n\n"
+  "message" : "Liked songs:\n\t[Digital Dreams]\n\nentities.Playlist@45afc369]\n\n"
 }, {
   "command" : "status",
   "user" : "bob35",

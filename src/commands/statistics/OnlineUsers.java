@@ -23,6 +23,9 @@ public abstract class OnlineUsers {
 
         ArrayNode onlineUsers = commandResult.putArray("result");
         for (User user : library.getUsers()) {
+            if (!user.getType().equals("user")) {
+                continue;
+            }
             if (memory.getConnectionStatus().containsKey(user.getUsername())) {
                 onlineUsers.add(user.getUsername());
             }

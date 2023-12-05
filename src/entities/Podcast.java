@@ -8,6 +8,13 @@ public final class Podcast implements Audio {
     private String owner;
     private ArrayList<Episode> episodes = new ArrayList<>();
 
+    public Podcast(final String name, final String owner,
+                   final ArrayList<Episode> episodes) {
+        this.name = name;
+        this.owner = owner;
+        this.episodes = episodes;
+    }
+
     public Podcast() {
     }
 

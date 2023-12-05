@@ -39,6 +39,9 @@ public abstract class Like {
             // get currently loaded song from playlist
             Integer index = memory.getCurrentIndex().get(username);
             currentSong = memory.getLoadedAudio().get(username).getPlaylistSongs().get(index);
+        } else if (memory.getLoadedAudio().get(username).getAudioType().equals("album")) {
+            Integer index = memory.getCurrentIndex().get(username);
+            currentSong = memory.getLoadedAudio().get(username).getPlaylistSongs().get(index);
         } else {
             currentSong = (Song) memory.getLoadedAudio().get(username);
         }

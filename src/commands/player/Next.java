@@ -3,10 +3,7 @@ package commands.player;
 import com.fasterxml.jackson.databind.JsonNode;
 import com.fasterxml.jackson.databind.ObjectMapper;
 import com.fasterxml.jackson.databind.node.ObjectNode;
-import entities.Episode;
-import entities.Playlist;
-import entities.Podcast;
-import entities.Song;
+import entities.*;
 import user.memory.UserMemory;
 
 import java.util.ArrayList;
@@ -36,6 +33,9 @@ public abstract class Next {
             Song loadedSong = (Song) memory.getLoadedAudio().get(username);
             nextSong(commandResult, username, loadedSong, memory);
         } else if (memory.getLoadedAudio().get(username).getAudioType().equals("playlist")) {
+            Playlist loadedPlaylist = (Playlist) memory.getLoadedAudio().get(username);
+            nextPlaylist(commandResult, username, loadedPlaylist, memory);
+        } else if (memory.getLoadedAudio().get(username).getAudioType().equals("album")) {
             Playlist loadedPlaylist = (Playlist) memory.getLoadedAudio().get(username);
             nextPlaylist(commandResult, username, loadedPlaylist, memory);
         } else {

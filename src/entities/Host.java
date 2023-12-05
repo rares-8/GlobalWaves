@@ -1,6 +1,10 @@
 package entities;
 
+import java.util.ArrayList;
+
 public final class Host extends User {
+    private final ArrayList<Podcast> podcasts = new ArrayList<>();
+    private final ArrayList<Announcement> announcements = new ArrayList<>();
     public Host() {
     }
 
@@ -50,5 +54,13 @@ public final class Host extends User {
     @Override
     public void setCity(final String city) {
         super.setCity(city);
+    }
+
+    public ArrayList<Podcast> getPodcasts() {
+        return podcasts;
+    }
+
+    public ArrayList<Announcement> getAnnouncements() {
+        return announcements;
     }
 }

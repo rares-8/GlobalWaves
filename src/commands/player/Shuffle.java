@@ -31,7 +31,8 @@ public abstract class Shuffle {
             commandResult.put("message",
                     "Please load a source before using the shuffle function.");
             return commandResult;
-        } else if (!memory.getLoadedAudio().get(username).getAudioType().equals("playlist")) {
+        } else if (!memory.getLoadedAudio().get(username).getAudioType().equals("playlist")
+        && !memory.getLoadedAudio().get(username).getAudioType().equals("album")) {
             commandResult.put("message",
                     "The loaded source is not a playlist.");
             return commandResult;

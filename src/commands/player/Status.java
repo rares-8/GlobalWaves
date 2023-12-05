@@ -36,10 +36,14 @@ public abstract class Status {
             name = memory.getLoadedAudio().get(username).getPlaylistSongs().get(index).getName();
         } else if (memory.getLoadedAudio().get(username).getAudioType().equals("song")) {
             name = memory.getLoadedAudio().get(username).getName();
+        } else if (memory.getLoadedAudio().get(username).getAudioType().equals("album")) {
+            Integer index = memory.getCurrentIndex().get(username);
+            name = memory.getLoadedAudio().get(username).getPlaylistSongs().get(index).getName();
         } else {
             Integer index = memory.getCurrentIndex().get(username);
             name = memory.getLoadedAudio().get(username).getEpisodes().get(index).getName();
         }
+
         statsNode.put("name", name);
         if (!memory.getLoadedAudio().get(username).getAudioType().equals("podcast")) {
             statsNode.put("remainedTime", memory.getRemainingTime().get(username));
@@ -49,7 +53,6 @@ public abstract class Status {
             statsNode.put("remainedTime",
                     memory.getEpisodeRemainingTime().get(username).get(podcastIndex));
         }
-
         return putStats(username, memory, commandResult, statsNode);
     }
 

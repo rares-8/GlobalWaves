@@ -8,7 +8,7 @@ import entities.Library;
 import entities.User;
 import utils.CheckUser;
 
-public abstract class RemoveEventArtist {
+public abstract class RemoveEvent {
     /**
      * @param username  - user
      * @param timestamp - current timestamp

@@ -31,11 +31,36 @@
   "user" : "soundseeker",
   "message" : "The username soundseeker has been added successfully."
 }, {
+  "command" : "addPodcast",
+  "user" : "soundseeker",
+  "timestamp" : 51,
+  "message" : "soundseeker has added new podcast successfully."
+}, {
+  "command" : "addPodcast",
+  "user" : "alice22",
+  "timestamp" : 52,
+  "message" : "alice22 is not a host."
+}, {
+  "command" : "addPodcast",
+  "user" : "soundseeker",
+  "timestamp" : 53,
+  "message" : "soundseeker has added new podcast successfully."
+}, {
+  "command" : "addPodcast",
+  "user" : "soundseeker",
+  "timestamp" : 53,
+  "message" : "soundseeker has another podcast with the same name."
+}, {
   "command" : "search",
   "user" : "alice22",
   "timestamp" : 55,
   "message" : "Search returned 1 results",
   "results" : [ "soundseeker" ]
+}, {
+  "command" : "addAnnouncement",
+  "user" : "soundseeker",
+  "timestamp" : 56,
+  "message" : "soundseeker has successfully added new announcement."
 }, {
   "command" : "select",
   "user" : "alice22",
@@ -77,41 +102,41 @@
   "command" : "search",
   "user" : "alice22",
   "timestamp" : 75,
-  "message" : "Search returned 0 results",
-  "results" : [ ]
+  "message" : "Search returned 1 results",
+  "results" : [ "Auditory Adventures" ]
 }, {
   "command" : "select",
   "user" : "alice22",
   "timestamp" : 80,
-  "message" : "The selected ID is too high."
+  "message" : "Successfully selected Auditory Adventures."
 }, {
   "command" : "load",
   "user" : "alice22",
   "timestamp" : 85,
-  "message" : "Please select a source before attempting to load."
+  "message" : "Playback loaded successfully."
 }, {
   "command" : "status",
   "user" : "alice22",
   "timestamp" : 86,
   "stats" : {
-    "name" : "",
-    "remainedTime" : 0,
+    "name" : "Exploring Sonic Landscapes",
+    "remainedTime" : 2699,
     "repeat" : "No Repeat",
     "shuffle" : false,
-    "paused" : true
+    "paused" : false
   }
 }, {
   "command" : "playPause",
   "user" : "alice22",
   "timestamp" : 3200,
-  "message" : "Please load a source before attempting to pause or resume playback."
+  "message" : "Playback paused successfully."
 }, {
   "command" : "status",
   "user" : "alice22",
   "timestamp" : 3201,
   "stats" : {
-    "name" : "",
-    "remainedTime" : 0,
+    "name" : "The Future of Music Technology",
+    "remainedTime" : 2785,
     "repeat" : "No Repeat",
     "shuffle" : false,
     "paused" : true
@@ -137,6 +162,11 @@
   "user" : "alice22",
   "timestamp" : 3225,
   "message" : "Playback loaded successfully."
+}, {
+  "command" : "addAnnouncement",
+  "user" : "soundseeker",
+  "timestamp" : 3226,
+  "message" : "soundseeker has successfully added new announcement."
 }, {
   "command" : "addRemoveInPlaylist",
   "user" : "alice22",
@@ -168,6 +198,17 @@
   "timestamp" : 3247,
   "user" : "magichost",
   "message" : "The username magichost is already taken."
+}, {
+  "command" : "showPodcasts",
+  "user" : "soundseeker",
+  "timestamp" : 3250,
+  "result" : [ {
+    "name" : "Auditory Adventures",
+    "songs" : [ "Exploring Sonic Landscapes", "The Future of Music Technology", "Cultural Beats" ]
+  }, {
+    "name" : "Harmony & History",
+    "songs" : [ "The Roots of Blues", "Classical Music's Modern Impact", "Jazz Journeys", "The Folk Revival" ]
+  } ]
 }, {
   "command" : "addRemoveInPlaylist",
   "user" : "alice22",

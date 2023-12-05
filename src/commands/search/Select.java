@@ -13,11 +13,10 @@ import java.util.ArrayList;
 public abstract class Select {
 
     /**
-     *
-     * @param username - user that issued the command
+     * @param username   - user that issued the command
      * @param itemNumber - item to select from search result
-     * @param timestamp - timestamp for command
-     * @param memory - database for users
+     * @param timestamp  - timestamp for command
+     * @param memory     - database for users
      * @return select status
      */
     public static JsonNode select(final String username, final Integer itemNumber,
@@ -39,14 +38,15 @@ public abstract class Select {
                 memory.getCurrentSelect().put(username, lastSearch.get(itemNumber - 1));
             }
             memory.getLastSearchAudio().remove(username);
-        } else if (memory.getLastSearchUser().containsKey(username)){
+        } else if (memory.getLastSearchUser().containsKey(username)) {
             ArrayList<User> lastSearch = memory.getLastSearchUser().get(username);
             if (lastSearch.size() < itemNumber) {
                 commandResult.put("message", "The selected ID is too high.");
             } else {
                 User selectedUser = memory.getLastSearchUser().get(username).get(itemNumber - 1);
                 if (selectedUser.getType().equals("artist")) {
-                    memory.getCurrentPage().put(username, new ArtistPage(selectedUser.getUsername()));
+                    memory.getCurrentPage().put(username,
+                            new ArtistPage(selectedUser.getUsername()));
                 }
                 commandResult.put("message", "Successfully selected "
                         + selectedUser.getUsername() + "'s page.");

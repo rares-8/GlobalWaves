@@ -99,10 +99,26 @@ public class User {
     }
 
     /**
-     * 
+     *
      * @return
      */
     public ArrayList<Merch> getMerchandise() {
+        return null;
+    }
+
+    /**
+     *
+     * @return
+     */
+    public ArrayList<Podcast> getPodcasts() {
+        return null;
+    }
+
+    /**
+     *
+     * @return
+     */
+    public ArrayList<Announcement> getAnnouncements() {
         return null;
     }
 }

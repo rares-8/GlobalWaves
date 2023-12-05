@@ -8,5 +8,6 @@ public enum SearchFilters {
     genre,
     releaseYear,
     artist,
-    owner
+    owner,
+    description
 }

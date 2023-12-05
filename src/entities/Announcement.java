@@ -1,17 +1,15 @@
 package entities;
 
-public final class Merch {
+public final class Announcement {
     private String description;
     private String name;
-    private Integer price;
 
-    public Merch(final String description, final String name, final Integer price) {
+    public Announcement(final String description, final String name) {
         this.description = description;
         this.name = name;
-        this.price = price;
     }
 
-    public Merch() {
+    public Announcement() {
     }
 
     public String getDescription() {
@@ -28,13 +26,5 @@ public final class Merch {
 
     public void setName(final String name) {
         this.name = name;
-    }
-
-    public Integer getPrice() {
-        return price;
-    }
-
-    public void setPrice(final Integer price) {
-        this.price = price;
     }
 }

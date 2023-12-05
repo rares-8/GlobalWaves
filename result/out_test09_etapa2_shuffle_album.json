@@ -127,28 +127,28 @@
   "command" : "printCurrentPage",
   "user" : "david27",
   "timestamp" : 430,
-  "message" : "Albums:\n\t[Harmonic Horizons]\n\n"
+  "message" : "Albums:\n\t[Harmonic Horizons]\n\nMerch:\n\t[]\n\nEvents:\n\t[Event1 - 01-01-2022:\n\tPrimul Event adaugat!]"
 }, {
   "command" : "search",
   "user" : "bob35",
   "timestamp" : 431,
-  "message" : "Search returned 0 results",
-  "results" : [ ]
+  "message" : "Search returned 1 results",
+  "results" : [ "Harmonic Horizons" ]
 }, {
   "command" : "select",
   "user" : "bob35",
   "timestamp" : 432,
-  "message" : "The selected ID is too high."
+  "message" : "Successfully selected Harmonic Horizons."
 }, {
   "command" : "load",
   "user" : "bob35",
   "timestamp" : 433,
-  "message" : "Please select a source before attempting to load."
+  "message" : "Playback loaded successfully."
 }, {
   "command" : "addMerch",
   "user" : "melodymaster",
   "timestamp" : 433,
-  "message" : "melodymaster has added new  merchandise successfully."
+  "message" : "melodymaster has added new merchandise successfully."
 }, {
   "command" : "load",
   "user" : "carol19",
@@ -159,27 +159,27 @@
   "user" : "bob35",
   "timestamp" : 434,
   "stats" : {
-    "name" : "",
-    "remainedTime" : 0,
+    "name" : "Vibrant Echoes",
+    "remainedTime" : 249,
     "repeat" : "No Repeat",
     "shuffle" : false,
-    "paused" : true
+    "paused" : false
   }
 }, {
   "command" : "shuffle",
   "user" : "bob35",
   "timestamp" : 440,
-  "message" : "Please load a source before using the shuffle function."
+  "message" : "Shuffle function activated successfully."
 }, {
   "command" : "status",
   "user" : "bob35",
   "timestamp" : 446,
   "stats" : {
-    "name" : "",
-    "remainedTime" : 0,
+    "name" : "Vibrant Echoes",
+    "remainedTime" : 237,
     "repeat" : "No Repeat",
-    "shuffle" : false,
-    "paused" : true
+    "shuffle" : true,
+    "paused" : false
   }
 }, {
   "command" : "repeat",
@@ -201,11 +201,11 @@
   "user" : "bob35",
   "timestamp" : 1000,
   "stats" : {
-    "name" : "",
-    "remainedTime" : 0,
+    "name" : "Digital Dreams",
+    "remainedTime" : 243,
     "repeat" : "No Repeat",
-    "shuffle" : false,
-    "paused" : true
+    "shuffle" : true,
+    "paused" : false
   }
 }, {
   "command" : "like",
@@ -397,7 +397,7 @@
   "command" : "printCurrentPage",
   "user" : "david27",
   "timestamp" : 3900,
-  "message" : "Albums:\n\t[Harmonic Horizons]\n\n"
+  "message" : "Albums:\n\t[Harmonic Horizons]\n\nMerch:\n\t[Merch1 - 100:\n\tPrimul Merch adaugat!]\n\nEvents:\n\t[Event2 - 05-02-2021:\n\tAl doilea Event adaugat!]"
 }, {
   "command" : "status",
   "user" : "bob35",
@@ -445,7 +445,7 @@
   "command" : "printCurrentPage",
   "user" : "david27",
   "timestamp" : 4400,
-  "message" : "Albums:\n\t[Harmonic Horizons]\n\n"
+  "message" : "Albums:\n\t[Harmonic Horizons]\n\nMerch:\n\t[Merch1 - 100:\n\tPrimul Merch adaugat!]\n\nEvents:\n\t[Event2 - 05-02-2021:\n\tAl doilea Event adaugat!]"
 }, {
   "command" : "status",
   "user" : "bob35",
@@ -472,7 +472,7 @@
   "command" : "printCurrentPage",
   "user" : "carol19",
   "timestamp" : 5000,
-  "message" : "Liked songs:\n\t[Digital Dreams]\n\nentities.Playlist@45afc369]\n\n"
+  "message" : "Liked songs:\n\t[Digital Dreams]\n\nentities.Playlist@d6da883]\n\n"
 }, {
   "command" : "status",
   "user" : "bob35",

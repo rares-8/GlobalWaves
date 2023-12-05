@@ -1,27 +1,27 @@
-package commands.artist;
+package commands.host;
 
 import com.fasterxml.jackson.databind.JsonNode;
 import com.fasterxml.jackson.databind.ObjectMapper;
 import com.fasterxml.jackson.databind.node.ObjectNode;
-import entities.Event;
-import entities.Merch;
+import entities.Announcement;
 import entities.Library;
 import entities.User;
 import utils.CheckUser;
 
-public abstract class AddMerchArtist {
+public abstract class AddAnnouncement {
     /**
      * @param username  - user
      * @param timestamp - current timestamp
-     * @param newMerch - merch to be added
+     * @param newAnnouncement - announcement to be added
      * @param library - contains songs, playlists, podcasts, users
-     * @return add merch status
+     * @return add announcement status
      */
-    public static JsonNode addMerch(final String username, final Library library,
-                                    final Merch newMerch, final Integer timestamp) {
+    public static JsonNode addAnnouncement(final String username, final Library library,
+                                           final Announcement newAnnouncement,
+                                           final Integer timestamp) {
         ObjectMapper mapper = new ObjectMapper();
         ObjectNode commandResult = mapper.createObjectNode();
-        commandResult.put("command", "addMerch");
+        commandResult.put("command", "addAnnouncement");
         commandResult.put("user", username);
         commandResult.put("timestamp", timestamp);
 
@@ -32,32 +32,28 @@ public abstract class AddMerchArtist {
             return commandResult;
         }
 
-        User artist = null;
+        User host = null;
         for (User user : library.getUsers()) {
             if (user.getUsername().equals(username)) {
-                artist = user;
+                host = user;
             }
         }
 
-        if (!artist.getType().equals("artist")) {
-            commandResult.put("message", username + " is not an artist.");
+        if (!host.getType().equals("host")) {
+            commandResult.put("message", username + " is not a host.");
             return commandResult;
         }
 
-        for (Merch merch : artist.getMerchandise()) {
-            if (merch.getName().equals(newMerch.getName())) {
-                commandResult.put("message", username + " has merchandise with the same name.");
+        for (Announcement announcement : host.getAnnouncements()) {
+            if (announcement.getName().equals(newAnnouncement.getName())) {
+                commandResult.put("message", username + " has already"
+                        + " added an announcement with this name.");
                 return commandResult;
             }
         }
 
-        if (newMerch.getPrice() < 0) {
-            commandResult.put("message", "Price for merchandise can not be negative.");
-            return commandResult;
-        }
-
-        commandResult.put("message", username + " has added new  merchandise successfully.");
-        artist.getMerchandise().add(newMerch);
+        commandResult.put("message", username + " has successfully added new announcement.");
+        host.getAnnouncements().add(newAnnouncement);
         return commandResult;
     }
 }

@@ -47,7 +47,8 @@ public abstract class Load {
             memory.getLoadedAudio().put(username, currentSelect);
             memory.getIsPaused().remove(username);
             commandResult.put("message", "Playback loaded successfully.");
-        } else if (currentSelect.getAudioType().equals("playlist")) {
+        } else if (currentSelect.getAudioType().equals("playlist")
+                || currentSelect.getAudioType().equals("album")) {
             memory.getIsPaused().remove(username);
 
             ArrayList<Integer> indexes = new ArrayList<>();

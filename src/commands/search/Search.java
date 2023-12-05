@@ -112,12 +112,24 @@ public abstract class Search implements Constants {
                                     final Map<String, String> otherFilters,
                                     final ArrayList<Audio> audioResult, final String type,
                                     final UserMemory memory) {
-        if (type.equals("album"))
-            return;
-        /*
-            First search for podcasts, easier to do
-         */
         int allMatch, found;
+        if (type.equals("album")) {
+            ArrayList<Audio> allAlbums = new ArrayList<>();
+            for (User user : library.getUsers()) {
+                if (user.getType().equals("artist")) {
+                    allAlbums.addAll(user.getAlbums());
+                }
+            }
+            for (Audio album : allAlbums) {
+                allMatch = checkIfAllMatch(otherFilters, album);
+                if (allMatch == 1) {
+                    audioResult.add(album);
+                }
+            }
+            return;
+        }
+
+        // search for podcasts
         if (type.equals("podcast")) {
             for (Podcast currentPodcast : library.getPodcasts()) {
                 allMatch = checkIfAllMatch(otherFilters, currentPodcast);
@@ -128,7 +140,7 @@ public abstract class Search implements Constants {
             return;
         }
 
-        //Next search for playlists
+        // next search for playlists
         if (type.equals("playlist")) {
             for (Playlist currentPlaylist : memory.getPublicPlaylists()) {
                 allMatch = checkIfAllMatch(otherFilters, currentPlaylist);
@@ -250,6 +262,11 @@ public abstract class Search implements Constants {
                 break;
             case "owner":
                 if (audio.getOwner().equalsIgnoreCase(element.getValue())) {
+                    return 1;
+                }
+                break;
+            case "description":
+                if (audio.getDescription().startsWith(element.getValue())) {
                     return 1;
                 }
                 break;

@@ -38,6 +38,9 @@ public abstract class Prev {
         } else if (memory.getLoadedAudio().get(username).getAudioType().equals("playlist")) {
             Playlist loadedPlaylist = (Playlist) memory.getLoadedAudio().get(username);
             prevPlaylist(commandResult, username, loadedPlaylist, memory);
+        } else if (memory.getLoadedAudio().get(username).getAudioType().equals("album")) {
+            Playlist loadedPlaylist = (Playlist) memory.getLoadedAudio().get(username);
+            prevPlaylist(commandResult, username, loadedPlaylist, memory);
         } else {
             Podcast loadedPodcast = (Podcast) memory.getLoadedAudio().get(username);
             prevPodcast(commandResult, username, loadedPodcast, memory);

@@ -11,7 +11,7 @@ import utils.CheckUser;
 import java.time.DateTimeException;
 import java.time.format.DateTimeFormatter;
 
-public abstract class AddEventArtist {
+public abstract class AddEvent {
     /**
      * @param username  - user
      * @param timestamp - current timestamp
@@ -53,7 +53,7 @@ public abstract class AddEventArtist {
             }
         }
 
-        ok = AddEventArtist.isValid(newEvent.getDate());
+        ok = AddEvent.isValid(newEvent.getDate());
         if (!ok) {
             commandResult.put("message", "Event for " + username + " does not have a valid date.");
             return commandResult;

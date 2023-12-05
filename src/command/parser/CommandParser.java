@@ -6,10 +6,13 @@ import com.fasterxml.jackson.databind.ObjectMapper;
 import com.fasterxml.jackson.databind.node.ArrayNode;
 import commands.admin.AddUser;
 import commands.admin.ShowAlbums;
+import commands.admin.ShowPodcasts;
 import commands.artist.AddAlbum;
-import commands.artist.AddEventArtist;
-import commands.artist.AddMerchArtist;
-import commands.artist.RemoveEventArtist;
+import commands.artist.AddEvent;
+import commands.artist.AddMerch;
+import commands.artist.RemoveEvent;
+import commands.host.AddAnnouncement;
+import commands.host.AddPodcast;
 import commands.player.*;
 import commands.playlist.CreatePlaylist;
 import commands.playlist.FollowPlaylist;
@@ -19,6 +22,7 @@ import commands.search.Search;
 import commands.search.SearchFilters;
 import commands.search.Select;
 import commands.statistics.OnlineUsers;
+import commands.statistics.AllUsers;
 import commands.statistics.ShowPreferredSongs;
 import commands.statistics.TopPlaylists;
 import commands.statistics.TopSongs;
@@ -137,14 +141,23 @@ public final class CommandParser {
             case "addAlbum":
                 addAlbumParse(currentCommand, memory, timestamp);
                 break;
+            case "addPodcast":
+                addPodcastParse(currentCommand, memory, timestamp);
+                break;
             case "showAlbums":
                 showAlbumsParse(currentCommand, memory, timestamp);
+                break;
+            case "showPodcasts":
+                showPodcastsParse(currentCommand, memory, timestamp);
                 break;
             case "addEvent":
                 addEventParse(currentCommand, memory, timestamp);
                 break;
             case "removeEvent":
                 removeEventParse(currentCommand, memory, timestamp);
+                break;
+            case "addAnnouncement":
+                addAnnouncementParse(currentCommand, memory, timestamp);
                 break;
             case "addMerch":
                 addMerchParse(currentCommand, memory, timestamp);
@@ -161,9 +174,64 @@ public final class CommandParser {
             case "getOnlineUsers":
                 outputs.add(OnlineUsers.getOnlineUsers(memory, timestamp, library));
                 break;
+            case "getAllUsers":
+                outputs.add(AllUsers.getUsers(memory, timestamp, library));
+                break;
             default:
                 //System.out.println("Unknown command : " + command);
         }
+    }
+
+    private void showPodcastsParse(final JsonNode currentCommand, final UserMemory memory,
+                                   final Integer timestamp) {
+        String username = getUsername(currentCommand);
+        outputs.add(ShowPodcasts.showPodcasts(username, library, timestamp));
+    }
+
+    /**
+     * Get the rest of the fields from "addAnnouncement" command and call method
+     * to solve the command
+     *
+     * @param currentCommand - command from input file
+     * @param memory         - database
+     * @param timestamp      - timestamp from command
+     */
+    private void addAnnouncementParse(final JsonNode currentCommand, final UserMemory memory,
+                                      final Integer timestamp) {
+        String username = getUsername(currentCommand);
+        String description = getDescription(currentCommand);
+        String name = getName(currentCommand);
+        Announcement newAnnouncement = new Announcement(description, name);
+        outputs.add(AddAnnouncement.addAnnouncement(username, library, newAnnouncement, timestamp));
+    }
+
+    /**
+     * Get the rest of the fields from "addPodcast" command and call method
+     * to solve the command
+     *
+     * @param currentCommand - command from input file
+     * @param memory         - database
+     * @param timestamp      - timestamp from command
+     */
+    private void addPodcastParse(final JsonNode currentCommand, final UserMemory memory,
+                                 final Integer timestamp) {
+        ObjectMapper mapper = new ObjectMapper();
+        String username = getUsername(currentCommand);
+        String name = getName(currentCommand);
+
+        JsonNode episodes = currentCommand.get("episodes");
+        ArrayList<Episode> newEpisodes = new ArrayList<>();
+        for (int i = 0; i < episodes.size(); i++) {
+            JsonNode currentEpisode = episodes.get(i);
+            String episodeName = getName(currentEpisode);
+            Integer duration = getDuration(currentEpisode);
+            String description = getDescription(currentEpisode);
+            Episode newEpisode = new Episode(episodeName, duration, description);
+            newEpisodes.add(newEpisode);
+
+        }
+        Podcast newPodcast = new Podcast(name, username, newEpisodes);
+        outputs.add(AddPodcast.addPodcast(username, timestamp, newPodcast, memory, library));
     }
 
     /**
@@ -174,13 +242,14 @@ public final class CommandParser {
      * @param memory         - database
      * @param timestamp      - timestamp from command
      */
-    private void addMerchParse(JsonNode currentCommand, UserMemory memory, Integer timestamp) {
+    private void addMerchParse(final JsonNode currentCommand, final UserMemory memory,
+                               final Integer timestamp) {
         String username = getUsername(currentCommand);
         String description = getDescription(currentCommand);
         String name = getName(currentCommand);
         Integer price = getPrice(currentCommand);
         Merch newMerch = new Merch(description, name, price);
-        outputs.add(AddMerchArtist.addMerch(username, library, newMerch, timestamp));
+        outputs.add(AddMerch.addMerch(username, library, newMerch, timestamp));
     }
 
     /**
@@ -195,7 +264,7 @@ public final class CommandParser {
                                   final Integer timestamp) {
         String username = getUsername(currentCommand);
         String name = getName(currentCommand);
-        outputs.add(RemoveEventArtist.removeEvent(username, library, name, timestamp));
+        outputs.add(RemoveEvent.removeEvent(username, library, name, timestamp));
     }
 
     /**
@@ -213,7 +282,7 @@ public final class CommandParser {
         String name = getName(currentCommand);
         String date = getDate(currentCommand);
         Event newEvent = new Event(description, date, name);
-        outputs.add(AddEventArtist.addEvent(username, library, newEvent, timestamp));
+        outputs.add(AddEvent.addEvent(username, library, newEvent, timestamp));
     }
 
     /**
@@ -241,7 +310,7 @@ public final class CommandParser {
     private void showAlbumsParse(final JsonNode currentCommand, final UserMemory memory,
                                  final Integer timestamp) {
         String username = getUsername(currentCommand);
-        outputs.add(ShowAlbums.addUser(username, library, timestamp));
+        outputs.add(ShowAlbums.showAlbums(username, library, timestamp));
     }
 
     /**

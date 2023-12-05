@@ -97,6 +97,30 @@ public final class PrintVisitor implements Visitor {
         } else {
             result.append("Albums:\n\t[]\n\n");
         }
+
+        if (!artist.getMerchandise().isEmpty()) {
+            result.append("Merch:\n\t[");
+            for (Merch merch : artist.getMerchandise()) {
+                result.append(merch.getName()).append(" - ").append(merch.getPrice());
+                result.append(":\n\t").append(merch.getDescription()).append(", ");
+            }
+            result = new StringBuilder(result.substring(0, result.length() - 2));
+            result.append("]\n\n");
+        } else {
+            result.append("Merch:\n\t[]\n\n");
+        }
+
+        if (!artist.getEvents().isEmpty()) {
+            result.append("Events:\n\t[");
+            for (Event event : artist.getEvents()) {
+                result.append(event.getName()).append(" - ").append(event.getDate());
+                result.append(":\n\t").append(event.getDescription()).append(", ");
+            }
+            result = new StringBuilder(result.substring(0, result.length() - 2));
+            result.append("]");
+        } else {
+            result.append("Event:\n\t[]");
+        }
         return result.toString();
     }
 

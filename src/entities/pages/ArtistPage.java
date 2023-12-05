@@ -6,7 +6,7 @@ import user.memory.UserMemory;
 public final class ArtistPage extends Page {
     private String owner;
 
-    public ArtistPage(String owner) {
+    public ArtistPage(final String owner) {
         this.owner = owner;
     }
 
@@ -20,7 +20,7 @@ public final class ArtistPage extends Page {
         return owner;
     }
 
-    public void setOwner(String owner) {
+    public void setOwner(final String owner) {
         this.owner = owner;
     }
 }

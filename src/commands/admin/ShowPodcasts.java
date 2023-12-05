@@ -4,43 +4,39 @@ import com.fasterxml.jackson.databind.JsonNode;
 import com.fasterxml.jackson.databind.ObjectMapper;
 import com.fasterxml.jackson.databind.node.ArrayNode;
 import com.fasterxml.jackson.databind.node.ObjectNode;
-import entities.Album;
-import entities.Artist;
-import entities.Library;
-import entities.Song;
-import entities.User;
+import entities.*;
 
-public abstract class ShowAlbums {
+public abstract class ShowPodcasts {
     /**
      * @param username  - artist name
      * @param library - library containing songs, users, podcasts
      * @param timestamp - current timestamp
-     * @return show albums status
+     * @return show podcasts status
      */
-    public static JsonNode showAlbums(final String username, final Library library,
+    public static JsonNode showPodcasts(final String username, final Library library,
                                    final Integer timestamp) {
         ObjectMapper mapper = new ObjectMapper();
         ObjectNode commandResult = mapper.createObjectNode();
-        commandResult.put("command", "showAlbums");
+        commandResult.put("command", "showPodcasts");
         commandResult.put("user", username);
         commandResult.put("timestamp", timestamp);
 
-        Artist artist = null;
+        Host host = null;
         for (User user : library.getUsers()) {
             if (user.getUsername().equals(username)) {
-                artist = (Artist) user;
+                host = (Host) user;
             }
         }
 
-        ArrayNode albums = commandResult.putArray("result");
-        for (Album album : artist.getAlbums()) {
-            ObjectNode currentAlbum = mapper.createObjectNode();
-            currentAlbum.put("name", album.getName());
-            ArrayNode albumSongs = currentAlbum.putArray("songs");
-            for (Song song : album.getPlaylistSongs()) {
-                albumSongs.add(song.getName());
+        ArrayNode podcasts = commandResult.putArray("result");
+        for (Podcast podcast : host.getPodcasts()) {
+            ObjectNode currentPodcast = mapper.createObjectNode();
+            currentPodcast.put("name", podcast.getName());
+            ArrayNode podcastEpisodes = currentPodcast.putArray("songs");
+            for (Episode episode : podcast.getEpisodes()) {
+                podcastEpisodes.add(episode.getName());
             }
-            albums.add(currentAlbum);
+            podcasts.add(currentPodcast);
         }
         return commandResult;
     }

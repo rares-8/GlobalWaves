@@ -22,6 +22,11 @@ public abstract class PrintCurrentPage {
         commandResult.put("user", username);
         commandResult.put("timestamp", timestamp);
 
+        if (!memory.getConnectionStatus().containsKey(username)) {
+            commandResult.put("message", username + " is offline.");
+            return commandResult;
+        }
+
         PrintVisitor printVisitor = new PrintVisitor();
         String result = memory.getCurrentPage().get(username).accept(printVisitor,
                 username, memory, library);

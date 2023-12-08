@@ -8,13 +8,11 @@ import commands.admin.AddUser;
 import commands.admin.DeleteUser;
 import commands.admin.ShowAlbums;
 import commands.admin.ShowPodcasts;
-import commands.artist.AddAlbum;
-import commands.artist.AddEvent;
-import commands.artist.AddMerch;
-import commands.artist.RemoveEvent;
+import commands.artist.*;
 import commands.host.AddAnnouncement;
 import commands.host.AddPodcast;
 import commands.host.RemoveAnnouncement;
+import commands.host.RemovePodcast;
 import commands.player.*;
 import commands.playlist.CreatePlaylist;
 import commands.playlist.FollowPlaylist;
@@ -23,11 +21,8 @@ import commands.playlist.SwitchVisibility;
 import commands.search.Search;
 import commands.search.SearchFilters;
 import commands.search.Select;
-import commands.statistics.OnlineUsers;
-import commands.statistics.AllUsers;
-import commands.statistics.ShowPreferredSongs;
-import commands.statistics.TopPlaylists;
-import commands.statistics.TopSongs;
+import commands.statistics.*;
+import commands.user.ChangePage;
 import commands.user.PrintCurrentPage;
 import commands.user.SwitchConnectionStatus;
 import entities.*;
@@ -63,6 +58,8 @@ public final class CommandParser {
                 } else {
                     UpdateTimestamp.updateTimestamp(user.getUsername(), timestamp, memory);
                 }
+            } else if (!memory.getConnectionStatus().containsKey(user.getUsername())) {
+                UpdateTimestamp.updateTimestamp(user.getUsername(), timestamp, memory);
             }
         }
 
@@ -91,8 +88,14 @@ public final class CommandParser {
             case "like":
                 likeParse(currentCommand, memory, timestamp);
                 break;
+            case "removeAlbum":
+                removeAlbumParse(currentCommand, memory, timestamp);
+                break;
             case "switchVisibility":
                 switchParse(currentCommand, memory, timestamp);
+                break;
+            case "changePage":
+                changePageParse(currentCommand, memory, timestamp);
                 break;
             case "follow":
                 followParse(currentCommand, memory, timestamp);
@@ -139,6 +142,9 @@ public final class CommandParser {
             case "showPodcasts":
                 showPodcastsParse(currentCommand, memory, timestamp);
                 break;
+            case "removePodcast":
+                removePodcastParse(currentCommand, memory, timestamp);
+                break;
             case "addEvent":
                 addEventParse(currentCommand, memory, timestamp);
                 break;
@@ -169,12 +175,62 @@ public final class CommandParser {
             case "getOnlineUsers":
                 outputs.add(OnlineUsers.getOnlineUsers(memory, timestamp, library));
                 break;
+            case "getTop5Albums":
+                outputs.add(Top5Albums.topAlbums(memory, timestamp, library));
+                break;
+            case "getTop5Artists":
+                break;
             case "getAllUsers":
                 outputs.add(AllUsers.getUsers(memory, timestamp, library));
                 break;
             default:
                 System.out.println("Unknown command : " + command);
         }
+    }
+
+    /**
+     * Get the rest of the fields from "removePodcast" command and call method
+     * to solve the command
+     *
+     * @param currentCommand - command from input file
+     * @param memory         - database
+     * @param timestamp      - timestamp from command
+     */
+    private void removePodcastParse(final JsonNode currentCommand, final UserMemory memory,
+                                    final Integer timestamp) {
+        String username = getUsername(currentCommand);
+        String podcastName = getName(currentCommand);
+        outputs.add(RemovePodcast.removePodcast(username, podcastName, timestamp, memory, library));
+    }
+
+    /**
+     * Get the rest of the fields from "removeAlbum" command and call method
+     * to solve the command
+     *
+     * @param currentCommand - command from input file
+     * @param memory         - database
+     * @param timestamp      - timestamp from command
+     */
+    private void removeAlbumParse(final JsonNode currentCommand, final UserMemory memory,
+                                  final Integer timestamp) {
+        String username = getUsername(currentCommand);
+        String albumName = getName(currentCommand);
+        outputs.add(RemoveAlbum.removeAlbum(username, albumName, timestamp, memory, library));
+    }
+
+    /**
+     * Get the rest of the fields from "changePage" command and call method
+     * to solve the command
+     *
+     * @param currentCommand - command from input file
+     * @param memory         - database
+     * @param timestamp      - timestamp from command
+     */
+    private void changePageParse(final JsonNode currentCommand, final UserMemory memory,
+                                 final Integer timestamp) {
+        String username = getUsername(currentCommand);
+        String nextPage = getNextPage(currentCommand);
+        outputs.add(ChangePage.changePage(username, nextPage, memory, timestamp, library));
     }
 
     /**
@@ -725,6 +781,13 @@ public final class CommandParser {
      */
     private String getGenre(final JsonNode currentCommand) {
         return currentCommand.get("genre").toString().replace("\"", "");
+    }
+
+    /**
+     * @return value for nextPage field
+     */
+    private String getNextPage(final JsonNode currentCommand) {
+        return currentCommand.get("nextPage").toString().replace("\"", "");
     }
 
     /**

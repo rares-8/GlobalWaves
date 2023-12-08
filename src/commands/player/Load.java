@@ -41,7 +41,7 @@ public abstract class Load {
         }
 
         Audio currentSelect = memory.getCurrentSelect().get(username);
-
+        memory.getIsShuffled().remove(username);
         if (currentSelect.getAudioType().equals("song")) {
             memory.getRemainingTime().put(username, currentSelect.getDuration());
             memory.getLoadedAudio().put(username, currentSelect);

@@ -10,6 +10,7 @@ public class Playlist implements Audio {
     private ArrayList<Song> songs = new ArrayList<>();
     private String owner;
     private Integer timeCreated;
+    private Integer totalLikes;
 
     public Playlist(final String name, final int isPrivate,
                     final ArrayList<Song> songs,
@@ -23,6 +24,14 @@ public class Playlist implements Audio {
 
     public Playlist() {
 
+    }
+
+    public Integer getTotalLikes() {
+        return totalLikes;
+    }
+
+    public void setTotalLikes(Integer totalLikes) {
+        this.totalLikes = totalLikes;
     }
 
     /**

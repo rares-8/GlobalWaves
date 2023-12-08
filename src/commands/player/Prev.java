@@ -69,7 +69,7 @@ public abstract class Prev {
             memory.getIsPaused().remove(username);
             commandResult.put("message",
                     "Returned to previous track successfully. The current track is "
-                    + loadedEpisode.getName() + ".");
+                            + loadedEpisode.getName() + ".");
             return;
         }
 
@@ -120,37 +120,19 @@ public abstract class Prev {
             memory.getIsPaused().remove(username);
             commandResult.put("message",
                     "Returned to previous track successfully. The current track is "
-                    + songs.get(currentIndex).getName() + ".");
+                            + songs.get(currentIndex).getName() + ".");
             return;
         }
 
-        if (repeatMode == 0) {
-            int indexOfCurrentSong = indexes.indexOf(currentIndex);
-            currentIndex = indexes.get(indexOfCurrentSong - 1);
-            Song currentSong = songs.get(currentIndex);
-            memory.getCurrentIndex().put(username, currentIndex);
-            memory.getRemainingTime().put(username, currentSong.getDuration());
-            memory.getIsPaused().remove(username);
-            commandResult.put("message", "Returned to previous track successfully."
-                    + " The current track is " + currentSong.getName() + ".");
-        } else if (repeatMode == 1) {
-            int indexOfCurrentSong;
-            indexOfCurrentSong = indexes.indexOf(currentIndex);
-            currentIndex = indexes.get(indexOfCurrentSong - 1);
-            memory.getRemainingTime().put(username, songs.get(currentIndex).getDuration());
-            memory.getCurrentIndex().put(username, currentIndex);
-            memory.getIsPaused().remove(username);
-            commandResult.put("message", "Returned to previous track successfully."
-                    + " The current track is " + songs.get(currentIndex).getName() + ".");
-        } else if (repeatMode == 2) {
-            int indexOfCurrentSong;
-            indexOfCurrentSong = indexes.indexOf(currentIndex);
-            currentIndex = indexes.get(indexOfCurrentSong);
-            memory.getRemainingTime().put(username, songs.get(currentIndex).getDuration());
-            memory.getIsPaused().remove(username);
-            commandResult.put("message", "Returned to previous track successfully."
-                    + " The current track is " + songs.get(currentIndex).getName() + ".");
-        }
+        int indexOfCurrentSong = indexes.indexOf(currentIndex);
+        currentIndex = indexes.get(indexOfCurrentSong - 1);
+        Song currentSong = songs.get(currentIndex);
+        memory.getCurrentIndex().put(username, currentIndex);
+        memory.getRemainingTime().put(username, currentSong.getDuration());
+        memory.getIsPaused().remove(username);
+        commandResult.put("message", "Returned to previous track successfully."
+                + " The current track is " + currentSong.getName() + ".");
+
     }
 
     /**

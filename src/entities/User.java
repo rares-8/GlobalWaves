@@ -7,6 +7,7 @@ public class User {
     private int age;
     private String city;
     private String type;
+    private Integer totalLikes = 0;
 
     public User() {
     }
@@ -120,5 +121,13 @@ public class User {
      */
     public ArrayList<Announcement> getAnnouncements() {
         return null;
+    }
+
+    public Integer getTotalLikes() {
+        return totalLikes;
+    }
+
+    public void setTotalLikes(Integer totalLikes) {
+        this.totalLikes = totalLikes;
     }
 }

@@ -163,6 +163,7 @@ public abstract class DeleteUser {
         }
 
         memory.getLastSearchAudio().remove(deleteUser.getUsername());
+        memory.getFollowedPlaylists().remove(deleteUser.getUsername());
         memory.getLastSearchUser().remove(deleteUser.getUsername());
         memory.getLastTimestamp().remove(deleteUser.getUsername());
         memory.getCurrentSelect().remove(deleteUser.getUsername());

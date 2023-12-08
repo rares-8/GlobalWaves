@@ -23,9 +23,11 @@ public abstract class SwitchConnectionStatus {
         commandResult.put("timestamp", timestamp);
 
         int ok = 0;
-        for (User user : library.getUsers()) {
-            if (user.getUsername().equals(username)) {
+        User user = null;
+        for (User currentUser : library.getUsers()) {
+            if (currentUser.getUsername().equals(username)) {
                 ok = 1;
+                user = currentUser;
                 break;
             }
         }
@@ -35,7 +37,11 @@ public abstract class SwitchConnectionStatus {
             return commandResult;
         }
 
-        // TODO CHANGE THIS AFTER IMPLEMENTING ADD USER
+        if (!user.getType().equals("user")) {
+            commandResult.put("message", username + " is not a normal user.");
+            return commandResult;
+        }
+
         if (memory.getConnectionStatus().containsKey(username)) {
             memory.getConnectionStatus().remove(username);
             commandResult.put("message",  username + " has changed status successfully.");

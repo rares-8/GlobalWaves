@@ -23,6 +23,16 @@ public final class Album extends Playlist {
     }
 
     @Override
+    public Integer getTotalLikes() {
+        return super.getTotalLikes();
+    }
+
+    @Override
+    public void setTotalLikes(Integer totalLikes) {
+        super.setTotalLikes(totalLikes);
+    }
+
+    @Override
     public String getDescription() {
         return description;
     }

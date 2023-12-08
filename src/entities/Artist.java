@@ -68,4 +68,14 @@ public final class Artist extends User {
     public ArrayList<Merch> getMerchandise() {
         return merchandise;
     }
+
+    @Override
+    public Integer getTotalLikes() {
+        return super.getTotalLikes();
+    }
+
+    @Override
+    public void setTotalLikes(Integer totalLikes) {
+        super.setTotalLikes(totalLikes);
+    }
 }

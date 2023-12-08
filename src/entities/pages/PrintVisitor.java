@@ -14,7 +14,8 @@ public final class PrintVisitor implements Visitor {
     public String visit(final HomePage homePage, final String username,
                         final UserMemory memory, final Library library) {
         StringBuilder result = new StringBuilder();
-        if (memory.getLikedSongs().containsKey(username)) {
+        if (memory.getLikedSongs().containsKey(username)
+        && !memory.getLikedSongs().get(username).isEmpty()) {
             ArrayList<Song> likedSongs = sortedSongs(memory, username);
 
             result.append("Liked songs:\n\t[");
@@ -27,7 +28,8 @@ public final class PrintVisitor implements Visitor {
             result.append("Liked songs:\n\t[]\n\n");
         }
 
-        if (memory.getFollowedPlaylists().containsKey(username)) {
+        if (memory.getFollowedPlaylists().containsKey(username)
+        && !memory.getFollowedPlaylists().get(username).isEmpty()) {
             ArrayList<Playlist> followedPlaylists = new ArrayList<>();
             ArrayList<Integer> likes = new ArrayList<>();
             for (Audio playlist : memory.getFollowedPlaylists().get(username)) {
@@ -41,6 +43,7 @@ public final class PrintVisitor implements Visitor {
                 followedPlaylists.add(newPlaylist);
             }
 
+            result.append("Followed playlists:\n\t[");
             for (int i = 0; i < followedPlaylists.size(); i++) {
                 int maxLikes = -1;
                 for (Integer iterator : likes) {
@@ -49,12 +52,12 @@ public final class PrintVisitor implements Visitor {
                     }
                 }
                 int index = likes.indexOf(maxLikes);
-                result.append(followedPlaylists.get(index)).append(", ");
+                result.append(followedPlaylists.get(index).getName()).append(", ");
                 followedPlaylists.remove(index);
                 likes.remove(index);
             }
             result = new StringBuilder(result.substring(0, result.length() - 2));
-            result.append("]\n\n");
+            result.append("]");
         } else {
             result.append("Followed playlists:\n\t[]");
         }
@@ -107,7 +110,7 @@ public final class PrintVisitor implements Visitor {
             result = new StringBuilder(result.substring(0, result.length() - 2));
             result.append("]");
         } else {
-            result.append("Event:\n\t[]");
+            result.append("Events:\n\t[]");
         }
         return result.toString();
     }
@@ -175,9 +178,9 @@ public final class PrintVisitor implements Visitor {
         }
 
 
-        if (memory.getLikedSongs().containsKey(username)) {
-            ArrayList<Song> likedSongs = sortedSongs(memory, username);
-
+        if (memory.getLikedSongs().containsKey(username)
+        && !memory.getLikedSongs().get(username).isEmpty()) {
+            ArrayList<Song> likedSongs = memory.getLikedSongs().get(username);
             result.append("Liked songs:\n\t[");
             for (Song likedSong : likedSongs) {
                 result.append(likedSong.getName()).append(" - ");
@@ -187,6 +190,42 @@ public final class PrintVisitor implements Visitor {
             result.append("]\n\n");
         } else {
             result.append("Liked songs:\n\t[]\n\n");
+        }
+
+        if (memory.getFollowedPlaylists().containsKey(username)
+                && !memory.getFollowedPlaylists().get(username).isEmpty()) {
+            ArrayList<Playlist> followedPlaylists = new ArrayList<>();
+            ArrayList<Integer> likes = new ArrayList<>();
+            for (Audio playlist : memory.getFollowedPlaylists().get(username)) {
+                int playlistLikes = 0;
+                for (Song song : playlist.getPlaylistSongs()) {
+                    playlistLikes += song.getLikes();
+                }
+                Playlist newPlaylist = new Playlist();
+                newPlaylist.setName(playlist.getName());
+                newPlaylist.setOwner(playlist.getOwner());
+                likes.add(playlistLikes);
+                followedPlaylists.add(newPlaylist);
+            }
+
+            result.append("Followed playlists:\n\t[");
+            for (int i = 0; i < followedPlaylists.size(); i++) {
+                int maxLikes = -1;
+                for (Integer iterator : likes) {
+                    if (maxLikes < iterator) {
+                        maxLikes = iterator;
+                    }
+                }
+                int index = likes.indexOf(maxLikes);
+                result.append(followedPlaylists.get(index).getName()).append(" - ");
+                result.append(followedPlaylists.get(index).getOwner()).append(", ");
+                followedPlaylists.remove(index);
+                likes.remove(index);
+            }
+            result = new StringBuilder(result.substring(0, result.length() - 2));
+            result.append("]");
+        } else {
+            result.append("Followed playlists:\n\t[]");
         }
 
         return result.toString();
@@ -206,7 +245,7 @@ public final class PrintVisitor implements Visitor {
             likedSongs.add(newSong);
         }
         // sort songs by total number of likes
-        Comparator<Song> byLikes = Comparator.comparingInt(Song::getLikes);
+        Comparator<Song> byLikes = (Song o1, Song o2) -> o2.getLikes() - o1.getLikes();
         likedSongs.sort(byLikes);
         if (likedSongs.size() > RESULT_MAX_SIZE) {
             likedSongs = new ArrayList<>(likedSongs.subList(0, RESULT_MAX_SIZE));

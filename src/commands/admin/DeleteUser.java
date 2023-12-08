@@ -50,7 +50,7 @@ public abstract class DeleteUser {
                 deleteHost(user, library, memory, commandResult);
                 break;
             case "artist":
-                deleteArtist(user, library, memory, commandResult, timestamp);
+                deleteArtist(user, library, memory, commandResult);
                 break;
             default:
                 System.out.println("Error deleting user - invalid type");
@@ -68,7 +68,7 @@ public abstract class DeleteUser {
      * @param commandResult - result for deleteUser command
      */
     private static void deleteArtist(final User deleteUser, final Library library,
-                                     final UserMemory memory, final ObjectNode commandResult, Integer timestamp) {
+                                     final UserMemory memory, final ObjectNode commandResult) {
         boolean ok = true;
         /* artist cannot be deleted if user is listening to owned album */
         for (User user : library.getUsers()) {
@@ -134,19 +134,22 @@ public abstract class DeleteUser {
      * @param memory     - database
      */
     private static void clearUser(final User deleteUser, final Library library,
-                                    final UserMemory memory) {
+                                  final UserMemory memory) {
         library.getUsers().remove(deleteUser);
         library.getSongs().removeIf(song -> song.getArtist().equals(deleteUser.getUsername()));
 
         // remove artist playlists from public followed playlists
-        for (Map.Entry<String, ArrayList<Audio>> entry : memory.getFollowedPlaylists().entrySet()) {
+        for (Map.Entry<String, ArrayList<Audio>> entry
+                : memory.getFollowedPlaylists().entrySet()) {
             String key = entry.getKey();
             ArrayList<Audio> playlists = entry.getValue();
-            playlists.removeIf(playlistBackup -> playlistBackup.getOwner().equals(deleteUser.getUsername()));
+            playlists.removeIf(playlistBackup ->
+                    playlistBackup.getOwner().equals(deleteUser.getUsername()));
         }
 
         // remove artist playlists from public playlists
-        memory.getPublicPlaylists().removeIf(playlist -> playlist.getOwner().equals(deleteUser.getUsername()));
+        memory.getPublicPlaylists().removeIf(playlist ->
+                playlist.getOwner().equals(deleteUser.getUsername()));
 
         // remove liked songs
         for (Map.Entry<String, ArrayList<Song>> entry : memory.getLikedSongs().entrySet()) {
@@ -247,7 +250,8 @@ public abstract class DeleteUser {
                 }
             }
         }
-        library.getPodcasts().removeIf(podcast -> podcast.getOwner().equals(deleteUser.getUsername()));
+        library.getPodcasts().removeIf(podcast ->
+                podcast.getOwner().equals(deleteUser.getUsername()));
     }
 
     /**

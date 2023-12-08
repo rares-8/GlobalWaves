@@ -75,7 +75,7 @@ public final class Artist extends User {
     }
 
     @Override
-    public void setTotalLikes(Integer totalLikes) {
+    public void setTotalLikes(final Integer totalLikes) {
         super.setTotalLikes(totalLikes);
     }
 }

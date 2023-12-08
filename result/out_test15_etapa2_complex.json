@@ -26051,4 +26051,8 @@
   "command" : "getTop5Albums",
   "timestamp" : 14849,
   "result" : [ "Bad Guide", "Teen Dreams", "Bad Hood", "Heroic Hood", "Groovy View" ]
+}, {
+  "command" : "getTop5Artists",
+  "timestamp" : 14849,
+  "result" : [ "leslie27", "amanda16", "jacobdean", "barmstrong", "cbutler" ]
 } ]

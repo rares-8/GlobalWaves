@@ -118,7 +118,7 @@ public abstract class RemoveAlbum {
     /**
      * Clear everything associated with an album
      *
-     * @param artist  - username of artist owning the album
+     * @param artist    - username of artist owning the album
      * @param albumName - album that should be deleted
      * @param memory    - database
      * @param library   - contains songs, playlists, podcasts, users
@@ -134,7 +134,8 @@ public abstract class RemoveAlbum {
             String key = entry.getKey();
             ArrayList<Playlist> playlists = entry.getValue();
             for (Playlist playlist : playlists) {
-                playlist.getPlaylistSongs().removeIf(song -> song.getAlbum().equals(albumName) && song.getArtist().equals(artist.getUsername()));
+                playlist.getPlaylistSongs().removeIf(song -> song.getAlbum().equals(albumName)
+                        && song.getArtist().equals(artist.getUsername()));
             }
         }
         artist.getAlbums().removeIf(album -> album.getName().equals(albumName));

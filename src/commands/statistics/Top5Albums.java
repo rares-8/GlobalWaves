@@ -16,7 +16,7 @@ public abstract class Top5Albums {
     /**
      * @param memory    - database
      * @param timestamp - current timestamp
-     * @param library - contains podcasts, songs, users
+     * @param library   - contains podcasts, songs, users
      * @return top albums
      */
     public static JsonNode topAlbums(final UserMemory memory, final Integer timestamp,
@@ -45,7 +45,8 @@ public abstract class Top5Albums {
         }
 
         Comparator<Playlist> byName = Comparator.comparing(Playlist::getName);
-        Comparator<Playlist> byLikes = (Playlist o1, Playlist o2) -> o2.getTotalLikes() - o1.getTotalLikes();
+        Comparator<Playlist> byLikes = (Playlist o1, Playlist o2) ->
+                o2.getTotalLikes() - o1.getTotalLikes();
 
         playlists.sort(byName);
         playlists.sort(byLikes);

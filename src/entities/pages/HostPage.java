@@ -3,7 +3,7 @@ package entities.pages;
 import entities.Library;
 import user.memory.UserMemory;
 
-public class HostPage extends Page {
+public final class HostPage extends Page {
     private String owner;
 
     public HostPage(final String owner) {

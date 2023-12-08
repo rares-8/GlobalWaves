@@ -25967,4 +25967,8 @@
   "command" : "getTop5Albums",
   "timestamp" : 14850,
   "result" : [ "Bad Dirt", "Teen Revolution", "Breezy View", "Groovy Harmonies", "Alone Hood" ]
+}, {
+  "command" : "getTop5Artists",
+  "timestamp" : 14850,
+  "result" : [ "jacobdean", "glester", "mccarthyluis", "jsimpson", "amanda16" ]
 } ]

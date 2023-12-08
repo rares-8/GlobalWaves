@@ -26,11 +26,19 @@ public class Playlist implements Audio {
 
     }
 
+    /**
+     *
+     * @return total likes for all songs
+     */
     public Integer getTotalLikes() {
         return totalLikes;
     }
 
-    public void setTotalLikes(Integer totalLikes) {
+    /**
+     *
+     * @param totalLikes total likes for all songs
+     */
+    public void setTotalLikes(final Integer totalLikes) {
         this.totalLikes = totalLikes;
     }
 

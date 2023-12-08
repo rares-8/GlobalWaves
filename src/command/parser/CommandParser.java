@@ -51,7 +51,8 @@ public final class CommandParser {
         Integer timestamp = getTimestamp(currentCommand);
 
         for (User user : library.getUsers()) {
-            if (user.getType().equals("user") && memory.getConnectionStatus().containsKey(user.getUsername())) {
+            if (user.getType().equals("user")
+                    && memory.getConnectionStatus().containsKey(user.getUsername())) {
                 boolean isPaused = memory.getIsPaused().containsKey(user.getUsername());
                 if (!isPaused) {
                     UpdatePlayer.updatePlayer(user.getUsername(), timestamp, memory);
@@ -179,6 +180,7 @@ public final class CommandParser {
                 outputs.add(Top5Albums.topAlbums(memory, timestamp, library));
                 break;
             case "getTop5Artists":
+                outputs.add(Top5Artists.topArtists(memory, timestamp, library));
                 break;
             case "getAllUsers":
                 outputs.add(AllUsers.getUsers(memory, timestamp, library));

@@ -4,12 +4,10 @@ import com.fasterxml.jackson.databind.JsonNode;
 import com.fasterxml.jackson.databind.ObjectMapper;
 import com.fasterxml.jackson.databind.node.ObjectNode;
 import entities.*;
-import entities.pages.Page;
 import user.memory.UserMemory;
 import utils.CheckUser;
 
 import java.util.ArrayList;
-import java.util.Map;
 
 public abstract class RemovePodcast {
     /**
@@ -57,7 +55,8 @@ public abstract class RemovePodcast {
         }
 
         if (!ok) {
-            commandResult.put("message", username + " doesn't have a podcast with the given name.");
+            commandResult.put("message", username + " doesn't have a"
+                    + " podcast with the given name.");
             return commandResult;
         }
 
@@ -92,7 +91,7 @@ public abstract class RemovePodcast {
      * @param library     - contains songs, playlists, podcasts, users
      */
     private static void clearPodcast(final User host, final String podcastName,
-                                   final UserMemory memory, final Library library) {
+                                     final UserMemory memory, final Library library) {
         for (User user : library.getUsers()) {
             if (memory.getLoadedPodcasts().containsKey(user.getUsername())) {
                 ArrayList<Podcast> loadedPodcasts =
@@ -108,7 +107,8 @@ public abstract class RemovePodcast {
                 }
             }
         }
-        library.getPodcasts().removeIf(podcast -> podcast.getOwner().equals(host.getUsername()) && podcast.getName().equals(podcastName));
+        library.getPodcasts().removeIf(podcast -> podcast.getOwner().equals(host.getUsername())
+                && podcast.getName().equals(podcastName));
         host.getPodcasts().removeIf(podcast -> podcast.getName().equals(podcastName));
     }
 }

@@ -123,11 +123,19 @@ public class User {
         return null;
     }
 
+    /**
+     *
+     * @return total likes from all playlists owner by user
+     */
     public Integer getTotalLikes() {
         return totalLikes;
     }
 
-    public void setTotalLikes(Integer totalLikes) {
+    /**
+     *
+     * @param totalLikes - total likes from all playlists owned by user
+     */
+    public void setTotalLikes(final Integer totalLikes) {
         this.totalLikes = totalLikes;
     }
 }

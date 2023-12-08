@@ -28,7 +28,7 @@ public final class Album extends Playlist {
     }
 
     @Override
-    public void setTotalLikes(Integer totalLikes) {
+    public void setTotalLikes(final Integer totalLikes) {
         super.setTotalLikes(totalLikes);
     }
 

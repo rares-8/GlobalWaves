@@ -16,6 +16,10 @@ public class Page implements Visitable {
         return v.visit(this, username, memory, library);
     }
 
+    /**
+     *
+     * @return owner of page
+     */
     public String getOwner() {
         return "";
     }

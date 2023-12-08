@@ -15,14 +15,35 @@ public interface Visitor {
     String visit(HomePage homePage, String username, UserMemory memory, Library library);
 
     /**
-     * Print the homePage
+     * Print the artistPage
      *
      * @param artistPage - print this
-     * @param owner - owner of page
+     * @param owner      - owner of page
+     * @param memory     - database
+     * @param library    - contains podcasts, users, songs
+     */
+    String visit(ArtistPage artistPage, String owner, UserMemory memory, Library library);
+
+    /**
+     * Print the hostPage
+     *
+     * @param hostPage - print this
+     * @param owner    - owner of page
      * @param memory   - database
      * @param library  - contains podcasts, users, songs
      */
-    String visit(ArtistPage artistPage, String owner, UserMemory memory, Library library);
+    String visit(HostPage hostPage, String owner, UserMemory memory, Library library);
+
+    /**
+     * Print the likedContentPage
+     *
+     * @param likedContentPage - print this
+     * @param owner    - owner of page
+     * @param memory   - database
+     * @param library  - contains podcasts, users, songs
+     */
+    String visit(LikedContentPage likedContentPage, String owner, UserMemory memory,
+                 Library library);
 
     /**
      * Print a generic page

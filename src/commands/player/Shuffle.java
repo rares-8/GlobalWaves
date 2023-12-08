@@ -34,7 +34,7 @@ public abstract class Shuffle {
         } else if (!memory.getLoadedAudio().get(username).getAudioType().equals("playlist")
         && !memory.getLoadedAudio().get(username).getAudioType().equals("album")) {
             commandResult.put("message",
-                    "The loaded source is not a playlist.");
+                    "The loaded source is not a playlist or an album.");
             return commandResult;
         }
 

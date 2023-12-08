@@ -472,7 +472,7 @@
   "command" : "printCurrentPage",
   "user" : "carol19",
   "timestamp" : 5000,
-  "message" : "Liked songs:\n\t[Digital Dreams]\n\nentities.Playlist@d6da883]\n\n"
+  "message" : "Liked songs:\n\t[Digital Dreams]\n\nentities.Playlist@290dbf45]\n\n"
 }, {
   "command" : "status",
   "user" : "bob35",

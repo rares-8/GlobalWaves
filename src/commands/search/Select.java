@@ -6,6 +6,7 @@ import com.fasterxml.jackson.databind.node.ObjectNode;
 import entities.Audio;
 import entities.User;
 import entities.pages.ArtistPage;
+import entities.pages.HostPage;
 import user.memory.UserMemory;
 
 import java.util.ArrayList;
@@ -47,7 +48,11 @@ public abstract class Select {
                 if (selectedUser.getType().equals("artist")) {
                     memory.getCurrentPage().put(username,
                             new ArtistPage(selectedUser.getUsername()));
+                } else if (selectedUser.getType().equals("host")) {
+                    memory.getCurrentPage().put(username,
+                            new HostPage(selectedUser.getUsername()));
                 }
+
                 commandResult.put("message", "Successfully selected "
                         + selectedUser.getUsername() + "'s page.");
             }

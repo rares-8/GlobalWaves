@@ -8755,7 +8755,7 @@
   "command" : "printCurrentPage",
   "user" : "alice22",
   "timestamp" : 10280,
-  "message" : "Liked songs:\n\t[]Followed playlists:\n\t[]"
+  "message" : "Liked songs:\n\t[]\n\nFollowed playlists:\n\t[]"
 }, {
   "command" : "search",
   "user" : "alice22",
@@ -8796,12 +8796,12 @@
   "command" : "printCurrentPage",
   "user" : "alice22",
   "timestamp" : 10280,
-  "message" : "Liked songs:\n\t[]Followed playlists:\n\t[]"
+  "message" : "Liked songs:\n\t[]\n\nFollowed playlists:\n\t[]"
 }, {
   "command" : "printCurrentPage",
   "user" : "alice22",
   "timestamp" : 10280,
-  "message" : "Liked songs:\n\t[]Followed playlists:\n\t[]"
+  "message" : "Liked songs:\n\t[]\n\nFollowed playlists:\n\t[]"
 }, {
   "command" : "printCurrentPage",
   "user" : "bob35",
@@ -9265,7 +9265,7 @@
   "command" : "printCurrentPage",
   "user" : "alice22",
   "timestamp" : 10380,
-  "message" : "Liked songs:\n\t[]Followed playlists:\n\t[]"
+  "message" : "Liked songs:\n\t[]\n\nFollowed playlists:\n\t[]"
 }, {
   "command" : "search",
   "user" : "alice22",
@@ -9306,12 +9306,12 @@
   "command" : "printCurrentPage",
   "user" : "alice22",
   "timestamp" : 10380,
-  "message" : "Liked songs:\n\t[]Followed playlists:\n\t[]"
+  "message" : "Liked songs:\n\t[]\n\nFollowed playlists:\n\t[]"
 }, {
   "command" : "printCurrentPage",
   "user" : "alice22",
   "timestamp" : 10380,
-  "message" : "Liked songs:\n\t[]Followed playlists:\n\t[]"
+  "message" : "Liked songs:\n\t[]\n\nFollowed playlists:\n\t[]"
 }, {
   "command" : "printCurrentPage",
   "user" : "bob35",
@@ -9775,7 +9775,7 @@
   "command" : "printCurrentPage",
   "user" : "alice22",
   "timestamp" : 10480,
-  "message" : "Liked songs:\n\t[]Followed playlists:\n\t[]"
+  "message" : "Liked songs:\n\t[]\n\nFollowed playlists:\n\t[]"
 }, {
   "command" : "search",
   "user" : "alice22",
@@ -9816,12 +9816,12 @@
   "command" : "printCurrentPage",
   "user" : "alice22",
   "timestamp" : 10480,
-  "message" : "Liked songs:\n\t[]Followed playlists:\n\t[]"
+  "message" : "Liked songs:\n\t[]\n\nFollowed playlists:\n\t[]"
 }, {
   "command" : "printCurrentPage",
   "user" : "alice22",
   "timestamp" : 10480,
-  "message" : "Liked songs:\n\t[]Followed playlists:\n\t[]"
+  "message" : "Liked songs:\n\t[]\n\nFollowed playlists:\n\t[]"
 }, {
   "command" : "printCurrentPage",
   "user" : "bob35",
@@ -10285,7 +10285,7 @@
   "command" : "printCurrentPage",
   "user" : "alice22",
   "timestamp" : 10580,
-  "message" : "Liked songs:\n\t[]Followed playlists:\n\t[]"
+  "message" : "Liked songs:\n\t[]\n\nFollowed playlists:\n\t[]"
 }, {
   "command" : "search",
   "user" : "alice22",

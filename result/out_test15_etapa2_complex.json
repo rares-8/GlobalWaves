@@ -5108,6 +5108,11 @@
   "timestamp" : 6041,
   "result" : [ "alice22", "bob35", "carol19", "david27", "emily30", "frank21", "grace25", "henry26", "irene33", "jack29" ]
 }, {
+  "command" : "deleteUser",
+  "user" : "cbutler",
+  "timestamp" : 6046,
+  "message" : "cbutler can't be deleted."
+}, {
   "command" : "shuffle",
   "user" : "carol19",
   "timestamp" : 6051,
@@ -8834,7 +8839,7 @@
   "command" : "printCurrentPage",
   "user" : "alice22",
   "timestamp" : 10279,
-  "message" : "Liked songs:\n\t[]Followed playlists:\n\t[]"
+  "message" : "Liked songs:\n\t[]\n\nFollowed playlists:\n\t[]"
 }, {
   "command" : "search",
   "user" : "alice22",
@@ -8987,7 +8992,7 @@
   "command" : "printCurrentPage",
   "user" : "david27",
   "timestamp" : 10309,
-  "message" : "Liked songs:\n\t[]Followed playlists:\n\t[]"
+  "message" : "Liked songs:\n\t[]\n\nFollowed playlists:\n\t[]"
 }, {
   "command" : "search",
   "user" : "david27",

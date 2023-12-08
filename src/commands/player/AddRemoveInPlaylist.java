@@ -28,7 +28,7 @@ public abstract class AddRemoveInPlaylist {
             commandResult.put("message", "Please load a source before adding to"
                     + " or removing from the playlist.");
             return commandResult;
-        } else if (!memory.getLoadedAudio().get(username).getAudioType().equals("song")) {
+        } else if (memory.getLoadedAudio().get(username).getAudioType().equals("podcast")) {
             commandResult.put("message", "The loaded source is not a song.");
             return commandResult;
         } else if (!memory.getUserPlaylists().containsKey(username)) {
@@ -42,11 +42,17 @@ public abstract class AddRemoveInPlaylist {
         Playlist selectedPlaylist =
                 memory.getUserPlaylists().get(username).get(playlistId - 1);
 
-        Audio loadedSong = memory.getLoadedAudio().get(username);
+        Audio loadedAudio;
+        if (memory.getLoadedAudio().get(username).getAudioType().equals("song")) {
+            loadedAudio = memory.getLoadedAudio().get(username);
+        } else {
+            Integer index = memory.getCurrentIndex().get(username);
+            loadedAudio = memory.getLoadedAudio().get(username).getPlaylistSongs().get(index);
+        }
         int songExists = 0, songIndex;
         // check if loaded Song is already in the playlist
         for (songIndex = 0; songIndex < selectedPlaylist.getPlaylistSongs().size(); songIndex++) {
-            if (loadedSong == selectedPlaylist.getPlaylistSongs().get(songIndex)) {
+            if (loadedAudio == selectedPlaylist.getPlaylistSongs().get(songIndex)) {
                 songExists = 1;
                 break;
             }
@@ -57,7 +63,7 @@ public abstract class AddRemoveInPlaylist {
             selectedPlaylist.getPlaylistSongs().remove(songIndex);
         } else {
             commandResult.put("message", "Successfully added to playlist.");
-            selectedPlaylist.getPlaylistSongs().add((Song) loadedSong);
+            selectedPlaylist.getPlaylistSongs().add((Song) loadedAudio);
         }
         return commandResult;
     }

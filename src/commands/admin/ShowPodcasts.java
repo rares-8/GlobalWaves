@@ -32,7 +32,7 @@ public abstract class ShowPodcasts {
         for (Podcast podcast : host.getPodcasts()) {
             ObjectNode currentPodcast = mapper.createObjectNode();
             currentPodcast.put("name", podcast.getName());
-            ArrayNode podcastEpisodes = currentPodcast.putArray("songs");
+            ArrayNode podcastEpisodes = currentPodcast.putArray("episodes");
             for (Episode episode : podcast.getEpisodes()) {
                 podcastEpisodes.add(episode.getName());
             }

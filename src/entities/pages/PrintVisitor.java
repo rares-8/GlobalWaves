@@ -13,21 +13,9 @@ public final class PrintVisitor implements Visitor {
     @Override
     public String visit(final HomePage homePage, final String username,
                         final UserMemory memory, final Library library) {
-        ArrayList<Song> likedSongs = new ArrayList<>();
         StringBuilder result = new StringBuilder();
         if (memory.getLikedSongs().containsKey(username)) {
-            for (Song song : memory.getLikedSongs().get(username)) {
-                Song newSong = new Song();
-                newSong.setLikes(song.getLikes());
-                newSong.setName(song.getName());
-                likedSongs.add(newSong);
-            }
-            // sort songs by total number of likes
-            Comparator<Song> byLikes = Comparator.comparingInt(Song::getLikes);
-            likedSongs.sort(byLikes);
-            if (likedSongs.size() > RESULT_MAX_SIZE) {
-                likedSongs = new ArrayList<>(likedSongs.subList(0, RESULT_MAX_SIZE));
-            }
+            ArrayList<Song> likedSongs = sortedSongs(memory, username);
 
             result.append("Liked songs:\n\t[");
             for (Song likedSong : likedSongs) {
@@ -36,7 +24,7 @@ public final class PrintVisitor implements Visitor {
             result = new StringBuilder(result.substring(0, result.length() - 2));
             result.append("]\n\n");
         } else {
-            result.append("Liked songs:\n\t[]");
+            result.append("Liked songs:\n\t[]\n\n");
         }
 
         if (memory.getFollowedPlaylists().containsKey(username)) {
@@ -122,6 +110,109 @@ public final class PrintVisitor implements Visitor {
             result.append("Event:\n\t[]");
         }
         return result.toString();
+    }
+
+    @Override
+    public String visit(final HostPage hostPage, final String owner,
+                        final UserMemory memory, final Library library) {
+        StringBuilder result = new StringBuilder();
+        User host = null;
+        for (User user : library.getUsers()) {
+            if (user.getUsername().equals(owner)) {
+                host = user;
+                break;
+            }
+        }
+
+        if (!host.getPodcasts().isEmpty()) {
+            result.append("Podcasts:\n\t[");
+
+            for (Podcast podcast : host.getPodcasts()) {
+                result.append(podcast.getName()).append(":\n\t");
+                if (!podcast.getEpisodes().isEmpty()) {
+                    result.append("[");
+                    for (Episode episode : podcast.getEpisodes()) {
+                        result.append(episode.getName()).append(" - ");
+                        result.append(episode.getDescription()).append(", ");
+                    }
+                    result = new StringBuilder(result.substring(0, result.length() - 2));
+                    result.append("]\n, ");
+                } else {
+                    result.append("[]\n\n, ");
+                }
+            }
+        } else {
+            result.append("Podcasts:\n\t[, ");
+        }
+        result = new StringBuilder(result.substring(0, result.length() - 2));
+        result.append("]\n\n");
+
+        if (!host.getAnnouncements().isEmpty()) {
+            result.append("Announcements:\n\t[");
+            for (Announcement announcement : host.getAnnouncements()) {
+                result.append(announcement.getName()).append(":\n\t");
+                result.append(announcement.getDescription());
+            }
+            result.append("\n");
+            result.append("]");
+        } else {
+            result.append("Announcements:\n\t[]\n\n");
+        }
+
+        return result.toString();
+    }
+
+    @Override
+    public String visit(final LikedContentPage likedContentPage, final String username,
+                        final UserMemory memory, final Library library) {
+        StringBuilder result = new StringBuilder();
+        User user = null;
+        for (User currentUser : library.getUsers()) {
+            if (currentUser.getUsername().equals(username)) {
+                user = currentUser;
+                break;
+            }
+        }
+
+
+        if (memory.getLikedSongs().containsKey(username)) {
+            ArrayList<Song> likedSongs = sortedSongs(memory, username);
+
+            result.append("Liked songs:\n\t[");
+            for (Song likedSong : likedSongs) {
+                result.append(likedSong.getName()).append(" - ");
+                result.append(likedSong.getArtist()).append(", ");
+            }
+            result = new StringBuilder(result.substring(0, result.length() - 2));
+            result.append("]\n\n");
+        } else {
+            result.append("Liked songs:\n\t[]\n\n");
+        }
+
+        return result.toString();
+    }
+
+    /**
+     *
+     * @param memory - database
+     * @return - songs sorted by number of likes
+     */
+    public ArrayList<Song> sortedSongs(final UserMemory memory, final String username) {
+        ArrayList<Song> likedSongs = new ArrayList<>();
+        for (Song song : memory.getLikedSongs().get(username)) {
+            Song newSong = new Song();
+            newSong.setLikes(song.getLikes());
+            newSong.setName(song.getName());
+            likedSongs.add(newSong);
+        }
+        // sort songs by total number of likes
+        Comparator<Song> byLikes = Comparator.comparingInt(Song::getLikes);
+        likedSongs.sort(byLikes);
+        if (likedSongs.size() > RESULT_MAX_SIZE) {
+            likedSongs = new ArrayList<>(likedSongs.subList(0, RESULT_MAX_SIZE));
+        }
+
+        return likedSongs;
     }
 
     @Override

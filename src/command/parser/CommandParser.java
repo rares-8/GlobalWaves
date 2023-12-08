@@ -5,6 +5,7 @@ import com.fasterxml.jackson.databind.JsonNode;
 import com.fasterxml.jackson.databind.ObjectMapper;
 import com.fasterxml.jackson.databind.node.ArrayNode;
 import commands.admin.AddUser;
+import commands.admin.DeleteUser;
 import commands.admin.ShowAlbums;
 import commands.admin.ShowPodcasts;
 import commands.artist.AddAlbum;
@@ -13,6 +14,7 @@ import commands.artist.AddMerch;
 import commands.artist.RemoveEvent;
 import commands.host.AddAnnouncement;
 import commands.host.AddPodcast;
+import commands.host.RemoveAnnouncement;
 import commands.player.*;
 import commands.playlist.CreatePlaylist;
 import commands.playlist.FollowPlaylist;
@@ -53,27 +55,14 @@ public final class CommandParser {
         String command = getCommand(currentCommand);
         Integer timestamp = getTimestamp(currentCommand);
 
-        if (currentCommand.has("username")
-                && memory.getConnectionStatus().containsKey(getUsername(currentCommand))) {
-            // TODO DELETE THIS LATER
-            int ok = 0;
-            for (User user : library.getUsers()) {
-                if (user.getUsername().equals(getUsername(currentCommand))) {
-                    ok = 1;
-                    break;
+        for (User user : library.getUsers()) {
+            if (user.getType().equals("user") && memory.getConnectionStatus().containsKey(user.getUsername())) {
+                boolean isPaused = memory.getIsPaused().containsKey(user.getUsername());
+                if (!isPaused) {
+                    UpdatePlayer.updatePlayer(user.getUsername(), timestamp, memory);
+                } else {
+                    UpdateTimestamp.updateTimestamp(user.getUsername(), timestamp, memory);
                 }
-            }
-            if (ok == 0) {
-                return;
-            }
-            boolean isPaused = memory.getIsPaused().containsKey(getUsername(currentCommand));
-            boolean update = command.equals("load") || command.equals("next")
-                    || command.equals("prev") || command.equals("forward")
-                    || command.equals("backward");
-            if (!isPaused) {
-                UpdatePlayer.updatePlayer(getUsername(currentCommand), timestamp, memory);
-            } else if (update) {
-                UpdateTimestamp.updateTimestamp(getUsername(currentCommand), timestamp, memory);
             }
         }
 
@@ -159,11 +148,17 @@ public final class CommandParser {
             case "addAnnouncement":
                 addAnnouncementParse(currentCommand, memory, timestamp);
                 break;
+            case "removeAnnouncement":
+                removeAnnouncementParse(currentCommand, memory, timestamp);
+                break;
             case "addMerch":
                 addMerchParse(currentCommand, memory, timestamp);
                 break;
             case "getTop5Songs":
                 outputs.add(TopSongs.topSongs(timestamp, memory, library));
+                break;
+            case "deleteUser":
+                deleteUserParse(currentCommand, memory, timestamp);
                 break;
             case "getTop5Playlists":
                 outputs.add(TopPlaylists.topPlaylists(timestamp, memory));
@@ -178,10 +173,47 @@ public final class CommandParser {
                 outputs.add(AllUsers.getUsers(memory, timestamp, library));
                 break;
             default:
-                //System.out.println("Unknown command : " + command);
+                System.out.println("Unknown command : " + command);
         }
     }
 
+    /**
+     * Get the rest of the fields from "deleteUser" command and call method
+     * to solve the command
+     *
+     * @param currentCommand - command from input file
+     * @param memory         - database
+     * @param timestamp      - timestamp from command
+     */
+    private void deleteUserParse(final JsonNode currentCommand, final UserMemory memory,
+                                 final Integer timestamp) {
+        String username = getUsername(currentCommand);
+        outputs.add(DeleteUser.deleteUser(username, timestamp, memory, library));
+    }
+
+    /**
+     * Get the rest of the fields from "removeAnnouncement" command and call method
+     * to solve the command
+     *
+     * @param currentCommand - command from input file
+     * @param memory         - database
+     * @param timestamp      - timestamp from command
+     */
+    private void removeAnnouncementParse(final JsonNode currentCommand, final UserMemory memory,
+                                         final Integer timestamp) {
+        String username = getUsername(currentCommand);
+        String name = getName(currentCommand);
+        outputs.add(RemoveAnnouncement.removeAnnouncement(username, library, name, timestamp));
+    }
+
+    /**
+     * Get the rest of the fields from "showPodcasts" command and call method
+     * to solve the command
+     *
+     * @param currentCommand - command from input file
+     * @param memory         - database
+     * @param timestamp      - timestamp from command
+     */
     private void showPodcastsParse(final JsonNode currentCommand, final UserMemory memory,
                                    final Integer timestamp) {
         String username = getUsername(currentCommand);

@@ -164,8 +164,15 @@ public abstract class DeleteUser {
                 Song songBackup = iterator.next();
                 if (songBackup.getArtist().equals(deleteUser.getUsername())) {
                     iterator.remove();
-                    songBackup.setLikes(songBackup.getLikes() - 1);
                 }
+            }
+        }
+
+        // dislike liked songs for deleted user
+        if (memory.getLikedSongs().containsKey(deleteUser.getUsername())) {
+            ArrayList<Song> songs = memory.getLikedSongs().get(deleteUser.getUsername());
+            for (Song song : songs) {
+                song.setLikes(song.getLikes() - 1);
             }
         }
 

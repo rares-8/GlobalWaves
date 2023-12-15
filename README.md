@@ -69,6 +69,51 @@ In continuare o sa explic cateva dintre comenzile mai complicate din commands.
 - In functie de comanda, se preiau valorile din format Json si se trimit in una din clasele din commands. Toate clasele din commands returneaza un JsonNode, care se adauga la outputs. La fiecare comanda, obiectul UserMemory memory se modifica, iar fiecare schimbare facuta de un user se pune aici
 - La sfarsit, trebuie sters UserMemory, pentru ca altfel se pastreaza valorile de la un test la altul.
 
+## Design patterns folosite: ##
+- Singleton, pentru UserMemory
+
 -----------------------------------------------------------------------
 
 ### Etapa 2 ###
+
+** Am folosit implementarea mea de la etapa 1. **
+
+- ## Clase actualizate fata de prima etapa: ##
+	- UserMemory - am adaugat doua hashmap - uri noi, connectionStatus, unde se pastreaza daca un user este online / offline, si currentPage, unde se pastreaza pagina curenta pentru fiecare user
+	-  CommandParser, am schimbat logica de actualizare a timpului. Acum, la fiecare comanda, se actualizeaza playerul fiecarui user, in loc sa se actualizeze doar playerul userului care a dat comanda, cum am facut in prima etapa.
+	
+<br />
+
+- ## Functionalitati noi: ##
+	- ** Album ** entitate noua, care se comporta exact la fel ca un playlist. Am facut album o subclasa a lui playlist si asta a fost toata implementarea.
+	- ** Useri noi : artists si hosts ** - subclase ale clasei User, se comporta aproximativ la fel, dar pot adauga albume / podcasturi noi.
+	- ** Events, Announcements, Merchendise ** - comenzile de add / remove au fost destul de similare, adauga sau elimina dintr-o ArrayList de tipul Event, Announcement, Merch
+	- ** delete users, add users ** - explicate mai jos
+	- ** sistem de pagini ** - explicat mai jos
+## Comenzi dificile / explicatii suplimentare ##
+-  ** DeleteUser ** a fost cea mai lunga comanda, si mi s-a parut cea mai complicata, deci o sa explic mai bine ce am facut. In functie de tipul userului, se apeleaza una din trei metode: deleteUser, deleteHost, deleteArtist.
+	- **deleteHost** a fost cel mai usor : am verificat daca in playerul unui user este loaded un podcast de la hostul pe care vrem sa il stergem. In plus, am mai verificat si daca un user este pe pagina hostului. Daca nu se intampla niciuna din cele doua variante, atunci hostul se poate sterge, si se apeleaza **clearHost**, unde se elimina toate legaturile hostului cu programul. Se elimina din cele 3 liste pentru podcasturi (explicate mai sus, la prima etapa) toate podcasturile si episoadele hostului.
+	- **deleteArtist** exista 4 cazuri in care un artist nu poate fi sters: user care asculta album de la artist, user care asculta melodie de la artist, user care asculta un playlist care contine o melodie de la artist, user pe pagina artistului. Daca un artist poate fi sters, se apeleaza **clearUser**
+	- **deleteUser** un user nu poate fi sters daca un alt user asculta un album creat de acesta. Daca poate fi sters, se apeleaza **clearUser**
+	- **clearUser**
+			1. Se sterge userul din library
+			2. Se sterg melodiile din library, daca au fost create de userul sters
+			3. Se sterg playlisturile create de user din lista de playlisturi urmarite ale altor useri
+			4. Se sterg playlisturile din publicPlaylists
+			5. Se sterg melodiile din likedSongs
+			6. Se da unlike la melodiile apreciate de userul pe care vrem sa il stergem
+			7. Se sterg toate intrarile asociate userului din hasmap-urile din UserMemory
+
+## Sistemul de pagini: ##
+- Cand se adauga un user, se afla automat pe Home Page
+- Cand selecteaza un artist / host, se muta pe ArtistPage / Host Page
+- Daca un user da changePage, se poate duce pe likedContent / home Page
+- **Afisarea** : am folosit **Visitor** pentru a afisa paginile, pentru ca aveam o ierarhie de pagini, o singura comanda de implementat, deci Visitor a usurat destul de mult implementarea
+
+## Design patterns folosite: ##
+- Singleton - pentru UserMemory
+- Visitor - pentru afisarea paginilor
+
+<div align="center"><img src="https://tenor.com/view/listening-to-music-spongebob-gif-8009182.gif" width="300px"></div>
+
+

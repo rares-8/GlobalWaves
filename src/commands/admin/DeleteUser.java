@@ -3,7 +3,11 @@ package commands.admin;
 import com.fasterxml.jackson.databind.JsonNode;
 import com.fasterxml.jackson.databind.ObjectMapper;
 import com.fasterxml.jackson.databind.node.ObjectNode;
-import entities.*;
+import entities.Audio;
+import entities.Library;
+import entities.Podcast;
+import entities.Song;
+import entities.User;
 import entities.pages.Page;
 import user.memory.UserMemory;
 import utils.CheckUser;
@@ -13,7 +17,7 @@ import java.util.Iterator;
 import java.util.Map;
 
 public abstract class DeleteUser {
-    /**
+    /** Deletes a user and all things associated with user
      * @param username  - user that should be deleted
      * @param memory    - database
      * @param timestamp - current timestamp
@@ -138,7 +142,7 @@ public abstract class DeleteUser {
         library.getUsers().remove(deleteUser);
         library.getSongs().removeIf(song -> song.getArtist().equals(deleteUser.getUsername()));
 
-        // remove artist playlists from public followed playlists
+        // remove user playlists from followed playlists
         for (Map.Entry<String, ArrayList<Audio>> entry
                 : memory.getFollowedPlaylists().entrySet()) {
             String key = entry.getKey();
@@ -147,7 +151,7 @@ public abstract class DeleteUser {
                     playlistBackup.getOwner().equals(deleteUser.getUsername()));
         }
 
-        // remove artist playlists from public playlists
+        // remove user playlists from public playlists
         memory.getPublicPlaylists().removeIf(playlist ->
                 playlist.getOwner().equals(deleteUser.getUsername()));
 
@@ -165,6 +169,7 @@ public abstract class DeleteUser {
             }
         }
 
+        // clear everything associated with a user
         memory.getLastSearchAudio().remove(deleteUser.getUsername());
         memory.getFollowedPlaylists().remove(deleteUser.getUsername());
         memory.getLastSearchUser().remove(deleteUser.getUsername());

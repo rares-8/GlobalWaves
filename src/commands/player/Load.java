@@ -12,7 +12,7 @@ import java.util.ArrayList;
 import java.util.Map;
 
 public abstract class Load {
-    /**
+    /**Load an audio file in player
      * @param username  - user that issued the command
      * @param memory    - database
      * @param timestamp - current timestamp

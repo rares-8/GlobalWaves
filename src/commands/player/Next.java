@@ -3,13 +3,16 @@ package commands.player;
 import com.fasterxml.jackson.databind.JsonNode;
 import com.fasterxml.jackson.databind.ObjectMapper;
 import com.fasterxml.jackson.databind.node.ObjectNode;
-import entities.*;
+import entities.Episode;
+import entities.Playlist;
+import entities.Podcast;
+import entities.Song;
 import user.memory.UserMemory;
 
 import java.util.ArrayList;
 
 public abstract class Next {
-    /**
+    /**Go to the next audio file
      * @param username  - user that issued the command
      * @param memory    - database
      * @param timestamp - current timestamp

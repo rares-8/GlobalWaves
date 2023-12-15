@@ -12,7 +12,7 @@ import user.memory.UserMemory;
 import java.util.ArrayList;
 
 public abstract class Prev {
-    /**
+    /**Go to the previous audio file
      * @param username  - user that issued the command
      * @param memory    - database
      * @param timestamp - current timestamp

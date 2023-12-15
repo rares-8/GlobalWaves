@@ -1,6 +1,11 @@
 package user.memory;
 
-import entities.*;
+import entities.Audio;
+import entities.Episode;
+import entities.Playlist;
+import entities.Podcast;
+import entities.Song;
+import entities.User;
 import entities.pages.Page;
 
 import java.util.ArrayList;
@@ -10,7 +15,6 @@ import java.util.Map;
 /**
  * This class keeps all configurations made by users.
  * Instance variables:
- *
  * lastSearch - last search for every user
  * lastTimestamp - timestamp the last command was given at
  * currentSelect - currently selected audio file

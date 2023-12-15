@@ -9,8 +9,9 @@ import entities.pages.LikedContentPage;
 import user.memory.UserMemory;
 
 public abstract class ChangePage {
-    /**
+    /** Change user page to newPage
      * @param username  - user that issued the command
+     * @param newPage - page to switch to
      * @param memory    - database
      * @param timestamp - current timestamp
      * @param library   - library containing every user, song and podcast

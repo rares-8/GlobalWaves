@@ -7,7 +7,7 @@ import user.memory.UserMemory;
 import entities.Audio;
 
 public abstract class Repeat {
-    /**
+    /** Repeat currently loaded audio file
      * @param username  - user that issued the command
      * @param memory    - database
      * @param timestamp - current timestamp

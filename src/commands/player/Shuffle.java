@@ -12,7 +12,7 @@ import java.util.Random;
 
 public abstract class Shuffle {
     /**
-     *
+     * Shuffle playlist / album
      * @param username - user that issued the command
      * @param seed - seed to randomize after
      * @param memory - database

@@ -3,20 +3,23 @@ package commands.host;
 import com.fasterxml.jackson.databind.JsonNode;
 import com.fasterxml.jackson.databind.ObjectMapper;
 import com.fasterxml.jackson.databind.node.ObjectNode;
-import entities.*;
+import entities.Audio;
+import entities.Library;
+import entities.Podcast;
+import entities.User;
 import user.memory.UserMemory;
 import utils.CheckUser;
 
 import java.util.ArrayList;
 
 public abstract class RemovePodcast {
-    /**
+    /** Remove podcast for host
      * @param username    - username of artist owning the album
      * @param podcastName - podcast that should be deleted
      * @param memory      - database
      * @param timestamp   - current timestamp
      * @param library     - contains songs, playlists, podcasts, users
-     * @return delete album status
+     * @return delete podcast status
      */
     public static JsonNode removePodcast(final String username, final String podcastName,
                                          final Integer timestamp, final UserMemory memory,

@@ -10,7 +10,7 @@ import user.memory.UserMemory;
 import static utils.Constants.FORWARD_BACKWARD_TIME;
 
 public abstract class Forward {
-    /**
+    /**Go forward in a podcast
      * @param username  - user that issued the command
      * @param memory    - database
      * @param timestamp - current timestamp

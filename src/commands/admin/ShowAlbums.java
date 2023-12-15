@@ -11,7 +11,7 @@ import entities.Song;
 import entities.User;
 
 public abstract class ShowAlbums {
-    /**
+    /** Show albums for given users
      * @param username  - artist name
      * @param library - library containing songs, users, podcasts
      * @param timestamp - current timestamp

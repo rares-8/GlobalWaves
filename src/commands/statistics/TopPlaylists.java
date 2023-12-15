@@ -14,7 +14,7 @@ import static utils.Constants.RESULT_MAX_SIZE;
 
 public abstract class TopPlaylists {
     /**
-     *
+     * Top playlists by number of likes
      * @param timestamp - current timestamp
      * @param memory - database
      * @return top 5 playlists

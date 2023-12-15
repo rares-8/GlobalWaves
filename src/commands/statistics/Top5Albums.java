@@ -4,7 +4,11 @@ import com.fasterxml.jackson.databind.JsonNode;
 import com.fasterxml.jackson.databind.ObjectMapper;
 import com.fasterxml.jackson.databind.node.ArrayNode;
 import com.fasterxml.jackson.databind.node.ObjectNode;
-import entities.*;
+import entities.Album;
+import entities.Library;
+import entities.Playlist;
+import entities.Song;
+import entities.User;
 import user.memory.UserMemory;
 
 import java.util.ArrayList;
@@ -13,7 +17,7 @@ import java.util.Comparator;
 import static utils.Constants.RESULT_MAX_SIZE;
 
 public abstract class Top5Albums {
-    /**
+    /** Top 5 albums by total number of likes
      * @param memory    - database
      * @param timestamp - current timestamp
      * @param library   - contains podcasts, songs, users

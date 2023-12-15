@@ -7,7 +7,7 @@ import user.memory.UserMemory;
 import utils.UpdateTimestamp;
 
 public abstract class Pause {
-    /**
+    /**Play/Pause player
      * @param username  - user that issued the command
      * @param memory    - database
      * @param timestamp - current timestamp

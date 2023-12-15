@@ -9,7 +9,7 @@ import user.memory.UserMemory;
 import java.util.ArrayList;
 
 public abstract class Like {
-    /**
+    /**Like/Unlike currently loaded song
      * @param username  - user that issued the command
      * @param memory    - database
      * @param timestamp - current timestamp

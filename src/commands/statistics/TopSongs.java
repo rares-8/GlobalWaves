@@ -15,11 +15,10 @@ import static utils.Constants.RESULT_MAX_SIZE;
 
 public abstract class TopSongs {
     /**
-     *
-     * @param timestamp
-     * @param memory
-     * @param library
-     * @return
+     * Top songs by likes
+     * @param timestamp - current timestamp
+     * @param memory - database
+     * @return top songs
      */
     public static JsonNode topSongs(final Integer timestamp, final UserMemory memory,
                                     final Library library) {

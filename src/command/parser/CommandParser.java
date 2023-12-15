@@ -8,7 +8,11 @@ import commands.admin.AddUser;
 import commands.admin.DeleteUser;
 import commands.admin.ShowAlbums;
 import commands.admin.ShowPodcasts;
-import commands.artist.*;
+import commands.artist.AddAlbum;
+import commands.artist.AddEvent;
+import commands.artist.AddMerch;
+import commands.artist.RemoveAlbum;
+import commands.artist.RemoveEvent;
 import commands.host.AddAnnouncement;
 import commands.host.AddPodcast;
 import commands.host.RemoveAnnouncement;
@@ -21,11 +25,25 @@ import commands.playlist.SwitchVisibility;
 import commands.search.Search;
 import commands.search.SearchFilters;
 import commands.search.Select;
-import commands.statistics.*;
+import commands.statistics.AllUsers;
+import commands.statistics.OnlineUsers;
+import commands.statistics.ShowPreferredSongs;
+import commands.statistics.Top5Albums;
+import commands.statistics.Top5Artists;
+import commands.statistics.TopPlaylists;
+import commands.statistics.TopSongs;
 import commands.user.ChangePage;
 import commands.user.PrintCurrentPage;
 import commands.user.SwitchConnectionStatus;
-import entities.*;
+import entities.Album;
+import entities.Announcement;
+import entities.Episode;
+import entities.Event;
+import entities.Library;
+import entities.Merch;
+import entities.Podcast;
+import entities.Song;
+import entities.User;
 import user.memory.UserMemory;
 import utils.UpdatePlayer;
 import utils.UpdateTimestamp;
@@ -51,15 +69,14 @@ public final class CommandParser {
         Integer timestamp = getTimestamp(currentCommand);
 
         for (User user : library.getUsers()) {
-            if (user.getType().equals("user")
-                    && memory.getConnectionStatus().containsKey(user.getUsername())) {
+            if (memory.getConnectionStatus().containsKey(user.getUsername())) {
                 boolean isPaused = memory.getIsPaused().containsKey(user.getUsername());
                 if (!isPaused) {
                     UpdatePlayer.updatePlayer(user.getUsername(), timestamp, memory);
                 } else {
                     UpdateTimestamp.updateTimestamp(user.getUsername(), timestamp, memory);
                 }
-            } else if (!memory.getConnectionStatus().containsKey(user.getUsername())) {
+            } else {
                 UpdateTimestamp.updateTimestamp(user.getUsername(), timestamp, memory);
             }
         }

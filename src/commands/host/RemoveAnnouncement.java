@@ -9,12 +9,12 @@ import entities.User;
 import utils.CheckUser;
 
 public abstract class RemoveAnnouncement {
-    /**
+    /** Remove announcement from host
      * @param username  - user
      * @param timestamp - current timestamp
      * @param announcementName - announcement to be deleted
      * @param library - contains songs, playlists, podcasts, users
-     * @return add announcement status
+     * @return remove announcement status
      */
     public static JsonNode removeAnnouncement(final String username, final Library library,
                                            final String announcementName,

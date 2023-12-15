@@ -9,7 +9,7 @@ import user.memory.UserMemory;
 
 public abstract class ShowPreferredSongs {
     /**
-     *
+     * Show songs that a user has likes
      * @param username - user that issued the command
      * @param memory - database
      * @param timestamp - current timestamp

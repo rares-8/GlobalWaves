@@ -12,7 +12,7 @@ import user.memory.UserMemory;
 import utils.CheckUser;
 
 public abstract class AddUser {
-    /**
+    /** Adds a user to library
      * @param username  - user that should be added
      * @param memory    - database
      * @param timestamp - current timestamp

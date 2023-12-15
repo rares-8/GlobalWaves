@@ -9,7 +9,7 @@ import entities.User;
 import utils.CheckUser;
 
 public abstract class AddMerch {
-    /**
+    /** Add merch for an artist
      * @param username  - user
      * @param timestamp - current timestamp
      * @param newMerch - merch to be added

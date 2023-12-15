@@ -9,7 +9,7 @@ import entities.User;
 import user.memory.UserMemory;
 
 public abstract class AllUsers {
-    /**
+    /** Print all users
      * @param memory    - database
      * @param timestamp - current timestamp
      * @param library   - library containing every user, song and podcast

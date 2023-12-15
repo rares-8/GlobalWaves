@@ -8,7 +8,7 @@ import entities.User;
 import user.memory.UserMemory;
 
 public abstract class SwitchConnectionStatus {
-    /**
+    /**Make a user online / offline
      * @param username  - user that issued the command
      * @param memory    - database
      * @param timestamp - current timestamp

@@ -9,7 +9,7 @@ import user.memory.UserMemory;
 import java.util.ArrayList;
 
 public abstract class FollowPlaylist {
-    /**
+    /**Follow playlist
      * @param username  - user that issued the command
      * @param memory    - database for users
      * @param timestamp - timestamp for command

@@ -3,7 +3,12 @@ package commands.artist;
 import com.fasterxml.jackson.databind.JsonNode;
 import com.fasterxml.jackson.databind.ObjectMapper;
 import com.fasterxml.jackson.databind.node.ObjectNode;
-import entities.*;
+import entities.Album;
+import entities.Audio;
+import entities.Library;
+import entities.Playlist;
+import entities.Song;
+import entities.User;
 import user.memory.UserMemory;
 import utils.CheckUser;
 
@@ -11,7 +16,7 @@ import java.util.ArrayList;
 import java.util.Map;
 
 public abstract class RemoveAlbum {
-    /**
+    /** Remove album created by given artist
      * @param username  - username of artist owning the album
      * @param albumName - album that should be deleted
      * @param memory    - database

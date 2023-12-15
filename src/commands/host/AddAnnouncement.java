@@ -9,7 +9,7 @@ import entities.User;
 import utils.CheckUser;
 
 public abstract class AddAnnouncement {
-    /**
+    /** Add announcement for a user
      * @param username  - user
      * @param timestamp - current timestamp
      * @param newAnnouncement - announcement to be added

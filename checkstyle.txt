@@ -1,20 +1,5 @@
 Starting audit...
 [ERROR] /home/rares/POO/oop-project-2023/etapa2/./src/utils/Constants.java:3:1: interfaces should describe a type and hence have methods. [InterfaceIsType]
-[ERROR] /home/rares/POO/oop-project-2023/etapa2/./src/main/Main.java:16:20: Using the '.*' form of import should be avoided - fileio.input.*. [AvoidStarImport]
-[ERROR] /home/rares/POO/oop-project-2023/etapa2/./src/user/memory/UserMemory.java:3:16: Using the '.*' form of import should be avoided - entities.*. [AvoidStarImport]
-[ERROR] /home/rares/POO/oop-project-2023/etapa2/./src/entities/pages/PrintVisitor.java:3:16: Using the '.*' form of import should be avoided - entities.*. [AvoidStarImport]
-[ERROR] /home/rares/POO/oop-project-2023/etapa2/./src/commands/artist/RemoveAlbum.java:6:16: Using the '.*' form of import should be avoided - entities.*. [AvoidStarImport]
-[ERROR] /home/rares/POO/oop-project-2023/etapa2/./src/commands/statistics/Top5Albums.java:7:16: Using the '.*' form of import should be avoided - entities.*. [AvoidStarImport]
-[ERROR] /home/rares/POO/oop-project-2023/etapa2/./src/commands/statistics/Top5Artists.java:7:16: Using the '.*' form of import should be avoided - entities.*. [AvoidStarImport]
-[ERROR] /home/rares/POO/oop-project-2023/etapa2/./src/commands/host/AddPodcast.java:6:16: Using the '.*' form of import should be avoided - entities.*. [AvoidStarImport]
-[ERROR] /home/rares/POO/oop-project-2023/etapa2/./src/commands/host/RemovePodcast.java:6:16: Using the '.*' form of import should be avoided - entities.*. [AvoidStarImport]
-[ERROR] /home/rares/POO/oop-project-2023/etapa2/./src/commands/search/Search.java:7:16: Using the '.*' form of import should be avoided - entities.*. [AvoidStarImport]
-[ERROR] /home/rares/POO/oop-project-2023/etapa2/./src/commands/player/Next.java:6:16: Using the '.*' form of import should be avoided - entities.*. [AvoidStarImport]
-[ERROR] /home/rares/POO/oop-project-2023/etapa2/./src/commands/admin/DeleteUser.java:6:16: Using the '.*' form of import should be avoided - entities.*. [AvoidStarImport]
-[ERROR] /home/rares/POO/oop-project-2023/etapa2/./src/commands/admin/ShowPodcasts.java:7:16: Using the '.*' form of import should be avoided - entities.*. [AvoidStarImport]
-[ERROR] /home/rares/POO/oop-project-2023/etapa2/./src/command/parser/CommandParser.java:11:23: Using the '.*' form of import should be avoided - commands.artist.*. [AvoidStarImport]
-[ERROR] /home/rares/POO/oop-project-2023/etapa2/./src/command/parser/CommandParser.java:16:23: Using the '.*' form of import should be avoided - commands.player.*. [AvoidStarImport]
-[ERROR] /home/rares/POO/oop-project-2023/etapa2/./src/command/parser/CommandParser.java:24:27: Using the '.*' form of import should be avoided - commands.statistics.*. [AvoidStarImport]
-[ERROR] /home/rares/POO/oop-project-2023/etapa2/./src/command/parser/CommandParser.java:28:16: Using the '.*' form of import should be avoided - entities.*. [AvoidStarImport]
+[ERROR] /home/rares/POO/oop-project-2023/etapa2/./src/command/parser/CommandParser.java:20:23: Using the '.*' form of import should be avoided - commands.player.*. [AvoidStarImport]
 Audit done.
-Checkstyle ends with 17 errors.
+Checkstyle ends with 2 errors.

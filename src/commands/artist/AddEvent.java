@@ -12,7 +12,7 @@ import java.time.DateTimeException;
 import java.time.format.DateTimeFormatter;
 
 public abstract class AddEvent {
-    /**
+    /** Add event for an artist
      * @param username  - user
      * @param timestamp - current timestamp
      * @param newEvent - event to be added

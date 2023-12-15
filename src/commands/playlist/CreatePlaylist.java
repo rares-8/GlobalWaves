@@ -10,7 +10,7 @@ import java.util.ArrayList;
 
 public abstract class CreatePlaylist {
     /**
-     *
+     *Create a playlist
      * @param username - owner of the playlist
      * @param playlistName - name of playlist to be created
      * @param timestamp - current timestamp

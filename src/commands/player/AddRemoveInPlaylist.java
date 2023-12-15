@@ -9,7 +9,7 @@ import entities.Song;
 import user.memory.UserMemory;
 
 public abstract class AddRemoveInPlaylist {
-    /**
+    /**Add or remove songs for playlist
      * @param username   - user that issued the command
      * @param playlistId - playlist id
      * @param memory     - database

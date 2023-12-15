@@ -1,6 +1,16 @@
 package entities.pages;
 
-import entities.*;
+import entities.Album;
+import entities.Announcement;
+import entities.Audio;
+import entities.Episode;
+import entities.Event;
+import entities.Library;
+import entities.Merch;
+import entities.Playlist;
+import entities.Podcast;
+import entities.Song;
+import entities.User;
 import user.memory.UserMemory;
 
 import java.util.ArrayList;

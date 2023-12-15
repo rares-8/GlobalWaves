@@ -4,11 +4,15 @@ import com.fasterxml.jackson.databind.JsonNode;
 import com.fasterxml.jackson.databind.ObjectMapper;
 import com.fasterxml.jackson.databind.node.ArrayNode;
 import com.fasterxml.jackson.databind.node.ObjectNode;
-import entities.*;
+import entities.Episode;
+import entities.Host;
+import entities.Library;
+import entities.Podcast;
+import entities.User;
 
 public abstract class ShowPodcasts {
-    /**
-     * @param username  - artist name
+    /** Show podcasts for given user
+     * @param username  - host name
      * @param library - library containing songs, users, podcasts
      * @param timestamp - current timestamp
      * @return show podcasts status

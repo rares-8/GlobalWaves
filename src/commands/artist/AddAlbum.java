@@ -11,7 +11,7 @@ import user.memory.UserMemory;
 import utils.CheckUser;
 
 public abstract class AddAlbum {
-    /**
+    /** Add album for a user
      * @param username  - user
      * @param memory    - database
      * @param timestamp - current timestamp

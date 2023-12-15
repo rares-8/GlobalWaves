@@ -3,12 +3,14 @@ package commands.host;
 import com.fasterxml.jackson.databind.JsonNode;
 import com.fasterxml.jackson.databind.ObjectMapper;
 import com.fasterxml.jackson.databind.node.ObjectNode;
-import entities.*;
+import entities.Library;
+import entities.Podcast;
+import entities.User;
 import user.memory.UserMemory;
 import utils.CheckUser;
 
 public abstract class AddPodcast {
-    /**
+    /** Add podcast for given user
      * @param username   - user
      * @param memory     - database
      * @param timestamp  - current timestamp

@@ -9,11 +9,11 @@ import entities.User;
 import utils.CheckUser;
 
 public abstract class RemoveEvent {
-    /**
+    /** Remove event for an artist
      * @param username  - user
      * @param timestamp - current timestamp
      * @param library - contains songs, playlists, podcasts, users
-     * @return add event status
+     * @return remove event status
      */
     public static JsonNode removeEvent(final String username, final Library library,
                                      final String eventName, final Integer timestamp) {

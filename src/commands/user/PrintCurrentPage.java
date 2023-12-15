@@ -8,7 +8,7 @@ import entities.pages.PrintVisitor;
 import user.memory.UserMemory;
 
 public abstract class PrintCurrentPage {
-    /**
+    /**Print the current page for user
      * @param username  - user that issued the command
      * @param memory    - database
      * @param timestamp - current timestamp

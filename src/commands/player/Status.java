@@ -7,7 +7,7 @@ import entities.Podcast;
 import user.memory.UserMemory;
 
 public abstract class Status {
-    /**
+    /**Print the status for the player of the given user
      * @param username  - user that issued the command
      * @param memory    - database
      * @param timestamp - current timestamp

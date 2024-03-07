@@ -1,5 +1,5 @@
 ### Apostol Rares ###
-### Global Waves - Spotify Clone ###
+### Global Waves - Music App ###
 <br />
 
 -------------------------------------------------------------

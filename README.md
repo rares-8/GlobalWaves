@@ -1,10 +1,9 @@
 ### Apostol Rares ###
-### 321CA ###
+### Global Waves - Spotify Clone ###
 <br />
 
 -------------------------------------------------------------
-### Etapa 1 ###
-Tema este organizata in urmatoarele pachete:
+Proiectul este organizat in urmatoarele pachete:
 
 - **command.parser**
 	- Contine clasa CommandParser, folosita pentru a parsa inputul primit
@@ -60,7 +59,7 @@ In continuare o sa explic cateva dintre comenzile mai complicate din commands.
 - **next / prev** Aici sunt destul de multe cazuri de care trebuie tinut cont : repeat, cat timp a trecut din melodie, ce tip de fisier este incarcat. Comenzile sunt destul de similare, o sa explic cum functioneaza next pentru playlist. Primul pas este sa luam indexul curent si lista de indecsi din hashmap, dupa care putem gasi melodia curenta. Algoritmul de trecere la urmatoarea melodie seamana destul de mult cu cel de la UpdatePlayer, numai ca acesta se executa o singura data. Daca repeat nu este setat si melodia nu este ultima, se trece la urmatorul index din lista si se da load la urmatoarea melodie. Daca repeat este setat, se alege urmatoarea melodie din  playlist.
 - **repeat / shuffle** Comenzile sunt destul de similare. In cadrul comenzilor nu se intampla foarte multe, dar actualizeaza configuratiile din memorie. La shuffle, se actualizeaza hashmap-urile isShuffled, collectionIndexes si currentIndex, iar la repeat isRepeating, collectionIndexes si currentIndex.
 - **status** comanda status foloseste hashmap-urile din memorie pentru a afisa setarile din playerul unui user.
-- **search** comanda de search este cea mai lunga. Aici m-am folosit de interfata Audio pentru a face o singura metoda pentru toate tipurile de fisiere. In metoda searchAudio se verifica daca un fisier audio din library se potriveste cu toate filtrele date. Search-ul pentru melodii a fost putin mai complicat decat pentru playlisturi si podcasturi, din cauza listei de taguri. Pentru melodii, prima data nu tin cont de taguri, si pun in audioResult toate melodiile care se potrivesc cu celelalte filtre. Dupa aceea, daca lista este goala, doar caut dupa taguri si pun in lista tot ce se potriveste. Daca nu este goala, sterg toate melodiile care nu se potrivesc cu tagurile date. Parsarea comenzii search a fost mai complicata decat pentru alte comenzi, si o sa explic putin ce am facut: daca filtrele contin si lista de taguri, atunci o pun intr-o lista de stringuri folosind ObjectMapper. Dupa asta pun intr-un hashmap toate celelalte filtre. Hashmap-ul o sa fie format din perechi de genul nume_filtru - valoare_filtru. Pentru a verifica daca un filtru exista, am creat un enum ce contine toate filtrele posibile. Iterez prin acest enum si verific daca filtrele contin acel filtru.
+- **search** comanda de search este cea mai lunga. Aici m-am folosit de interfata Audio pentru a face o singura metoda pentru toate tipurile de fisiere. In metoda searchAudio se verifica daca un fisier audio din library se potriveste cu toate filtrele date. Search-ul pentru melodii a fost putin mai complicat decat pentru playlisturi si podcasturi, din cauza listei de taguri. Pentru melodii, prima data nu tin cont de taguri, si pun in audioResult toate melodiile care se potrivesc cu celelalte filtre. Dupa aceea, daca lista este goala, doar caut dupa taguri si pun in lista tot ce se potriveste. Daca nu este goala, sterg toate melodiile care nu se potrivesc cu tagurile date. Parsarea comenzii search a fost mai complicata decat pentru alte comenzi: daca filtrele contin si lista de taguri, atunci o pun intr-o lista de stringuri folosind ObjectMapper. Dupa asta pun intr-un hashmap toate celelalte filtre. Hashmap-ul o sa fie format din perechi de genul nume_filtru - valoare_filtru. Pentru a verifica daca un filtru exista, am creat un enum ce contine toate filtrele posibile. Iterez prin acest enum si verific daca filtrele contin acel filtru.
 
 ## Flow-ul programului ##
 
@@ -74,18 +73,16 @@ In continuare o sa explic cateva dintre comenzile mai complicate din commands.
 
 -----------------------------------------------------------------------
 
-### Etapa 2 ###
+### Cateva functionalitati noi ###
 
-** Am folosit implementarea mea de la etapa 1. **
-
-- ## Clase actualizate fata de prima etapa: ##
+- ## Imbunatatiri fata de ultima etapa: ##
 	- UserMemory - am adaugat doua hashmap - uri noi, connectionStatus, unde se pastreaza daca un user este online / offline, si currentPage, unde se pastreaza pagina curenta pentru fiecare user
 	-  CommandParser, am schimbat logica de actualizare a timpului. Acum, la fiecare comanda, se actualizeaza playerul fiecarui user, in loc sa se actualizeze doar playerul userului care a dat comanda, cum am facut in prima etapa.
 	
 <br />
 
 - ## Functionalitati noi: ##
-	- ** Album ** entitate noua, care se comporta exact la fel ca un playlist. Am facut album o subclasa a lui playlist si asta a fost toata implementarea.
+	- ** Album ** entitate noua, care se comporta exact la fel ca un playlist. Am facut album o subclasa a lui playlist.
 	- ** Useri noi : artists si hosts ** - subclase ale clasei User, se comporta aproximativ la fel, dar pot adauga albume / podcasturi noi.
 	- ** Events, Announcements, Merchendise ** - comenzile de add / remove au fost destul de similare, adauga sau elimina dintr-o ArrayList de tipul Event, Announcement, Merch
 	- ** delete users, add users ** - explicate mai jos

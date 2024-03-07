@@ -82,13 +82,13 @@ In continuare o sa explic cateva dintre comenzile mai complicate din commands.
 <br />
 
 - ## Functionalitati noi: ##
-	- ** Album ** entitate noua, care se comporta exact la fel ca un playlist. Am facut album o subclasa a lui playlist.
-	- ** Useri noi : artists si hosts ** - subclase ale clasei User, se comporta aproximativ la fel, dar pot adauga albume / podcasturi noi.
-	- ** Events, Announcements, Merchendise ** - comenzile de add / remove au fost destul de similare, adauga sau elimina dintr-o ArrayList de tipul Event, Announcement, Merch
-	- ** delete users, add users ** - explicate mai jos
-	- ** sistem de pagini ** - explicat mai jos
+	- **Album** entitate noua, care se comporta exact la fel ca un playlist. Am facut album o subclasa a lui playlist.
+	- **Useri noi : artists si hosts** - subclase ale clasei User, se comporta aproximativ la fel, dar pot adauga albume / podcasturi noi.
+	- **Events, Announcements, Merchendise** - comenzile de add / remove au fost destul de similare, adauga sau elimina dintr-o ArrayList de tipul Event, Announcement, Merch
+	- **delete users, add users** - explicate mai jos
+	- **sistem de pagini** - explicat mai jos
 ## Comenzi dificile / explicatii suplimentare ##
--  ** DeleteUser ** a fost cea mai lunga comanda, si mi s-a parut cea mai complicata, deci o sa explic mai bine ce am facut. In functie de tipul userului, se apeleaza una din trei metode: deleteUser, deleteHost, deleteArtist.
+-  **DeleteUser** a fost cea mai lunga comanda, si mi s-a parut cea mai complicata, deci o sa explic mai bine ce am facut. In functie de tipul userului, se apeleaza una din trei metode: deleteUser, deleteHost, deleteArtist.
 	- **deleteHost** a fost cel mai usor : am verificat daca in playerul unui user este loaded un podcast de la hostul pe care vrem sa il stergem. In plus, am mai verificat si daca un user este pe pagina hostului. Daca nu se intampla niciuna din cele doua variante, atunci hostul se poate sterge, si se apeleaza **clearHost**, unde se elimina toate legaturile hostului cu programul. Se elimina din cele 3 liste pentru podcasturi (explicate mai sus, la prima etapa) toate podcasturile si episoadele hostului.
 	- **deleteArtist** exista 4 cazuri in care un artist nu poate fi sters: user care asculta album de la artist, user care asculta melodie de la artist, user care asculta un playlist care contine o melodie de la artist, user pe pagina artistului. Daca un artist poate fi sters, se apeleaza **clearUser**
 	- **deleteUser** un user nu poate fi sters daca un alt user asculta un album creat de acesta. Daca poate fi sters, se apeleaza **clearUser**
